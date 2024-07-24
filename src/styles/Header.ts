@@ -1,6 +1,10 @@
 import Link from "next/link";
 import styled, { css } from "styled-components";
 
+export const MainWrapper = styled.div`
+  background-color: #fafbfd;
+`;
+
 export const TopWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -65,6 +69,25 @@ export const SearchInput = styled.input`
   }
 `;
 
+export const MenuContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+`;
+
+export const MenuItem = styled.div`
+  font-size: 15px;
+  color: #343a40;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  max-width: 140px;
+
+  &:not(:last-child) {
+    border-right: 1px solid #dee2e6;
+  }
+`;
+
 export const CartBadge = styled.span`
   display: flex;
   align-items: center;
@@ -104,8 +127,8 @@ export const Button = styled.button<{
   ${(props) =>
     props.primary &&
     css`
-      background-color: #ffca00; /* Sepet butonunun arka plan rengi */
-      color: #343a40; /* Sepet butonunun yazı rengi */
+      background-color: #ffca00;
+      color: #343a40;
     `}
 
   ${(props) =>
