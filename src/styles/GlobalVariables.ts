@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const gutter = "1.5rem";
 
@@ -33,17 +33,26 @@ export const Row = styled.div`
   margin-left: calc(${gutter} / -2);
 `;
 
-export const Col = styled.div`
+interface ColProps {
+  size?: number;
+}
+
+export const Col = styled.div<ColProps>`
   flex: 1;
   position: relative;
   width: 100%;
   padding-right: calc(${gutter} / 2);
   padding-left: calc(${gutter} / 2);
-
   ${(props) =>
     props.size &&
     css`
       flex: 0 0 ${(props.size / 12) * 100}%;
       max-width: ${(props.size / 12) * 100}%;
     `}
+
+  @media (max-width: 992px) {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 1rem 0;
+  }
 `;
