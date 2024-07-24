@@ -1,0 +1,36 @@
+import { Logo, Nav, NavLink, TopWrapper } from "@/styles/Header";
+import { Col, Container, Row } from "@/styles/GlobalVariables";
+import Image from "next/image";
+
+const Top = () => {
+  return (
+    <Container>
+      <Row>
+        <Col>
+          <TopWrapper>
+            <Logo>
+              <Image
+                src="/images/turkcell.png"
+                alt="logo"
+                width={35}
+                height={20}
+                priority
+              />
+              <span>turkcell.com.tr</span>
+            </Logo>
+            <Nav>
+              <NavLink href="#">Favorilerim</NavLink>
+              <NavLink href="#">Kampanyalar</NavLink>
+              <NavLink href="#">Yardım</NavLink>
+              <NavLink href="#">Neden Pasaj?</NavLink>
+              <NavLink href="#">Pasaj Blog</NavLink>
+              <NavLink href="#">Sipariş Sorgulama</NavLink>
+            </Nav>
+          </TopWrapper>
+        </Col>
+      </Row>
+    </Container>
+  );
+};
+
+export default Top;

@@ -1,0 +1,110 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@gmail.com",
+      "basket": [
+        {
+          "id": 1,
+          "count": 1,
+          "productId": 1
+        }
+      ],
+      "favorites": [
+        {
+          "id": 1,
+          "productId": 1
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone 15 Pro Max 256 GB",
+      "price": 89999,
+      "category": "Cep Telefonu-Aksesuar",
+      "subCategory": "Apple Telefonlar",
+      "rating": 4.5,
+      "discountPercentage": 12,
+      "discountEndTime": "2024-07-31T23:59:59.999Z",
+      "stock": 35,
+      "installmentCount": 3,
+      "installmentPrice": 29999.67,
+      "limit": 1,
+      "seller": "Turkcell Satış A.Ş.",
+      "description": "Apple GPU’ları tarihindeki en büyük tasarım yeniliğine hazır mısınız? Tamamen yeni bir iPhone çip sınıfı olan A17 Pro, şimdiye kadarki en iyi grafik performansımızı sunuyor. Hem de açık ara.",
+      "images": ["1.webp", "2.webp", "3.webp"],
+      "features": [
+        { "name": "Ürün Model Adı", "value": "IPHONE 15 PRO MAX 256GB" },
+        { "name": "Üretim Yeri", "value": "Çin" },
+        { "name": "İşletim Sistemi Versiyonu", "value": "IOS 17" },
+        { "name": "Dahili Hafıza", "value": "256 GB" },
+        { "name": "Ram (bellek) Kapasitesi", "value": "8 GB" },
+        { "name": "Ekran Boyutu", "value": "6.7 INC" },
+        { "name": "Ekran Teknolojisi", "value": "SUPER RETINA XDR EKRAN" },
+        { "name": "Çözünürlük", "value": "2796 X 1290 PIXELS" },
+        { "name": "Ekran Yenileme Hızı (hz)", "value": "120 HZ" },
+        { "name": "Ön Kamera", "value": "12 MP" },
+        { "name": "Arka Kamera", "value": "48 MP + 12 MP + 12 MP" },
+        { "name": "4.5guyumu", "value": "5G" },
+        { "name": "İşlemci", "value": "A17 PRO ÇİP" },
+        { "name": "Ana İşlemci Hızı", "value": "3.64 GHZ, 6 ÇEKİRDEK" },
+        { "name": "Nfc", "value": "VAR" },
+        { "name": "Autofocus", "value": "VAR" }
+      ],
+      "otherSellers": [
+        {
+          "seller": "Vodafone Satış A.Ş.",
+          "price": 89999,
+          "rating": 4.5
+        },
+        {
+          "seller": "Türk Telekom Satış A.Ş.",
+          "price": 89999,
+          "rating": 4
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": [
+            "Mavi Titanyum",
+            "Natürel Titanyum",
+            "Siyah Titanyum",
+            "Beyaz Titanyum"
+          ]
+        },
+        {
+          "title": "Hafıza",
+          "options": ["256 GB", "512 GB", "1 TB"]
+        }
+      ],
+      "badges": ["Peşine 4 Taksit", "Ücretsiz Kargo", "Alışveriş Kredisi"],
+      "comments": [
+        {
+          "id": 1,
+          "userId": 1,
+          "comment": "Ürün çok güzel",
+          "rating": 5,
+          "date": "2024-07-31T23:59:59.999Z"
+        }
+      ],
+      "qa": [
+        {
+          "id": 1,
+          "question": "Ürünün garantisi var mı?",
+          "answer": "Evet, ürünün garantisi vardır.",
+          "questionDate": "2024-07-31T23:59:59.999Z",
+          "answerDate": "2024-07-31T23:59:59.999Z"
+        }
+      ],
+      "creditCard": true,
+      "fibabanka": true,
+      "freeShipping": true,
+      "guarantee": true,
+      "isContract": true
+    }
+  ]
+}
