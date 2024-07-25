@@ -4,8 +4,20 @@ import { Button, CartBadge } from "@/styles/Header/Navbar";
 import { IoPersonCircleOutline, IoChevronDownSharp } from "react-icons/io5";
 import { BsCart4 } from "react-icons/bs";
 import Search from "./Search";
+import { useState } from "react";
+import AuthModal from "./AuthModal";
 
 const Navbar = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <Container>
       <Row>
@@ -22,7 +34,7 @@ const Navbar = () => {
           <Search />
         </Col>
         <Col size={2}>
-          <Button $withicon $border>
+          <Button $withicon $border onClick={openModal}>
             <span>
               <IoPersonCircleOutline size={24} />
             </span>
@@ -31,6 +43,7 @@ const Navbar = () => {
               <IoChevronDownSharp size={24} />
             </span>
           </Button>
+          <AuthModal isOpen={isModalOpen} onClose={closeModal} />
         </Col>
         <Col size={2}>
           <Button $primary $withicon>

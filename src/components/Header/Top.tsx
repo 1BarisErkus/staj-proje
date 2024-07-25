@@ -1,8 +1,11 @@
 import { Logo, Nav, NavLink, TopWrapper } from "@/styles/Header/Top";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const Top = () => {
+  const router = useRouter();
+
   return (
     <Container>
       <Row>
@@ -21,10 +24,14 @@ const Top = () => {
             <Nav>
               <NavLink href="#">Favorilerim</NavLink>
               <NavLink href="#">Kampanyalar</NavLink>
-              <NavLink href="#">Yardım</NavLink>
-              <NavLink href="#">Neden Pasaj?</NavLink>
-              <NavLink href="#">Pasaj Blog</NavLink>
-              <NavLink href="#">Sipariş Sorgulama</NavLink>
+              {router.pathname === "/" && (
+                <>
+                  <NavLink href="#">Yardım</NavLink>
+                  <NavLink href="#">Neden Pasaj?</NavLink>
+                  <NavLink href="#">Pasaj Blog</NavLink>
+                  <NavLink href="#">Sipariş Sorgulama</NavLink>
+                </>
+              )}
             </Nav>
           </TopWrapper>
         </Col>

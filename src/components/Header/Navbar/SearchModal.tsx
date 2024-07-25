@@ -9,9 +9,9 @@ import {
   Overlay,
   PopularSearches,
   SearchItem,
-  SearchModal,
+  SearchModalWrapper,
   SpecialCategories,
-} from "@/styles/Header/Navbar";
+} from "@/styles/Header/Navbar/SearchModal";
 import { Navigation } from "swiper/modules";
 import Image from "next/image";
 
@@ -32,7 +32,7 @@ const popularSearches = [
   "Spor - Dizi - Film Yayın Paketleri",
 ];
 
-const Modal = ({
+const SearchModal = ({
   handleClickOutside,
   modalRef,
 }: {
@@ -42,7 +42,7 @@ const Modal = ({
   return (
     <>
       <Overlay onClick={handleClickOutside} />
-      <SearchModal ref={modalRef}>
+      <SearchModalWrapper ref={modalRef}>
         <ModalContent>
           <ModalHeader>Sana Özel Kategoriler</ModalHeader>
           <SpecialCategories>
@@ -86,9 +86,9 @@ const Modal = ({
           </ModalBottomWrapper>
           <Link href="#">Tüm Tıraş Makinelerini Göster</Link>
         </ModalContent>
-      </SearchModal>
+      </SearchModalWrapper>
     </>
   );
 };
 
-export default Modal;
+export default SearchModal;

@@ -2,10 +2,10 @@ import {
   SearchContainer,
   SearchIcon,
   SearchInput,
-} from "@/styles/Header/Navbar";
+} from "@/styles/Header/Navbar/Search";
 import { useState, useEffect, useRef } from "react";
 import { CiSearch } from "react-icons/ci";
-import Modal from "./Modal";
+import SearchModal from "./SearchModal";
 
 const Search = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -57,7 +57,10 @@ const Search = () => {
         />
       </SearchContainer>
       {isModalOpen && (
-        <Modal handleClickOutside={handleClickOutside} modalRef={modalRef} />
+        <SearchModal
+          handleClickOutside={handleClickOutside}
+          modalRef={modalRef}
+        />
       )}
     </>
   );

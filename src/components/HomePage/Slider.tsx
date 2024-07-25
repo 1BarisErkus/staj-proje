@@ -1,8 +1,13 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { BlurredImage, Container, SlideContent } from "@/styles/Home/Slider";
+import {
+  BlurredImage,
+  Container,
+  SlideContent,
+  StyledSwiperSlide,
+} from "@/styles/HomePage/Slider";
 import { useState } from "react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
@@ -43,24 +48,28 @@ const Slider = () => {
       <Swiper
         slidesPerView={1}
         onSlideChange={handleSlideChange}
-        modules={[Pagination, Navigation]}
+        modules={[Pagination, Navigation, Autoplay]}
         pagination={{
           clickable: true,
         }}
         navigation={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
       >
         {images.map((image, index) => (
-          <SwiperSlide key={index}>
+          <StyledSwiperSlide key={index}>
             <SlideContent>
               <Image
                 src={`/images/mainSlider/${image}`}
                 alt="Slider"
-                width={1180}
-                height={500}
+                fill
                 priority
+                style={{ objectFit: "cover" }}
               />
             </SlideContent>
-          </SwiperSlide>
+          </StyledSwiperSlide>
         ))}
       </Swiper>
     </Container>
