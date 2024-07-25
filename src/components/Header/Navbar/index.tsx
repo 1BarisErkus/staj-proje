@@ -1,16 +1,9 @@
 import Image from "next/image";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
-import {
-  Button,
-  CartBadge,
-  SearchContainer,
-  SearchIcon,
-  SearchInput,
-} from "@/styles/Header";
-
-import { CiSearch } from "react-icons/ci";
+import { Button, CartBadge } from "@/styles/Header/Navbar";
 import { IoPersonCircleOutline, IoChevronDownSharp } from "react-icons/io5";
 import { BsCart4 } from "react-icons/bs";
+import Search from "./Search";
 
 const Navbar = () => {
   return (
@@ -26,15 +19,7 @@ const Navbar = () => {
           />
         </Col>
         <Col size={6}>
-          <SearchContainer>
-            <SearchIcon>
-              <CiSearch />
-            </SearchIcon>
-            <SearchInput
-              type="text"
-              placeholder="Ürün, marka veya kategori ara"
-            />
-          </SearchContainer>
+          <Search />
         </Col>
         <Col size={2}>
           <Button $withicon $border>

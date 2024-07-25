@@ -1,4 +1,4 @@
-import { MenuContainer, MenuItem } from "@/styles/Header";
+import { MenuContainer, MenuItem } from "@/styles/Header/Menu";
 
 const Menu = () => {
   const menuItems = [

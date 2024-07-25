@@ -3,7 +3,7 @@ import {
   MiddleRight,
   MiddleSection,
   SocialMedia,
-} from "@/styles/Footer";
+} from "@/styles/Footer/Middle";
 import Link from "next/link";
 import { BsTwitterX } from "react-icons/bs";
 import {

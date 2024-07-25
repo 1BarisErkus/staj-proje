@@ -1,4 +1,4 @@
-import { Logo, Nav, NavLink, TopWrapper } from "@/styles/Header";
+import { Logo, Nav, NavLink, TopWrapper } from "@/styles/Header/Top";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
 import Image from "next/image";
 

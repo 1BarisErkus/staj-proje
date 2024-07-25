@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BottomLinks, BottomWrapper, Copyright } from "@/styles/Footer";
+import { BottomLinks, BottomWrapper, Copyright } from "@/styles/Footer/Bottom";
 
 const Bottom = () => {
   return (
@@ -10,6 +10,13 @@ const Bottom = () => {
         <Link href="#">Tarife Karşılaştırma</Link>
       </BottomLinks>
       <Copyright>
+        <Image
+          src="/images/guven-damgasi-icon.webp"
+          alt="etbis"
+          width={40}
+          height={40}
+          priority
+        />
         <Image
           src="/images/etbis-qr-code.webp"
           alt="etbis"

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { SwiperWrapper } from "@/styles/Footer";
+import { SwiperWrapper } from "@/styles/Footer/Slider";
 
 const logos = [
   "fizy-logo",
@@ -24,21 +24,21 @@ const Slider = () => {
   return (
     <SwiperWrapper>
       <Swiper
-        slidesPerView={9}
-        // breakpoints={{
-        //   640: {
-        //     slidesPerView: 2,
-        //     spaceBetween: 20,
-        //   },
-        //   768: {
-        //     slidesPerView: 4,
-        //     spaceBetween: 40,
-        //   },
-        //   1024: {
-        //     slidesPerView: 5,
-        //     spaceBetween: 50,
-        //   },
-        // }}
+        slidesPerView={2}
+        breakpoints={{
+          640: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 6,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 9,
+            spaceBetween: 50,
+          },
+        }}
         navigation={true}
         modules={[Navigation]}
       >
