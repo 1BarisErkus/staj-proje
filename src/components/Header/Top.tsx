@@ -8,7 +8,7 @@ const Top = () => {
       <Row>
         <Col>
           <TopWrapper>
-            <Logo>
+            <Logo href="https://www.turkcell.com.tr/">
               <Image
                 src="/images/turkcell.png"
                 alt="logo"

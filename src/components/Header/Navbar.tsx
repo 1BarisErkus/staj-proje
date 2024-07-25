@@ -37,7 +37,7 @@ const Navbar = () => {
           </SearchContainer>
         </Col>
         <Col size={2}>
-          <Button withicon border>
+          <Button $withicon $border>
             <span>
               <IoPersonCircleOutline size={24} />
             </span>
@@ -48,7 +48,7 @@ const Navbar = () => {
           </Button>
         </Col>
         <Col size={2}>
-          <Button primary withicon>
+          <Button $primary $withicon>
             <span>
               <BsCart4 size={24} />
             </span>

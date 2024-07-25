@@ -3,11 +3,13 @@ import Head from "next/head";
 import localFont from "next/font/local";
 
 import "react-toastify/dist/ReactToastify.css";
+import "swiper/css";
+import "swiper/css/navigation";
 
-import GlobalStyles from "@/styles/GlobalStyles";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ToastContainer } from "react-toastify";
+import GlobalStyles from "@/styles/GlobalStyles";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 

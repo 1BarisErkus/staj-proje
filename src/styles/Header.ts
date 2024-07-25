@@ -13,7 +13,7 @@ export const TopWrapper = styled.div`
   padding: 1.2rem 0;
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,6 +71,7 @@ export const SearchInput = styled.input`
 
 export const MenuContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 1rem 0;
@@ -104,9 +105,9 @@ export const CartBadge = styled.span`
 `;
 
 export const Button = styled.button<{
-  primary?: boolean;
-  withicon?: boolean;
-  border?: boolean;
+  $primary?: boolean;
+  $withicon?: boolean;
+  $border?: boolean;
 }>`
   display: flex;
   align-items: center;
@@ -114,7 +115,7 @@ export const Button = styled.button<{
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: 500;
-  border: ${(props) => (props.border ? "1px solid #e9ecef" : "none")};
+  border: ${(props) => (props.$border ? "1px solid #e9ecef" : "none")};
   border-radius: 6px;
   cursor: pointer;
   background-color: white;
@@ -125,14 +126,14 @@ export const Button = styled.button<{
   transition: all 0.3s ease;
 
   ${(props) =>
-    props.primary &&
+    props.$primary &&
     css`
       background-color: #ffca00;
       color: #343a40;
     `}
 
   ${(props) =>
-    props.withicon &&
+    props.$withicon &&
     css`
       padding-left: 14px;
       padding-right: 14px;
