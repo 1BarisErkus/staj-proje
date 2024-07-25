@@ -19,4 +19,5 @@ export const SlideContent = styled.div`
 export const BlurredImage = styled(Image)`
   object-fit: cover;
   filter: blur(16px);
+  transform: scale(1.1);
 `;
