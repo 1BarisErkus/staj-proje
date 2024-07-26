@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "John Doe",
       "email": "john@gmail.com",
       "basket": [
@@ -21,7 +21,7 @@
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "iPhone 15 Pro Max 256 GB",
       "price": 89999,
       "category": "Cep Telefonu-Aksesuar",
@@ -31,11 +31,15 @@
       "discountEndTime": "2024-07-31T23:59:59.999Z",
       "stock": 35,
       "installmentCount": 3,
-      "installmentPrice": 29999.67,
+      "installmentPrice": 29999,
       "limit": 1,
       "seller": "Turkcell Satış A.Ş.",
       "description": "Apple GPU’ları tarihindeki en büyük tasarım yeniliğine hazır mısınız? Tamamen yeni bir iPhone çip sınıfı olan A17 Pro, şimdiye kadarki en iyi grafik performansımızı sunuyor. Hem de açık ara.",
-      "images": ["1.webp", "2.webp", "3.webp"],
+      "images": [
+        "iphone-15-pro-max-256gb/1.webp",
+        "iphone-15-pro-max-256gb/2.webp",
+        "iphone-15-pro-max-256gb/3.webp"
+      ],
       "features": [
         { "name": "Ürün Model Adı", "value": "IPHONE 15 PRO MAX 256GB" },
         { "name": "Üretim Yeri", "value": "Çin" },
@@ -104,7 +108,831 @@
       "fibabanka": true,
       "freeShipping": true,
       "guarantee": true,
-      "isContract": true
+      "isContract": true,
+      "isSpecialForYou": true
+    },
+    {
+      "id": "2",
+      "name": "iPhone 13 128 GB",
+      "price": 42999,
+      "category": "Cep Telefonu-Aksesuar",
+      "subCategory": "Apple Telefonlar",
+      "rating": 4,
+      "discountPercentage": 0,
+      "discountEndTime": "",
+      "stock": 40,
+      "installmentCount": 3,
+      "installmentPrice": 14199,
+      "limit": 1,
+      "seller": "Turkcell Satış A.Ş.",
+      "description": "6,1 inç boyutundaki geniş ekranı ile birçok kullanıcının ilgi odağı olmayı başaran iPhone 13 modelleri, OLED ekran teknolojisi ile de dikkat çeker. 1170 x 2532 piksel ekran çözünürlüğü sayesinde pek çok formattaki görüntünün net bir şekilde ekrana yansımasını sağlayabileceğiniz modelde, FHD+ çözünürlük standardı kullanılır. Corning Gorilla Shield Glass ile özel olarak korunan model, kolay kolay zarar görmemesi ile bilinir. 60 Hz ekran yenileme hızı ile birçok kişinin tercihi haline gelen iPhone 13 özellikleri ile kullanıcıların yüzünü güldürmeyi başarır. Cihazın dikkat çeken özellikleri arasında HDR10, Multi Touch, True Tone Ekran, Dolby Vision ve çerçevesiz tasarım gibi birçok özellik de yer alır.",
+      "images": [
+        "iphone-13-128gb/1.webp",
+        "iphone-13-128gb/2.webp",
+        "iphone-13-128gb/3.webp"
+      ],
+      "features": [
+        { "name": "Ürün Model Adı", "value": "IPHONE 13 128GB" },
+        { "name": "Üretim Yeri", "value": "Çin" },
+        { "name": "İşletim Sistemi Versiyonu", "value": "IOS 15" },
+        { "name": "Dahili Hafıza", "value": "128 GB" },
+        { "name": "Ram (bellek) Kapasitesi", "value": "8 GB" },
+        { "name": "Ekran Boyutu", "value": "6.1 INC" },
+        { "name": "Ekran Teknolojisi", "value": "SUPER RETINE XDR OLED" },
+        { "name": "Çözünürlük", "value": "2532 X 1170 PIXELS" },
+        { "name": "Ekran Yenileme Hızı (hz)", "value": "120 HZ" },
+        { "name": "Ön Kamera", "value": "12 MP" },
+        { "name": "Arka Kamera", "value": "12MP+12MP" },
+        { "name": "4.5guyumu", "value": "5G" },
+        { "name": "İşlemci", "value": "A15 PRO ÇİP" },
+        { "name": "Ana İşlemci Hızı", "value": "3.64 GHZ, 6 ÇEKİRDEK" },
+        { "name": "Nfc", "value": "VAR" },
+        { "name": "Autofocus", "value": "VAR" }
+      ],
+      "otherSellers": [
+        {
+          "seller": "Vodafone Satış A.Ş.",
+          "price": 38068,
+          "rating": 4.5
+        },
+        {
+          "seller": "Türk Telekom Satış A.Ş.",
+          "price": 39459,
+          "rating": 3.5
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": [
+            "Yıldız Işığı",
+            "Gece Yarısı",
+            "Mavi",
+            "Yeşil",
+            "Kırmızı",
+            "Pembe"
+          ]
+        },
+        {
+          "title": "Hafıza",
+          "options": ["128 GB", "256 GB", "512 GB"]
+        }
+      ],
+      "badges": ["Ücretsiz Kargo", "Alışveriş Kredisi"],
+      "comments": [
+        {
+          "id": 1,
+          "userId": 1,
+          "comment": "Ürün çok güzel",
+          "rating": 5,
+          "date": "2024-07-31T23:59:59.999Z"
+        }
+      ],
+      "qa": [
+        {
+          "id": 1,
+          "question": "Ürünün garantisi var mı?",
+          "answer": "Evet, ürünün garantisi vardır.",
+          "questionDate": "2024-07-31T23:59:59.999Z",
+          "answerDate": "2024-07-31T23:59:59.999Z"
+        }
+      ],
+      "creditCard": true,
+      "fibabanka": false,
+      "freeShipping": true,
+      "guarantee": true,
+      "isContract": false,
+      "isSpecialForYou": true
+    },
+    {
+      "id": "3",
+      "name": "Huawei Watch GT4 46MM Akıllı Saat Siyah",
+      "price": 5299,
+      "category": "Cep Telefonu-Aksesuar",
+      "subCategory": "Giyinebilir Teknolojiler",
+      "rating": 4.8,
+      "discountPercentage": 0,
+      "discountEndTime": "",
+      "stock": 25,
+      "installmentCount": 6,
+      "installmentPrice": 1644,
+      "limit": null,
+      "seller": "SONNTECH",
+      "description": "Modaya ayak uydurun. Gelişmiş teknoloji ile sınırları zorlayın. Spor yapın, keşfedin ve limitleri aşın. HUAWEI Akıllı Saatler ile teknoloji ve modayı harmanlayın. Her an, Fashion Forward.",
+      "images": [
+        "huawei-watch/1.webp",
+        "huawei-watch/2.webp",
+        "huawei-watch/3.webp"
+      ],
+      "features": [
+        { "name": "Ürün Model Adı", "value": "WATCH GT4 46MM SİLİKON" },
+        { "name": "Üretim Yeri", "value": "Çin" },
+        { "name": "Dahili Hafıza", "value": "VAR" },
+        { "name": "Bellek Ram", "value": "YOK" },
+        { "name": "İşlemci Hızı", "value": "YOK" },
+        { "name": "Bluetooth Vrs", "value": "5.2" },
+        { "name": "İşletim Sistemi", "value": "HARMONYOS" },
+        { "name": "Ekran Boyutu", "value": "1.43 INC" }
+      ],
+      "otherSellers": [
+        {
+          "seller": "Vodafone Satış A.Ş.",
+          "price": 38068,
+          "rating": 4.5
+        },
+        {
+          "seller": "Türk Telekom Satış A.Ş.",
+          "price": 39459,
+          "rating": 3.5
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": ["Siyah"]
+        }
+      ],
+      "badges": [],
+      "comments": [
+        {
+          "id": 1,
+          "userId": 1,
+          "comment": "Ürün çok güzel",
+          "rating": 5,
+          "date": "2024-07-31T23:59:59.999Z"
+        }
+      ],
+      "qa": [
+        {
+          "id": 1,
+          "question": "Ürünün garantisi var mı?",
+          "answer": "Evet, ürünün garantisi vardır.",
+          "questionDate": "2024-07-31T23:59:59.999Z",
+          "answerDate": "2024-07-31T23:59:59.999Z"
+        }
+      ],
+      "creditCard": true,
+      "fibabanka": false,
+      "freeShipping": false,
+      "guarantee": true,
+      "isContract": false,
+      "isSpecialForYou": true
+    },
+    {
+      "id": "4",
+      "name": "HiFuture FutureFit Zone 2 50 mm Akıllı Saat",
+      "price": 1549,
+      "category": "Cep Telefonu-Aksesuar",
+      "subCategory": "Giyinebilir Teknolojiler",
+      "rating": 3.0,
+      "discountPercentage": 0,
+      "discountEndTime": "",
+      "stock": 25,
+      "installmentCount": 6,
+      "installmentPrice": 464,
+      "limit": null,
+      "seller": "Erufas Teknoloji Ürünleri - Turkcell Mağazası",
+      "description": "1.96 inç IPS Ekranınızın parlaklığıyla büyülenmeye hazırlanın, netlik ve canlı renkler dünyasına dalın. Bildirimlerinizi, mesajlarınızı ve uygulamalarınızı sadece bir bakışla kolayca gezin.",
+      "images": [
+        "hifuture-zone/1.webp",
+        "hifuture-zone/2.webp",
+        "hifuture-zone/3.webp"
+      ],
+      "features": [
+        { "name": "Ürün Model Adı", "value": "ZONE 2 AKILLI SAAT" },
+        { "name": "Üretim Yeri", "value": "Çin" },
+        { "name": "Dahili Hafıza", "value": "128 MB" },
+        { "name": "Bellek Ram", "value": "600 KB" },
+        { "name": "İşlemci Hızı", "value": "YOK" },
+        { "name": "Bluetooth Vrs", "value": "5.2" },
+        { "name": "İşletim Sistemi", "value": "YOK" },
+        { "name": "Ekran Boyutu", "value": "1.96 INC" }
+      ],
+      "otherSellers": [
+        {
+          "seller": "Vodafone Satış A.Ş.",
+          "price": 38068,
+          "rating": 4.5
+        },
+        {
+          "seller": "Türk Telekom Satış A.Ş.",
+          "price": 39459,
+          "rating": 3.5
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": ["Pembe", "Gümüş", "Siyah"]
+        }
+      ],
+      "badges": [],
+      "comments": [
+        {
+          "id": 1,
+          "userId": 1,
+          "comment": "Ürün çok güzel",
+          "rating": 5,
+          "date": "2024-07-31T23:59:59.999Z"
+        }
+      ],
+      "qa": [
+        {
+          "id": 1,
+          "question": "Ürünün garantisi var mı?",
+          "answer": "Evet, ürünün garantisi vardır.",
+          "questionDate": "2024-07-31T23:59:59.999Z",
+          "answerDate": "2024-07-31T23:59:59.999Z"
+        }
+      ],
+      "creditCard": true,
+      "fibabanka": true,
+      "freeShipping": true,
+      "guarantee": true,
+      "isContract": true,
+      "isSpecialForYou": true
+    },
+    {
+      "id": "5",
+      "name": "Apple USB C Güç Adaptörü 20W",
+      "price": 611,
+      "category": "Cep Telefonu-Aksesuar",
+      "subCategory": "Aksesuarlar",
+      "rating": 4.8,
+      "discountPercentage": 0,
+      "discountEndTime": "",
+      "stock": 125,
+      "installmentCount": 0,
+      "installmentPrice": 0,
+      "limit": null,
+      "seller": "AYA DİJİTAL",
+      "description": "Apple 20 W USB-C Güç Adaptörü, aygıtınızı evde, ofiste veya yolda hızlı ve verimli bir şekilde şarj etme imkanı sunar. Bu güç adaptörü, USB-C özellikli tüm aygıtlarla uyumludur. Ancak Apple, optimum şarj performansı için bu adaptörü iPad Pro ve iPad Air ile birlikte kullanmanızı önerir",
+      "images": [
+        "apple-power/1.webp",
+        "apple-power/2.webp",
+        "apple-power/3.webp"
+      ],
+      "features": [
+        { "name": "Ürün Model Adı", "value": "20 W USB-C GÜÇ ADAPTÖRÜ" },
+        { "name": "Üretim Yeri", "value": "Çin" },
+        { "name": "Ürün Tipi", "value": "SEYAHAT / EV" },
+        { "name": "Adaptör Port Yuvası Tipi", "value": "TYPE-C" },
+        { "name": "Kablo Dahili Mi", "value": "YOK" },
+        { "name": "Çıkış Gücü (w)", "value": "20W" },
+        { "name": "Çıkış Akımı (a)", "value": "3.5 A" },
+        { "name": "Garanti Süresi", "value": "2 YIL" }
+      ],
+      "otherSellers": [
+        {
+          "seller": "Vodafone Satış A.Ş.",
+          "price": 38068,
+          "rating": 4.5
+        },
+        {
+          "seller": "Türk Telekom Satış A.Ş.",
+          "price": 39459,
+          "rating": 3.5
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": ["Beyaz"]
+        }
+      ],
+      "badges": [],
+      "comments": [
+        {
+          "id": 1,
+          "userId": 1,
+          "comment": "Ürün çok güzel",
+          "rating": 5,
+          "date": "2024-07-31T23:59:59.999Z"
+        }
+      ],
+      "qa": [
+        {
+          "id": 1,
+          "question": "Ürünün garantisi var mı?",
+          "answer": "Evet, ürünün garantisi vardır.",
+          "questionDate": "2024-07-31T23:59:59.999Z",
+          "answerDate": "2024-07-31T23:59:59.999Z"
+        }
+      ],
+      "creditCard": true,
+      "fibabanka": true,
+      "freeShipping": true,
+      "guarantee": true,
+      "isContract": true,
+      "isSpecialForYou": true
+    },
+    {
+      "id": "6",
+      "name": "Samsung Galaxy S23 Ultra 512 GB",
+      "price": 74999,
+      "category": "Cep Telefonu-Aksesuar",
+      "subCategory": "Android Telefonlar",
+      "rating": 4.7,
+      "discountPercentage": 10,
+      "discountEndTime": "2024-08-15T23:59:59.999Z",
+      "stock": 0,
+      "installmentCount": 4,
+      "installmentPrice": 18749.75,
+      "limit": 2,
+      "seller": "MediaMarkt",
+      "description": "Samsung Galaxy S23 Ultra ile yüksek performansı deneyimleyin. 512 GB depolama alanı ve güçlü işlemcisi ile her türlü ihtiyacınızı karşılayacak.",
+      "images": ["samsung-galaxy-s23-ultra-512gb/1.webp"],
+      "features": [
+        { "name": "Ürün Model Adı", "value": "GALAXY S23 ULTRA 512GB" },
+        { "name": "Üretim Yeri", "value": "Güney Kore" },
+        { "name": "İşletim Sistemi Versiyonu", "value": "Android 13" },
+        { "name": "Dahili Hafıza", "value": "512 GB" },
+        { "name": "Ram (bellek) Kapasitesi", "value": "12 GB" },
+        { "name": "Ekran Boyutu", "value": "6.8 INC" },
+        { "name": "Ekran Teknolojisi", "value": "DYNAMIC AMOLED 2X" },
+        { "name": "Çözünürlük", "value": "3088 X 1440 PIXELS" },
+        { "name": "Ekran Yenileme Hızı (hz)", "value": "120 HZ" },
+        { "name": "Ön Kamera", "value": "40 MP" },
+        { "name": "Arka Kamera", "value": "200 MP + 12 MP + 10 MP + 10 MP" },
+        { "name": "4.5guyumu", "value": "5G" },
+        { "name": "İşlemci", "value": "SNAPDRAGON 8 GEN 2" },
+        { "name": "Ana İşlemci Hızı", "value": "3.2 GHZ, 8 ÇEKİRDEK" },
+        { "name": "Nfc", "value": "VAR" },
+        { "name": "Autofocus", "value": "VAR" }
+      ],
+      "otherSellers": [
+        {
+          "seller": "Vatan Bilgisayar",
+          "price": 74999,
+          "rating": 4.6
+        },
+        {
+          "seller": "Teknosa",
+          "price": 74999,
+          "rating": 4.5
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": ["Phantom Siyah", "Phantom Beyaz", "Yeşil", "Lavanta"]
+        },
+        {
+          "title": "Hafıza",
+          "options": ["256 GB", "512 GB", "1 TB"]
+        }
+      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo", "12 Ay Taksit"],
+      "comments": [
+        {
+          "id": 2,
+          "userId": 2,
+          "comment": "Mükemmel bir telefon",
+          "rating": 5,
+          "date": "2024-08-01T23:59:59.999Z"
+        }
+      ],
+      "qa": [
+        {
+          "id": 2,
+          "question": "Suya dayanıklı mı?",
+          "answer": "Evet, suya ve toza dayanıklıdır.",
+          "questionDate": "2024-08-01T23:59:59.999Z",
+          "answerDate": "2024-08-01T23:59:59.999Z"
+        }
+      ],
+      "creditCard": true,
+      "fibabanka": true,
+      "freeShipping": true,
+      "guarantee": true,
+      "isContract": true,
+      "isSpecialForYou": false
+    },
+    {
+      "id": "7",
+      "name": "Xiaomi Mi 11 Lite 128 GB",
+      "price": 4999,
+      "category": "Cep Telefonu-Aksesuar",
+      "subCategory": "Android Telefonlar",
+      "rating": 4.3,
+      "discountPercentage": 5,
+      "discountEndTime": "2024-08-10T23:59:59.999Z",
+      "stock": 100,
+      "installmentCount": 6,
+      "installmentPrice": 833.17,
+      "limit": 3,
+      "seller": "Hepsiburada",
+      "description": "Xiaomi Mi 11 Lite, hafif ve şık tasarımıyla yüksek performans sunar. 128 GB depolama alanı ile tüm ihtiyaçlarınızı karşılar.",
+      "images": [
+        "xiaomi-mi-11-lite-128gb/1.webp",
+        "xiaomi-mi-11-lite-128gb/2.webp",
+        "xiaomi-mi-11-lite-128gb/3.webp"
+      ],
+      "features": [
+        { "name": "Ürün Model Adı", "value": "MI 11 LITE 128GB" },
+        { "name": "Üretim Yeri", "value": "Çin" },
+        { "name": "İşletim Sistemi Versiyonu", "value": "Android 11" },
+        { "name": "Dahili Hafıza", "value": "128 GB" },
+        { "name": "Ram (bellek) Kapasitesi", "value": "6 GB" },
+        { "name": "Ekran Boyutu", "value": "6.55 INC" },
+        { "name": "Ekran Teknolojisi", "value": "AMOLED" },
+        { "name": "Çözünürlük", "value": "2400 X 1080 PIXELS" },
+        { "name": "Ekran Yenileme Hızı (hz)", "value": "90 HZ" },
+        { "name": "Ön Kamera", "value": "16 MP" },
+        { "name": "Arka Kamera", "value": "64 MP + 8 MP + 5 MP" },
+        { "name": "4.5guyumu", "value": "5G" },
+        { "name": "İşlemci", "value": "SNAPDRAGON 732G" },
+        { "name": "Ana İşlemci Hızı", "value": "2.3 GHZ, 8 ÇEKİRDEK" },
+        { "name": "Nfc", "value": "VAR" },
+        { "name": "Autofocus", "value": "VAR" }
+      ],
+      "otherSellers": [
+        {
+          "seller": "Amazon Türkiye",
+          "price": 4999,
+          "rating": 4.4
+        },
+        {
+          "seller": "GittiGidiyor",
+          "price": 4999,
+          "rating": 4.2
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": ["Buz Mavisi", "Gün Batımı Kırmızısı", "Şeftali Pembesi"]
+        },
+        {
+          "title": "Hafıza",
+          "options": ["128 GB", "256 GB"]
+        }
+      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
+      "comments": [
+        {
+          "id": 3,
+          "userId": 3,
+          "comment": "Fiyat performans ürünü",
+          "rating": 4,
+          "date": "2024-07-15T23:59:59.999Z"
+        }
+      ],
+      "qa": [
+        {
+          "id": 3,
+          "question": "Pil ömrü ne kadar?",
+          "answer": "Ortalama 1 günü rahat çıkarır.",
+          "questionDate": "2024-07-15T23:59:59.999Z",
+          "answerDate": "2024-07-15T23:59:59.999Z"
+        }
+      ],
+      "creditCard": true,
+      "fibabanka": true,
+      "freeShipping": true,
+      "guarantee": true,
+      "isContract": false,
+      "isSpecialForYou": false
+    },
+    {
+      "id": "8",
+      "name": "OnePlus 12R 256GB 16GB",
+      "price": 6999,
+      "category": "Cep Telefonu-Aksesuar",
+      "subCategory": "Android Telefonlar",
+      "rating": 4.4,
+      "discountPercentage": 8,
+      "discountEndTime": "2024-08-20T23:59:59.999Z",
+      "stock": 60,
+      "installmentCount": 5,
+      "installmentPrice": 1399.8,
+      "limit": 2,
+      "seller": "N11",
+      "description": "OnePlus 9 Pro, yüksek performansı ve şık tasarımı ile dikkat çekiyor. 256 GB depolama alanı ve üstün kamera özellikleri ile fark yaratır.",
+      "images": [
+        "one-plus-12r/1.webp",
+        "one-plus-12r/2.webp",
+        "one-plus-12r/3.webp"
+      ],
+      "features": [
+        { "name": "Ürün Model Adı", "value": "ONEPLUS 9 PRO 256GB" },
+        { "name": "Üretim Yeri", "value": "Çin" },
+        { "name": "İşletim Sistemi Versiyonu", "value": "Android 12" },
+        { "name": "Dahili Hafıza", "value": "256 GB" },
+        { "name": "Ram (bellek) Kapasitesi", "value": "12 GB" },
+        { "name": "Ekran Boyutu", "value": "6.7 INC" },
+        { "name": "Ekran Teknolojisi", "value": "FLUID AMOLED" },
+        { "name": "Çözünürlük", "value": "3216 X 1440 PIXELS" },
+        { "name": "Ekran Yenileme Hızı (hz)", "value": "120 HZ" },
+        { "name": "Ön Kamera", "value": "16 MP" },
+        { "name": "Arka Kamera", "value": "48 MP + 50 MP + 8 MP + 2 MP" },
+        { "name": "4.5guyumu", "value": "5G" },
+        { "name": "İşlemci", "value": "SNAPDRAGON 888" },
+        { "name": "Ana İşlemci Hızı", "value": "2.84 GHZ, 8 ÇEKİRDEK" },
+        { "name": "Nfc", "value": "VAR" },
+        { "name": "Autofocus", "value": "VAR" }
+      ],
+      "otherSellers": [
+        {
+          "seller": "Amazon Türkiye",
+          "price": 6999,
+          "rating": 4.3
+        },
+        {
+          "seller": "Vatan Bilgisayar",
+          "price": 6999,
+          "rating": 4.2
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": ["Gümüş", "Yeşil", "Mavi", "Siyah"]
+        },
+        {
+          "title": "Hafıza",
+          "options": ["128 GB", "256 GB"]
+        }
+      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
+      "comments": [
+        {
+          "id": 4,
+          "userId": 4,
+          "comment": "Çok memnunum",
+          "rating": 4,
+          "date": "2024-08-05T23:59:59.999Z"
+        }
+      ],
+      "qa": [
+        {
+          "id": 4,
+          "question": "Ekran koruyucu var mı?",
+          "answer": "Evet, kutuda bir adet ekran koruyucu bulunuyor.",
+          "questionDate": "2024-08-05T23:59:59.999Z",
+          "answerDate": "2024-08-05T23:59:59.999Z"
+        }
+      ],
+      "creditCard": true,
+      "fibabanka": true,
+      "freeShipping": true,
+      "guarantee": true,
+      "isContract": false,
+      "isSpecialForYou": false
+    },
+    {
+      "id": "9",
+      "name": "Huawei Matebook D14 İntel İ5-12450H 16 GB 512 GB Dizüstü Bilgisayar",
+      "price": 10999,
+      "category": "Bilgisayar-Tablet",
+      "subCategory": "Dizüstü Bilgisayar",
+      "rating": 4.6,
+      "discountPercentage": 7,
+      "discountEndTime": "2024-08-25T23:59:59.999Z",
+      "stock": 45,
+      "installmentCount": 4,
+      "installmentPrice": 2749.75,
+      "limit": 2,
+      "seller": "Teknosa",
+      "description": "Huawei P50 Pro, üstün kamera özellikleri ve yüksek performansı ile göz dolduruyor. 256 GB depolama alanı ile tüm verilerinizi saklayın.",
+      "images": [
+        "huawei-matebook/1.webp",
+        "huawei-matebook/2.webp",
+        "huawei-matebook/3.webp"
+      ],
+      "features": [
+        { "name": "Ürün Model Adı", "value": "P50 PRO 256GB" },
+        { "name": "Üretim Yeri", "value": "Çin" },
+        { "name": "İşletim Sistemi Versiyonu", "value": "HarmonyOS 2.0" },
+        { "name": "Dahili Hafıza", "value": "256 GB" },
+        { "name": "Ram (bellek) Kapasitesi", "value": "8 GB" },
+        { "name": "Ekran Boyutu", "value": "6.6 INC" },
+        { "name": "Ekran Teknolojisi", "value": "OLED" },
+        { "name": "Çözünürlük", "value": "2700 X 1228 PIXELS" },
+        { "name": "Ekran Yenileme Hızı (hz)", "value": "120 HZ" },
+        { "name": "Ön Kamera", "value": "13 MP" },
+        { "name": "Arka Kamera", "value": "50 MP + 40 MP + 13 MP + 64 MP" },
+        { "name": "4.5guyumu", "value": "5G" },
+        { "name": "İşlemci", "value": "KIRIN 9000" },
+        { "name": "Ana İşlemci Hızı", "value": "3.13 GHZ, 8 ÇEKİRDEK" },
+        { "name": "Nfc", "value": "VAR" },
+        { "name": "Autofocus", "value": "VAR" }
+      ],
+      "otherSellers": [
+        {
+          "seller": "Hepsiburada",
+          "price": 10999,
+          "rating": 4.5
+        },
+        {
+          "seller": "GittiGidiyor",
+          "price": 10999,
+          "rating": 4.4
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": ["Siyah", "Beyaz", "Altın", "Gümüş"]
+        },
+        {
+          "title": "Hafıza",
+          "options": ["256 GB", "512 GB"]
+        }
+      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo", "6 Ay Taksit"],
+      "comments": [
+        {
+          "id": 5,
+          "userId": 5,
+          "comment": "Kamera performansı müthiş",
+          "rating": 5,
+          "date": "2024-08-10T23:59:59.999Z"
+        }
+      ],
+      "qa": [
+        {
+          "id": 5,
+          "question": "Yüz tanıma var mı?",
+          "answer": "Evet, yüz tanıma özelliği bulunmaktadır.",
+          "questionDate": "2024-08-10T23:59:59.999Z",
+          "answerDate": "2024-08-10T23:59:59.999Z"
+        }
+      ],
+      "creditCard": true,
+      "fibabanka": true,
+      "freeShipping": true,
+      "guarantee": true,
+      "isContract": true,
+      "isSpecialForYou": false
+    },
+    {
+      "id": "10",
+      "name": "Corelli Voniq E-Folding 7 Vites 2024 Model ",
+      "price": 8999,
+      "category": "Hobi-Oyun",
+      "subCategory": "Scooterlar ve Bisikletler",
+      "rating": 4.5,
+      "discountPercentage": 6,
+      "discountEndTime": "2024-08-30T23:59:59.999Z",
+      "stock": 30,
+      "installmentCount": 3,
+      "installmentPrice": 2999.67,
+      "limit": 1,
+      "seller": "Teknosa",
+      "description": "Google Pixel 6 Pro, yüksek performansı ve gelişmiş kamera özellikleri ile ön plana çıkar. 128 GB depolama alanı ile tüm verilerinizi saklayın.",
+      "images": [
+        "corelli-vonic/1.webp",
+        "corelli-vonic/2.webp",
+        "corelli-vonic/3.webp"
+      ],
+      "features": [
+        { "name": "Ürün Model Adı", "value": "PIXEL 6 PRO 128GB" },
+        { "name": "Üretim Yeri", "value": "Vietnam" },
+        { "name": "İşletim Sistemi Versiyonu", "value": "Android 12" },
+        { "name": "Dahili Hafıza", "value": "128 GB" },
+        { "name": "Ram (bellek) Kapasitesi", "value": "12 GB" },
+        { "name": "Ekran Boyutu", "value": "6.71 INC" },
+        { "name": "Ekran Teknolojisi", "value": "LTPO OLED" },
+        { "name": "Çözünürlük", "value": "3120 X 1440 PIXELS" },
+        { "name": "Ekran Yenileme Hızı (hz)", "value": "120 HZ" },
+        { "name": "Ön Kamera", "value": "11.1 MP" },
+        { "name": "Arka Kamera", "value": "50 MP + 48 MP + 12 MP" },
+        { "name": "4.5guyumu", "value": "5G" },
+        { "name": "İşlemci", "value": "GOOGLE TENSOR" },
+        { "name": "Ana İşlemci Hızı", "value": "2.84 GHZ, 8 ÇEKİRDEK" },
+        { "name": "Nfc", "value": "VAR" },
+        { "name": "Autofocus", "value": "VAR" }
+      ],
+      "otherSellers": [
+        {
+          "seller": "Hepsiburada",
+          "price": 8999,
+          "rating": 4.4
+        },
+        {
+          "seller": "Amazon Türkiye",
+          "price": 8999,
+          "rating": 4.3
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": ["Geyik", "Güzel Koyu", "Panda"]
+        },
+        {
+          "title": "Hafıza",
+          "options": ["128 GB", "256 GB"]
+        }
+      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo", "12 Ay Taksit"],
+      "comments": [
+        {
+          "id": 6,
+          "userId": 6,
+          "comment": "Harika bir telefon",
+          "rating": 5,
+          "date": "2024-08-01T23:59:59.999Z"
+        }
+      ],
+      "qa": [
+        {
+          "id": 6,
+          "question": "Su geçirmez mi?",
+          "answer": "Evet, suya ve toza dayanıklıdır.",
+          "questionDate": "2024-08-01T23:59:59.999Z",
+          "answerDate": "2024-08-01T23:59:59.999Z"
+        }
+      ],
+      "creditCard": true,
+      "fibabanka": true,
+      "freeShipping": true,
+      "guarantee": true,
+      "isContract": true,
+      "isSpecialForYou": false
+    },
+    {
+      "id": "11",
+      "name": "Sigma Plus 12.000 BTU/h A++ R32 SGM12INVDHB Inverter Klima",
+      "price": 8499,
+      "category": "Beyaz Eşya",
+      "subCategory": "Isıtma ve Soğutma Sistemleri",
+      "rating": 4.3,
+      "discountPercentage": 9,
+      "discountEndTime": "2024-09-05T23:59:59.999Z",
+      "stock": 25,
+      "installmentCount": 4,
+      "installmentPrice": 2124.75,
+      "limit": 2,
+      "seller": "Vatan Bilgisayar",
+      "description": "Sony Xperia 1 III, üstün kamera özellikleri ve yüksek performansı ile dikkat çekiyor. 256 GB depolama alanı ile tüm verilerinizi güvenle saklayın.",
+      "images": ["sigma-plus/1.webp", "sigma-plus/2.webp", "sigma-plus/3.webp"],
+      "features": [
+        { "name": "Ürün Model Adı", "value": "XPERIA 1 III 256GB" },
+        { "name": "Üretim Yeri", "value": "Japonya" },
+        { "name": "İşletim Sistemi Versiyonu", "value": "Android 11" },
+        { "name": "Dahili Hafıza", "value": "256 GB" },
+        { "name": "Ram (bellek) Kapasitesi", "value": "12 GB" },
+        { "name": "Ekran Boyutu", "value": "6.5 INC" },
+        { "name": "Ekran Teknolojisi", "value": "OLED" },
+        { "name": "Çözünürlük", "value": "3840 X 1644 PIXELS" },
+        { "name": "Ekran Yenileme Hızı (hz)", "value": "120 HZ" },
+        { "name": "Ön Kamera", "value": "8 MP" },
+        { "name": "Arka Kamera", "value": "12 MP + 12 MP + 12 MP" },
+        { "name": "4.5guyumu", "value": "5G" },
+        { "name": "İşlemci", "value": "SNAPDRAGON 888" },
+        { "name": "Ana İşlemci Hızı", "value": "2.84 GHZ, 8 ÇEKİRDEK" },
+        { "name": "Nfc", "value": "VAR" },
+        { "name": "Autofocus", "value": "VAR" }
+      ],
+      "otherSellers": [
+        {
+          "seller": "Hepsiburada",
+          "price": 8499,
+          "rating": 4.2
+        },
+        {
+          "seller": "Amazon Türkiye",
+          "price": 8499,
+          "rating": 4.1
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": ["Siyah", "Beyaz", "Mor"]
+        },
+        {
+          "title": "Hafıza",
+          "options": ["128 GB", "256 GB"]
+        }
+      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
+      "comments": [
+        {
+          "id": 7,
+          "userId": 7,
+          "comment": "Kamera performansı çok iyi",
+          "rating": 4,
+          "date": "2024-08-15T23:59:59.999Z"
+        }
+      ],
+      "qa": [
+        {
+          "id": 7,
+          "question": "Kutusunda kulaklık var mı?",
+          "answer": "Evet, kutusunda kulaklık çıkmaktadır.",
+          "questionDate": "2024-08-15T23:59:59.999Z",
+          "answerDate": "2024-08-15T23:59:59.999Z"
+        }
+      ],
+      "creditCard": true,
+      "fibabanka": true,
+      "freeShipping": true,
+      "guarantee": true,
+      "isContract": false,
+      "isSpecialForYou": false
     }
   ]
 }

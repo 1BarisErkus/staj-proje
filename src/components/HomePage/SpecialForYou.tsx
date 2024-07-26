@@ -1,15 +1,12 @@
-import {
-  Card,
-  CardList,
-  Price,
-  ProductImage,
-  ProductName,
-} from "@/styles/HomePage/SpecialForYou";
 import Section from "../Section";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { CardList } from "@/styles/Card";
+import Card from "../Card";
+import { Key } from "react";
+import { Product } from "@/common/types";
 
-const SpecialForYou = () => {
+const SpecialForYou = ({ data }: { data: Product[] }) => {
   return (
     <Section title="Sana Özel Ürünler">
       <CardList>
@@ -17,81 +14,37 @@ const SpecialForYou = () => {
           slidesPerView={1}
           breakpoints={{
             768: {
-              slidesPerView: 2,
+              slidesPerView: data?.length < 2 ? data?.length : 2,
               spaceBetween: 10,
             },
             1024: {
-              slidesPerView: 3,
+              slidesPerView: data?.length < 3 ? data?.length : 3,
               spaceBetween: 20,
             },
             1700: {
-              slidesPerView: 4,
+              slidesPerView: data?.length < 4 ? data?.length : 4,
               spaceBetween: 20,
             },
           }}
           navigation={true}
           modules={[Navigation]}
         >
-          <SwiperSlide>
-            <Card>
-              <ProductImage
-                src="/images/products/iphone-15-pro-max-256gb/1.webp"
-                alt="İphone 15 Pro Max 256GB"
-                width={250}
-                height={200}
-              />
-              <ProductName>İphone 15 Pro Max 256GB</ProductName>
-              <Price>89.999 TL</Price>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <ProductImage
-                src="/images/products/iphone-15-pro-max-256gb/1.webp"
-                alt="İphone 15 Pro Max 256GB"
-                width={250}
-                height={200}
-              />
-              <ProductName>İphone 15 Pro Max 256GB</ProductName>
-              <Price>89.999 TL</Price>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <ProductImage
-                src="/images/products/iphone-15-pro-max-256gb/1.webp"
-                alt="İphone 15 Pro Max 256GB"
-                width={250}
-                height={200}
-              />
-              <ProductName>İphone 15 Pro Max 256GB</ProductName>
-              <Price>89.999 TL</Price>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <ProductImage
-                src="/images/products/iphone-15-pro-max-256gb/1.webp"
-                alt="İphone 15 Pro Max 256GB"
-                width={250}
-                height={200}
-              />
-              <ProductName>İphone 15 Pro Max 256GB</ProductName>
-              <Price>89.999 TL</Price>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <ProductImage
-                src="/images/products/iphone-15-pro-max-256gb/1.webp"
-                alt="İphone 15 Pro Max 256GB"
-                width={250}
-                height={200}
-              />
-              <ProductName>İphone 15 Pro Max 256GB</ProductName>
-              <Price>89.999 TL</Price>
-            </Card>
-          </SwiperSlide>
+          {data?.map(
+            (product: {
+              id: Key | null | undefined;
+              images: string[];
+              name: string;
+              price: number;
+            }) => (
+              <SwiperSlide key={product.id}>
+                <Card
+                  images={product.images}
+                  name={product.name}
+                  price={product.price}
+                />
+              </SwiperSlide>
+            )
+          )}
         </Swiper>
       </CardList>
     </Section>

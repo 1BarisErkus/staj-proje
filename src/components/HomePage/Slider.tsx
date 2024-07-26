@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
 import {
   BlurredImage,
   Container,

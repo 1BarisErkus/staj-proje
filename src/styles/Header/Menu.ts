@@ -14,8 +14,14 @@ export const MenuItem = styled.div`
   padding: 0.5rem 1rem;
   text-align: center;
   max-width: 140px;
+  cursor: pointer;
 
   &:not(:last-child) {
     border-right: 1px solid #dee2e6;
+  }
+
+  &:hover {
+    color: #ffc900;
+    border-bottom: 2px solid #ffc900;
   }
 `;

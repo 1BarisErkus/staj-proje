@@ -12,7 +12,7 @@ export const CartBadge = styled.span`
   border: 4px solid white;
   font-size: 1rem;
   position: absolute;
-  right: -15px;
+  right: -28px;
 `;
 
 export const Button = styled.button<{
@@ -35,6 +35,7 @@ export const Button = styled.button<{
   height: 100%;
   gap: 8px;
   transition: all 0.3s ease;
+  position: relative;
 
   ${(props) =>
     props.$primary &&
