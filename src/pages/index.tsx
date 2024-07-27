@@ -1,3 +1,4 @@
+import AdditionToYourBill from "@/components/HomePage/AdditionToYourBill";
 import PopularCategories from "@/components/HomePage/PopularCategories";
 import Slider from "@/components/HomePage/Slider";
 import SpecialForYou from "@/components/HomePage/SpecialForYou";
@@ -33,6 +34,7 @@ export default function Home() {
       <Slider />
       <PopularCategories />
       <SpecialForYou data={specialForYouData} />
+      <AdditionToYourBill />
     </>
   );
 }
