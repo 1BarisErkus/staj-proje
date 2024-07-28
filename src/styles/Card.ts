@@ -5,6 +5,10 @@ interface CardWrapperProps {
   type?: string;
 }
 
+interface SingleBadgeWrapperProps {
+  type?: string;
+}
+
 export const CardWrapper = styled.div<CardWrapperProps>`
   border: 1px solid #e0e0e0;
   border-radius: 10px;
@@ -13,6 +17,7 @@ export const CardWrapper = styled.div<CardWrapperProps>`
   width: 280px;
   min-height: ${(props) =>
     props.type === "SpecialForYou" ? "300px" : "420px"};
+  position: relative;
 `;
 
 export const ProductImage = styled(Image)`
@@ -80,4 +85,25 @@ export const Badge = styled.span`
   margin-right: 8px;
   display: flex;
   max-width: 50px;
+`;
+
+export const LikeIconWrapper = styled.span`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+`;
+
+export const SingleBadgeWrapper = styled.div<SingleBadgeWrapperProps>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: ${(props) =>
+    props.type === "bestSeller" ? "#ff9800" : "#5BCC34"};
+  color: white;
+  padding: 4px 8px;
+  border-end-end-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
 `;

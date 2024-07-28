@@ -38,4 +38,7 @@ export interface Product {
   guarantee: boolean;
   isContract: boolean;
   isSpecialForYou: boolean;
+  isBestOffer: boolean;
+  isNew: boolean;
+  isBestSeller: boolean;
 }

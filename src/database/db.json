@@ -111,7 +111,8 @@
       "isContract": true,
       "isSpecialForYou": true,
       "isBestOffer": true,
-      "isNew": true
+      "isNew": true,
+      "isBestSeller": true
     },
     {
       "id": "2",
@@ -206,7 +207,8 @@
       "isContract": false,
       "isSpecialForYou": true,
       "isBestOffer": false,
-      "isNew": true
+      "isNew": true,
+      "isBestSeller": true
     },
     {
       "id": "3",
@@ -282,7 +284,8 @@
       "isContract": false,
       "isSpecialForYou": true,
       "isBestOffer": false,
-      "isNew": false
+      "isNew": false,
+      "isBestSeller": true
     },
     {
       "id": "4",
@@ -358,7 +361,8 @@
       "isContract": true,
       "isSpecialForYou": true,
       "isBestOffer": true,
-      "isNew": false
+      "isNew": false,
+      "isBestSeller": true
     },
     {
       "id": "5",
@@ -430,7 +434,8 @@
       "isContract": true,
       "isSpecialForYou": true,
       "isBestOffer": false,
-      "isNew": true
+      "isNew": true,
+      "isBestSeller": false
     },
     {
       "id": "6",
@@ -514,7 +519,8 @@
       "isContract": true,
       "isSpecialForYou": false,
       "isBestOffer": true,
-      "isNew": false
+      "isNew": false,
+      "isBestSeller": false
     },
     {
       "id": "7",
@@ -602,7 +608,8 @@
       "isContract": false,
       "isSpecialForYou": false,
       "isBestOffer": true,
-      "isNew": false
+      "isNew": false,
+      "isBestSeller": true
     },
     {
       "id": "8",
@@ -690,7 +697,8 @@
       "isContract": false,
       "isSpecialForYou": false,
       "isBestOffer": true,
-      "isNew": false
+      "isNew": false,
+      "isBestSeller": true
     },
     {
       "id": "9",
@@ -778,7 +786,8 @@
       "isContract": true,
       "isSpecialForYou": false,
       "isBestOffer": false,
-      "isNew": true
+      "isNew": true,
+      "isBestSeller": true
     },
     {
       "id": "10",
@@ -866,7 +875,8 @@
       "isContract": true,
       "isSpecialForYou": false,
       "isBestOffer": false,
-      "isNew": false
+      "isNew": false,
+      "isBestSeller": true
     },
     {
       "id": "11",
@@ -950,7 +960,8 @@
       "isContract": false,
       "isSpecialForYou": false,
       "isBestOffer": true,
-      "isNew": false
+      "isNew": false,
+      "isBestSeller": true
     }
   ]
 }

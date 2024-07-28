@@ -1,5 +1,6 @@
 import AdditionToYourBill from "@/components/HomePage/AdditionToYourBill";
 import BestOffers from "@/components/HomePage/BestOffers";
+import BestSellers from "@/components/HomePage/BestSellers";
 import Campaigns from "@/components/HomePage/Campaigns";
 import NewOnes from "@/components/HomePage/NewOnes";
 import Opportunities from "@/components/HomePage/Opportunities";
@@ -45,6 +46,10 @@ export default function Home() {
 
   const recentReviewsData = data ? data.slice(0, 4) : [];
 
+  // const bestSellersData = data
+  //   ? data.filter((product: { isBestSeller: boolean }) => product.isBestSeller)
+  //   : [];
+
   return (
     <>
       <Slider />
@@ -53,6 +58,7 @@ export default function Home() {
       <AdditionToYourBill />
       <BestOffers data={bestOffersData} />
       <Campaigns />
+      <BestSellers data={data} />
       <Opportunities />
       <NewOnes data={newOnesData} />
       <RecentReviews data={recentReviewsData} />

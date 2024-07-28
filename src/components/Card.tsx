@@ -4,15 +4,18 @@ import {
   CardWrapper,
   Discount,
   DiscountlessAmount,
+  LikeIconWrapper,
   MinPrice,
   Price,
   PriceWrapper,
   ProductImage,
   ProductName,
+  SingleBadgeWrapper,
 } from "@/styles/Card";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Rating } from "@smastrom/react-rating";
+import { CiHeart } from "react-icons/ci";
 
 interface CardProps {
   images: string[];
@@ -21,6 +24,8 @@ interface CardProps {
   badges?: string[];
   type: string;
   discountPercentage?: number;
+  fibabanka?: boolean;
+  isBestSeller?: boolean;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -30,9 +35,19 @@ const Card: React.FC<CardProps> = ({
   badges,
   type,
   discountPercentage,
+  fibabanka,
+  isBestSeller,
 }) => {
   return (
     <CardWrapper type={type}>
+      {isBestSeller ? (
+        <SingleBadgeWrapper type="bestSeller">Çok Satan</SingleBadgeWrapper>
+      ) : fibabanka ? (
+        <SingleBadgeWrapper type="fibabanka">Fibabanka</SingleBadgeWrapper>
+      ) : null}
+      <LikeIconWrapper>
+        <CiHeart size={30} color="orange" />
+      </LikeIconWrapper>
       <Swiper
         slidesPerView={1}
         pagination={{
