@@ -1,5 +1,12 @@
 import styled from "styled-components";
-import { Col } from "../GlobalVariables";
+import { Col, Row } from "../GlobalVariables";
+
+export const StyledRow = styled(Row)`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const Wrapper = styled(Col)`
   display: flex;
@@ -12,11 +19,25 @@ export const Wrapper = styled(Col)`
   border-radius: 10px;
 `;
 
+export const StyledCol = styled(Col)`
+  padding: 10px;
+  width: 100%;
+  flex: ${({ size = 0 }) => (size / 12) * 100}%;
+
+  @media (max-width: 576px) {
+    flex: 100%;
+    width: 100%;
+  }
+`;
+
 export const Text = styled.p`
   font-size: 1.45rem;
   color: #fff;
   font-weight: bold;
   text-align: center;
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 export const Button = styled.button`
@@ -30,4 +51,8 @@ export const Button = styled.button`
   border: none;
   font-size: 0.9rem;
   margin-left: auto;
+  @media (max-width: 576px) {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
 `;

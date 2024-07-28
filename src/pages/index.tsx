@@ -1,5 +1,6 @@
 import AdditionToYourBill from "@/components/HomePage/AdditionToYourBill";
 import BestOffers from "@/components/HomePage/BestOffers";
+import Campaigns from "@/components/HomePage/Campaigns";
 import PopularCategories from "@/components/HomePage/PopularCategories";
 import Slider from "@/components/HomePage/Slider";
 import SpecialForYou from "@/components/HomePage/SpecialForYou";
@@ -41,6 +42,7 @@ export default function Home() {
       <SpecialForYou data={specialForYouData} />
       <AdditionToYourBill />
       <BestOffers data={bestOffersData} />
+      <Campaigns />
     </>
   );
 }

@@ -1,32 +1,39 @@
 import Image from "next/image";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
-import { Button, Text, Wrapper } from "@/styles/HomePage/AdditionToYourBill";
+import {
+  Button,
+  StyledCol,
+  StyledRow,
+  Text,
+  Wrapper,
+} from "@/styles/HomePage/AdditionToYourBill";
 import { FaAngleRight } from "react-icons/fa6";
 
 const AdditionToYourBill = () => {
   return (
     <Container>
-      <Row>
-        <Wrapper>
-          <Col size={3}>
+      <StyledRow>
+        <Wrapper size={12}>
+          <StyledCol size={3}>
             <Image
               src="/images/teknoloji-group-18.webp"
               alt="Turkcell Grup"
               width={220}
               height={150}
+              layout="responsive"
             />
-          </Col>
-          <Col size={6}>
+          </StyledCol>
+          <StyledCol size={6}>
             <Text>Turkcell Faturana Ek Alabileceğin Cihazlar</Text>
-          </Col>
-          <Col size={3}>
+          </StyledCol>
+          <StyledCol size={3}>
             <Button>
               <span>İncele</span>
               <FaAngleRight />
             </Button>
-          </Col>
+          </StyledCol>
         </Wrapper>
-      </Row>
+      </StyledRow>
     </Container>
   );
 };
