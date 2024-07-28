@@ -4,6 +4,7 @@ import Campaigns from "@/components/HomePage/Campaigns";
 import NewOnes from "@/components/HomePage/NewOnes";
 import Opportunities from "@/components/HomePage/Opportunities";
 import PopularCategories from "@/components/HomePage/PopularCategories";
+import RecentReviews from "@/components/HomePage/RecentReviews";
 import Slider from "@/components/HomePage/Slider";
 import SpecialForYou from "@/components/HomePage/SpecialForYou";
 import { getProducts } from "@/server/posts";
@@ -41,6 +42,8 @@ export default function Home() {
     ? data.filter((product: { isNew: boolean }) => product.isNew)
     : [];
 
+  const recentReviewsData = data ? data.slice(0, 4) : [];
+
   return (
     <>
       <Slider />
@@ -51,6 +54,7 @@ export default function Home() {
       <Campaigns />
       <Opportunities />
       <NewOnes data={newOnesData} />
+      <RecentReviews data={recentReviewsData} />
     </>
   );
 }

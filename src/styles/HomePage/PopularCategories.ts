@@ -20,8 +20,8 @@ export const Item = styled(Link)`
 export const Title = styled.span`
   font-size: 16px;
   font-weight: 400;
-  word-wrap: break-word; /* Taşmayı engellemek için */
-  overflow-wrap: break-word; /* Taşmayı engellemek için */
-  max-width: 110px; /* Maksimum genişlik ayarlayarak kelimenin alt satıra kaymasını sağlamak için */
-  text-align: center; /* Ortalamak için */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 110px;
+  text-align: center;
 `;
