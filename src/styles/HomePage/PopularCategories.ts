@@ -15,6 +15,14 @@ export const Item = styled(Link)`
   align-items: center;
   text-align: center;
   gap: 0.5rem;
+
+  &:hover {
+    img {
+      transition: 0.3s ease-in-out;
+      border: 5px solid orange;
+      border-radius: 50%;
+    }
+  }
 `;
 
 export const Title = styled.span`

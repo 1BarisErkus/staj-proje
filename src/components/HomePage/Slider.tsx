@@ -7,7 +7,7 @@ import {
   StyledSwiperSlide,
 } from "@/styles/HomePage/Slider";
 import { useState } from "react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
@@ -48,11 +48,10 @@ const Slider = () => {
       <Swiper
         slidesPerView={1}
         onSlideChange={handleSlideChange}
-        modules={[Pagination, Navigation, Autoplay]}
+        modules={[Pagination, Autoplay]}
         pagination={{
           clickable: true,
         }}
-        navigation={true}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,

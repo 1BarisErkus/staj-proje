@@ -4,6 +4,15 @@ import { Product } from "@/common/types";
 import { Navigation } from "swiper/modules";
 import Card from "../Card";
 
+interface RecentReviewsProductProps {
+  id: string;
+  images: string[];
+  name: string;
+  price: number;
+  badges: string[];
+  discountPercentage: number;
+}
+
 const RecentReviews = ({ data }: { data: Product[] }) => {
   return (
     <Section title="Son İncelenenler">
@@ -26,27 +35,18 @@ const RecentReviews = ({ data }: { data: Product[] }) => {
         navigation={true}
         modules={[Navigation]}
       >
-        {data?.map(
-          (product: {
-            id: string;
-            images: string[];
-            name: string;
-            price: number;
-            badges: string[];
-            discountPercentage: number;
-          }) => (
-            <SwiperSlide key={product.id}>
-              <Card
-                images={product.images}
-                name={product.name}
-                price={product.price}
-                badges={product.badges}
-                type="BestOffers"
-                discountPercentage={product.discountPercentage}
-              />
-            </SwiperSlide>
-          )
-        )}
+        {data?.map((product: RecentReviewsProductProps) => (
+          <SwiperSlide key={product.id}>
+            <Card
+              images={product.images}
+              name={product.name}
+              price={product.price}
+              badges={product.badges}
+              type="BestOffers"
+              discountPercentage={product.discountPercentage}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Section>
   );

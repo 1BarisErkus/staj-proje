@@ -56,20 +56,17 @@ export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
   background-color: #ffc900;
   padding: 10px 20px;
   border-radius: 50px;
   border: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  margin-left: auto;
 
   @media (max-width: 576px) {
     padding: 5px 10px;
     font-size: 0.75rem;
-  }
-
-  span {
-    margin-right: 5px;
   }
 `;
 

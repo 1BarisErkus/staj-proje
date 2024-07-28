@@ -10,6 +10,7 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import Image from "next/image";
+import { useState } from "react";
 
 interface BestSellersProductProps {
   id: string;
@@ -35,6 +36,14 @@ const categories = [
 ];
 
 const BestSellers = ({ data }: { data: Product[] }) => {
+  const [activeCategory, setActiveCategory] = useState<string>(
+    "Cep Telefonu-Aksesuar"
+  );
+
+  const filteredData = data.filter(
+    (product) => product.category === activeCategory
+  );
+
   return (
     <Section title="Çok Satanlar">
       <Swiper
@@ -58,7 +67,10 @@ const BestSellers = ({ data }: { data: Product[] }) => {
       >
         {categories?.map((category, index) => (
           <SwiperSlide key={index}>
-            <CategoryCard>
+            <CategoryCard
+              active={activeCategory === category.name}
+              onClick={() => setActiveCategory(category.name)}
+            >
               <CategoryImage>
                 <Image
                   src={`/images/bestSellerCategories/${category.image}`}
@@ -74,7 +86,7 @@ const BestSellers = ({ data }: { data: Product[] }) => {
         ))}
       </Swiper>
       <CardList>
-        {data?.slice(0, 8).map((product: BestSellersProductProps) => (
+        {filteredData?.slice(0, 8).map((product: BestSellersProductProps) => (
           <Card
             key={product.id}
             images={product.images}

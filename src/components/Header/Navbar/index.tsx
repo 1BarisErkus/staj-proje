@@ -6,6 +6,7 @@ import { BsCart4 } from "react-icons/bs";
 import Search from "./Search";
 import { useState } from "react";
 import AuthModal from "./AuthModal";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,13 +23,15 @@ const Navbar = () => {
     <Container>
       <Row>
         <Col size={2}>
-          <Image
-            src="/images/pasaj-logo-new.webp"
-            alt="Pasaj Logo"
-            width={116}
-            height={40}
-            priority
-          />
+          <Link href="/">
+            <Image
+              src="/images/pasaj-logo-new.webp"
+              alt="Pasaj Logo"
+              width={116}
+              height={40}
+              priority
+            />
+          </Link>
         </Col>
         <Col size={6}>
           <Search />
