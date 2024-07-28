@@ -7,6 +7,7 @@ import PopularCategories from "@/components/HomePage/PopularCategories";
 import RecentReviews from "@/components/HomePage/RecentReviews";
 import Slider from "@/components/HomePage/Slider";
 import SpecialForYou from "@/components/HomePage/SpecialForYou";
+import WhyPasaj from "@/components/HomePage/WhyPasaj";
 import { getProducts } from "@/server/posts";
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
 
@@ -55,6 +56,7 @@ export default function Home() {
       <Opportunities />
       <NewOnes data={newOnesData} />
       <RecentReviews data={recentReviewsData} />
+      <WhyPasaj />
     </>
   );
 }
