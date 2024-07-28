@@ -1,7 +1,15 @@
 import { Product } from "@/common/types";
 import Section from "../Section";
 import Card from "../Card";
-import { CardList } from "@/styles/HomePage/BestSellers";
+import {
+  CardList,
+  CategoryCard,
+  CategoryImage,
+  CategoryName,
+} from "@/styles/HomePage/BestSellers";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import Image from "next/image";
 
 interface BestSellersProductProps {
   id: string;
@@ -14,11 +22,59 @@ interface BestSellersProductProps {
   isBestSeller: boolean;
 }
 
+const categories = [
+  { name: "Cep Telefonu-Aksesuar", image: "ceptelefonuaksesuar.webp" },
+  { name: "Bilgisayar-Tablet", image: "bilgisayartablet.webp" },
+  { name: "Elektrikli Ev Aletleri", image: "elektriklievaletleri.webp" },
+  { name: "Sağlık-Kişisel Bakım", image: "saglikkisiselbakim.webp" },
+  { name: "Beyaz Eşya", image: "beyaz-esya.webp" },
+  { name: "Hobi-Oyun", image: "hobioyun.webp" },
+  { name: "TV-Ses Sistemleri", image: "tvsessistemleri.webp" },
+  { name: "Ev-Yaşam", image: "evyasam.webp" },
+  { name: "Anne-Bebek-Oyuncak", image: "annebebekcocuk.webp" },
+];
+
 const BestSellers = ({ data }: { data: Product[] }) => {
   return (
     <Section title="Çok Satanlar">
+      <Swiper
+        slidesPerView={2}
+        breakpoints={{
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
+          1200: {
+            slidesPerView: 5,
+            spaceBetween: 10,
+          },
+          1700: {
+            slidesPerView: 7,
+            spaceBetween: 10,
+          },
+        }}
+        navigation={true}
+        modules={[Navigation]}
+      >
+        {categories?.map((category, index) => (
+          <SwiperSlide key={index}>
+            <CategoryCard>
+              <CategoryImage>
+                <Image
+                  src={`/images/bestSellerCategories/${category.image}`}
+                  alt={category.name}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </CategoryImage>
+              <CategoryName>{category.name}</CategoryName>
+            </CategoryCard>
+          </SwiperSlide>
+        ))}
+      </Swiper>
       <CardList>
-        {data?.map((product: BestSellersProductProps) => (
+        {data?.slice(0, 8).map((product: BestSellersProductProps) => (
           <Card
             key={product.id}
             images={product.images}

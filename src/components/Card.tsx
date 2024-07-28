@@ -92,7 +92,7 @@ const Card: React.FC<CardProps> = ({
               {price - Math.round(price * ((discountPercentage ?? 0) / 100))} TL
             </Price>
             <Discount>
-              <DiscountlessAmount>{price} TL</DiscountlessAmount>
+              <DiscountlessAmount>{price} TL</DiscountlessAmount>{" "}
               {Math.round(price * ((discountPercentage ?? 0) / 100))} TL İndirim
             </Discount>
             <MinPrice>Son 30 günün en düşük fiyatı</MinPrice>
