@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
     }
     body {
         font-family: var(--font-greycliffcf), sans-serif;
+        background-color: #FAFBFD;
     }
     a {
         text-decoration: none;

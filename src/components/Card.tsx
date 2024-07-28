@@ -16,6 +16,7 @@ import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Rating } from "@smastrom/react-rating";
 import { CiHeart } from "react-icons/ci";
+import CustomSwiper from "./CustomSwiper";
 
 interface CardProps {
   images: string[];
@@ -48,7 +49,7 @@ const Card: React.FC<CardProps> = ({
       <LikeIconWrapper>
         <CiHeart size={30} color="orange" />
       </LikeIconWrapper>
-      <Swiper
+      <CustomSwiper
         slidesPerView={1}
         pagination={{
           clickable: true,
@@ -66,7 +67,7 @@ const Card: React.FC<CardProps> = ({
             />
           </SwiperSlide>
         ))}
-      </Swiper>
+      </CustomSwiper>
       <ProductName>{name}</ProductName>
       {type === "BestOffers" && (
         <>

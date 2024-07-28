@@ -1,13 +1,14 @@
 import Section from "../Section";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import Card from "../Card";
 import { Product } from "@/common/types";
+import CustomSwiper from "../CustomSwiper";
 
 const SpecialForYou = ({ data }: { data: Product[] }) => {
   return (
     <Section title="Sana Özel Ürünler">
-      <Swiper
+      <CustomSwiper
         slidesPerView={1}
         breakpoints={{
           768: {
@@ -23,8 +24,8 @@ const SpecialForYou = ({ data }: { data: Product[] }) => {
             spaceBetween: 20,
           },
         }}
-        navigation={true}
         modules={[Navigation]}
+        navigation
       >
         {data?.map(
           (product: {
@@ -43,7 +44,7 @@ const SpecialForYou = ({ data }: { data: Product[] }) => {
             </SwiperSlide>
           )
         )}
-      </Swiper>
+      </CustomSwiper>
     </Section>
   );
 };

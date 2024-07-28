@@ -1,7 +1,8 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 import Section from "../Section";
 import { Navigation } from "swiper/modules";
 import Image from "next/image";
+import CustomSwiper from "../CustomSwiper";
 
 const data = [
   "pacunku-kfa.webp",
@@ -17,7 +18,7 @@ const data = [
 const Opportunities = () => {
   return (
     <Section title="Kaçırılmayacak Fırsatlar">
-      <Swiper
+      <CustomSwiper
         slidesPerView={1}
         breakpoints={{
           768: {
@@ -47,7 +48,7 @@ const Opportunities = () => {
             />
           </SwiperSlide>
         ))}
-      </Swiper>
+      </CustomSwiper>
     </Section>
   );
 };

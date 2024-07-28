@@ -7,10 +7,11 @@ import {
   CategoryImage,
   CategoryName,
 } from "@/styles/HomePage/BestSellers";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import Image from "next/image";
 import { useState } from "react";
+import CustomSwiper from "../CustomSwiper";
 
 interface BestSellersProductProps {
   id: string;
@@ -46,7 +47,7 @@ const BestSellers = ({ data }: { data: Product[] }) => {
 
   return (
     <Section title="Çok Satanlar">
-      <Swiper
+      <CustomSwiper
         slidesPerView={2}
         breakpoints={{
           768: {
@@ -84,7 +85,7 @@ const BestSellers = ({ data }: { data: Product[] }) => {
             </CategoryCard>
           </SwiperSlide>
         ))}
-      </Swiper>
+      </CustomSwiper>
       <CardList>
         {filteredData?.slice(0, 8).map((product: BestSellersProductProps) => (
           <Card

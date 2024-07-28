@@ -3,6 +3,7 @@ import Section from "../Section";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Card from "../Card";
 import { Navigation } from "swiper/modules";
+import CustomSwiper from "../CustomSwiper";
 
 interface BestOffersProductProps {
   id: string;
@@ -16,7 +17,7 @@ interface BestOffersProductProps {
 const BestOffers = ({ data }: { data: Product[] }) => {
   return (
     <Section title="En İyi Teklifler">
-      <Swiper
+      <CustomSwiper
         slidesPerView={1}
         breakpoints={{
           768: {
@@ -47,7 +48,7 @@ const BestOffers = ({ data }: { data: Product[] }) => {
             />
           </SwiperSlide>
         ))}
-      </Swiper>
+      </CustomSwiper>
     </Section>
   );
 };

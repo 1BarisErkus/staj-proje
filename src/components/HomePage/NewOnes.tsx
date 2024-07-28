@@ -1,13 +1,14 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 import Section from "../Section";
 import Card from "../Card";
 import { Product } from "@/common/types";
 import { Navigation } from "swiper/modules";
+import CustomSwiper from "../CustomSwiper";
 
 const NewOnes = ({ data }: { data: Product[] }) => {
   return (
     <Section title="Pasajın Yenileri">
-      <Swiper
+      <CustomSwiper
         slidesPerView={1}
         breakpoints={{
           768: {
@@ -47,7 +48,7 @@ const NewOnes = ({ data }: { data: Product[] }) => {
             </SwiperSlide>
           )
         )}
-      </Swiper>
+      </CustomSwiper>
     </Section>
   );
 };

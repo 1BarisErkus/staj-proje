@@ -3,6 +3,7 @@ import Section from "../Section";
 import { Product } from "@/common/types";
 import { Navigation } from "swiper/modules";
 import Card from "../Card";
+import CustomSwiper from "../CustomSwiper";
 
 interface RecentReviewsProductProps {
   id: string;
@@ -16,7 +17,7 @@ interface RecentReviewsProductProps {
 const RecentReviews = ({ data }: { data: Product[] }) => {
   return (
     <Section title="Son İncelenenler">
-      <Swiper
+      <CustomSwiper
         slidesPerView={1}
         breakpoints={{
           768: {
@@ -47,7 +48,7 @@ const RecentReviews = ({ data }: { data: Product[] }) => {
             />
           </SwiperSlide>
         ))}
-      </Swiper>
+      </CustomSwiper>
     </Section>
   );
 };

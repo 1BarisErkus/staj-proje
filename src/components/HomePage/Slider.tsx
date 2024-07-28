@@ -7,7 +7,7 @@ import {
   StyledSwiperSlide,
 } from "@/styles/HomePage/Slider";
 import { useState } from "react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
