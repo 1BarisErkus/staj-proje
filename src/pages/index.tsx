@@ -1,4 +1,5 @@
 import AdditionToYourBill from "@/components/HomePage/AdditionToYourBill";
+import BestOffers from "@/components/HomePage/BestOffers";
 import PopularCategories from "@/components/HomePage/PopularCategories";
 import Slider from "@/components/HomePage/Slider";
 import SpecialForYou from "@/components/HomePage/SpecialForYou";
@@ -29,12 +30,17 @@ export default function Home() {
       )
     : [];
 
+  const bestOffersData = data
+    ? data.filter((product: { isBestOffer: boolean }) => product.isBestOffer)
+    : [];
+
   return (
     <>
       <Slider />
       <PopularCategories />
       <SpecialForYou data={specialForYouData} />
       <AdditionToYourBill />
+      <BestOffers data={bestOffersData} />
     </>
   );
 }

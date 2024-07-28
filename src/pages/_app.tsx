@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { useState } from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import localFont from "next/font/local";
@@ -13,6 +13,7 @@ import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
+import "@smastrom/react-rating/style.css";
 
 import GlobalStyles from "@/styles/GlobalStyles";
 import Header from "@/components/Header";

@@ -109,7 +109,8 @@
       "freeShipping": true,
       "guarantee": true,
       "isContract": true,
-      "isSpecialForYou": true
+      "isSpecialForYou": true,
+      "isBestOffer": true
     },
     {
       "id": "2",
@@ -202,7 +203,8 @@
       "freeShipping": true,
       "guarantee": true,
       "isContract": false,
-      "isSpecialForYou": true
+      "isSpecialForYou": true,
+      "isBestOffer": false
     },
     {
       "id": "3",
@@ -276,7 +278,8 @@
       "freeShipping": false,
       "guarantee": true,
       "isContract": false,
-      "isSpecialForYou": true
+      "isSpecialForYou": true,
+      "isBestOffer": false
     },
     {
       "id": "4",
@@ -350,7 +353,8 @@
       "freeShipping": true,
       "guarantee": true,
       "isContract": true,
-      "isSpecialForYou": true
+      "isSpecialForYou": true,
+      "isBestOffer": true
     },
     {
       "id": "5",
@@ -424,7 +428,8 @@
       "freeShipping": true,
       "guarantee": true,
       "isContract": true,
-      "isSpecialForYou": true
+      "isSpecialForYou": true,
+      "isBestOffer": false
     },
     {
       "id": "6",
@@ -506,7 +511,8 @@
       "freeShipping": true,
       "guarantee": true,
       "isContract": true,
-      "isSpecialForYou": false
+      "isSpecialForYou": false,
+      "isBestOffer": true
     },
     {
       "id": "7",
@@ -592,7 +598,8 @@
       "freeShipping": true,
       "guarantee": true,
       "isContract": false,
-      "isSpecialForYou": false
+      "isSpecialForYou": false,
+      "isBestOffer": true
     },
     {
       "id": "8",
@@ -678,7 +685,8 @@
       "freeShipping": true,
       "guarantee": true,
       "isContract": false,
-      "isSpecialForYou": false
+      "isSpecialForYou": false,
+      "isBestOffer": true
     },
     {
       "id": "9",
@@ -764,7 +772,8 @@
       "freeShipping": true,
       "guarantee": true,
       "isContract": true,
-      "isSpecialForYou": false
+      "isSpecialForYou": false,
+      "isBestOffer": false
     },
     {
       "id": "10",
@@ -850,7 +859,8 @@
       "freeShipping": true,
       "guarantee": true,
       "isContract": true,
-      "isSpecialForYou": false
+      "isSpecialForYou": false,
+      "isBestOffer": false
     },
     {
       "id": "11",
@@ -932,7 +942,8 @@
       "freeShipping": true,
       "guarantee": true,
       "isContract": false,
-      "isSpecialForYou": false
+      "isSpecialForYou": false,
+      "isBestOffer": true
     }
   ]
 }

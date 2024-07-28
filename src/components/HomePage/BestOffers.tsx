@@ -1,13 +1,13 @@
-import Section from "../Section";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import { CardList } from "@/styles/Card";
-import Card from "../Card";
 import { Product } from "@/common/types";
+import Section from "../Section";
+import { CardList } from "@/styles/Card";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Card from "../Card";
+import { Navigation } from "swiper/modules";
 
-const SpecialForYou = ({ data }: { data: Product[] }) => {
+const BestOffers = ({ data }: { data: Product[] }) => {
   return (
-    <Section title="Sana Özel Ürünler">
+    <Section title="En İyi Teklifler">
       <CardList>
         <Swiper
           slidesPerView={1}
@@ -34,13 +34,17 @@ const SpecialForYou = ({ data }: { data: Product[] }) => {
               images: string[];
               name: string;
               price: number;
+              badges: string[];
+              discountPercentage: number;
             }) => (
               <SwiperSlide key={product.id}>
                 <Card
                   images={product.images}
                   name={product.name}
                   price={product.price}
-                  type="SpecialForYou"
+                  badges={product.badges}
+                  type="BestOffers"
+                  discountPercentage={product.discountPercentage}
                 />
               </SwiperSlide>
             )
@@ -51,4 +55,4 @@ const SpecialForYou = ({ data }: { data: Product[] }) => {
   );
 };
 
-export default SpecialForYou;
+export default BestOffers;
