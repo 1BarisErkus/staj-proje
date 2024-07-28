@@ -78,6 +78,7 @@ const SearchModal = ({
               alt="Tıraş Makinesi"
               width={70}
               height={50}
+              priority
             />
             <ModalBottomTitle>
               Goldmaster Boss GM-8192 10 in 1 Erkek Bakım Seti

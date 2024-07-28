@@ -16,8 +16,7 @@ const data = [
 
 const Opportunities = () => {
   return (
-    <Section title="Opportunities">
-      {/* <CardList> */}
+    <Section title="Kaçırılmayacak Fırsatlar">
       <Swiper
         slidesPerView={1}
         breakpoints={{
@@ -44,11 +43,11 @@ const Opportunities = () => {
               alt={image}
               width={280}
               height={420}
+              priority
             />
           </SwiperSlide>
         ))}
       </Swiper>
-      {/* </CardList> */}
     </Section>
   );
 };

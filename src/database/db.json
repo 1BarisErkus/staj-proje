@@ -110,7 +110,8 @@
       "guarantee": true,
       "isContract": true,
       "isSpecialForYou": true,
-      "isBestOffer": true
+      "isBestOffer": true,
+      "isNew": true
     },
     {
       "id": "2",
@@ -204,7 +205,8 @@
       "guarantee": true,
       "isContract": false,
       "isSpecialForYou": true,
-      "isBestOffer": false
+      "isBestOffer": false,
+      "isNew": true
     },
     {
       "id": "3",
@@ -279,7 +281,8 @@
       "guarantee": true,
       "isContract": false,
       "isSpecialForYou": true,
-      "isBestOffer": false
+      "isBestOffer": false,
+      "isNew": false
     },
     {
       "id": "4",
@@ -354,7 +357,8 @@
       "guarantee": true,
       "isContract": true,
       "isSpecialForYou": true,
-      "isBestOffer": true
+      "isBestOffer": true,
+      "isNew": false
     },
     {
       "id": "5",
@@ -371,11 +375,7 @@
       "limit": null,
       "seller": "AYA DİJİTAL",
       "description": "Apple 20 W USB-C Güç Adaptörü, aygıtınızı evde, ofiste veya yolda hızlı ve verimli bir şekilde şarj etme imkanı sunar. Bu güç adaptörü, USB-C özellikli tüm aygıtlarla uyumludur. Ancak Apple, optimum şarj performansı için bu adaptörü iPad Pro ve iPad Air ile birlikte kullanmanızı önerir",
-      "images": [
-        "apple-power/1.webp",
-        "apple-power/2.webp",
-        "apple-power/3.webp"
-      ],
+      "images": ["apple-power/1.webp", "apple-power/2.webp"],
       "features": [
         { "name": "Ürün Model Adı", "value": "20 W USB-C GÜÇ ADAPTÖRÜ" },
         { "name": "Üretim Yeri", "value": "Çin" },
@@ -429,7 +429,8 @@
       "guarantee": true,
       "isContract": true,
       "isSpecialForYou": true,
-      "isBestOffer": false
+      "isBestOffer": false,
+      "isNew": true
     },
     {
       "id": "6",
@@ -512,7 +513,8 @@
       "guarantee": true,
       "isContract": true,
       "isSpecialForYou": false,
-      "isBestOffer": true
+      "isBestOffer": true,
+      "isNew": false
     },
     {
       "id": "7",
@@ -599,7 +601,8 @@
       "guarantee": true,
       "isContract": false,
       "isSpecialForYou": false,
-      "isBestOffer": true
+      "isBestOffer": true,
+      "isNew": false
     },
     {
       "id": "8",
@@ -686,7 +689,8 @@
       "guarantee": true,
       "isContract": false,
       "isSpecialForYou": false,
-      "isBestOffer": true
+      "isBestOffer": true,
+      "isNew": false
     },
     {
       "id": "9",
@@ -773,7 +777,8 @@
       "guarantee": true,
       "isContract": true,
       "isSpecialForYou": false,
-      "isBestOffer": false
+      "isBestOffer": false,
+      "isNew": true
     },
     {
       "id": "10",
@@ -860,7 +865,8 @@
       "guarantee": true,
       "isContract": true,
       "isSpecialForYou": false,
-      "isBestOffer": false
+      "isBestOffer": false,
+      "isNew": false
     },
     {
       "id": "11",
@@ -943,7 +949,8 @@
       "guarantee": true,
       "isContract": false,
       "isSpecialForYou": false,
-      "isBestOffer": true
+      "isBestOffer": true,
+      "isNew": false
     }
   ]
 }

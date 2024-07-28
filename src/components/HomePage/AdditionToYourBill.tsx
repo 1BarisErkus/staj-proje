@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { Col, Container, Row } from "@/styles/GlobalVariables";
+import { Container } from "@/styles/GlobalVariables";
 import {
   Button,
+  ImageWrapper,
   StyledCol,
   StyledRow,
   Text,
@@ -15,13 +16,15 @@ const AdditionToYourBill = () => {
       <StyledRow>
         <Wrapper size={12}>
           <StyledCol size={3}>
-            <Image
-              src="/images/teknoloji-group-18.webp"
-              alt="Turkcell Grup"
-              width={220}
-              height={150}
-              layout="responsive"
-            />
+            <ImageWrapper>
+              <Image
+                src="/images/teknoloji-group-18.webp"
+                alt="Turkcell Grup"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </ImageWrapper>
           </StyledCol>
           <StyledCol size={6}>
             <Text>Turkcell Faturana Ek Alabileceğin Cihazlar</Text>

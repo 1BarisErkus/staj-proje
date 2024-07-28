@@ -1,6 +1,7 @@
 import AdditionToYourBill from "@/components/HomePage/AdditionToYourBill";
 import BestOffers from "@/components/HomePage/BestOffers";
 import Campaigns from "@/components/HomePage/Campaigns";
+import NewOnes from "@/components/HomePage/NewOnes";
 import Opportunities from "@/components/HomePage/Opportunities";
 import PopularCategories from "@/components/HomePage/PopularCategories";
 import Slider from "@/components/HomePage/Slider";
@@ -36,6 +37,10 @@ export default function Home() {
     ? data.filter((product: { isBestOffer: boolean }) => product.isBestOffer)
     : [];
 
+  const newOnesData = data
+    ? data.filter((product: { isNew: boolean }) => product.isNew)
+    : [];
+
   return (
     <>
       <Slider />
@@ -45,6 +50,7 @@ export default function Home() {
       <BestOffers data={bestOffersData} />
       <Campaigns />
       <Opportunities />
+      <NewOnes data={newOnesData} />
     </>
   );
 }

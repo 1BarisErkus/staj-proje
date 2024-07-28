@@ -1,12 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
 
-export const CardList = styled.div`
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-`;
-
 interface CardWrapperProps {
   type?: string;
 }

@@ -47,6 +47,7 @@ const Card: React.FC<CardProps> = ({
               alt={name}
               width={250}
               height={200}
+              priority
             />
           </SwiperSlide>
         ))}

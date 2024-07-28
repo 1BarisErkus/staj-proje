@@ -49,6 +49,7 @@ const Slider = () => {
                 src={`/images/footerSlider/${logo}.webp`}
                 alt="logo"
                 fill
+                priority
                 style={{ objectFit: "contain" }}
                 sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,

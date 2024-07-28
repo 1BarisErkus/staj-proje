@@ -30,6 +30,7 @@ const AuthModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               alt="Login"
               width={350}
               height={200}
+              priority
             />
             <h2>Turkcell Pasaj’ın fırsatlarla dolu dünyasına hoş geldiniz!</h2>
             <LoginText>

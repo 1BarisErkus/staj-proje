@@ -1,12 +1,12 @@
-import { Product } from "@/common/types";
-import Section from "../Section";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Section from "../Section";
 import Card from "../Card";
+import { Product } from "@/common/types";
 import { Navigation } from "swiper/modules";
 
-const BestOffers = ({ data }: { data: Product[] }) => {
+const NewOnes = ({ data }: { data: Product[] }) => {
   return (
-    <Section title="En İyi Teklifler">
+    <Section title="Pasajın Yenileri">
       <Swiper
         slidesPerView={1}
         breakpoints={{
@@ -52,4 +52,4 @@ const BestOffers = ({ data }: { data: Product[] }) => {
   );
 };
 
-export default BestOffers;
+export default NewOnes;
