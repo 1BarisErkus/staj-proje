@@ -8,7 +8,7 @@ export const CardList = styled.div`
   border-top: 1px solid gainsboro;
 `;
 
-export const CategoryCard = styled.div<{ active?: boolean }>`
+export const CategoryCard = styled.div<{ $active?: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +28,7 @@ export const CategoryCard = styled.div<{ active?: boolean }>`
   }
 
   ${(props) =>
-    props.active &&
+    props.$active &&
     `
     border-bottom: 1px solid #2855ac;
     span {

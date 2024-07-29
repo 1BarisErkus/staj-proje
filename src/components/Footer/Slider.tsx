@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { SwiperWrapper } from "@/styles/Footer/Slider";
+import CustomSwiper from "../CustomSwiper";
 
 const logos = [
   "fizy-logo",
@@ -23,7 +24,7 @@ const logos = [
 const Slider = () => {
   return (
     <SwiperWrapper>
-      <Swiper
+      <CustomSwiper
         slidesPerView={2}
         breakpoints={{
           640: {
@@ -58,7 +59,7 @@ const Slider = () => {
             </div>
           </SwiperSlide>
         ))}
-      </Swiper>
+      </CustomSwiper>
     </SwiperWrapper>
   );
 };

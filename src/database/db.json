@@ -26,6 +26,7 @@
       "price": 89999,
       "category": "Cep Telefonu-Aksesuar",
       "subCategory": "Apple Telefonlar",
+      "brandCode": "apple",
       "rating": 4.5,
       "discountPercentage": 12,
       "discountEndTime": "2024-07-31T23:59:59.999Z",
@@ -120,6 +121,7 @@
       "price": 42999,
       "category": "Cep Telefonu-Aksesuar",
       "subCategory": "Apple Telefonlar",
+      "brandCode": "apple",
       "rating": 4,
       "discountPercentage": 0,
       "discountEndTime": "",
@@ -216,6 +218,7 @@
       "price": 5299,
       "category": "Cep Telefonu-Aksesuar",
       "subCategory": "Giyinebilir Teknolojiler",
+      "brandCode": "huawei",
       "rating": 4.8,
       "discountPercentage": 0,
       "discountEndTime": "",
@@ -293,6 +296,7 @@
       "price": 1549,
       "category": "Cep Telefonu-Aksesuar",
       "subCategory": "Giyinebilir Teknolojiler",
+      "brandCode": "hiFuture",
       "rating": 3.0,
       "discountPercentage": 0,
       "discountEndTime": "",
@@ -370,6 +374,7 @@
       "price": 611,
       "category": "Cep Telefonu-Aksesuar",
       "subCategory": "Aksesuarlar",
+      "brandCode": "apple",
       "rating": 4.8,
       "discountPercentage": 0,
       "discountEndTime": "",
@@ -443,6 +448,7 @@
       "price": 74999,
       "category": "Cep Telefonu-Aksesuar",
       "subCategory": "Android Telefonlar",
+      "brandCode": "samsung",
       "rating": 4.7,
       "discountPercentage": 10,
       "discountEndTime": "2024-08-15T23:59:59.999Z",
@@ -528,6 +534,7 @@
       "price": 4999,
       "category": "Cep Telefonu-Aksesuar",
       "subCategory": "Android Telefonlar",
+      "brandCode": "xiaomi",
       "rating": 4.3,
       "discountPercentage": 5,
       "discountEndTime": "2024-08-10T23:59:59.999Z",
@@ -617,6 +624,7 @@
       "price": 6999,
       "category": "Cep Telefonu-Aksesuar",
       "subCategory": "Android Telefonlar",
+      "brandCode": "onePlus",
       "rating": 4.4,
       "discountPercentage": 8,
       "discountEndTime": "2024-08-20T23:59:59.999Z",
@@ -706,6 +714,7 @@
       "price": 10999,
       "category": "Bilgisayar-Tablet",
       "subCategory": "Dizüstü Bilgisayar",
+      "brandCode": "huawei",
       "rating": 4.6,
       "discountPercentage": 7,
       "discountEndTime": "2024-08-25T23:59:59.999Z",
@@ -795,6 +804,7 @@
       "price": 8999,
       "category": "Hobi-Oyun",
       "subCategory": "Scooterlar ve Bisikletler",
+      "brandCode": "Corelli",
       "rating": 4.5,
       "discountPercentage": 6,
       "discountEndTime": "2024-08-30T23:59:59.999Z",
@@ -884,6 +894,7 @@
       "price": 8499,
       "category": "Beyaz Eşya",
       "subCategory": "Isıtma ve Soğutma Sistemleri",
+      "brandCode": "huawei",
       "rating": 4.3,
       "discountPercentage": 9,
       "discountEndTime": "2024-09-05T23:59:59.999Z",
@@ -932,6 +943,83 @@
         {
           "title": "Hafıza",
           "options": ["128 GB", "256 GB"]
+        }
+      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
+      "comments": [
+        {
+          "id": 7,
+          "userId": 7,
+          "comment": "Kamera performansı çok iyi",
+          "rating": 4,
+          "date": "2024-08-15T23:59:59.999Z"
+        }
+      ],
+      "qa": [
+        {
+          "id": 7,
+          "question": "Kutusunda kulaklık var mı?",
+          "answer": "Evet, kutusunda kulaklık çıkmaktadır.",
+          "questionDate": "2024-08-15T23:59:59.999Z",
+          "answerDate": "2024-08-15T23:59:59.999Z"
+        }
+      ],
+      "creditCard": true,
+      "fibabanka": true,
+      "freeShipping": true,
+      "guarantee": true,
+      "isContract": false,
+      "isSpecialForYou": false,
+      "isBestOffer": true,
+      "isNew": false,
+      "isBestSeller": true
+    },
+    {
+      "id": "12",
+      "name": "Apple iPhone USB C Lightning Şarj ve Data Kablosu (1m)",
+      "price": 560,
+      "category": "Cep Telefonu-Aksesuar",
+      "subCategory": "Aksesuarlar",
+      "brandCode": "apple",
+      "rating": 4.5,
+      "discountPercentage": 9,
+      "discountEndTime": "2024-09-05T23:59:59.999Z",
+      "stock": 125,
+      "installmentCount": 0,
+      "installmentPrice": 0,
+      "limit": null,
+      "seller": "Messa İletişim - Turkcell Mağazası",
+      "description": "Lightning konnektörüne sahip iPhone, iPad veya iPod’unuzu eşzamanlamak ve şarj etmek için USB C veya Thunderbolt 3 (USB C) özellikli Mac’inize bağlayın.",
+      "images": ["apple-cable/1.webp"],
+      "features": [
+        {
+          "name": "Ürün Model Adı",
+          "value": "APPLE USB-C TO LIGHTNING CABLE 1M"
+        },
+        { "name": "Üretim Yeri", "value": "VİETNAM" },
+        { "name": "Kablo Çıkış Soket Tipi", "value": "LIGHTNING" },
+        { "name": "Giriş Soket Tipi", "value": "TYPE-C" },
+        { "name": "Kablo Materyali", "value": "ELASTİK" },
+        { "name": "Kablo Uzunluğu (m)", "value": "1 M" },
+        { "name": "Mfı Lisansı", "value": "VAR" },
+        { "name": "Orjınal Renk", "value": "BEYAZ" }
+      ],
+      "otherSellers": [
+        {
+          "seller": "Hepsiburada",
+          "price": 8499,
+          "rating": 4.2
+        },
+        {
+          "seller": "Amazon Türkiye",
+          "price": 8499,
+          "rating": 4.1
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": ["Beyaz"]
         }
       ],
       "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],

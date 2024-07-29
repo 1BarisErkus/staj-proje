@@ -41,7 +41,6 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
     const swiperInstance = swiperRef.current;
 
     if (swiperInstance) {
-      // Check if navigation is initialized and is an object
       if (
         swiperInstance.params.navigation &&
         typeof swiperInstance.params.navigation !== "boolean" &&

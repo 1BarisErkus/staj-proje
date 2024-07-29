@@ -69,7 +69,7 @@ const BestSellers = ({ data }: { data: Product[] }) => {
         {categories?.map((category, index) => (
           <SwiperSlide key={index}>
             <CategoryCard
-              active={activeCategory === category.name}
+              $active={activeCategory === category.name}
               onClick={() => setActiveCategory(category.name)}
             >
               <CategoryImage>

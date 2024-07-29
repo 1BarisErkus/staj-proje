@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const MenuContainer = styled.div`
@@ -8,7 +9,7 @@ export const MenuContainer = styled.div`
   padding: 1rem 0;
 `;
 
-export const MenuItem = styled.div`
+export const MenuItem = styled(Link)`
   font-size: 15px;
   color: #343a40;
   padding: 0.5rem 1rem;
