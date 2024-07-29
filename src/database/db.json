@@ -114,7 +114,8 @@
       "isSpecialForYou": true,
       "isBestOffer": true,
       "isNew": true,
-      "isBestSeller": true
+      "isBestSeller": true,
+      "createdAt": "2024-07-31T23:59:59.999Z"
     },
     {
       "id": "2",
@@ -212,7 +213,8 @@
       "isSpecialForYou": true,
       "isBestOffer": false,
       "isNew": true,
-      "isBestSeller": true
+      "isBestSeller": true,
+      "createdAt": "2024-06-31T23:59:59.999Z"
     },
     {
       "id": "3",
@@ -291,7 +293,8 @@
       "isSpecialForYou": true,
       "isBestOffer": false,
       "isNew": false,
-      "isBestSeller": true
+      "isBestSeller": true,
+      "createdAt": "2024-01-31T23:59:59.999Z"
     },
     {
       "id": "4",
@@ -370,7 +373,8 @@
       "isSpecialForYou": true,
       "isBestOffer": true,
       "isNew": false,
-      "isBestSeller": true
+      "isBestSeller": true,
+      "createdAt": "2021-07-31T23:59:59.999Z"
     },
     {
       "id": "5",
@@ -445,7 +449,8 @@
       "isSpecialForYou": true,
       "isBestOffer": false,
       "isNew": true,
-      "isBestSeller": false
+      "isBestSeller": false,
+      "createdAt": "2023-07-31T23:59:59.999Z"
     },
     {
       "id": "6",
@@ -532,7 +537,8 @@
       "isSpecialForYou": false,
       "isBestOffer": true,
       "isNew": false,
-      "isBestSeller": false
+      "isBestSeller": false,
+      "createdAt": "2024-07-31T23:59:59.999Z"
     },
     {
       "id": "7",
@@ -623,7 +629,8 @@
       "isSpecialForYou": false,
       "isBestOffer": true,
       "isNew": false,
-      "isBestSeller": true
+      "isBestSeller": true,
+      "createdAt": "2024-07-31T23:59:59.999Z"
     },
     {
       "id": "8",
@@ -714,7 +721,8 @@
       "isSpecialForYou": false,
       "isBestOffer": true,
       "isNew": false,
-      "isBestSeller": true
+      "isBestSeller": true,
+      "createdAt": "2024-12-31T23:59:59.999Z"
     },
     {
       "id": "9",
@@ -805,7 +813,8 @@
       "isSpecialForYou": false,
       "isBestOffer": false,
       "isNew": true,
-      "isBestSeller": true
+      "isBestSeller": true,
+      "createdAt": "2024-11-31T23:59:59.999Z"
     },
     {
       "id": "10",
@@ -896,7 +905,8 @@
       "isSpecialForYou": false,
       "isBestOffer": false,
       "isNew": false,
-      "isBestSeller": true
+      "isBestSeller": true,
+      "createdAt": "2024-10-31T23:59:59.999Z"
     },
     {
       "id": "11",
@@ -983,7 +993,8 @@
       "isSpecialForYou": false,
       "isBestOffer": true,
       "isNew": false,
-      "isBestSeller": true
+      "isBestSeller": true,
+      "createdAt": "2024-09-31T23:59:59.999Z"
     },
     {
       "id": "12",
@@ -1061,7 +1072,8 @@
       "isSpecialForYou": false,
       "isBestOffer": true,
       "isNew": false,
-      "isBestSeller": true
+      "isBestSeller": true,
+      "createdAt": "2024-07-31T23:59:59.999Z"
     }
   ]
 }

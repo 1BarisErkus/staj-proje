@@ -4,7 +4,6 @@ export const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 370px;
-  margin-top: 2rem;
 `;
 
 export const Text = styled.h1`

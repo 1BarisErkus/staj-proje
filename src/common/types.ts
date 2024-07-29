@@ -41,4 +41,5 @@ export interface Product {
   isBestOffer: boolean;
   isNew: boolean;
   isBestSeller: boolean;
+  createdAt: string;
 }

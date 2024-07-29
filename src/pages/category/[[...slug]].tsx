@@ -47,7 +47,7 @@ const ProductFilter = ({ params }: { params: any }) => {
       <Content>
         <Title title={params.slug[params.slug.length - 1]} />
         <JustForYou data={justForYouData} />
-        <Filter />
+        <Filter data={data} params={params} />
       </Content>
     </>
   );

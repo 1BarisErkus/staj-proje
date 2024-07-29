@@ -34,7 +34,7 @@ const JustForYou = ({ data }: { data: Product[] }) => {
               name={product.name}
               price={product.price}
               badges={product.badges}
-              type="BestOffers"
+              type="SpecialForYou"
               discountPercentage={product.discountPercentage}
             />
           </SwiperSlide>

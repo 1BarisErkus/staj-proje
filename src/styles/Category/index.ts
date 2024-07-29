@@ -25,7 +25,7 @@ export const Header = styled.div`
 `;
 
 export const Item = styled.div<{ $active: boolean }>`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
   margin: 8px 0;
   cursor: pointer;

@@ -22,14 +22,14 @@ const Slider = () => {
   return (
     <Swiper
       slidesPerView={1}
-      modules={[Pagination]}
+      modules={[Pagination, Autoplay]}
       pagination={{
         clickable: true,
       }}
-      // autoplay={{
-      //   delay: 2500,
-      //   disableOnInteraction: false,
-      // }}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
     >
       {images.map((item, index) => (
         <SwiperSlide key={index}>
@@ -40,6 +40,7 @@ const Slider = () => {
               alt="Slider"
               fill
               priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               style={{ objectFit: "cover", borderRadius: "30px" }}
             />
             <Button>İncele</Button>

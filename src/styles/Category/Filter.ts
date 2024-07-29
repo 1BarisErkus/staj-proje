@@ -4,6 +4,7 @@ import { Col } from "../GlobalVariables";
 export const StyledCol = styled(Col)`
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 1rem;
 `;
 
 export const StyledLeftCol = styled(Col)`

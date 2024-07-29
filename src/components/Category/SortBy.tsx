@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 import { Container, Header, Icon, Item } from "@/styles/Category";
 import { RadioButton } from "@/styles/Category/SwitchButton";
+import { Product } from "@/common/types";
 
 const sortOptions = [
   "En Popüler",
@@ -11,12 +12,32 @@ const sortOptions = [
   "En Yüksek Puan",
 ];
 
-const SortBy = () => {
+const SortBy = ({ setFilteredData }: { setFilteredData: any }) => {
   const [selectedOption, setSelectedOption] = useState("En Popüler");
   const [isExpanded, setIsExpanded] = useState(true);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedOption(event.target.value);
+    const value = event.target.value;
+    setSelectedOption(value);
+
+    setFilteredData((prevData: Product[]) => {
+      let sortedData = [...prevData];
+
+      if (value === "En Yeniler") {
+        sortedData.sort(
+          (a: Product, b: Product) =>
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        );
+      } else if (value === "En Düşük Fiyat") {
+        sortedData.sort((a: Product, b: Product) => a.price - b.price);
+      } else if (value === "En Yüksek Fiyat") {
+        sortedData.sort((a: Product, b: Product) => b.price - a.price);
+      } else if (value === "En Yüksek Puan") {
+        sortedData.sort((a: Product, b: Product) => b.rating - a.rating);
+      }
+
+      return sortedData;
+    });
   };
 
   const toggleExpand = () => {

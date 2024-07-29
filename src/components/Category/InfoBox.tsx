@@ -6,6 +6,8 @@ import {
 } from "@/styles/Category/InfoBox";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 import { Container, Header, Item } from "@/styles/Category";
+import { Product } from "@/common/types";
+import { categoryNames } from "@/lib/categoryNames";
 
 interface SubCategory {
   name: string;
@@ -18,24 +20,15 @@ interface Category {
   subcategories?: SubCategory[];
 }
 
-const categories: Category[] = [
-  {
-    name: "Apple Telefonlar",
-    count: 61,
-    subcategories: [
-      { name: "Tüm Apple Telefonlar", count: 0 },
-      { name: "Android Telefonlar", count: 587 },
-      { name: "Yapay Zeka (AI) Telefonlar", count: 19 },
-      { name: "Aksesuarlar", count: 8434 },
-      { name: "Giyilebilir Teknolojiler", count: 633 },
-      { name: "Yenilenmiş Telefonlar", count: 533 },
-    ],
-  },
-];
+const InfoBox = ({ data, params }: { data: Product[]; params: any }) => {
+  const categories: Category[] = [
+    {
+      name: params.slug[1] ? categoryNames[params.slug[1]] : "Tüm Kategoriler",
+      count: data.length,
+    },
+  ];
 
-const InfoBox = () => {
   const [openCategories, setOpenCategories] = useState<string[]>([]);
-  const [openSubCategories, setOpenSubCategories] = useState<string[]>([]);
 
   const toggleCategory = (categoryName: string) => {
     if (openCategories.includes(categoryName)) {
@@ -45,19 +38,9 @@ const InfoBox = () => {
     }
   };
 
-  const toggleSubCategory = (subcategoryName: string) => {
-    if (openSubCategories.includes(subcategoryName)) {
-      setOpenSubCategories(
-        openSubCategories.filter((name) => name !== subcategoryName)
-      );
-    } else {
-      setOpenSubCategories([...openSubCategories, subcategoryName]);
-    }
-  };
-
   return (
     <Container>
-      <Header>Cep Telefonu-Aksesuar (10252 Ürün)</Header>
+      <Header>{categoryNames[params.slug[0]]}</Header>
       {categories.map((category) => (
         <div key={category.name}>
           <Item $active={false} onClick={() => toggleCategory(category.name)}>
@@ -70,25 +53,6 @@ const InfoBox = () => {
               )}
             </Icon>
           </Item>
-          {openCategories.includes(category.name) && category.subcategories && (
-            <SubCategoryList>
-              {category.subcategories.map((subcategory) => (
-                <SubCategoryItem
-                  key={subcategory.name}
-                  onClick={() => toggleSubCategory(subcategory.name)}
-                >
-                  {subcategory.name} ({subcategory.count})
-                  <Icon>
-                    {openSubCategories.includes(subcategory.name) ? (
-                      <FaAngleDown />
-                    ) : (
-                      <FaAngleRight />
-                    )}
-                  </Icon>
-                </SubCategoryItem>
-              ))}
-            </SubCategoryList>
-          )}
         </div>
       ))}
     </Container>
