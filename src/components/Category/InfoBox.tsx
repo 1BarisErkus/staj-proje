@@ -20,11 +20,17 @@ interface Category {
   subcategories?: SubCategory[];
 }
 
-const InfoBox = ({ data, params }: { data: Product[]; params: any }) => {
+const InfoBox = ({
+  dataLength,
+  params,
+}: {
+  dataLength: number;
+  params: any;
+}) => {
   const categories: Category[] = [
     {
       name: params.slug[1] ? categoryNames[params.slug[1]] : "Tüm Kategoriler",
-      count: data.length,
+      count: dataLength,
     },
   ];
 

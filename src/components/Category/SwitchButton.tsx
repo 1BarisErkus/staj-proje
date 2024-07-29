@@ -7,11 +7,18 @@ import {
   SwitchContainer,
 } from "@/styles/Category/SwitchButton";
 
-const SwitchButton = ({ title }: { title: string }) => {
+const SwitchButton = ({
+  title,
+  handleChange,
+}: {
+  title: string;
+  handleChange: () => void;
+}) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleToggle = () => {
     setIsChecked(!isChecked);
+    handleChange();
   };
 
   return (

@@ -1,15 +1,15 @@
-import { Col, Container, Row } from "@/styles/GlobalVariables";
-import SwitchButton from "./SwitchButton";
+import { useState } from "react";
 import { StyledCol, StyledLeftCol } from "@/styles/Category/Filter";
+import { Container as Background } from "@/styles/Category";
+import { CardList } from "@/styles/HomePage/BestSellers";
+import { Col, Container, Row } from "@/styles/GlobalVariables";
+import { Product } from "@/common/types";
+import SwitchButton from "./SwitchButton";
 import InfoBox from "./InfoBox";
 import SortBy from "./SortBy";
-import { Container as Background } from "@/styles/Category";
 import Options from "./Options";
 import Slider from "./Slider";
-import { CardList } from "@/styles/HomePage/BestSellers";
 import Card from "../Card";
-import { Product } from "@/common/types";
-import { useState } from "react";
 
 interface BestSellersProductProps {
   id: string;
@@ -23,28 +23,36 @@ interface BestSellersProductProps {
 }
 
 const Filter = ({ data, params }: { data: Product[]; params: any }) => {
-  const [filteredData, setFilteredData] = useState<Product[]>(data);
+  const [compareMode, setCompareMode] = useState(false);
+  const [contractedProducts, setContractedProducts] = useState(false);
+  const [brands, setBrands] = useState<string[]>([]);
 
   return (
     <Container>
       <Row>
         <StyledCol>
-          <SwitchButton title="Karşılaştırma Modu" />
+          <SwitchButton
+            title="Karşılaştırma Modu"
+            handleChange={() => setCompareMode(!compareMode)}
+          />
         </StyledCol>
       </Row>
       <Row>
         <StyledLeftCol size={3}>
-          <InfoBox data={data} params={params} />
-          <SortBy setFilteredData={setFilteredData} />
+          <InfoBox dataLength={data.length} params={params} />
+          <SortBy />
           <Background>
-            <SwitchButton title="Kontratlı Ürünler" />
+            <SwitchButton
+              title="Kontratlı Ürünler"
+              handleChange={() => setContractedProducts(!contractedProducts)}
+            />
           </Background>
           <Options />
         </StyledLeftCol>
         <Col size={9}>
           <Slider />
           <CardList>
-            {filteredData?.map((product: BestSellersProductProps) => (
+            {data?.map((product: BestSellersProductProps) => (
               <Card
                 key={product.id}
                 images={product.images}
