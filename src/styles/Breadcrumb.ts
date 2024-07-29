@@ -6,7 +6,7 @@ export const BreadcrumbWrapper = styled.div`
   align-items: center;
   text-align: center;
   background-color: #f8f8f8;
-  padding-top: 20px;
+  padding: 20px 0;
 `;
 
 export const BreadcrumbItem = styled(Link)`

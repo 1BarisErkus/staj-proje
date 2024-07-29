@@ -16,7 +16,7 @@ const Menu = () => {
   return (
     <MenuContainer>
       {menuItems.map((item, index) => (
-        <MenuItem key={index} href="category/telefon/apple">
+        <MenuItem key={index} href="/category/phone-accessories/apple">
           {item}
         </MenuItem>
       ))}

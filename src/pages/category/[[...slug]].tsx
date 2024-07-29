@@ -5,6 +5,7 @@ import Title from "@/components/Category/Title";
 import { getProducts } from "@/server/posts";
 import { Content } from "@/styles/Category";
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
+import Filter from "@/components/Category/Filter";
 
 export async function getServerSideProps({ params }: { params: any }) {
   const queryClient = new QueryClient();
@@ -25,14 +26,20 @@ export async function getServerSideProps({ params }: { params: any }) {
 const ProductFilter = ({ params }: { params: any }) => {
   const { data } = useQuery({ queryKey: ["products"], queryFn: getProducts });
 
-  console.log(params.slug[params.slug.length - 1]);
-
-  const justForYouData = data
+  const justForYouMainData = data
     ? data.filter(
         (product: { brandCode: string }) =>
           product.brandCode === params.slug[params.slug.length - 1]
       )
     : [];
+
+  const justForYouData =
+    justForYouMainData.length > 1
+      ? justForYouMainData
+      : data.filter(
+          (product: { categoryCode: string }) =>
+            product.categoryCode === params.slug[params.slug.length - 1]
+        );
 
   return (
     <>
@@ -40,6 +47,7 @@ const ProductFilter = ({ params }: { params: any }) => {
       <Content>
         <Title title={params.slug[params.slug.length - 1]} />
         <JustForYou data={justForYouData} />
+        <Filter />
       </Content>
     </>
   );

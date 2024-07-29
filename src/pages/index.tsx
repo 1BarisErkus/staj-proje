@@ -46,10 +46,6 @@ export default function Home() {
 
   const recentReviewsData = data ? data.slice(0, 4) : [];
 
-  // const bestSellersData = data
-  //   ? data.filter((product: { isBestSeller: boolean }) => product.isBestSeller)
-  //   : [];
-
   return (
     <>
       <Slider />

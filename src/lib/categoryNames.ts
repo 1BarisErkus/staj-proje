@@ -1,5 +1,5 @@
 export const categoryNames: { [key: string]: string } = {
-  telefon: "Cep Telefonu-Aksesuar",
+  "phone-accessories": "Cep Telefonu-Aksesuar",
   bilgisayar: "Bilgisayar-Tablet",
   elektrik: "Elektrikli Ev Aletleri",
   beyaz: "Beyaz Eşya",
