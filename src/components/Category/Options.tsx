@@ -5,26 +5,36 @@ import Colors from "./Colors";
 import Price from "./Price";
 import Sellers from "./Sellers";
 
-export const filterColors = [
-  "black",
-  "white",
-  "red",
-  "green",
-  "blue",
-  "yellow",
-  "orange",
-  "purple",
-  "pink",
-  "darkblue",
-];
+interface FilterComponentProps {
+  dispatch: any;
+  brands: string[];
+  colors: string[];
+  prices: {
+    min: number;
+    max: number;
+  }[];
+  sellers: string[];
+  sellerOptions: string[];
+}
 
-const FilterComponent: React.FC = () => {
+const FilterComponent: React.FC<FilterComponentProps> = ({
+  dispatch,
+  brands,
+  colors,
+  prices,
+  sellers,
+  sellerOptions,
+}) => {
   return (
     <Container>
-      <Brands />
-      <Colors />
-      <Price />
-      <Sellers />
+      <Brands dispatch={dispatch} brands={brands} />
+      <Colors dispatch={dispatch} colors={colors} />
+      <Price dispatch={dispatch} prices={prices} />
+      <Sellers
+        dispatch={dispatch}
+        sellers={sellers}
+        sellerOptions={sellerOptions}
+      />
     </Container>
   );
 };

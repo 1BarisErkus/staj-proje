@@ -11,21 +11,33 @@ import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 
 const brandItems = ["Apple", "Samsung", "Huawei", "Xiaomi", "OnePlus"];
 
-const Brands = () => {
+interface BrandsProps {
+  dispatch: any;
+  brands: string[];
+}
+
+const Brands: React.FC<BrandsProps> = ({ dispatch, brands }) => {
   const [isBrandOpen, setIsBrandOpen] = useState(true);
 
   return (
     <FilterSection>
-      <Header>
+      <Header onClick={() => setIsBrandOpen((prev) => !prev)}>
         Markalar {isBrandOpen ? <FaAngleDown /> : <FaAngleRight />}
       </Header>
       {isBrandOpen && (
         <div>
           {brandItems.map((brand, index) => (
-            <FilterOption key={index}>
+            <FilterOption
+              key={index}
+              onClick={() =>
+                dispatch({ type: "BRANDS", payload: brand.toLowerCase() })
+              }
+            >
               <CheckboxContainer>
                 <HiddenCheckbox />
-                <StyledCheckbox checked={false} />
+                <StyledCheckbox
+                  checked={brands.includes(brand.toLowerCase())}
+                />
               </CheckboxContainer>
               {brand}
             </FilterOption>

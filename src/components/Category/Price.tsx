@@ -9,33 +9,46 @@ import {
 import { HiddenCheckbox } from "@/styles/Category/SwitchButton";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 
-const prices = [
-  "0 - 20000 TL (18)",
-  "20000 - 30000 TL (8)",
-  "30000 - 40000 TL (5)",
-  "40000 - 50000 TL (4)",
-  "50000 TL ve üzeri (26)",
+const priceOptions = [
+  { min: 0, max: 20000 },
+  { min: 20000, max: 30000 },
+  { min: 30000, max: 40000 },
+  { min: 40000, max: 50000 },
+  { min: 50000, max: 0 },
 ];
 
-const Price = () => {
+interface PriceProps {
+  dispatch: any;
+  prices: {
+    min: number;
+    max: number;
+  }[];
+}
+
+const Price: React.FC<PriceProps> = ({ dispatch, prices }) => {
   const [isPriceOpen, setIsPriceOpen] = useState<boolean>(false);
 
   return (
     <FilterSection>
-      <Header>
+      <Header onClick={() => setIsPriceOpen((prev) => !prev)}>
         Peşin Fiyat {isPriceOpen ? <FaAngleDown /> : <FaAngleRight />}
       </Header>
       {isPriceOpen && (
         <div>
-          {prices.map((price, index) => (
-            <FilterOption key={index}>
-              <CheckboxContainer>
-                <HiddenCheckbox />
-                <StyledCheckbox checked={false} />
-              </CheckboxContainer>
-              {price}
-            </FilterOption>
-          ))}
+          {priceOptions.map((item, index) => {
+            return (
+              <FilterOption
+                key={index}
+                onClick={() => dispatch({ type: "PRICE", payload: item })}
+              >
+                <CheckboxContainer>
+                  <HiddenCheckbox />
+                  <StyledCheckbox checked={prices.includes(item)} />
+                </CheckboxContainer>
+                {item.min} - {item.max !== 0 ? item.max : "Üzeri"} TL
+              </FilterOption>
+            );
+          })}
         </div>
       )}
     </FilterSection>

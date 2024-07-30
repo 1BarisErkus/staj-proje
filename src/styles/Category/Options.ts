@@ -10,6 +10,7 @@ export const FilterOption = styled.div`
   align-items: center;
   margin-bottom: 10px;
   gap: 10px;
+  cursor: pointer;
 `;
 
 export const SearchInput = styled.input`
@@ -41,7 +42,7 @@ export const StyledCheckbox = styled.div<{ checked: boolean }>`
   display: inline-block;
   width: 24px;
   height: 24px;
-  background: ${(props) => (props.checked ? "yellow" : "white")};
+  background: white;
   border: 2px solid #ccc;
   border-radius: 4px;
   transition: all 150ms;
@@ -59,7 +60,7 @@ export const StyledCheckbox = styled.div<{ checked: boolean }>`
     display: block;
     text-align: center;
     line-height: 20px;
-    color: black;
+    color: #ffd700;
     font-weight: bold;
     font-size: 18px;
   }

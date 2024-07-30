@@ -4,6 +4,8 @@ export interface Product {
   price: number;
   category: string;
   subCategory: string;
+  categoryCode: string;
+  brandCode: string;
   rating: number;
   discountPercentage: number;
   discountEndTime: string;

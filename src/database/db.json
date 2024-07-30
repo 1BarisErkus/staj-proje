@@ -311,7 +311,7 @@
       "installmentCount": 6,
       "installmentPrice": 464,
       "limit": null,
-      "seller": "Erufas Teknoloji Ürünleri - Turkcell Mağazası",
+      "seller": "Erufas Teknoloji Ürünleri",
       "description": "1.96 inç IPS Ekranınızın parlaklığıyla büyülenmeye hazırlanın, netlik ve canlı renkler dünyasına dalın. Bildirimlerinizi, mesajlarınızı ve uygulamalarınızı sadece bir bakışla kolayca gezin.",
       "images": [
         "hifuture-zone/1.webp",
@@ -1011,7 +1011,7 @@
       "installmentCount": 0,
       "installmentPrice": 0,
       "limit": null,
-      "seller": "Messa İletişim - Turkcell Mağazası",
+      "seller": "Messa İletişim",
       "description": "Lightning konnektörüne sahip iPhone, iPad veya iPod’unuzu eşzamanlamak ve şarj etmek için USB C veya Thunderbolt 3 (USB C) özellikli Mac’inize bağlayın.",
       "images": ["apple-cable/1.webp"],
       "features": [

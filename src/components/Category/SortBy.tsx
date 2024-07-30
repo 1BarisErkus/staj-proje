@@ -11,13 +11,16 @@ const sortOptions = [
   "En Yüksek Puan",
 ];
 
-const SortBy = () => {
-  const [selectedOption, setSelectedOption] = useState("En Popüler");
+interface SortByProps {
+  sortValue: string;
+  dispatch: any;
+}
+
+const SortBy: React.FC<SortByProps> = ({ sortValue, dispatch }) => {
   const [isExpanded, setIsExpanded] = useState(true);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setSelectedOption(value);
+    dispatch({ type: "SORT_BY", payload: event.target.value });
   };
 
   const toggleExpand = () => {
@@ -32,11 +35,11 @@ const SortBy = () => {
       </Header>
       {isExpanded &&
         sortOptions.map((option) => (
-          <Item $active={option === selectedOption} key={option}>
+          <Item $active={option === sortValue} key={option}>
             <label>
               <RadioButton
                 value={option}
-                checked={selectedOption === option}
+                checked={sortValue === option}
                 onChange={handleChange}
               />
               {option}
