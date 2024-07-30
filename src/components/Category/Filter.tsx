@@ -10,6 +10,7 @@ import SortBy from "./SortBy";
 import Options from "./Options";
 import Slider from "./Slider";
 import Card from "../Card";
+import Faqs from "./Faqs";
 
 interface BestSellersProductProps {
   id: string;
@@ -134,7 +135,6 @@ const Filter = ({ data, params }: { data: Product[]; params: any }) => {
   const [filteredData, setFilteredData] = useState<Product[]>(data);
 
   useEffect(() => {
-    console.log("state", state);
     setFilteredData(applyFilters(data, state));
   }, [data, state]);
 
@@ -194,6 +194,7 @@ const Filter = ({ data, params }: { data: Product[]; params: any }) => {
             ))}
           </CardList>
         </Col>
+        <Faqs />
       </Row>
     </Container>
   );
