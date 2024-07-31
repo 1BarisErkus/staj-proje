@@ -15,6 +15,7 @@ interface FilterComponentProps {
   }[];
   sellers: string[];
   sellerOptions: string[];
+  brandOptions: string[];
 }
 
 const FilterComponent: React.FC<FilterComponentProps> = ({
@@ -24,10 +25,11 @@ const FilterComponent: React.FC<FilterComponentProps> = ({
   prices,
   sellers,
   sellerOptions,
+  brandOptions,
 }) => {
   return (
     <Container>
-      <Brands dispatch={dispatch} brands={brands} />
+      <Brands dispatch={dispatch} brands={brands} brandOptions={brandOptions} />
       <Colors dispatch={dispatch} colors={colors} />
       <Price dispatch={dispatch} prices={prices} />
       <Sellers

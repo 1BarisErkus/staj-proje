@@ -8,15 +8,15 @@ import {
 } from "@/styles/Category/Options";
 import { Header } from "@/styles/Category";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
-
-const brandItems = ["Apple", "Samsung", "Huawei", "Xiaomi", "OnePlus"];
+import { capitalizeFirstLetter } from "@/lib/helpers";
 
 interface BrandsProps {
   dispatch: any;
   brands: string[];
+  brandOptions: string[];
 }
 
-const Brands: React.FC<BrandsProps> = ({ dispatch, brands }) => {
+const Brands: React.FC<BrandsProps> = ({ dispatch, brands, brandOptions }) => {
   const [isBrandOpen, setIsBrandOpen] = useState(true);
 
   return (
@@ -26,7 +26,7 @@ const Brands: React.FC<BrandsProps> = ({ dispatch, brands }) => {
       </Header>
       {isBrandOpen && (
         <div>
-          {brandItems.map((brand, index) => (
+          {brandOptions.map((brand, index) => (
             <FilterOption
               key={index}
               onClick={() =>
@@ -39,7 +39,7 @@ const Brands: React.FC<BrandsProps> = ({ dispatch, brands }) => {
                   checked={brands.includes(brand.toLowerCase())}
                 />
               </CheckboxContainer>
-              {brand}
+              {capitalizeFirstLetter(brand)}
             </FilterOption>
           ))}
         </div>

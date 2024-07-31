@@ -4,13 +4,13 @@ import { Container as Background } from "@/styles/Category";
 import { CardList } from "@/styles/HomePage/BestSellers";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
 import { Product, ProductProps } from "@/common/types";
-import SwitchButton from "./SwitchButton";
-import InfoBox from "./InfoBox";
+import SwitchButton from "../SwitchButton";
+import InfoBox from "../InfoBox";
 import SortBy from "./SortBy";
-import Options from "./Options";
-import Slider from "./Slider";
-import Card from "../Card";
-import Faqs from "./Faqs";
+import FilterComponent from "./Options";
+import Slider from "../Slider";
+import Card from "@/components/Card";
+import Faqs from "../Faqs";
 
 interface BestSellersProductProps extends ProductProps {
   fibabanka: boolean;
@@ -139,16 +139,21 @@ const Filter = ({ data, params }: { data: Product[]; params: any }) => {
     }
   });
 
+  let brandOptions: string[] = [];
+  data.forEach((product) => {
+    if (!brandOptions.includes(product.brandCode)) {
+      brandOptions.push(product.brandCode);
+    }
+  });
+
   return (
     <Container>
-      <Row>
-        <StyledCol>
-          <SwitchButton
-            title="Karşılaştırma Modu"
-            handleChange={() => setCompareMode(!compareMode)}
-          />
-        </StyledCol>
-      </Row>
+      <StyledCol>
+        <SwitchButton
+          title="Karşılaştırma Modu"
+          handleChange={() => setCompareMode(!compareMode)}
+        />
+      </StyledCol>
       <Row>
         <StyledLeftCol size={3}>
           <InfoBox
@@ -166,13 +171,14 @@ const Filter = ({ data, params }: { data: Product[]; params: any }) => {
               }}
             />
           </Background>
-          <Options
+          <FilterComponent
             dispatch={dispatch}
             brands={state.brands}
             colors={state.colors}
             prices={state.prices}
             sellers={state.sellers}
             sellerOptions={sellerOptions}
+            brandOptions={brandOptions}
           />
         </StyledLeftCol>
         <Col size={9}>

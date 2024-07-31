@@ -86,13 +86,13 @@ export const Stock = styled.div`
   color: #ffca00;
 `;
 
-export const Configuration = styled.div`
+export const ConfigurationWrapper = styled.div`
   display: flex;
   margin-top: 2rem;
   gap: 1rem;
 `;
 
-export const Offer = styled.div`
+export const OfferWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
