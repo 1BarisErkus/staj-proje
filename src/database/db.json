@@ -22,7 +22,7 @@
   "products": [
     {
       "id": "1",
-      "name": "iPhone 15 Pro Max 256 GB",
+      "name": "iPhone 15 Pro Max",
       "price": 89999,
       "category": "Cep Telefonu-Aksesuar",
       "subCategory": "Apple Telefonlar",
@@ -30,7 +30,7 @@
       "brandCode": "apple",
       "rating": 4.5,
       "discountPercentage": 12,
-      "discountEndTime": "2024-07-31T23:59:59.999Z",
+      "discountEndTime": "2024-08-31T23:59:59.999Z",
       "stock": 35,
       "installmentCount": 3,
       "installmentPrice": 29999,
@@ -43,7 +43,7 @@
         "iphone-15-pro-max-256gb/3.webp"
       ],
       "features": [
-        { "name": "Ürün Model Adı", "value": "IPHONE 15 PRO MAX 256GB" },
+        { "name": "Ürün Model Adı", "value": "IPHONE 15 PRO MAX" },
         { "name": "Üretim Yeri", "value": "Çin" },
         { "name": "İşletim Sistemi Versiyonu", "value": "IOS 17" },
         { "name": "Dahili Hafıza", "value": "256 GB" },
@@ -76,10 +76,10 @@
         {
           "title": "Renk",
           "options": [
-            "Mavi Titanyum",
-            "Natürel Titanyum",
-            "Siyah Titanyum",
-            "Beyaz Titanyum"
+            { "label": "Mavi Titanyum", "color": "#1e88e5" },
+            { "label": "Altın Titanyum", "color": "#fbc02d" },
+            { "label": "Grafik Titanyum", "color": "#616161" },
+            { "label": "Natürel Titanyum", "color": "#e0e0e0" }
           ]
         },
         {
@@ -119,7 +119,7 @@
     },
     {
       "id": "2",
-      "name": "iPhone 13 128 GB",
+      "name": "iPhone 13",
       "price": 42999,
       "category": "Cep Telefonu-Aksesuar",
       "subCategory": "Apple Telefonlar",
@@ -140,7 +140,7 @@
         "iphone-13-128gb/3.webp"
       ],
       "features": [
-        { "name": "Ürün Model Adı", "value": "IPHONE 13 128GB" },
+        { "name": "Ürün Model Adı", "value": "IPHONE 13" },
         { "name": "Üretim Yeri", "value": "Çin" },
         { "name": "İşletim Sistemi Versiyonu", "value": "IOS 15" },
         { "name": "Dahili Hafıza", "value": "128 GB" },
@@ -173,12 +173,12 @@
         {
           "title": "Renk",
           "options": [
-            "Yıldız Işığı",
-            "Gece Yarısı",
-            "Mavi",
-            "Yeşil",
-            "Kırmızı",
-            "Pembe"
+            { "label": "Yıldız Işığı", "color": "#fbc02d" },
+            { "label": "Gece Yarısı", "color": "#1e88e5" },
+            { "label": "Mavi", "color": "#2196f3" },
+            { "label": "Yeşil", "color": "#4caf50" },
+            { "label": "Kırmızı", "color": "#f44336" },
+            { "label": "Pembe", "color": "#e91e63" }
           ]
         },
         {
@@ -263,7 +263,7 @@
       "configuration": [
         {
           "title": "Renk",
-          "options": ["Siyah"]
+          "options": [{ "label": "Siyah", "color": "#000000" }]
         }
       ],
       "badges": [],
@@ -343,7 +343,11 @@
       "configuration": [
         {
           "title": "Renk",
-          "options": ["Pembe", "Gümüş", "Siyah"]
+          "options": [
+            { "label": "Pembe", "color": "#e91e63" },
+            { "label": "Gümüş", "color": "#c0c0c0" },
+            { "label": "Siyah", "color": "#000000" }
+          ]
         }
       ],
       "badges": [],
@@ -419,7 +423,7 @@
       "configuration": [
         {
           "title": "Renk",
-          "options": ["Beyaz"]
+          "options": [{ "lable": "Beyaz", "color": "#ffffff" }]
         }
       ],
       "badges": [],
@@ -454,7 +458,7 @@
     },
     {
       "id": "6",
-      "name": "Samsung Galaxy S23 Ultra 512 GB",
+      "name": "Samsung Galaxy S23 Ultra",
       "price": 74999,
       "category": "Cep Telefonu-Aksesuar",
       "subCategory": "Android Telefonlar",
@@ -471,7 +475,7 @@
       "description": "Samsung Galaxy S23 Ultra ile yüksek performansı deneyimleyin. 512 GB depolama alanı ve güçlü işlemcisi ile her türlü ihtiyacınızı karşılayacak.",
       "images": ["samsung-galaxy-s23-ultra-512gb/1.webp"],
       "features": [
-        { "name": "Ürün Model Adı", "value": "GALAXY S23 ULTRA 512GB" },
+        { "name": "Ürün Model Adı", "value": "GALAXY S23 ULTRA" },
         { "name": "Üretim Yeri", "value": "Güney Kore" },
         { "name": "İşletim Sistemi Versiyonu", "value": "Android 13" },
         { "name": "Dahili Hafıza", "value": "512 GB" },
@@ -503,7 +507,12 @@
       "configuration": [
         {
           "title": "Renk",
-          "options": ["Phantom Siyah", "Phantom Beyaz", "Yeşil", "Lavanta"]
+          "options": [
+            { "label": "Phantom Siyah", "color": "#000000" },
+            { "label": "Phantom Beyaz", "color": "#ffffff" },
+            { "label": "Yeşil", "color": "#4caf50" },
+            { "label": "Lavanta", "color": "#e1bee7" }
+          ]
         },
         {
           "title": "Hafıza",
@@ -542,7 +551,7 @@
     },
     {
       "id": "7",
-      "name": "Xiaomi Mi 11 Lite 128 GB",
+      "name": "Xiaomi Mi 11 Lite",
       "price": 4999,
       "category": "Cep Telefonu-Aksesuar",
       "subCategory": "Android Telefonlar",
@@ -563,7 +572,7 @@
         "xiaomi-mi-11-lite-128gb/3.webp"
       ],
       "features": [
-        { "name": "Ürün Model Adı", "value": "MI 11 LITE 128GB" },
+        { "name": "Ürün Model Adı", "value": "MI 11 LITE" },
         { "name": "Üretim Yeri", "value": "Çin" },
         { "name": "İşletim Sistemi Versiyonu", "value": "Android 11" },
         { "name": "Dahili Hafıza", "value": "128 GB" },
@@ -595,7 +604,11 @@
       "configuration": [
         {
           "title": "Renk",
-          "options": ["Buz Mavisi", "Gün Batımı Kırmızısı", "Şeftali Pembesi"]
+          "options": [
+            { "label": "Buz Mavisi", "color": "#2196f3" },
+            { "label": "Gün Batımı Kırmızısı", "color": "#f44336" },
+            { "label": "Şeftali Pembesi", "color": "#ffccbc" }
+          ]
         },
         {
           "title": "Hafıza",
@@ -634,7 +647,7 @@
     },
     {
       "id": "8",
-      "name": "OnePlus 12R 256GB 16GB",
+      "name": "OnePlus 12R 16GB",
       "price": 6999,
       "category": "Cep Telefonu-Aksesuar",
       "subCategory": "Android Telefonlar",
@@ -655,7 +668,7 @@
         "one-plus-12r/3.webp"
       ],
       "features": [
-        { "name": "Ürün Model Adı", "value": "ONEPLUS 9 PRO 256GB" },
+        { "name": "Ürün Model Adı", "value": "ONEPLUS 9 PRO" },
         { "name": "Üretim Yeri", "value": "Çin" },
         { "name": "İşletim Sistemi Versiyonu", "value": "Android 12" },
         { "name": "Dahili Hafıza", "value": "256 GB" },
@@ -687,7 +700,12 @@
       "configuration": [
         {
           "title": "Renk",
-          "options": ["Gümüş", "Yeşil", "Mavi", "Siyah"]
+          "options": [
+            { "label": "Gümüş", "color": "#c0c0c0" },
+            { "label": "Yeşil", "color": "#4caf50" },
+            { "label": "Mavi", "color": "#2196f3" },
+            { "label": "Siyah", "color": "#000000" }
+          ]
         },
         {
           "title": "Hafıza",
@@ -779,7 +797,12 @@
       "configuration": [
         {
           "title": "Renk",
-          "options": ["Siyah", "Beyaz", "Altın", "Gümüş"]
+          "options": [
+            { "label": "Siyah", "color": "#000000" },
+            { "label": "Beyaz", "color": "#ffffff" },
+            { "label": "Altın", "color": "#ffd700" },
+            { "label": "Gümüş", "color": "#c0c0c0" }
+          ]
         },
         {
           "title": "Hafıza",
@@ -839,7 +862,7 @@
         "corelli-vonic/3.webp"
       ],
       "features": [
-        { "name": "Ürün Model Adı", "value": "PIXEL 6 PRO 128GB" },
+        { "name": "Ürün Model Adı", "value": "PIXEL 6 PRO" },
         { "name": "Üretim Yeri", "value": "Vietnam" },
         { "name": "İşletim Sistemi Versiyonu", "value": "Android 12" },
         { "name": "Dahili Hafıza", "value": "128 GB" },
@@ -871,7 +894,11 @@
       "configuration": [
         {
           "title": "Renk",
-          "options": ["Geyik", "Güzel Koyu", "Panda"]
+          "options": [
+            { "label": "Geyik", "color": "#795548" },
+            { "label": "Güzel Koyu", "color": "#000000" },
+            { "label": "Panda", "color": "#ffffff" }
+          ]
         },
         {
           "title": "Hafıza",
@@ -915,7 +942,7 @@
       "category": "Beyaz Eşya",
       "subCategory": "Isıtma ve Soğutma Sistemleri",
       "categoryCode": "white-goods",
-      "brandCode": "huawei",
+      "brandCode": "sigma",
       "rating": 4.3,
       "discountPercentage": 9,
       "discountEndTime": "2024-09-05T23:59:59.999Z",
@@ -959,7 +986,11 @@
       "configuration": [
         {
           "title": "Renk",
-          "options": ["Siyah", "Beyaz", "Mor"]
+          "options": [
+            { "label": "Siyah", "color": "#000000" },
+            { "label": "Beyaz", "color": "#ffffff" },
+            { "label": "Mor", "color": "#9c27b0" }
+          ]
         },
         {
           "title": "Hafıza",
@@ -1042,7 +1073,7 @@
       "configuration": [
         {
           "title": "Renk",
-          "options": ["Beyaz"]
+          "options": [{ "label": "Beyaz", "color": "#fff" }]
         }
       ],
       "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],

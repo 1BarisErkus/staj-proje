@@ -3,7 +3,7 @@ import { StyledCol, StyledLeftCol } from "@/styles/Category/Filter";
 import { Container as Background } from "@/styles/Category";
 import { CardList } from "@/styles/HomePage/BestSellers";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
-import { Product } from "@/common/types";
+import { Product, ProductProps } from "@/common/types";
 import SwitchButton from "./SwitchButton";
 import InfoBox from "./InfoBox";
 import SortBy from "./SortBy";
@@ -12,13 +12,7 @@ import Slider from "./Slider";
 import Card from "../Card";
 import Faqs from "./Faqs";
 
-interface BestSellersProductProps {
-  id: string;
-  images: string[];
-  name: string;
-  price: number;
-  badges: string[];
-  discountPercentage: number;
+interface BestSellersProductProps extends ProductProps {
   fibabanka: boolean;
   isBestSeller: boolean;
 }
@@ -157,7 +151,12 @@ const Filter = ({ data, params }: { data: Product[]; params: any }) => {
       </Row>
       <Row>
         <StyledLeftCol size={3}>
-          <InfoBox dataLength={data.length} params={params} />
+          <InfoBox
+            category={data[0].category}
+            subCategory={data[0].subCategory}
+            dataLength={data.length}
+            params={params}
+          />
           <SortBy sortValue={state.sortBy} dispatch={dispatch} />
           <Background>
             <SwitchButton
@@ -182,6 +181,7 @@ const Filter = ({ data, params }: { data: Product[]; params: any }) => {
             {filteredData?.map((product: BestSellersProductProps) => (
               <Card
                 key={product.id}
+                id={product.id}
                 images={product.images}
                 name={product.name}
                 price={product.price}

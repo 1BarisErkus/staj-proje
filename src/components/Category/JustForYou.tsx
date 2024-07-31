@@ -30,6 +30,7 @@ const JustForYou = ({ data }: { data: Product[] }) => {
         {data?.map((product) => (
           <SwiperSlide key={product.id}>
             <Card
+              id={product.id}
               images={product.images}
               name={product.name}
               price={product.price}

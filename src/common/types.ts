@@ -45,3 +45,12 @@ export interface Product {
   isBestSeller: boolean;
   date: string;
 }
+
+export interface ProductProps {
+  id: string;
+  images: string[];
+  name: string;
+  price: number;
+  badges: string[];
+  discountPercentage: number;
+}

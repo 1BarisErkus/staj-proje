@@ -39,6 +39,7 @@ const BestOffers = ({ data }: { data: Product[] }) => {
         {data?.map((product: BestOffersProductProps) => (
           <SwiperSlide key={product.id}>
             <Card
+              id={product.id}
               images={product.images}
               name={product.name}
               price={product.price}

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 interface CardWrapperProps {
   type?: string;
+  size?: string;
 }
 
 interface SingleBadgeWrapperProps {
@@ -18,6 +19,13 @@ export const CardWrapper = styled.div<CardWrapperProps>`
   min-height: ${(props) =>
     props.type === "SpecialForYou" ? "300px" : "420px"};
   position: relative;
+
+  ${({ size }) =>
+    size === "small" &&
+    `
+    width: 160px;
+    min-height: 250px;
+    `}
 `;
 
 export const ProductImage = styled(Image)`
@@ -25,11 +33,20 @@ export const ProductImage = styled(Image)`
   margin-bottom: 16px;
 `;
 
-export const ProductName = styled.h2`
+export const ProductName = styled.h2<{ size?: string }>`
   font-size: 1.1rem;
   font-weight: bold;
   color: #333;
   min-height: 50px;
+
+  ${({ size }) =>
+    size === "small" &&
+    `
+    font-size: 0.8rem;
+    min-height: 30px;
+    word-wrap: break-word;
+    max-width: 100px;
+    `}
 `;
 
 export const PriceWrapper = styled.div`

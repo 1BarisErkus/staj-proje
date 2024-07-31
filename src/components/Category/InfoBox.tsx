@@ -1,13 +1,7 @@
 import React, { useState } from "react";
-import {
-  SubCategoryList,
-  SubCategoryItem,
-  Icon,
-} from "@/styles/Category/InfoBox";
+import { Icon } from "@/styles/Category/InfoBox";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 import { Container, Header, Item } from "@/styles/Category";
-import { Product } from "@/common/types";
-import { categoryNames } from "@/lib/categoryNames";
 
 interface SubCategory {
   name: string;
@@ -17,19 +11,22 @@ interface SubCategory {
 interface Category {
   name: string;
   count: number;
-  subcategories?: SubCategory[];
 }
 
 const InfoBox = ({
   dataLength,
   params,
+  category,
+  subCategory,
 }: {
   dataLength: number;
   params: any;
+  category: string;
+  subCategory: string;
 }) => {
   const categories: Category[] = [
     {
-      name: params.slug[1] ? categoryNames[params.slug[1]] : "Tüm Kategoriler",
+      name: params.slug[1] ? subCategory : "Tüm Kategoriler",
       count: dataLength,
     },
   ];
@@ -46,7 +43,7 @@ const InfoBox = ({
 
   return (
     <Container>
-      <Header>{categoryNames[params.slug[0]]}</Header>
+      <Header>{category}</Header>
       {categories.map((category) => (
         <div key={category.name}>
           <Item $active={false} onClick={() => toggleCategory(category.name)}>

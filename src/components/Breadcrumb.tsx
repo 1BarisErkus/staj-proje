@@ -1,5 +1,4 @@
 import React from "react";
-import { categoryNames } from "@/lib/categoryNames";
 import {
   BreadcrumbIcon,
   BreadcrumbItem,
@@ -7,22 +6,25 @@ import {
 } from "@/styles/Breadcrumb";
 import { Container } from "@/styles/GlobalVariables";
 
-const Breadcrumb = ({ items }: { items: string[] }) => {
+const Breadcrumb = ({
+  category,
+  subCategory,
+}: {
+  category: string;
+  subCategory?: string;
+}) => {
   return (
     <Container>
       <BreadcrumbWrapper>
         <BreadcrumbItem href="/">Pasaj</BreadcrumbItem>
         <BreadcrumbIcon> {">"} </BreadcrumbIcon>
-        {items.map((item, index) => {
-          return (
-            <React.Fragment key={index}>
-              <BreadcrumbItem href={item}>{categoryNames[item]}</BreadcrumbItem>
-              <BreadcrumbIcon>
-                {index < items.length - 1 && " > "}
-              </BreadcrumbIcon>
-            </React.Fragment>
-          );
-        })}
+        <BreadcrumbItem href={"#"}>{category}</BreadcrumbItem>
+        {subCategory && (
+          <>
+            <BreadcrumbIcon>{">"} </BreadcrumbIcon>
+            <BreadcrumbItem href={"#"}>{subCategory}</BreadcrumbItem>
+          </>
+        )}
       </BreadcrumbWrapper>
     </Container>
   );

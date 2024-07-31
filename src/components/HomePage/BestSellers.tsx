@@ -1,4 +1,4 @@
-import { Product } from "@/common/types";
+import { Product, ProductProps } from "@/common/types";
 import Section from "../Section";
 import Card from "../Card";
 import {
@@ -13,13 +13,7 @@ import Image from "next/image";
 import { useState } from "react";
 import CustomSwiper from "../CustomSwiper";
 
-interface BestSellersProductProps {
-  id: string;
-  images: string[];
-  name: string;
-  price: number;
-  badges: string[];
-  discountPercentage: number;
+interface BestSellersProductProps extends ProductProps {
   fibabanka: boolean;
   isBestSeller: boolean;
 }
@@ -90,6 +84,7 @@ const BestSellers = ({ data }: { data: Product[] }) => {
         {filteredData?.slice(0, 8).map((product: BestSellersProductProps) => (
           <Card
             key={product.id}
+            id={product.id}
             images={product.images}
             name={product.name}
             price={product.price}

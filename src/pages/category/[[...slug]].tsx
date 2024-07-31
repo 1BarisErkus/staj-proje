@@ -43,7 +43,10 @@ const ProductFilter = ({ params }: { params: any }) => {
 
   return (
     <>
-      <Breadcrumb items={params.slug} />
+      <Breadcrumb
+        category={data[0].category}
+        subCategory={params.slug.length > 1 ? data[0].subCategory : ""}
+      />
       <Content>
         <Title title={params.slug[params.slug.length - 1]} />
         <JustForYou data={justForYouData} />
