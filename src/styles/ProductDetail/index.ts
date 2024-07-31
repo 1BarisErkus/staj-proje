@@ -91,3 +91,65 @@ export const Configuration = styled.div`
   margin-top: 2rem;
   gap: 1rem;
 `;
+
+export const Offer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 2rem;
+`;
+
+export const Button = styled.button`
+  background-color: #ffd917;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+`;
+
+export const BadgeContainer = styled.div`
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+`;
+
+export const BadgeWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    div {
+      background-color: orange;
+      color: white;
+      padding: 1rem;
+    }
+
+    span {
+      color: orange;
+    }
+  }
+`;
+
+export const Badge = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #ecf0f2;
+  color: gray;
+  padding: 1rem;
+  border-radius: 50%;
+`;
+
+export const BadgeText = styled.span`
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: gray;
+  text-align: center;
+`;

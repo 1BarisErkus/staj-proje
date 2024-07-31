@@ -65,22 +65,24 @@ const Head: React.FC<HeadProps> = ({ title, targetDate, stock }) => {
         </FavoriteButton>
       </TitleWrapper>
       <Rating value={4} style={{ maxWidth: 75 }} readOnly />
-      <DiscountWrapper>
-        <span>İndirimin bitmesine</span>{" "}
-        <TimerContainer>
-          <TimePart>{timeLeft.days}</TimePart>
-          <TimePart color="secondary">Gn</TimePart>
+      {targetDate !== "" && (
+        <DiscountWrapper>
+          <span>İndirimin bitmesine</span>{" "}
+          <TimerContainer>
+            <TimePart>{timeLeft.days}</TimePart>
+            <TimePart color="secondary">Gn</TimePart>
+            <Separator>|</Separator>
+            <TimePart>{timeLeft.hours}</TimePart>
+            <TimePart color="secondary">Sa</TimePart>
+            <Separator>|</Separator>
+            <TimePart>{timeLeft.minutes}</TimePart>
+            <TimePart color="secondary">Dk</TimePart>
+          </TimerContainer>{" "}
+          <span>kaldı.</span>
           <Separator>|</Separator>
-          <TimePart>{timeLeft.hours}</TimePart>
-          <TimePart color="secondary">Sa</TimePart>
-          <Separator>|</Separator>
-          <TimePart>{timeLeft.minutes}</TimePart>
-          <TimePart color="secondary">Dk</TimePart>
-        </TimerContainer>{" "}
-        <span>kaldı.</span>
-        <Separator>|</Separator>
-        <Stock>30&apos;dan {stock > 30 ? "fazla" : "az"} ürün vardır.</Stock>
-      </DiscountWrapper>
+          <Stock>30&apos;dan {stock > 30 ? "fazla" : "az"} ürün vardır.</Stock>
+        </DiscountWrapper>
+      )}
     </>
   );
 };

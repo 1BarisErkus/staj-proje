@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import SelectBox from "@/components/ProductDetail/SelectBox";
 import Head from "@/components/ProductDetail/Head";
@@ -6,8 +7,22 @@ import Slider from "@/components/ProductDetail/Slider";
 import TakenTogether from "@/components/ProductDetail/TakenTogether";
 import { getProduct, getSimilarProducts } from "@/server/posts";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
-import { Configuration, Content, LeftCol } from "@/styles/ProductDetail";
+import {
+  Badge,
+  BadgeContainer,
+  BadgeText,
+  BadgeWrapper,
+  Button,
+  Configuration,
+  Content,
+  LeftCol,
+  Offer,
+} from "@/styles/ProductDetail";
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
+import OfferBox from "@/components/ProductDetail/OfferBox";
+import { FaShippingFast } from "react-icons/fa";
+import { GoShield } from "react-icons/go";
+import { LuCalendarPlus } from "react-icons/lu";
 
 export async function getServerSideProps({ params }: { params: any }) {
   const queryClient = new QueryClient();
@@ -45,6 +60,12 @@ const Product = ({ params }: { params: any }) => {
     queryFn: () => getSimilarProducts(data.categoryCode),
   });
 
+  const [selectedOffer, setSelectedOffer] = useState<number>(1);
+
+  const handleSelect = (index: number) => {
+    setSelectedOffer(index);
+  };
+
   return (
     <>
       <Breadcrumb category={data.category} subCategory={data.subCategory} />
@@ -71,6 +92,58 @@ const Product = ({ params }: { params: any }) => {
                   />
                 )}
               </Configuration>
+              <Offer>
+                {data.creditCard &&
+                  data.installmentPrice !== 0 &&
+                  data.installmentCount !== 0 && (
+                    <OfferBox
+                      title="Kredi Kartı Limitine Takılmayın!"
+                      subtitle="Kredi sorgulama sonucunza göre tutarlar değişiklik gösterebilir."
+                      price={data.installmentPrice}
+                      installmentCount={data.installmentCount}
+                      selected={selectedOffer === 0}
+                      onSelect={() => handleSelect(0)}
+                    />
+                  )}
+                <OfferBox
+                  title={data.seller}
+                  price={data.price}
+                  selected={selectedOffer === 1}
+                  tag={data.freeShipping ? "Ücretsiz Kargo" : ""}
+                  tagColor="#2855AC"
+                  deliveryTime="1 iş gününde kargoda"
+                  onSelect={() => handleSelect(1)}
+                />
+              </Offer>
+              <Button>Sepete Ekle</Button>
+              <BadgeContainer>
+                {data.freeShipping && (
+                  <BadgeWrapper>
+                    <Badge>
+                      <FaShippingFast size={24} />
+                    </Badge>
+                    <BadgeText>Ücretsiz Kargo</BadgeText>
+                  </BadgeWrapper>
+                )}
+
+                {data.guarantee && (
+                  <BadgeWrapper>
+                    <Badge>
+                      <GoShield size={24} />
+                    </Badge>
+                    <BadgeText>Turkcell Pasaj Garantisi</BadgeText>
+                  </BadgeWrapper>
+                )}
+
+                {data.isContract && (
+                  <BadgeWrapper>
+                    <Badge>
+                      <LuCalendarPlus size={24} />
+                    </Badge>
+                    <BadgeText>Taksitli Alışveriş</BadgeText>
+                  </BadgeWrapper>
+                )}
+              </BadgeContainer>
             </Col>
           </Row>
         </Container>
