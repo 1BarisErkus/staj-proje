@@ -5,6 +5,7 @@ import { Container, Row } from "@/styles/GlobalVariables";
 import { Content } from "@/styles/ProductDetail";
 import Left from "@/components/ProductDetail/Left";
 import Right from "@/components/ProductDetail/Right";
+import OtherSellers from "@/components/ProductDetail/OtherSellers";
 
 export async function getServerSideProps({ params }: { params: any }) {
   const queryClient = new QueryClient();
@@ -70,6 +71,7 @@ const Product = ({ params }: { params: any }) => {
           </Row>
         </Container>
       </Content>
+      <OtherSellers data={data.otherSellers} />
     </>
   );
 };

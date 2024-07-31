@@ -13,7 +13,19 @@ interface TakenTogetherProps {
 const TakenTogether: React.FC<TakenTogetherProps> = ({ similarProducts }) => {
   return (
     <Section title="Birlikte Alınanlar">
-      <CustomSwiper slidesPerView={3} navigation={true} modules={[Navigation]}>
+      <CustomSwiper
+        slidesPerView={1}
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+          },
+          1200: {
+            slidesPerView: 3,
+          },
+        }}
+        navigation={true}
+        modules={[Navigation]}
+      >
         {similarProducts?.map((product: ProductProps) => (
           <SwiperSlide key={product.id}>
             <Card

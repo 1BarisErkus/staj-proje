@@ -64,12 +64,12 @@
         {
           "seller": "Vodafone Satış A.Ş.",
           "price": 89999,
-          "rating": 4.5
+          "rating": 10
         },
         {
           "seller": "Türk Telekom Satış A.Ş.",
           "price": 89999,
-          "rating": 4
+          "rating": 9
         }
       ],
       "configuration": [
@@ -161,12 +161,12 @@
         {
           "seller": "Vodafone Satış A.Ş.",
           "price": 38068,
-          "rating": 4.5
+          "rating": 10
         },
         {
           "seller": "Türk Telekom Satış A.Ş.",
           "price": 39459,
-          "rating": 3.5
+          "rating": 9
         }
       ],
       "configuration": [
@@ -496,12 +496,12 @@
         {
           "seller": "Vatan Bilgisayar",
           "price": 74999,
-          "rating": 4.6
+          "rating": 10
         },
         {
           "seller": "Teknosa",
           "price": 74999,
-          "rating": 4.5
+          "rating": 9
         }
       ],
       "configuration": [
@@ -593,12 +593,12 @@
         {
           "seller": "Amazon Türkiye",
           "price": 4999,
-          "rating": 4.4
+          "rating": 9
         },
         {
           "seller": "GittiGidiyor",
           "price": 4999,
-          "rating": 4.2
+          "rating": 8
         }
       ],
       "configuration": [

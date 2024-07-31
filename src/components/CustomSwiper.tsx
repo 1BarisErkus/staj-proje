@@ -11,6 +11,7 @@ interface CustomSwiperProps {
   breakpoints?: SwiperOptions["breakpoints"];
   modules: SwiperOptions["modules"];
   slidesPerView: SwiperOptions["slidesPerView"];
+  spaceBetween?: SwiperOptions["spaceBetween"];
   pagination?: SwiperOptions["pagination"];
   navigation?: SwiperOptions["navigation"];
 }
@@ -20,6 +21,7 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
   breakpoints,
   modules,
   slidesPerView,
+  spaceBetween,
   pagination = false,
   navigation = false,
   ...props
@@ -74,6 +76,7 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
       <Swiper
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         slidesPerView={slidesPerView}
+        spaceBetween={spaceBetween}
         breakpoints={breakpoints}
         navigation={{
           prevEl: prevRef.current,
