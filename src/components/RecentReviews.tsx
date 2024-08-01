@@ -1,9 +1,9 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import Section from "../Section";
+import { SwiperSlide } from "swiper/react";
+import Section from "./Section";
 import { Product, ProductProps } from "@/common/types";
 import { Navigation } from "swiper/modules";
-import Card from "../Card";
-import CustomSwiper from "../CustomSwiper";
+import Card from "./Card";
+import CustomSwiper from "./CustomSwiper";
 
 const RecentReviews = ({ data }: { data: Product[] }) => {
   return (

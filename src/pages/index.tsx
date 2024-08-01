@@ -5,7 +5,7 @@ import Campaigns from "@/components/HomePage/Campaigns";
 import NewOnes from "@/components/HomePage/NewOnes";
 import Opportunities from "@/components/HomePage/Opportunities";
 import PopularCategories from "@/components/HomePage/PopularCategories";
-import RecentReviews from "@/components/HomePage/RecentReviews";
+import RecentReviews from "@/components/RecentReviews";
 import Slider from "@/components/HomePage/Slider";
 import SpecialForYou from "@/components/HomePage/SpecialForYou";
 import WhyPasaj from "@/components/HomePage/WhyPasaj";

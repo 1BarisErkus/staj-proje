@@ -43,22 +43,70 @@
         "iphone-15-pro-max-256gb/3.webp"
       ],
       "features": [
-        { "name": "Ürün Model Adı", "value": "IPHONE 15 PRO MAX" },
-        { "name": "Üretim Yeri", "value": "Çin" },
-        { "name": "İşletim Sistemi Versiyonu", "value": "IOS 17" },
-        { "name": "Dahili Hafıza", "value": "256 GB" },
-        { "name": "Ram (bellek) Kapasitesi", "value": "8 GB" },
-        { "name": "Ekran Boyutu", "value": "6.7 INC" },
-        { "name": "Ekran Teknolojisi", "value": "SUPER RETINA XDR EKRAN" },
-        { "name": "Çözünürlük", "value": "2796 X 1290 PIXELS" },
-        { "name": "Ekran Yenileme Hızı (hz)", "value": "120 HZ" },
-        { "name": "Ön Kamera", "value": "12 MP" },
-        { "name": "Arka Kamera", "value": "48 MP + 12 MP + 12 MP" },
-        { "name": "4.5guyumu", "value": "5G" },
-        { "name": "İşlemci", "value": "A17 PRO ÇİP" },
-        { "name": "Ana İşlemci Hızı", "value": "3.64 GHZ, 6 ÇEKİRDEK" },
-        { "name": "Nfc", "value": "VAR" },
-        { "name": "Autofocus", "value": "VAR" }
+        {
+          "name": "Ürün Model Adı",
+          "value": "IPHONE 15 PRO MAX"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "Çin"
+        },
+        {
+          "name": "İşletim Sistemi Versiyonu",
+          "value": "IOS 17"
+        },
+        {
+          "name": "Dahili Hafıza",
+          "value": "256 GB"
+        },
+        {
+          "name": "Ram (bellek) Kapasitesi",
+          "value": "8 GB"
+        },
+        {
+          "name": "Ekran Boyutu",
+          "value": "6.7 INC"
+        },
+        {
+          "name": "Ekran Teknolojisi",
+          "value": "SUPER RETINA XDR EKRAN"
+        },
+        {
+          "name": "Çözünürlük",
+          "value": "2796 X 1290 PIXELS"
+        },
+        {
+          "name": "Ekran Yenileme Hızı (hz)",
+          "value": "120 HZ"
+        },
+        {
+          "name": "Ön Kamera",
+          "value": "12 MP"
+        },
+        {
+          "name": "Arka Kamera",
+          "value": "48 MP + 12 MP + 12 MP"
+        },
+        {
+          "name": "4.5guyumu",
+          "value": "5G"
+        },
+        {
+          "name": "İşlemci",
+          "value": "A17 PRO ÇİP"
+        },
+        {
+          "name": "Ana İşlemci Hızı",
+          "value": "3.64 GHZ, 6 ÇEKİRDEK"
+        },
+        {
+          "name": "Nfc",
+          "value": "VAR"
+        },
+        {
+          "name": "Autofocus",
+          "value": "VAR"
+        }
       ],
       "otherSellers": [
         {
@@ -76,34 +124,56 @@
         {
           "title": "Renk",
           "options": [
-            { "label": "Mavi Titanyum", "color": "#1e88e5" },
-            { "label": "Altın Titanyum", "color": "#fbc02d" },
-            { "label": "Grafik Titanyum", "color": "#616161" },
-            { "label": "Natürel Titanyum", "color": "#e0e0e0" }
+            {
+              "label": "Mavi Titanyum",
+              "color": "#1e88e5"
+            },
+            {
+              "label": "Altın Titanyum",
+              "color": "#fbc02d"
+            },
+            {
+              "label": "Grafik Titanyum",
+              "color": "#616161"
+            },
+            {
+              "label": "Natürel Titanyum",
+              "color": "#e0e0e0"
+            }
           ]
         },
         {
           "title": "Hafıza",
-          "options": ["256 GB", "512 GB", "1 TB"]
+          "options": [
+            "256 GB",
+            "512 GB",
+            "1 TB"
+          ]
         }
       ],
-      "badges": ["Peşine 4 Taksit", "Ücretsiz Kargo", "Alışveriş Kredisi"],
+      "badges": [
+        "Peşine 4 Taksit",
+        "Ücretsiz Kargo",
+        "Alışveriş Kredisi"
+      ],
       "comments": [
         {
-          "id": 1,
-          "userId": 1,
-          "comment": "Ürün çok güzel",
-          "rating": 5,
-          "date": "2024-07-31T23:59:59.999Z"
+          "id": "7fc50c94-d948-4c11-a1cd-542f7a85ef38",
+          "userName": "Geçici User",
+          "comment": "Deneme Yorum",
+          "rating": 4,
+          "date": "2024-08-01T11:33:15.166Z",
+          "helpfulCount": 0
         }
       ],
       "qa": [
         {
-          "id": 1,
-          "question": "Ürünün garantisi var mı?",
-          "answer": "Evet, ürünün garantisi vardır.",
-          "questionDate": "2024-07-31T23:59:59.999Z",
-          "answerDate": "2024-07-31T23:59:59.999Z"
+          "id": "e26fdfad-8d21-4d63-ae9c-07859cddb60e",
+          "questionText": "MerhabaMerhaba",
+          "questionDate": "2024-08-01T11:33:27.328Z",
+          "answerText": "",
+          "answerDate": "",
+          "storeName": "Turkcell Satış A.Ş."
         }
       ],
       "creditCard": true,
@@ -140,22 +210,70 @@
         "iphone-13-128gb/3.webp"
       ],
       "features": [
-        { "name": "Ürün Model Adı", "value": "IPHONE 13" },
-        { "name": "Üretim Yeri", "value": "Çin" },
-        { "name": "İşletim Sistemi Versiyonu", "value": "IOS 15" },
-        { "name": "Dahili Hafıza", "value": "128 GB" },
-        { "name": "Ram (bellek) Kapasitesi", "value": "8 GB" },
-        { "name": "Ekran Boyutu", "value": "6.1 INC" },
-        { "name": "Ekran Teknolojisi", "value": "SUPER RETINE XDR OLED" },
-        { "name": "Çözünürlük", "value": "2532 X 1170 PIXELS" },
-        { "name": "Ekran Yenileme Hızı (hz)", "value": "120 HZ" },
-        { "name": "Ön Kamera", "value": "12 MP" },
-        { "name": "Arka Kamera", "value": "12MP+12MP" },
-        { "name": "4.5guyumu", "value": "5G" },
-        { "name": "İşlemci", "value": "A15 PRO ÇİP" },
-        { "name": "Ana İşlemci Hızı", "value": "3.64 GHZ, 6 ÇEKİRDEK" },
-        { "name": "Nfc", "value": "VAR" },
-        { "name": "Autofocus", "value": "VAR" }
+        {
+          "name": "Ürün Model Adı",
+          "value": "IPHONE 13"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "Çin"
+        },
+        {
+          "name": "İşletim Sistemi Versiyonu",
+          "value": "IOS 15"
+        },
+        {
+          "name": "Dahili Hafıza",
+          "value": "128 GB"
+        },
+        {
+          "name": "Ram (bellek) Kapasitesi",
+          "value": "8 GB"
+        },
+        {
+          "name": "Ekran Boyutu",
+          "value": "6.1 INC"
+        },
+        {
+          "name": "Ekran Teknolojisi",
+          "value": "SUPER RETINE XDR OLED"
+        },
+        {
+          "name": "Çözünürlük",
+          "value": "2532 X 1170 PIXELS"
+        },
+        {
+          "name": "Ekran Yenileme Hızı (hz)",
+          "value": "120 HZ"
+        },
+        {
+          "name": "Ön Kamera",
+          "value": "12 MP"
+        },
+        {
+          "name": "Arka Kamera",
+          "value": "12MP+12MP"
+        },
+        {
+          "name": "4.5guyumu",
+          "value": "5G"
+        },
+        {
+          "name": "İşlemci",
+          "value": "A15 PRO ÇİP"
+        },
+        {
+          "name": "Ana İşlemci Hızı",
+          "value": "3.64 GHZ, 6 ÇEKİRDEK"
+        },
+        {
+          "name": "Nfc",
+          "value": "VAR"
+        },
+        {
+          "name": "Autofocus",
+          "value": "VAR"
+        }
       ],
       "otherSellers": [
         {
@@ -173,38 +291,47 @@
         {
           "title": "Renk",
           "options": [
-            { "label": "Yıldız Işığı", "color": "#fbc02d" },
-            { "label": "Gece Yarısı", "color": "#1e88e5" },
-            { "label": "Mavi", "color": "#2196f3" },
-            { "label": "Yeşil", "color": "#4caf50" },
-            { "label": "Kırmızı", "color": "#f44336" },
-            { "label": "Pembe", "color": "#e91e63" }
+            {
+              "label": "Yıldız Işığı",
+              "color": "#fbc02d"
+            },
+            {
+              "label": "Gece Yarısı",
+              "color": "#1e88e5"
+            },
+            {
+              "label": "Mavi",
+              "color": "#2196f3"
+            },
+            {
+              "label": "Yeşil",
+              "color": "#4caf50"
+            },
+            {
+              "label": "Kırmızı",
+              "color": "#f44336"
+            },
+            {
+              "label": "Pembe",
+              "color": "#e91e63"
+            }
           ]
         },
         {
           "title": "Hafıza",
-          "options": ["128 GB", "256 GB", "512 GB"]
+          "options": [
+            "128 GB",
+            "256 GB",
+            "512 GB"
+          ]
         }
       ],
-      "badges": ["Ücretsiz Kargo", "Alışveriş Kredisi"],
-      "comments": [
-        {
-          "id": 1,
-          "userId": 1,
-          "comment": "Ürün çok güzel",
-          "rating": 5,
-          "date": "2024-07-31T23:59:59.999Z"
-        }
+      "badges": [
+        "Ücretsiz Kargo",
+        "Alışveriş Kredisi"
       ],
-      "qa": [
-        {
-          "id": 1,
-          "question": "Ürünün garantisi var mı?",
-          "answer": "Evet, ürünün garantisi vardır.",
-          "questionDate": "2024-07-31T23:59:59.999Z",
-          "answerDate": "2024-07-31T23:59:59.999Z"
-        }
-      ],
+      "comments": [],
+      "qa": [],
       "creditCard": true,
       "fibabanka": false,
       "freeShipping": true,
@@ -239,14 +366,38 @@
         "huawei-watch/3.webp"
       ],
       "features": [
-        { "name": "Ürün Model Adı", "value": "WATCH GT4 46MM SİLİKON" },
-        { "name": "Üretim Yeri", "value": "Çin" },
-        { "name": "Dahili Hafıza", "value": "VAR" },
-        { "name": "Bellek Ram", "value": "YOK" },
-        { "name": "İşlemci Hızı", "value": "YOK" },
-        { "name": "Bluetooth Vrs", "value": "5.2" },
-        { "name": "İşletim Sistemi", "value": "HARMONYOS" },
-        { "name": "Ekran Boyutu", "value": "1.43 INC" }
+        {
+          "name": "Ürün Model Adı",
+          "value": "WATCH GT4 46MM SİLİKON"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "Çin"
+        },
+        {
+          "name": "Dahili Hafıza",
+          "value": "VAR"
+        },
+        {
+          "name": "Bellek Ram",
+          "value": "YOK"
+        },
+        {
+          "name": "İşlemci Hızı",
+          "value": "YOK"
+        },
+        {
+          "name": "Bluetooth Vrs",
+          "value": "5.2"
+        },
+        {
+          "name": "İşletim Sistemi",
+          "value": "HARMONYOS"
+        },
+        {
+          "name": "Ekran Boyutu",
+          "value": "1.43 INC"
+        }
       ],
       "otherSellers": [
         {
@@ -263,28 +414,17 @@
       "configuration": [
         {
           "title": "Renk",
-          "options": [{ "label": "Siyah", "color": "#000000" }]
+          "options": [
+            {
+              "label": "Siyah",
+              "color": "#000000"
+            }
+          ]
         }
       ],
       "badges": [],
-      "comments": [
-        {
-          "id": 1,
-          "userId": 1,
-          "comment": "Ürün çok güzel",
-          "rating": 5,
-          "date": "2024-07-31T23:59:59.999Z"
-        }
-      ],
-      "qa": [
-        {
-          "id": 1,
-          "question": "Ürünün garantisi var mı?",
-          "answer": "Evet, ürünün garantisi vardır.",
-          "questionDate": "2024-07-31T23:59:59.999Z",
-          "answerDate": "2024-07-31T23:59:59.999Z"
-        }
-      ],
+      "comments": [],
+      "qa": [],
       "creditCard": true,
       "fibabanka": false,
       "freeShipping": false,
@@ -304,7 +444,7 @@
       "subCategory": "Giyinebilir Teknolojiler",
       "categoryCode": "phone-accessories",
       "brandCode": "hiFuture",
-      "rating": 3.0,
+      "rating": 3,
       "discountPercentage": 0,
       "discountEndTime": "",
       "stock": 25,
@@ -319,14 +459,38 @@
         "hifuture-zone/3.webp"
       ],
       "features": [
-        { "name": "Ürün Model Adı", "value": "ZONE 2 AKILLI SAAT" },
-        { "name": "Üretim Yeri", "value": "Çin" },
-        { "name": "Dahili Hafıza", "value": "128 MB" },
-        { "name": "Bellek Ram", "value": "600 KB" },
-        { "name": "İşlemci Hızı", "value": "YOK" },
-        { "name": "Bluetooth Vrs", "value": "5.2" },
-        { "name": "İşletim Sistemi", "value": "YOK" },
-        { "name": "Ekran Boyutu", "value": "1.96 INC" }
+        {
+          "name": "Ürün Model Adı",
+          "value": "ZONE 2 AKILLI SAAT"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "Çin"
+        },
+        {
+          "name": "Dahili Hafıza",
+          "value": "128 MB"
+        },
+        {
+          "name": "Bellek Ram",
+          "value": "600 KB"
+        },
+        {
+          "name": "İşlemci Hızı",
+          "value": "YOK"
+        },
+        {
+          "name": "Bluetooth Vrs",
+          "value": "5.2"
+        },
+        {
+          "name": "İşletim Sistemi",
+          "value": "YOK"
+        },
+        {
+          "name": "Ekran Boyutu",
+          "value": "1.96 INC"
+        }
       ],
       "otherSellers": [
         {
@@ -344,31 +508,24 @@
         {
           "title": "Renk",
           "options": [
-            { "label": "Pembe", "color": "#e91e63" },
-            { "label": "Gümüş", "color": "#c0c0c0" },
-            { "label": "Siyah", "color": "#000000" }
+            {
+              "label": "Pembe",
+              "color": "#e91e63"
+            },
+            {
+              "label": "Gümüş",
+              "color": "#c0c0c0"
+            },
+            {
+              "label": "Siyah",
+              "color": "#000000"
+            }
           ]
         }
       ],
       "badges": [],
-      "comments": [
-        {
-          "id": 1,
-          "userId": 1,
-          "comment": "Ürün çok güzel",
-          "rating": 5,
-          "date": "2024-07-31T23:59:59.999Z"
-        }
-      ],
-      "qa": [
-        {
-          "id": 1,
-          "question": "Ürünün garantisi var mı?",
-          "answer": "Evet, ürünün garantisi vardır.",
-          "questionDate": "2024-07-31T23:59:59.999Z",
-          "answerDate": "2024-07-31T23:59:59.999Z"
-        }
-      ],
+      "comments": [],
+      "qa": [],
       "creditCard": true,
       "fibabanka": true,
       "freeShipping": true,
@@ -397,16 +554,43 @@
       "limit": null,
       "seller": "AYA DİJİTAL",
       "description": "Apple 20 W USB-C Güç Adaptörü, aygıtınızı evde, ofiste veya yolda hızlı ve verimli bir şekilde şarj etme imkanı sunar. Bu güç adaptörü, USB-C özellikli tüm aygıtlarla uyumludur. Ancak Apple, optimum şarj performansı için bu adaptörü iPad Pro ve iPad Air ile birlikte kullanmanızı önerir",
-      "images": ["apple-power/1.webp", "apple-power/2.webp"],
+      "images": [
+        "apple-power/1.webp",
+        "apple-power/2.webp"
+      ],
       "features": [
-        { "name": "Ürün Model Adı", "value": "20 W USB-C GÜÇ ADAPTÖRÜ" },
-        { "name": "Üretim Yeri", "value": "Çin" },
-        { "name": "Ürün Tipi", "value": "SEYAHAT / EV" },
-        { "name": "Adaptör Port Yuvası Tipi", "value": "TYPE-C" },
-        { "name": "Kablo Dahili Mi", "value": "YOK" },
-        { "name": "Çıkış Gücü (w)", "value": "20W" },
-        { "name": "Çıkış Akımı (a)", "value": "3.5 A" },
-        { "name": "Garanti Süresi", "value": "2 YIL" }
+        {
+          "name": "Ürün Model Adı",
+          "value": "20 W USB-C GÜÇ ADAPTÖRÜ"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "Çin"
+        },
+        {
+          "name": "Ürün Tipi",
+          "value": "SEYAHAT / EV"
+        },
+        {
+          "name": "Adaptör Port Yuvası Tipi",
+          "value": "TYPE-C"
+        },
+        {
+          "name": "Kablo Dahili Mi",
+          "value": "YOK"
+        },
+        {
+          "name": "Çıkış Gücü (w)",
+          "value": "20W"
+        },
+        {
+          "name": "Çıkış Akımı (a)",
+          "value": "3.5 A"
+        },
+        {
+          "name": "Garanti Süresi",
+          "value": "2 YIL"
+        }
       ],
       "otherSellers": [
         {
@@ -423,28 +607,17 @@
       "configuration": [
         {
           "title": "Renk",
-          "options": [{ "lable": "Beyaz", "color": "#ffffff" }]
+          "options": [
+            {
+              "lable": "Beyaz",
+              "color": "#ffffff"
+            }
+          ]
         }
       ],
       "badges": [],
-      "comments": [
-        {
-          "id": 1,
-          "userId": 1,
-          "comment": "Ürün çok güzel",
-          "rating": 5,
-          "date": "2024-07-31T23:59:59.999Z"
-        }
-      ],
-      "qa": [
-        {
-          "id": 1,
-          "question": "Ürünün garantisi var mı?",
-          "answer": "Evet, ürünün garantisi vardır.",
-          "questionDate": "2024-07-31T23:59:59.999Z",
-          "answerDate": "2024-07-31T23:59:59.999Z"
-        }
-      ],
+      "comments": [],
+      "qa": [],
       "creditCard": true,
       "fibabanka": true,
       "freeShipping": true,
@@ -473,24 +646,74 @@
       "limit": 2,
       "seller": "MediaMarkt",
       "description": "Samsung Galaxy S23 Ultra ile yüksek performansı deneyimleyin. 512 GB depolama alanı ve güçlü işlemcisi ile her türlü ihtiyacınızı karşılayacak.",
-      "images": ["samsung-galaxy-s23-ultra-512gb/1.webp"],
+      "images": [
+        "samsung-galaxy-s23-ultra-512gb/1.webp"
+      ],
       "features": [
-        { "name": "Ürün Model Adı", "value": "GALAXY S23 ULTRA" },
-        { "name": "Üretim Yeri", "value": "Güney Kore" },
-        { "name": "İşletim Sistemi Versiyonu", "value": "Android 13" },
-        { "name": "Dahili Hafıza", "value": "512 GB" },
-        { "name": "Ram (bellek) Kapasitesi", "value": "12 GB" },
-        { "name": "Ekran Boyutu", "value": "6.8 INC" },
-        { "name": "Ekran Teknolojisi", "value": "DYNAMIC AMOLED 2X" },
-        { "name": "Çözünürlük", "value": "3088 X 1440 PIXELS" },
-        { "name": "Ekran Yenileme Hızı (hz)", "value": "120 HZ" },
-        { "name": "Ön Kamera", "value": "40 MP" },
-        { "name": "Arka Kamera", "value": "200 MP + 12 MP + 10 MP + 10 MP" },
-        { "name": "4.5guyumu", "value": "5G" },
-        { "name": "İşlemci", "value": "SNAPDRAGON 8 GEN 2" },
-        { "name": "Ana İşlemci Hızı", "value": "3.2 GHZ, 8 ÇEKİRDEK" },
-        { "name": "Nfc", "value": "VAR" },
-        { "name": "Autofocus", "value": "VAR" }
+        {
+          "name": "Ürün Model Adı",
+          "value": "GALAXY S23 ULTRA"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "Güney Kore"
+        },
+        {
+          "name": "İşletim Sistemi Versiyonu",
+          "value": "Android 13"
+        },
+        {
+          "name": "Dahili Hafıza",
+          "value": "512 GB"
+        },
+        {
+          "name": "Ram (bellek) Kapasitesi",
+          "value": "12 GB"
+        },
+        {
+          "name": "Ekran Boyutu",
+          "value": "6.8 INC"
+        },
+        {
+          "name": "Ekran Teknolojisi",
+          "value": "DYNAMIC AMOLED 2X"
+        },
+        {
+          "name": "Çözünürlük",
+          "value": "3088 X 1440 PIXELS"
+        },
+        {
+          "name": "Ekran Yenileme Hızı (hz)",
+          "value": "120 HZ"
+        },
+        {
+          "name": "Ön Kamera",
+          "value": "40 MP"
+        },
+        {
+          "name": "Arka Kamera",
+          "value": "200 MP + 12 MP + 10 MP + 10 MP"
+        },
+        {
+          "name": "4.5guyumu",
+          "value": "5G"
+        },
+        {
+          "name": "İşlemci",
+          "value": "SNAPDRAGON 8 GEN 2"
+        },
+        {
+          "name": "Ana İşlemci Hızı",
+          "value": "3.2 GHZ, 8 ÇEKİRDEK"
+        },
+        {
+          "name": "Nfc",
+          "value": "VAR"
+        },
+        {
+          "name": "Autofocus",
+          "value": "VAR"
+        }
       ],
       "otherSellers": [
         {
@@ -508,36 +731,40 @@
         {
           "title": "Renk",
           "options": [
-            { "label": "Phantom Siyah", "color": "#000000" },
-            { "label": "Phantom Beyaz", "color": "#ffffff" },
-            { "label": "Yeşil", "color": "#4caf50" },
-            { "label": "Lavanta", "color": "#e1bee7" }
+            {
+              "label": "Phantom Siyah",
+              "color": "#000000"
+            },
+            {
+              "label": "Phantom Beyaz",
+              "color": "#ffffff"
+            },
+            {
+              "label": "Yeşil",
+              "color": "#4caf50"
+            },
+            {
+              "label": "Lavanta",
+              "color": "#e1bee7"
+            }
           ]
         },
         {
           "title": "Hafıza",
-          "options": ["256 GB", "512 GB", "1 TB"]
+          "options": [
+            "256 GB",
+            "512 GB",
+            "1 TB"
+          ]
         }
       ],
-      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo", "12 Ay Taksit"],
-      "comments": [
-        {
-          "id": 2,
-          "userId": 2,
-          "comment": "Mükemmel bir telefon",
-          "rating": 5,
-          "date": "2024-08-01T23:59:59.999Z"
-        }
+      "badges": [
+        "Hızlı Teslimat",
+        "Ücretsiz Kargo",
+        "12 Ay Taksit"
       ],
-      "qa": [
-        {
-          "id": 2,
-          "question": "Suya dayanıklı mı?",
-          "answer": "Evet, suya ve toza dayanıklıdır.",
-          "questionDate": "2024-08-01T23:59:59.999Z",
-          "answerDate": "2024-08-01T23:59:59.999Z"
-        }
-      ],
+      "comments": [],
+      "qa": [],
       "creditCard": true,
       "fibabanka": true,
       "freeShipping": true,
@@ -572,22 +799,70 @@
         "xiaomi-mi-11-lite-128gb/3.webp"
       ],
       "features": [
-        { "name": "Ürün Model Adı", "value": "MI 11 LITE" },
-        { "name": "Üretim Yeri", "value": "Çin" },
-        { "name": "İşletim Sistemi Versiyonu", "value": "Android 11" },
-        { "name": "Dahili Hafıza", "value": "128 GB" },
-        { "name": "Ram (bellek) Kapasitesi", "value": "6 GB" },
-        { "name": "Ekran Boyutu", "value": "6.55 INC" },
-        { "name": "Ekran Teknolojisi", "value": "AMOLED" },
-        { "name": "Çözünürlük", "value": "2400 X 1080 PIXELS" },
-        { "name": "Ekran Yenileme Hızı (hz)", "value": "90 HZ" },
-        { "name": "Ön Kamera", "value": "16 MP" },
-        { "name": "Arka Kamera", "value": "64 MP + 8 MP + 5 MP" },
-        { "name": "4.5guyumu", "value": "5G" },
-        { "name": "İşlemci", "value": "SNAPDRAGON 732G" },
-        { "name": "Ana İşlemci Hızı", "value": "2.3 GHZ, 8 ÇEKİRDEK" },
-        { "name": "Nfc", "value": "VAR" },
-        { "name": "Autofocus", "value": "VAR" }
+        {
+          "name": "Ürün Model Adı",
+          "value": "MI 11 LITE"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "Çin"
+        },
+        {
+          "name": "İşletim Sistemi Versiyonu",
+          "value": "Android 11"
+        },
+        {
+          "name": "Dahili Hafıza",
+          "value": "128 GB"
+        },
+        {
+          "name": "Ram (bellek) Kapasitesi",
+          "value": "6 GB"
+        },
+        {
+          "name": "Ekran Boyutu",
+          "value": "6.55 INC"
+        },
+        {
+          "name": "Ekran Teknolojisi",
+          "value": "AMOLED"
+        },
+        {
+          "name": "Çözünürlük",
+          "value": "2400 X 1080 PIXELS"
+        },
+        {
+          "name": "Ekran Yenileme Hızı (hz)",
+          "value": "90 HZ"
+        },
+        {
+          "name": "Ön Kamera",
+          "value": "16 MP"
+        },
+        {
+          "name": "Arka Kamera",
+          "value": "64 MP + 8 MP + 5 MP"
+        },
+        {
+          "name": "4.5guyumu",
+          "value": "5G"
+        },
+        {
+          "name": "İşlemci",
+          "value": "SNAPDRAGON 732G"
+        },
+        {
+          "name": "Ana İşlemci Hızı",
+          "value": "2.3 GHZ, 8 ÇEKİRDEK"
+        },
+        {
+          "name": "Nfc",
+          "value": "VAR"
+        },
+        {
+          "name": "Autofocus",
+          "value": "VAR"
+        }
       ],
       "otherSellers": [
         {
@@ -605,35 +880,34 @@
         {
           "title": "Renk",
           "options": [
-            { "label": "Buz Mavisi", "color": "#2196f3" },
-            { "label": "Gün Batımı Kırmızısı", "color": "#f44336" },
-            { "label": "Şeftali Pembesi", "color": "#ffccbc" }
+            {
+              "label": "Buz Mavisi",
+              "color": "#2196f3"
+            },
+            {
+              "label": "Gün Batımı Kırmızısı",
+              "color": "#f44336"
+            },
+            {
+              "label": "Şeftali Pembesi",
+              "color": "#ffccbc"
+            }
           ]
         },
         {
           "title": "Hafıza",
-          "options": ["128 GB", "256 GB"]
+          "options": [
+            "128 GB",
+            "256 GB"
+          ]
         }
       ],
-      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
-      "comments": [
-        {
-          "id": 3,
-          "userId": 3,
-          "comment": "Fiyat performans ürünü",
-          "rating": 4,
-          "date": "2024-07-15T23:59:59.999Z"
-        }
+      "badges": [
+        "Hızlı Teslimat",
+        "Ücretsiz Kargo"
       ],
-      "qa": [
-        {
-          "id": 3,
-          "question": "Pil ömrü ne kadar?",
-          "answer": "Ortalama 1 günü rahat çıkarır.",
-          "questionDate": "2024-07-15T23:59:59.999Z",
-          "answerDate": "2024-07-15T23:59:59.999Z"
-        }
-      ],
+      "comments": [],
+      "qa": [],
       "creditCard": true,
       "fibabanka": true,
       "freeShipping": true,
@@ -668,22 +942,70 @@
         "one-plus-12r/3.webp"
       ],
       "features": [
-        { "name": "Ürün Model Adı", "value": "ONEPLUS 9 PRO" },
-        { "name": "Üretim Yeri", "value": "Çin" },
-        { "name": "İşletim Sistemi Versiyonu", "value": "Android 12" },
-        { "name": "Dahili Hafıza", "value": "256 GB" },
-        { "name": "Ram (bellek) Kapasitesi", "value": "12 GB" },
-        { "name": "Ekran Boyutu", "value": "6.7 INC" },
-        { "name": "Ekran Teknolojisi", "value": "FLUID AMOLED" },
-        { "name": "Çözünürlük", "value": "3216 X 1440 PIXELS" },
-        { "name": "Ekran Yenileme Hızı (hz)", "value": "120 HZ" },
-        { "name": "Ön Kamera", "value": "16 MP" },
-        { "name": "Arka Kamera", "value": "48 MP + 50 MP + 8 MP + 2 MP" },
-        { "name": "4.5guyumu", "value": "5G" },
-        { "name": "İşlemci", "value": "SNAPDRAGON 888" },
-        { "name": "Ana İşlemci Hızı", "value": "2.84 GHZ, 8 ÇEKİRDEK" },
-        { "name": "Nfc", "value": "VAR" },
-        { "name": "Autofocus", "value": "VAR" }
+        {
+          "name": "Ürün Model Adı",
+          "value": "ONEPLUS 9 PRO"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "Çin"
+        },
+        {
+          "name": "İşletim Sistemi Versiyonu",
+          "value": "Android 12"
+        },
+        {
+          "name": "Dahili Hafıza",
+          "value": "256 GB"
+        },
+        {
+          "name": "Ram (bellek) Kapasitesi",
+          "value": "12 GB"
+        },
+        {
+          "name": "Ekran Boyutu",
+          "value": "6.7 INC"
+        },
+        {
+          "name": "Ekran Teknolojisi",
+          "value": "FLUID AMOLED"
+        },
+        {
+          "name": "Çözünürlük",
+          "value": "3216 X 1440 PIXELS"
+        },
+        {
+          "name": "Ekran Yenileme Hızı (hz)",
+          "value": "120 HZ"
+        },
+        {
+          "name": "Ön Kamera",
+          "value": "16 MP"
+        },
+        {
+          "name": "Arka Kamera",
+          "value": "48 MP + 50 MP + 8 MP + 2 MP"
+        },
+        {
+          "name": "4.5guyumu",
+          "value": "5G"
+        },
+        {
+          "name": "İşlemci",
+          "value": "SNAPDRAGON 888"
+        },
+        {
+          "name": "Ana İşlemci Hızı",
+          "value": "2.84 GHZ, 8 ÇEKİRDEK"
+        },
+        {
+          "name": "Nfc",
+          "value": "VAR"
+        },
+        {
+          "name": "Autofocus",
+          "value": "VAR"
+        }
       ],
       "otherSellers": [
         {
@@ -701,36 +1023,38 @@
         {
           "title": "Renk",
           "options": [
-            { "label": "Gümüş", "color": "#c0c0c0" },
-            { "label": "Yeşil", "color": "#4caf50" },
-            { "label": "Mavi", "color": "#2196f3" },
-            { "label": "Siyah", "color": "#000000" }
+            {
+              "label": "Gümüş",
+              "color": "#c0c0c0"
+            },
+            {
+              "label": "Yeşil",
+              "color": "#4caf50"
+            },
+            {
+              "label": "Mavi",
+              "color": "#2196f3"
+            },
+            {
+              "label": "Siyah",
+              "color": "#000000"
+            }
           ]
         },
         {
           "title": "Hafıza",
-          "options": ["128 GB", "256 GB"]
+          "options": [
+            "128 GB",
+            "256 GB"
+          ]
         }
       ],
-      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
-      "comments": [
-        {
-          "id": 4,
-          "userId": 4,
-          "comment": "Çok memnunum",
-          "rating": 4,
-          "date": "2024-08-05T23:59:59.999Z"
-        }
+      "badges": [
+        "Hızlı Teslimat",
+        "Ücretsiz Kargo"
       ],
-      "qa": [
-        {
-          "id": 4,
-          "question": "Ekran koruyucu var mı?",
-          "answer": "Evet, kutuda bir adet ekran koruyucu bulunuyor.",
-          "questionDate": "2024-08-05T23:59:59.999Z",
-          "answerDate": "2024-08-05T23:59:59.999Z"
-        }
-      ],
+      "comments": [],
+      "qa": [],
       "creditCard": true,
       "fibabanka": true,
       "freeShipping": true,
@@ -765,22 +1089,70 @@
         "huawei-matebook/3.webp"
       ],
       "features": [
-        { "name": "Ürün Model Adı", "value": "P50 PRO 256GB" },
-        { "name": "Üretim Yeri", "value": "Çin" },
-        { "name": "İşletim Sistemi Versiyonu", "value": "HarmonyOS 2.0" },
-        { "name": "Dahili Hafıza", "value": "256 GB" },
-        { "name": "Ram (bellek) Kapasitesi", "value": "8 GB" },
-        { "name": "Ekran Boyutu", "value": "6.6 INC" },
-        { "name": "Ekran Teknolojisi", "value": "OLED" },
-        { "name": "Çözünürlük", "value": "2700 X 1228 PIXELS" },
-        { "name": "Ekran Yenileme Hızı (hz)", "value": "120 HZ" },
-        { "name": "Ön Kamera", "value": "13 MP" },
-        { "name": "Arka Kamera", "value": "50 MP + 40 MP + 13 MP + 64 MP" },
-        { "name": "4.5guyumu", "value": "5G" },
-        { "name": "İşlemci", "value": "KIRIN 9000" },
-        { "name": "Ana İşlemci Hızı", "value": "3.13 GHZ, 8 ÇEKİRDEK" },
-        { "name": "Nfc", "value": "VAR" },
-        { "name": "Autofocus", "value": "VAR" }
+        {
+          "name": "Ürün Model Adı",
+          "value": "P50 PRO 256GB"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "Çin"
+        },
+        {
+          "name": "İşletim Sistemi Versiyonu",
+          "value": "HarmonyOS 2.0"
+        },
+        {
+          "name": "Dahili Hafıza",
+          "value": "256 GB"
+        },
+        {
+          "name": "Ram (bellek) Kapasitesi",
+          "value": "8 GB"
+        },
+        {
+          "name": "Ekran Boyutu",
+          "value": "6.6 INC"
+        },
+        {
+          "name": "Ekran Teknolojisi",
+          "value": "OLED"
+        },
+        {
+          "name": "Çözünürlük",
+          "value": "2700 X 1228 PIXELS"
+        },
+        {
+          "name": "Ekran Yenileme Hızı (hz)",
+          "value": "120 HZ"
+        },
+        {
+          "name": "Ön Kamera",
+          "value": "13 MP"
+        },
+        {
+          "name": "Arka Kamera",
+          "value": "50 MP + 40 MP + 13 MP + 64 MP"
+        },
+        {
+          "name": "4.5guyumu",
+          "value": "5G"
+        },
+        {
+          "name": "İşlemci",
+          "value": "KIRIN 9000"
+        },
+        {
+          "name": "Ana İşlemci Hızı",
+          "value": "3.13 GHZ, 8 ÇEKİRDEK"
+        },
+        {
+          "name": "Nfc",
+          "value": "VAR"
+        },
+        {
+          "name": "Autofocus",
+          "value": "VAR"
+        }
       ],
       "otherSellers": [
         {
@@ -798,36 +1170,39 @@
         {
           "title": "Renk",
           "options": [
-            { "label": "Siyah", "color": "#000000" },
-            { "label": "Beyaz", "color": "#ffffff" },
-            { "label": "Altın", "color": "#ffd700" },
-            { "label": "Gümüş", "color": "#c0c0c0" }
+            {
+              "label": "Siyah",
+              "color": "#000000"
+            },
+            {
+              "label": "Beyaz",
+              "color": "#ffffff"
+            },
+            {
+              "label": "Altın",
+              "color": "#ffd700"
+            },
+            {
+              "label": "Gümüş",
+              "color": "#c0c0c0"
+            }
           ]
         },
         {
           "title": "Hafıza",
-          "options": ["256 GB", "512 GB"]
+          "options": [
+            "256 GB",
+            "512 GB"
+          ]
         }
       ],
-      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo", "6 Ay Taksit"],
-      "comments": [
-        {
-          "id": 5,
-          "userId": 5,
-          "comment": "Kamera performansı müthiş",
-          "rating": 5,
-          "date": "2024-08-10T23:59:59.999Z"
-        }
+      "badges": [
+        "Hızlı Teslimat",
+        "Ücretsiz Kargo",
+        "6 Ay Taksit"
       ],
-      "qa": [
-        {
-          "id": 5,
-          "question": "Yüz tanıma var mı?",
-          "answer": "Evet, yüz tanıma özelliği bulunmaktadır.",
-          "questionDate": "2024-08-10T23:59:59.999Z",
-          "answerDate": "2024-08-10T23:59:59.999Z"
-        }
-      ],
+      "comments": [],
+      "qa": [],
       "creditCard": true,
       "fibabanka": true,
       "freeShipping": true,
@@ -862,22 +1237,70 @@
         "corelli-vonic/3.webp"
       ],
       "features": [
-        { "name": "Ürün Model Adı", "value": "PIXEL 6 PRO" },
-        { "name": "Üretim Yeri", "value": "Vietnam" },
-        { "name": "İşletim Sistemi Versiyonu", "value": "Android 12" },
-        { "name": "Dahili Hafıza", "value": "128 GB" },
-        { "name": "Ram (bellek) Kapasitesi", "value": "12 GB" },
-        { "name": "Ekran Boyutu", "value": "6.71 INC" },
-        { "name": "Ekran Teknolojisi", "value": "LTPO OLED" },
-        { "name": "Çözünürlük", "value": "3120 X 1440 PIXELS" },
-        { "name": "Ekran Yenileme Hızı (hz)", "value": "120 HZ" },
-        { "name": "Ön Kamera", "value": "11.1 MP" },
-        { "name": "Arka Kamera", "value": "50 MP + 48 MP + 12 MP" },
-        { "name": "4.5guyumu", "value": "5G" },
-        { "name": "İşlemci", "value": "GOOGLE TENSOR" },
-        { "name": "Ana İşlemci Hızı", "value": "2.84 GHZ, 8 ÇEKİRDEK" },
-        { "name": "Nfc", "value": "VAR" },
-        { "name": "Autofocus", "value": "VAR" }
+        {
+          "name": "Ürün Model Adı",
+          "value": "PIXEL 6 PRO"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "Vietnam"
+        },
+        {
+          "name": "İşletim Sistemi Versiyonu",
+          "value": "Android 12"
+        },
+        {
+          "name": "Dahili Hafıza",
+          "value": "128 GB"
+        },
+        {
+          "name": "Ram (bellek) Kapasitesi",
+          "value": "12 GB"
+        },
+        {
+          "name": "Ekran Boyutu",
+          "value": "6.71 INC"
+        },
+        {
+          "name": "Ekran Teknolojisi",
+          "value": "LTPO OLED"
+        },
+        {
+          "name": "Çözünürlük",
+          "value": "3120 X 1440 PIXELS"
+        },
+        {
+          "name": "Ekran Yenileme Hızı (hz)",
+          "value": "120 HZ"
+        },
+        {
+          "name": "Ön Kamera",
+          "value": "11.1 MP"
+        },
+        {
+          "name": "Arka Kamera",
+          "value": "50 MP + 48 MP + 12 MP"
+        },
+        {
+          "name": "4.5guyumu",
+          "value": "5G"
+        },
+        {
+          "name": "İşlemci",
+          "value": "GOOGLE TENSOR"
+        },
+        {
+          "name": "Ana İşlemci Hızı",
+          "value": "2.84 GHZ, 8 ÇEKİRDEK"
+        },
+        {
+          "name": "Nfc",
+          "value": "VAR"
+        },
+        {
+          "name": "Autofocus",
+          "value": "VAR"
+        }
       ],
       "otherSellers": [
         {
@@ -895,35 +1318,35 @@
         {
           "title": "Renk",
           "options": [
-            { "label": "Geyik", "color": "#795548" },
-            { "label": "Güzel Koyu", "color": "#000000" },
-            { "label": "Panda", "color": "#ffffff" }
+            {
+              "label": "Geyik",
+              "color": "#795548"
+            },
+            {
+              "label": "Güzel Koyu",
+              "color": "#000000"
+            },
+            {
+              "label": "Panda",
+              "color": "#ffffff"
+            }
           ]
         },
         {
           "title": "Hafıza",
-          "options": ["128 GB", "256 GB"]
+          "options": [
+            "128 GB",
+            "256 GB"
+          ]
         }
       ],
-      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo", "12 Ay Taksit"],
-      "comments": [
-        {
-          "id": 6,
-          "userId": 6,
-          "comment": "Harika bir telefon",
-          "rating": 5,
-          "date": "2024-08-01T23:59:59.999Z"
-        }
+      "badges": [
+        "Hızlı Teslimat",
+        "Ücretsiz Kargo",
+        "12 Ay Taksit"
       ],
-      "qa": [
-        {
-          "id": 6,
-          "question": "Su geçirmez mi?",
-          "answer": "Evet, suya ve toza dayanıklıdır.",
-          "questionDate": "2024-08-01T23:59:59.999Z",
-          "answerDate": "2024-08-01T23:59:59.999Z"
-        }
-      ],
+      "comments": [],
+      "qa": [],
       "creditCard": true,
       "fibabanka": true,
       "freeShipping": true,
@@ -952,24 +1375,76 @@
       "limit": 2,
       "seller": "Vatan Bilgisayar",
       "description": "Sony Xperia 1 III, üstün kamera özellikleri ve yüksek performansı ile dikkat çekiyor. 256 GB depolama alanı ile tüm verilerinizi güvenle saklayın.",
-      "images": ["sigma-plus/1.webp", "sigma-plus/2.webp", "sigma-plus/3.webp"],
+      "images": [
+        "sigma-plus/1.webp",
+        "sigma-plus/2.webp",
+        "sigma-plus/3.webp"
+      ],
       "features": [
-        { "name": "Ürün Model Adı", "value": "XPERIA 1 III 256GB" },
-        { "name": "Üretim Yeri", "value": "Japonya" },
-        { "name": "İşletim Sistemi Versiyonu", "value": "Android 11" },
-        { "name": "Dahili Hafıza", "value": "256 GB" },
-        { "name": "Ram (bellek) Kapasitesi", "value": "12 GB" },
-        { "name": "Ekran Boyutu", "value": "6.5 INC" },
-        { "name": "Ekran Teknolojisi", "value": "OLED" },
-        { "name": "Çözünürlük", "value": "3840 X 1644 PIXELS" },
-        { "name": "Ekran Yenileme Hızı (hz)", "value": "120 HZ" },
-        { "name": "Ön Kamera", "value": "8 MP" },
-        { "name": "Arka Kamera", "value": "12 MP + 12 MP + 12 MP" },
-        { "name": "4.5guyumu", "value": "5G" },
-        { "name": "İşlemci", "value": "SNAPDRAGON 888" },
-        { "name": "Ana İşlemci Hızı", "value": "2.84 GHZ, 8 ÇEKİRDEK" },
-        { "name": "Nfc", "value": "VAR" },
-        { "name": "Autofocus", "value": "VAR" }
+        {
+          "name": "Ürün Model Adı",
+          "value": "XPERIA 1 III 256GB"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "Japonya"
+        },
+        {
+          "name": "İşletim Sistemi Versiyonu",
+          "value": "Android 11"
+        },
+        {
+          "name": "Dahili Hafıza",
+          "value": "256 GB"
+        },
+        {
+          "name": "Ram (bellek) Kapasitesi",
+          "value": "12 GB"
+        },
+        {
+          "name": "Ekran Boyutu",
+          "value": "6.5 INC"
+        },
+        {
+          "name": "Ekran Teknolojisi",
+          "value": "OLED"
+        },
+        {
+          "name": "Çözünürlük",
+          "value": "3840 X 1644 PIXELS"
+        },
+        {
+          "name": "Ekran Yenileme Hızı (hz)",
+          "value": "120 HZ"
+        },
+        {
+          "name": "Ön Kamera",
+          "value": "8 MP"
+        },
+        {
+          "name": "Arka Kamera",
+          "value": "12 MP + 12 MP + 12 MP"
+        },
+        {
+          "name": "4.5guyumu",
+          "value": "5G"
+        },
+        {
+          "name": "İşlemci",
+          "value": "SNAPDRAGON 888"
+        },
+        {
+          "name": "Ana İşlemci Hızı",
+          "value": "2.84 GHZ, 8 ÇEKİRDEK"
+        },
+        {
+          "name": "Nfc",
+          "value": "VAR"
+        },
+        {
+          "name": "Autofocus",
+          "value": "VAR"
+        }
       ],
       "otherSellers": [
         {
@@ -987,35 +1462,34 @@
         {
           "title": "Renk",
           "options": [
-            { "label": "Siyah", "color": "#000000" },
-            { "label": "Beyaz", "color": "#ffffff" },
-            { "label": "Mor", "color": "#9c27b0" }
+            {
+              "label": "Siyah",
+              "color": "#000000"
+            },
+            {
+              "label": "Beyaz",
+              "color": "#ffffff"
+            },
+            {
+              "label": "Mor",
+              "color": "#9c27b0"
+            }
           ]
         },
         {
           "title": "Hafıza",
-          "options": ["128 GB", "256 GB"]
+          "options": [
+            "128 GB",
+            "256 GB"
+          ]
         }
       ],
-      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
-      "comments": [
-        {
-          "id": 7,
-          "userId": 7,
-          "comment": "Kamera performansı çok iyi",
-          "rating": 4,
-          "date": "2024-08-15T23:59:59.999Z"
-        }
+      "badges": [
+        "Hızlı Teslimat",
+        "Ücretsiz Kargo"
       ],
-      "qa": [
-        {
-          "id": 7,
-          "question": "Kutusunda kulaklık var mı?",
-          "answer": "Evet, kutusunda kulaklık çıkmaktadır.",
-          "questionDate": "2024-08-15T23:59:59.999Z",
-          "answerDate": "2024-08-15T23:59:59.999Z"
-        }
-      ],
+      "comments": [],
+      "qa": [],
       "creditCard": true,
       "fibabanka": true,
       "freeShipping": true,
@@ -1044,19 +1518,42 @@
       "limit": null,
       "seller": "Messa İletişim",
       "description": "Lightning konnektörüne sahip iPhone, iPad veya iPod’unuzu eşzamanlamak ve şarj etmek için USB C veya Thunderbolt 3 (USB C) özellikli Mac’inize bağlayın.",
-      "images": ["apple-cable/1.webp"],
+      "images": [
+        "apple-cable/1.webp"
+      ],
       "features": [
         {
           "name": "Ürün Model Adı",
           "value": "APPLE USB-C TO LIGHTNING CABLE 1M"
         },
-        { "name": "Üretim Yeri", "value": "VİETNAM" },
-        { "name": "Kablo Çıkış Soket Tipi", "value": "LIGHTNING" },
-        { "name": "Giriş Soket Tipi", "value": "TYPE-C" },
-        { "name": "Kablo Materyali", "value": "ELASTİK" },
-        { "name": "Kablo Uzunluğu (m)", "value": "1 M" },
-        { "name": "Mfı Lisansı", "value": "VAR" },
-        { "name": "Orjınal Renk", "value": "BEYAZ" }
+        {
+          "name": "Üretim Yeri",
+          "value": "VİETNAM"
+        },
+        {
+          "name": "Kablo Çıkış Soket Tipi",
+          "value": "LIGHTNING"
+        },
+        {
+          "name": "Giriş Soket Tipi",
+          "value": "TYPE-C"
+        },
+        {
+          "name": "Kablo Materyali",
+          "value": "ELASTİK"
+        },
+        {
+          "name": "Kablo Uzunluğu (m)",
+          "value": "1 M"
+        },
+        {
+          "name": "Mfı Lisansı",
+          "value": "VAR"
+        },
+        {
+          "name": "Orjınal Renk",
+          "value": "BEYAZ"
+        }
       ],
       "otherSellers": [
         {
@@ -1073,28 +1570,20 @@
       "configuration": [
         {
           "title": "Renk",
-          "options": [{ "label": "Beyaz", "color": "#fff" }]
+          "options": [
+            {
+              "label": "Beyaz",
+              "color": "#fff"
+            }
+          ]
         }
       ],
-      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
-      "comments": [
-        {
-          "id": 7,
-          "userId": 7,
-          "comment": "Kamera performansı çok iyi",
-          "rating": 4,
-          "date": "2024-08-15T23:59:59.999Z"
-        }
+      "badges": [
+        "Hızlı Teslimat",
+        "Ücretsiz Kargo"
       ],
-      "qa": [
-        {
-          "id": 7,
-          "question": "Kutusunda kulaklık var mı?",
-          "answer": "Evet, kutusunda kulaklık çıkmaktadır.",
-          "questionDate": "2024-08-15T23:59:59.999Z",
-          "answerDate": "2024-08-15T23:59:59.999Z"
-        }
-      ],
+      "comments": [],
+      "qa": [],
       "creditCard": true,
       "fibabanka": true,
       "freeShipping": true,

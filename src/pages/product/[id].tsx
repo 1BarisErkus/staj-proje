@@ -6,6 +6,8 @@ import { Content } from "@/styles/ProductDetail";
 import Left from "@/components/ProductDetail/Left";
 import Right from "@/components/ProductDetail/Right";
 import OtherSellers from "@/components/ProductDetail/OtherSellers";
+import RecentReviews from "@/components/RecentReviews";
+import Features from "@/components/ProductDetail/Features";
 
 export async function getServerSideProps({ params }: { params: any }) {
   const queryClient = new QueryClient();
@@ -72,6 +74,15 @@ const Product = ({ params }: { params: any }) => {
         </Container>
       </Content>
       <OtherSellers data={data.otherSellers} />
+      <RecentReviews data={similarProducts} />
+      <Features
+        description={data.description}
+        features={data.features}
+        reviews={data.comments}
+        seller={data.seller}
+        productId={params.id}
+        qas={data.qa}
+      />
     </>
   );
 };
