@@ -98,23 +98,98 @@ export const LoginText = styled.p`
   }
 `;
 
-export const LoginBottomText = styled.p`
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-align: center;
-  cursor: pointer;
-  color: #ffc107;
-  text-align: end;
-  padding-top: 20px;
-  border-top: 1px solid #e9ecef;
+export const LoginHead = styled.h1`
+  font-size: 2rem;
+  margin-bottom: 2rem;
 
   @media (max-width: 768px) {
-    font-size: 0.6rem;
-    padding-top: 15px;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
   }
 
   @media (max-width: 576px) {
-    font-size: 0.5rem;
-    padding-top: 10px;
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+`;
+
+export const Input = styled.input`
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    padding: 8px;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 6px;
+    margin-bottom: 12px;
+  }
+`;
+
+export const LoginFormButton = styled.button`
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #ffc107;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+`;
+
+export const AlreadyMember = styled.div`
+  font-size: 0.8rem;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+
+  &:hover {
+    color: #ffc107;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+    margin-top: 16px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 0.6rem;
+    margin-top: 12px;
+  }
+`;
+
+export const Error = styled.p`
+  color: orangered;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 0.6rem;
+    margin-bottom: 6px;
   }
 `;

@@ -13,7 +13,7 @@ const sortOptions = [
 
 interface SortByProps {
   sortValue: string;
-  dispatch: any;
+  dispatch: React.Dispatch<{ type: string; payload: string }>;
 }
 
 const SortBy: React.FC<SortByProps> = ({ sortValue, dispatch }) => {

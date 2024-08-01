@@ -18,7 +18,10 @@ const priceOptions = [
 ];
 
 interface PriceProps {
-  dispatch: any;
+  dispatch: React.Dispatch<{
+    type: string;
+    payload: string | { min: number; max: number };
+  }>;
   prices: {
     min: number;
     max: number;
@@ -36,6 +39,7 @@ const Price: React.FC<PriceProps> = ({ dispatch, prices }) => {
       {isPriceOpen && (
         <div>
           {priceOptions.map((item, index) => {
+            console.log(item);
             return (
               <FilterOption
                 key={index}

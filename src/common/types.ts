@@ -18,7 +18,10 @@ export interface Product {
   images: string[];
   features: { name: string; value: string }[];
   otherSellers: { seller: string; price: number; rating: number }[];
-  configuration: { title: string; options: string[] }[];
+  configuration: {
+    title: string;
+    options: string[] | { label: string; color: string }[];
+  }[];
   badges: string[];
   comments: {
     id: number;

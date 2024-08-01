@@ -8,6 +8,7 @@ export const Conainer = styled.div`
 
 export const TopContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 50px;
 `;

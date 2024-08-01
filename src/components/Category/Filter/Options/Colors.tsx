@@ -21,7 +21,7 @@ export const filterColors = [
 ];
 
 interface ColorsProps {
-  dispatch: any;
+  dispatch: React.Dispatch<{ type: string; payload: string }>;
   colors: string[];
 }
 
@@ -38,7 +38,9 @@ const Colors: React.FC<ColorsProps> = ({ dispatch, colors }) => {
           {filterColors.map((color, index) => (
             <FilterOption
               key={index}
-              onClick={() => dispatch({ type: "COLORS", payload: color })}
+              onClick={() => {
+                dispatch({ type: "COLORS", payload: color });
+              }}
             >
               <CheckboxContainer>
                 <HiddenCheckbox />

@@ -95,7 +95,12 @@ const applyFilters = (data: Product[], state: FilterState) => {
     .filter((product) =>
       state.colors.length
         ? product.configuration.some((config) =>
-            config.options.some((option) => state.colors.includes(option))
+            config.options.some((option) => {
+              if (typeof option === "object" && "label" in option) {
+                return state.colors.includes(option.label);
+              }
+              return false;
+            })
           )
         : true
     )
@@ -145,6 +150,17 @@ const Filter = ({ data, params }: { data: Product[]; params: any }) => {
       brandOptions.push(product.brandCode);
     }
   });
+
+  // let colorOptions = data.forEach((product) => {
+  //   product.configuration.forEach((config) => {
+  //     if (config.name === "Renk") {
+  //       config.options.forEach((option) => {
+  //         if (!colorOptions.includes(option)) {
+  //           colorOptions.push(option);
+  //         }
+  //       });
+  //     }
+  //   });
 
   return (
     <Container>

@@ -11,7 +11,7 @@ import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 import { capitalizeFirstLetter } from "@/lib/helpers";
 
 interface BrandsProps {
-  dispatch: any;
+  dispatch: React.Dispatch<{ type: string; payload: string }>;
   brands: string[];
   brandOptions: string[];
 }
@@ -29,15 +29,11 @@ const Brands: React.FC<BrandsProps> = ({ dispatch, brands, brandOptions }) => {
           {brandOptions.map((brand, index) => (
             <FilterOption
               key={index}
-              onClick={() =>
-                dispatch({ type: "BRANDS", payload: brand.toLowerCase() })
-              }
+              onClick={() => dispatch({ type: "BRANDS", payload: brand })}
             >
               <CheckboxContainer>
                 <HiddenCheckbox />
-                <StyledCheckbox
-                  checked={brands.includes(brand.toLowerCase())}
-                />
+                <StyledCheckbox checked={brands.includes(brand)} />
               </CheckboxContainer>
               {capitalizeFirstLetter(brand)}
             </FilterOption>

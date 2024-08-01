@@ -11,7 +11,7 @@ import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 import { Header } from "@/styles/Category";
 
 interface SellersProps {
-  dispatch: any;
+  dispatch: React.Dispatch<{ type: string; payload: string }>;
   sellers: string[];
   sellerOptions: string[];
 }

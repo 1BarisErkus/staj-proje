@@ -6,7 +6,10 @@ import Price from "./Price";
 import Sellers from "./Sellers";
 
 interface FilterComponentProps {
-  dispatch: any;
+  dispatch: React.Dispatch<{
+    type: string;
+    payload: string | { min: number; max: number };
+  }>;
   brands: string[];
   colors: string[];
   prices: {
