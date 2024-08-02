@@ -151,16 +151,22 @@ const Filter = ({ data, params }: { data: Product[]; params: any }) => {
     }
   });
 
-  // let colorOptions = data.forEach((product) => {
-  //   product.configuration.forEach((config) => {
-  //     if (config.name === "Renk") {
-  //       config.options.forEach((option) => {
-  //         if (!colorOptions.includes(option)) {
-  //           colorOptions.push(option);
-  //         }
-  //       });
-  //     }
-  //   });
+  let colorOptions: string[] = [];
+  data.forEach((product) => {
+    product.configuration.forEach((config) => {
+      if (config.title === "Renk") {
+        config.options.forEach((option) => {
+          if (
+            typeof option === "object" &&
+            "label" in option &&
+            !colorOptions.includes(option.label)
+          ) {
+            colorOptions.push(option.label);
+          }
+        });
+      }
+    });
+  });
 
   return (
     <Container>
@@ -195,6 +201,7 @@ const Filter = ({ data, params }: { data: Product[]; params: any }) => {
             sellers={state.sellers}
             sellerOptions={sellerOptions}
             brandOptions={brandOptions}
+            colorOptions={colorOptions}
           />
         </StyledLeftCol>
         <Col size={9}>

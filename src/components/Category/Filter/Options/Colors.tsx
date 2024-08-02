@@ -9,23 +9,13 @@ import {
 } from "@/styles/Category/Options";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 
-export const filterColors = [
-  "Beyaz",
-  "Siyah",
-  "Pembe",
-  "Gümüş",
-  "Yeşil",
-  "Mavi",
-  "Altın",
-  "Mor",
-];
-
 interface ColorsProps {
   dispatch: React.Dispatch<{ type: string; payload: string }>;
   colors: string[];
+  colorOptions: string[];
 }
 
-const Colors: React.FC<ColorsProps> = ({ dispatch, colors }) => {
+const Colors: React.FC<ColorsProps> = ({ dispatch, colors, colorOptions }) => {
   const [isColorOpen, setIsColorOpen] = useState<boolean>(false);
 
   return (
@@ -35,7 +25,7 @@ const Colors: React.FC<ColorsProps> = ({ dispatch, colors }) => {
       </Header>
       {isColorOpen && (
         <div>
-          {filterColors.map((color, index) => (
+          {colorOptions.map((color, index) => (
             <FilterOption
               key={index}
               onClick={() => {
