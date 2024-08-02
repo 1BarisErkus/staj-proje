@@ -46,7 +46,11 @@ const Navbar = () => {
               <IoChevronDownSharp size={24} />
             </span>
           </Button>
-          <AuthModal isOpen={isModalOpen} onClose={closeModal} />
+          <AuthModal
+            isOpen={isModalOpen}
+            setIsModalOpen={setIsModalOpen}
+            onClose={closeModal}
+          />
         </Col>
         <Col size={2}>
           <Button $primary $withicon>

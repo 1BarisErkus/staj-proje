@@ -18,6 +18,7 @@ import "@smastrom/react-rating/style.css";
 import GlobalStyles from "@/styles/GlobalStyles";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SessionProvider from "@/lib/SessionProvider";
 
 const greycliffCF = localFont({
   src: [
@@ -50,20 +51,22 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <HydrationBoundary state={pageProps.dehydratedState}>
-        <Head>
-          <title>Staj Final</title>
-          <link rel="icon" href="/images/favicon.png" />
-        </Head>
-        <div className={`${greycliffCF.className}`}>
-          <GlobalStyles />
-          <Header />
-          <main>
-            <Component {...pageProps} />
-          </main>
-          <Footer />
-          <ToastContainer />
-        </div>
-        <ReactQueryDevtools />
+        <SessionProvider>
+          <Head>
+            <title>Staj Final</title>
+            <link rel="icon" href="/images/favicon.png" />
+          </Head>
+          <div className={`${greycliffCF.className}`}>
+            <GlobalStyles />
+            <Header />
+            <main>
+              <Component {...pageProps} />
+            </main>
+            <Footer />
+            <ToastContainer />
+          </div>
+          <ReactQueryDevtools />
+        </SessionProvider>
       </HydrationBoundary>
     </QueryClientProvider>
   );
