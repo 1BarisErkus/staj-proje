@@ -7,9 +7,11 @@ import Search from "./Search";
 import { useState } from "react";
 import AuthModal from "./AuthModal";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -53,7 +55,7 @@ const Navbar = () => {
           />
         </Col>
         <Col size={2}>
-          <Button $primary $withicon>
+          <Button $primary $withicon onClick={() => router.push("/basket")}>
             <span>
               <BsCart4 size={24} />
             </span>

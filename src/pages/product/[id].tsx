@@ -57,6 +57,8 @@ const Product = ({ params }: { params: any }) => {
               similarProducts={similarProducts}
             />
             <Right
+              id={data.id}
+              image={data.images[0]}
               name={data.name}
               discountEndTime={data.discountEndTime}
               stock={data.stock}

@@ -1,5 +1,4 @@
 import { BASE_URL } from "./baseUrl";
-import { v4 as uuidv4 } from "uuid";
 
 export const getUser = async (id: string) => {
   const response = await fetch(`${BASE_URL}/users/${id}`);
@@ -31,4 +30,10 @@ export const addUser = async (user: {
   const data = await response.json();
 
   return data;
+};
+
+export const getBasket = async (userId: string) => {
+  const data = await getUser(userId);
+
+  return data.basket;
 };

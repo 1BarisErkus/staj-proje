@@ -57,3 +57,23 @@ export interface ProductProps {
   badges: string[];
   discountPercentage: number;
 }
+
+export interface ProductForBasket {
+  productId: string;
+  image: string;
+  name: string;
+  color: string | null;
+  memory: string | null;
+  price: number;
+  count: number;
+}
+
+export interface ColorOptions {
+  label: string;
+  color: string;
+}
+
+export interface Configuration {
+  title: string;
+  options: ColorOptions[] | string[];
+}

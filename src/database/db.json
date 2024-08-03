@@ -1,5 +1,14 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": "wuhEiFqcxse8NeTLAAcB4B3DDko1",
+      "name": "Barış Erkuş",
+      "email": "baris@gmail.com",
+      "isAdmin": false,
+      "basket": [],
+      "favorites": []
+    }
+  ],
   "products": [
     {
       "id": "1",

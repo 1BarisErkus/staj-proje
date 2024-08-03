@@ -68,8 +68,6 @@ const AuthModal: React.FC<ModalProps> = ({
 
   const session = useSession();
 
-  // console.log(session);
-
   const {
     register,
     handleSubmit,
@@ -91,10 +89,10 @@ const AuthModal: React.FC<ModalProps> = ({
       setIsModalOpen(false);
       router.push("/");
       notify("Giriş başarılı", "success");
-      reset();
     } else {
       notify("Kullanıcı adı veya şifre hatalı !", "error");
     }
+    reset();
   };
   const registerSubmit: SubmitHandler<RegisterInputs> = async (data) => {
     try {
@@ -103,18 +101,17 @@ const AuthModal: React.FC<ModalProps> = ({
         data.email,
         data.password
       );
-      console.log(user);
       notify(`Üyeliğiniz oluşturuldu ${data.name} ${data.surname}`, "success");
       await addUser({
         id: user.uid,
         name: `${data.name} ${data.surname}`,
         email: data.email,
       });
-      reset();
       setIsAuth("login");
     } catch (error: any) {
       notify(error.message, "error");
     }
+    reset();
   };
 
   if (!isOpen) {

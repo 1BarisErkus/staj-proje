@@ -1,0 +1,54 @@
+import React from "react";
+import Section from "../Section";
+import { Product } from "@/common/types";
+import CustomSwiper from "../CustomSwiper";
+import { Navigation } from "swiper/modules";
+import { SwiperSlide } from "swiper/react";
+import Card from "../Card";
+
+const MayInterestYou = ({ data }: { data: Product[] }) => {
+  return (
+    <Section title="İlginizi Çekebilecek Ürünler">
+      <CustomSwiper
+        slidesPerView={1}
+        breakpoints={{
+          768: {
+            slidesPerView: data?.length < 2 ? data?.length : 2,
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: data?.length < 3 ? data?.length : 3,
+            spaceBetween: 20,
+          },
+          1700: {
+            slidesPerView: data?.length < 4 ? data?.length : 4,
+            spaceBetween: 30,
+          },
+        }}
+        modules={[Navigation]}
+        navigation
+      >
+        {data?.map(
+          (product: {
+            id: string;
+            images: string[];
+            name: string;
+            price: number;
+          }) => (
+            <SwiperSlide key={product.id}>
+              <Card
+                id={product.id}
+                images={product.images}
+                name={product.name}
+                price={product.price}
+                type="SpecialForYou"
+              />
+            </SwiperSlide>
+          )
+        )}
+      </CustomSwiper>
+    </Section>
+  );
+};
+
+export default MayInterestYou;
