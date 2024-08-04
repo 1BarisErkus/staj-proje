@@ -31,9 +31,3 @@ export const addUser = async (user: {
 
   return data;
 };
-
-export const getBasket = async (userId: string) => {
-  const data = await getUser(userId);
-
-  return data.basket;
-};

@@ -3,6 +3,13 @@ import { BASE_URL } from "./baseUrl";
 import { getUser } from "./user";
 import { v4 as uuidv4 } from "uuid";
 
+export const getBasket = async (userId: string) => {
+  if (!userId) return [];
+
+  const data = await getUser(userId);
+  return data.basket;
+};
+
 export const addProductToBasket = async (
   userId: string,
   { productId, image, name, color, memory, price, count }: ProductForBasket
