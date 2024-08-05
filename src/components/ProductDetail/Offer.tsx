@@ -9,6 +9,7 @@ interface OfferProps {
   seller: string;
   freeShipping: boolean;
   price: number;
+  discountPercentage: number;
 }
 
 const Offer: React.FC<OfferProps> = ({
@@ -18,12 +19,16 @@ const Offer: React.FC<OfferProps> = ({
   seller,
   freeShipping,
   price,
+  discountPercentage,
 }) => {
   const [selectedOffer, setSelectedOffer] = useState<number>(1);
 
   const handleSelect = (index: number) => {
     setSelectedOffer(index);
   };
+
+  const discountAmount = (price * discountPercentage) / 100;
+  const discountPrice = price - discountAmount;
 
   return (
     <OfferWrapper>
@@ -37,9 +42,12 @@ const Offer: React.FC<OfferProps> = ({
           onSelect={() => handleSelect(0)}
         />
       )}
+
       <OfferBox
         title={seller}
-        price={price.toString()}
+        price={
+          discountPercentage > 0 ? discountPrice.toString() : price.toString()
+        }
         selected={selectedOffer === 1}
         tag={freeShipping ? "Ücretsiz Kargo" : ""}
         tagColor="#2855AC"

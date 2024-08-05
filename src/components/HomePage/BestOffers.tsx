@@ -1,18 +1,9 @@
-import { Product } from "@/common/types";
+import { Product, ProductProps } from "@/common/types";
 import Section from "../Section";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 import Card from "../Card";
 import { Navigation } from "swiper/modules";
 import CustomSwiper from "../CustomSwiper";
-
-interface BestOffersProductProps {
-  id: string;
-  images: string[];
-  name: string;
-  price: number;
-  badges: string[];
-  discountPercentage: number;
-}
 
 const BestOffers = ({ data }: { data: Product[] }) => {
   return (
@@ -36,7 +27,7 @@ const BestOffers = ({ data }: { data: Product[] }) => {
         navigation={true}
         modules={[Navigation]}
       >
-        {data?.map((product: BestOffersProductProps) => (
+        {data?.map((product: ProductProps) => (
           <SwiperSlide key={product.id}>
             <Card
               id={product.id}
@@ -44,7 +35,6 @@ const BestOffers = ({ data }: { data: Product[] }) => {
               name={product.name}
               price={product.price}
               badges={product.badges}
-              type="BestOffers"
               discountPercentage={product.discountPercentage}
             />
           </SwiperSlide>

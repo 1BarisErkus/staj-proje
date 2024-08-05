@@ -2,7 +2,6 @@ import Image from "next/image";
 import styled from "styled-components";
 
 interface CardWrapperProps {
-  type?: string;
   size?: string;
 }
 
@@ -16,8 +15,7 @@ export const CardWrapper = styled.div<CardWrapperProps>`
   padding: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 280px;
-  min-height: ${(props) =>
-    props.type === "SpecialForYou" ? "300px" : "420px"};
+  min-height: 420px;
   position: relative;
 
   ${({ size }) =>
@@ -83,7 +81,7 @@ export const BadgeWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-top: 10px;
-  height: 30px;
+  height: 25px;
 `;
 
 export const Badge = styled.span`

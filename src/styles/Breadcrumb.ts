@@ -5,7 +5,7 @@ export const BreadcrumbWrapper = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
-  background-color: #f8f8f8;
+  background-color: transparent;
   padding: 20px 0;
 `;
 

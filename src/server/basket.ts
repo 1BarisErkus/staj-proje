@@ -12,7 +12,16 @@ export const getBasket = async (userId: string) => {
 
 export const addProductToBasket = async (
   userId: string,
-  { productId, image, name, color, memory, price, count }: ProductForBasket
+  {
+    productId,
+    image,
+    name,
+    color,
+    memory,
+    price,
+    count,
+    seller,
+  }: ProductForBasket
 ) => {
   const user = await getUser(userId);
 
@@ -24,7 +33,8 @@ export const addProductToBasket = async (
       product.memory === memory &&
       product.price === price &&
       product.name === name &&
-      product.image === image
+      product.image === image &&
+      product.seller === seller
   );
 
   if (productIndex !== -1) {
@@ -39,8 +49,36 @@ export const addProductToBasket = async (
       memory,
       price,
       count,
+      seller,
     };
     basket.push(newBasketItem);
+  }
+
+  const response = await fetch(`${BASE_URL}/users/${userId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ ...user, basket }),
+  });
+
+  const data = await response.json();
+  return data.basket;
+};
+
+export const removeProductFromBasket = async (
+  userId: string,
+  productId: string
+) => {
+  const user = await getUser(userId);
+
+  const basket = user.basket;
+  const productIndex = basket.findIndex(
+    (product: ProductForBasket) => product.productId === productId
+  );
+
+  if (productIndex !== -1) {
+    basket.splice(productIndex, 1);
   }
 
   const response = await fetch(`${BASE_URL}/users/${userId}`, {

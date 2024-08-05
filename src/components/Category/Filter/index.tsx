@@ -215,7 +215,6 @@ const Filter = ({ data, params }: { data: Product[]; params: any }) => {
                 name={product.name}
                 price={product.price}
                 badges={product.badges}
-                type="BestOffers"
                 discountPercentage={product.discountPercentage}
                 fibabanka={product.fibabanka}
                 isBestSeller={product.isBestSeller}

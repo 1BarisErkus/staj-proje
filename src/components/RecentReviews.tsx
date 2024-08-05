@@ -35,7 +35,6 @@ const RecentReviews = ({ data }: { data: Product[] }) => {
               name={product.name}
               price={product.price}
               badges={product.badges}
-              type="BestOffers"
               discountPercentage={product.discountPercentage}
             />
           </SwiperSlide>

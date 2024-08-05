@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Key } from "react";
 import { GetServerSideProps } from "next";
 import { useQuery } from "@tanstack/react-query";
 import { getSession } from "next-auth/react";
@@ -8,6 +8,9 @@ import NoItem from "@/components/Basket/NoItem";
 import { getProducts } from "@/server/posts";
 import { getBasket } from "@/server/basket";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
+import BasketItem from "@/components/Basket/BasketItem";
+import { BasketItemsContainer, TitleOrder, Wrapper } from "@/styles/Basket";
+import BasketSummary from "@/components/Basket/BasketSummary";
 
 interface BasketProps {
   dehydratedState: unknown;
@@ -23,14 +26,54 @@ const Basket: FC<BasketProps> = ({ session }) => {
   const mayInterestYouData = data ? data.slice(0, 6) : [];
 
   return (
-    <Container>
-      <Row>
-        <Col>
-          {basket?.length > 0 ? <div>asdadsa</div> : <NoItem />}
-          <MayInterestYou data={mayInterestYouData} />
-        </Col>
-      </Row>
-    </Container>
+    <Wrapper>
+      <Container>
+        {basket?.length === 0 ? (
+          <NoItem />
+        ) : (
+          <>
+            <TitleOrder>Sepetim</TitleOrder>
+            <Row>
+              <Col size={8}>
+                <BasketItemsContainer>
+                  {basket.map(
+                    (item: {
+                      id: Key | null | undefined;
+                      userId: string;
+                      productId: string;
+                      image: string;
+                      name: string;
+                      memory: string;
+                      color: string;
+                      price: number;
+                      count: number;
+                      seller: string;
+                    }) => (
+                      <BasketItem
+                        key={item.id}
+                        userId={session?.user.uid}
+                        productId={item.productId}
+                        image={item.image}
+                        name={item.name}
+                        memory={item.memory ? item.memory : null}
+                        color={item.color}
+                        price={item.price}
+                        count={item.count}
+                        seller={item.seller}
+                      />
+                    )
+                  )}
+                </BasketItemsContainer>
+              </Col>
+              <Col size={4}>
+                <BasketSummary />
+              </Col>
+            </Row>
+          </>
+        )}
+        <MayInterestYou data={mayInterestYouData} />
+      </Container>
+    </Wrapper>
   );
 };
 

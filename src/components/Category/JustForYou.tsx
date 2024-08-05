@@ -1,4 +1,4 @@
-import { Product } from "@/common/types";
+import { Product, ProductProps } from "@/common/types";
 import CustomSwiper from "../CustomSwiper";
 import Section from "../Section";
 import { Navigation } from "swiper/modules";
@@ -27,7 +27,7 @@ const JustForYou = ({ data }: { data: Product[] }) => {
         navigation={true}
         modules={[Navigation]}
       >
-        {data?.map((product) => (
+        {data?.map((product: ProductProps) => (
           <SwiperSlide key={product.id}>
             <Card
               id={product.id}
@@ -35,7 +35,6 @@ const JustForYou = ({ data }: { data: Product[] }) => {
               name={product.name}
               price={product.price}
               badges={product.badges}
-              type="SpecialForYou"
               discountPercentage={product.discountPercentage}
             />
           </SwiperSlide>

@@ -2,7 +2,7 @@ import Section from "../Section";
 import { SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import Card from "../Card";
-import { Product } from "@/common/types";
+import { Product, ProductProps } from "@/common/types";
 import CustomSwiper from "../CustomSwiper";
 
 const SpecialForYou = ({ data }: { data: Product[] }) => {
@@ -27,24 +27,17 @@ const SpecialForYou = ({ data }: { data: Product[] }) => {
         modules={[Navigation]}
         navigation
       >
-        {data?.map(
-          (product: {
-            id: string;
-            images: string[];
-            name: string;
-            price: number;
-          }) => (
-            <SwiperSlide key={product.id}>
-              <Card
-                id={product.id}
-                images={product.images}
-                name={product.name}
-                price={product.price}
-                type="SpecialForYou"
-              />
-            </SwiperSlide>
-          )
-        )}
+        {data?.map((product: ProductProps) => (
+          <SwiperSlide key={product.id}>
+            <Card
+              id={product.id}
+              images={product.images}
+              name={product.name}
+              price={product.price}
+              discountPercentage={product.discountPercentage}
+            />
+          </SwiperSlide>
+        ))}
       </CustomSwiper>
     </Section>
   );

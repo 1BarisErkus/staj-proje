@@ -1,6 +1,6 @@
 import React from "react";
 import Section from "../Section";
-import { Product } from "@/common/types";
+import { Product, ProductProps } from "@/common/types";
 import CustomSwiper from "../CustomSwiper";
 import { Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
@@ -28,24 +28,17 @@ const MayInterestYou = ({ data }: { data: Product[] }) => {
         modules={[Navigation]}
         navigation
       >
-        {data?.map(
-          (product: {
-            id: string;
-            images: string[];
-            name: string;
-            price: number;
-          }) => (
-            <SwiperSlide key={product.id}>
-              <Card
-                id={product.id}
-                images={product.images}
-                name={product.name}
-                price={product.price}
-                type="SpecialForYou"
-              />
-            </SwiperSlide>
-          )
-        )}
+        {data?.map((product: ProductProps) => (
+          <SwiperSlide key={product.id}>
+            <Card
+              id={product.id}
+              images={product.images}
+              name={product.name}
+              price={product.price}
+              discountPercentage={product.discountPercentage}
+            />
+          </SwiperSlide>
+        ))}
       </CustomSwiper>
     </Section>
   );

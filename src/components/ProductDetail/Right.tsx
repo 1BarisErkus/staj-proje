@@ -14,6 +14,7 @@ interface RightProps {
   id: string;
   name: string;
   image: string;
+  discountPercentage: number;
   discountEndTime: string;
   stock: number;
   configuration: Configuration[];
@@ -31,6 +32,7 @@ const Right: React.FC<RightProps> = ({
   id,
   image,
   name,
+  discountPercentage,
   discountEndTime,
   stock,
   configuration,
@@ -61,6 +63,7 @@ const Right: React.FC<RightProps> = ({
       price,
       count: 1,
       memory: configuration[1] ? selectedMemory : null,
+      seller: seller,
     };
 
     await addProductToBasket(
@@ -85,6 +88,7 @@ const Right: React.FC<RightProps> = ({
         seller={seller}
         price={price}
         freeShipping={freeShipping}
+        discountPercentage={discountPercentage}
       />
       <Button onClick={handleClick}>Sepete Ekle</Button>
       <Badges

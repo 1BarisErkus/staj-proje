@@ -34,7 +34,6 @@ const TakenTogether: React.FC<TakenTogetherProps> = ({ similarProducts }) => {
               name={product.name}
               price={product.price}
               badges={product.badges}
-              type="SpecialForYou"
               discountPercentage={product.discountPercentage}
               size="small"
             />

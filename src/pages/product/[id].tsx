@@ -60,6 +60,7 @@ const Product = ({ params }: { params: any }) => {
               id={data.id}
               image={data.images[0]}
               name={data.name}
+              discountPercentage={data.discountPercentage}
               discountEndTime={data.discountEndTime}
               stock={data.stock}
               configuration={data.configuration}
