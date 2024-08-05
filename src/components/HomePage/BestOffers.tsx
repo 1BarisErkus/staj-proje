@@ -18,15 +18,15 @@ const BestOffers = ({
         slidesPerView={1}
         breakpoints={{
           768: {
-            slidesPerView: data?.length < 2 ? data?.length : 2,
+            slidesPerView: 2,
             spaceBetween: 10,
           },
           1024: {
-            slidesPerView: data?.length < 3 ? data?.length : 3,
+            slidesPerView: 3,
             spaceBetween: 20,
           },
           1700: {
-            slidesPerView: data?.length < 4 ? data?.length : 4,
+            slidesPerView: 4,
             spaceBetween: 20,
           },
         }}

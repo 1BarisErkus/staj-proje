@@ -16,27 +16,31 @@ const Favorites = ({ session }: { session: any }) => {
       await getFavorites((session?.user as { uid: string })?.uid),
   });
 
-  const favoritesDate = data?.filter((product: Product) =>
+  const favoritesData = data?.filter((product: Product) =>
     favorites.includes(product.id)
   );
 
   return (
     <Section title="Favorilerim">
       <CardList>
-        {favoritesDate?.slice(0, 8).map((product: Product) => (
-          <Card
-            key={product.id}
-            id={product.id}
-            images={product.images}
-            name={product.name}
-            price={product.price}
-            badges={product.badges}
-            discountPercentage={product.discountPercentage}
-            fibabanka={product.fibabanka}
-            isBestSeller={product.isBestSeller}
-            isFavorite={favorites.includes(product.id)}
-          />
-        ))}
+        {favoritesData.length > 0 ? (
+          favoritesData?.map((product: Product) => (
+            <Card
+              key={product.id}
+              id={product.id}
+              images={product.images}
+              name={product.name}
+              price={product.price}
+              badges={product.badges}
+              discountPercentage={product.discountPercentage}
+              fibabanka={product.fibabanka}
+              isBestSeller={product.isBestSeller}
+              isFavorite={favorites.includes(product.id)}
+            />
+          ))
+        ) : (
+          <p>Favori ürününüz bulunmamaktadır.</p>
+        )}
       </CardList>
     </Section>
   );
