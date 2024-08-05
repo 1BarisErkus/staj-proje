@@ -130,6 +130,7 @@ const Filter = ({ data, params }: { data: Product[]; params: any }) => {
   const [state, dispatch] = useReducer<
     React.Reducer<FilterState, FilterAction>
   >(reducer, initialArgs);
+
   const [compareMode, setCompareMode] = useState(false);
   const [filteredData, setFilteredData] = useState<Product[]>(data);
 
@@ -179,8 +180,8 @@ const Filter = ({ data, params }: { data: Product[]; params: any }) => {
       <Row>
         <StyledLeftCol size={3}>
           <InfoBox
-            category={data[0].category}
-            subCategory={data[0].subCategory}
+            category={data[0]?.category}
+            subCategory={data[0]?.subCategory}
             dataLength={data.length}
             params={params}
           />

@@ -22,7 +22,7 @@ const Top = () => {
               <span>turkcell.com.tr</span>
             </Logo>
             <Nav>
-              <NavLink href="#">Favorilerim</NavLink>
+              <NavLink href="/favorites">Favorilerim</NavLink>
               <NavLink href="#">Kampanyalar</NavLink>
               {router.pathname === "/" && (
                 <>

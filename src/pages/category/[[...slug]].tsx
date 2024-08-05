@@ -26,31 +26,28 @@ export async function getServerSideProps({ params }: { params: any }) {
 const ProductFilter = ({ params }: { params: any }) => {
   const { data } = useQuery({ queryKey: ["products"], queryFn: getProducts });
 
-  const justForYouMainData = data
+  const justForYouData = data
     ? data.filter(
-        (product: { brandCode: string }) =>
-          product.brandCode === params.slug[params.slug.length - 1]
+        (product: { categoryCode: string; subCategoryCode: string }) =>
+          params.slug.length > 1
+            ? product.categoryCode === params.slug[params.slug.length - 2] &&
+              product.subCategoryCode === params.slug[params.slug.length - 1]
+            : product.categoryCode === params.slug[params.slug.length - 1]
       )
     : [];
-
-  const justForYouData =
-    justForYouMainData.length > 1
-      ? justForYouMainData
-      : data.filter(
-          (product: { categoryCode: string }) =>
-            product.categoryCode === params.slug[params.slug.length - 1]
-        );
 
   return (
     <>
       <Breadcrumb
-        category={data[0].category}
-        subCategory={params.slug.length > 1 ? data[0].subCategory : ""}
+        category={justForYouData[0]?.category}
+        subCategory={
+          params.slug.length > 1 ? justForYouData[0]?.subCategory : ""
+        }
       />
       <Content>
         <Title title={params.slug[params.slug.length - 1]} />
         <JustForYou data={justForYouData} />
-        <Filter data={data} params={params} />
+        <Filter data={justForYouData} params={params} />
       </Content>
     </>
   );

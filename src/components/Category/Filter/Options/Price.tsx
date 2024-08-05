@@ -39,7 +39,6 @@ const Price: React.FC<PriceProps> = ({ dispatch, prices }) => {
       {isPriceOpen && (
         <div>
           {priceOptions.map((item, index) => {
-            console.log(item);
             return (
               <FilterOption
                 key={index}

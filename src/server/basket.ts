@@ -1,7 +1,8 @@
 import { ProductForBasket } from "@/common/types";
-import { BASE_URL } from "./baseUrl";
 import { getUser } from "./user";
 import { v4 as uuidv4 } from "uuid";
+
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const getBasket = async (userId: string) => {
   if (!userId) return [];
@@ -54,7 +55,7 @@ export const addProductToBasket = async (
     basket.push(newBasketItem);
   }
 
-  const response = await fetch(`${BASE_URL}/users/${userId}`, {
+  const response = await fetch(`${baseUrl}/users/${userId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -81,7 +82,7 @@ export const removeProductFromBasket = async (
     basket.splice(productIndex, 1);
   }
 
-  const response = await fetch(`${BASE_URL}/users/${userId}`, {
+  const response = await fetch(`${baseUrl}/users/${userId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

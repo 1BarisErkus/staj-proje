@@ -24,6 +24,10 @@ export const CardWrapper = styled.div<CardWrapperProps>`
     width: 160px;
     min-height: 250px;
     `}
+
+  &:hover {
+    border: 2px solid #ffc900;
+  }
 `;
 
 export const ProductImage = styled(Image)`

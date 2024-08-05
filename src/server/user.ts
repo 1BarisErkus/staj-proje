@@ -1,7 +1,7 @@
-import { BASE_URL } from "./baseUrl";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const getUser = async (id: string) => {
-  const response = await fetch(`${BASE_URL}/users/${id}`);
+  const response = await fetch(`${baseUrl}/users/${id}`);
   const data = await response.json();
 
   return data;
@@ -19,7 +19,7 @@ export const addUser = async (user: {
     favorites: [],
   };
 
-  const response = await fetch(`${BASE_URL}/users`, {
+  const response = await fetch(`${baseUrl}/users`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
