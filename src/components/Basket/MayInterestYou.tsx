@@ -6,7 +6,13 @@ import { Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import Card from "../Card";
 
-const MayInterestYou = ({ data }: { data: Product[] }) => {
+const MayInterestYou = ({
+  data,
+  favorites,
+}: {
+  data: Product[];
+  favorites: string[];
+}) => {
   return (
     <Section title="İlginizi Çekebilecek Ürünler">
       <CustomSwiper
@@ -36,6 +42,7 @@ const MayInterestYou = ({ data }: { data: Product[] }) => {
               name={product.name}
               price={product.price}
               discountPercentage={product.discountPercentage}
+              isFavorite={favorites.includes(product.id)}
             />
           </SwiperSlide>
         ))}

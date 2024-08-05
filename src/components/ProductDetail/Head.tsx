@@ -11,14 +11,30 @@ import {
 } from "@/styles/ProductDetail";
 import { CiHeart } from "react-icons/ci";
 import { Rating } from "@smastrom/react-rating";
+import { FaHeart } from "react-icons/fa";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { changeFavorite } from "@/server/posts";
+import { useSession } from "next-auth/react";
+import { notify } from "@/lib/notify";
 
 interface HeadProps {
   title: string;
   targetDate: string;
   stock: number;
+  isFavorite: boolean;
+  productId: string;
 }
 
-const Head: React.FC<HeadProps> = ({ title, targetDate, stock }) => {
+const Head: React.FC<HeadProps> = ({
+  title,
+  targetDate,
+  stock,
+  isFavorite,
+  productId,
+}) => {
+  const session = useSession();
+  const queryClient = useQueryClient();
+
   const calculateTimeLeft = useCallback(() => {
     const difference = +new Date(targetDate) - +new Date();
     let timeLeft = {
@@ -56,12 +72,32 @@ const Head: React.FC<HeadProps> = ({ title, targetDate, stock }) => {
     return () => clearInterval(timer);
   }, [calculateTimeLeft, targetDate]);
 
+  const { isPending, mutate } = useMutation({
+    mutationFn: async () =>
+      await changeFavorite(
+        (session.data?.user as { uid: string })?.uid,
+        productId
+      ),
+    onSuccess: () => {
+      if (isFavorite) notify("Ürün favorilerden kaldırıldı", "success");
+      else notify("Ürün favorilere eklendi", "success");
+      queryClient.invalidateQueries({
+        queryKey: ["favorites"],
+      });
+    },
+    onError: () => notify("Ürün favori durumu değiştirilemedi", "error"),
+  });
+
   return (
     <>
       <TitleWrapper>
         <Title>{title}</Title>
-        <FavoriteButton>
-          <CiHeart size={40} color="orange" />
+        <FavoriteButton onClick={() => mutate()} disabled={isPending}>
+          {isFavorite ? (
+            <FaHeart size={34} color="orange" />
+          ) : (
+            <CiHeart size={40} color="orange" />
+          )}
         </FavoriteButton>
       </TitleWrapper>
       <Rating value={4} style={{ maxWidth: 75 }} readOnly />

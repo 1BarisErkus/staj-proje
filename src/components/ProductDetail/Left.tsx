@@ -9,14 +9,20 @@ interface LeftProps {
   images: string[];
   limit: number;
   similarProducts: Product[];
+  favorites: string[];
 }
 
-const Left: React.FC<LeftProps> = ({ images, limit, similarProducts }) => {
+const Left: React.FC<LeftProps> = ({
+  images,
+  limit,
+  similarProducts,
+  favorites,
+}) => {
   return (
     <LeftCol size={6}>
       <Slider images={images} />
       <Limit limit={limit} />
-      <TakenTogether similarProducts={similarProducts} />
+      <TakenTogether similarProducts={similarProducts} favorites={favorites} />
     </LeftCol>
   );
 };

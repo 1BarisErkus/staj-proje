@@ -30,7 +30,13 @@ const categories = [
   { name: "Anne-Bebek-Oyuncak", image: "annebebekcocuk.webp" },
 ];
 
-const BestSellers = ({ data }: { data: Product[] }) => {
+const BestSellers = ({
+  data,
+  favorites,
+}: {
+  data: Product[];
+  favorites: string[];
+}) => {
   const [activeCategory, setActiveCategory] = useState<string>(
     "Cep Telefonu-Aksesuar"
   );
@@ -92,6 +98,7 @@ const BestSellers = ({ data }: { data: Product[] }) => {
             discountPercentage={product.discountPercentage}
             fibabanka={product.fibabanka}
             isBestSeller={product.isBestSeller}
+            isFavorite={favorites.includes(product.id)}
           />
         ))}
       </CardList>

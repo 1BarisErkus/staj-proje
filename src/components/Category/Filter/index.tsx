@@ -126,7 +126,15 @@ const applyFilters = (data: Product[], state: FilterState) => {
     });
 };
 
-const Filter = ({ data, params }: { data: Product[]; params: any }) => {
+const Filter = ({
+  data,
+  params,
+  favorites,
+}: {
+  data: Product[];
+  params: any;
+  favorites: string[];
+}) => {
   const [state, dispatch] = useReducer<
     React.Reducer<FilterState, FilterAction>
   >(reducer, initialArgs);
@@ -219,6 +227,7 @@ const Filter = ({ data, params }: { data: Product[]; params: any }) => {
                 discountPercentage={product.discountPercentage}
                 fibabanka={product.fibabanka}
                 isBestSeller={product.isBestSeller}
+                isFavorite={favorites.includes(product.id)}
               />
             ))}
           </CardList>

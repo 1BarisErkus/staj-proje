@@ -9,26 +9,25 @@ import RecentReviews from "@/components/RecentReviews";
 import Slider from "@/components/HomePage/Slider";
 import SpecialForYou from "@/components/HomePage/SpecialForYou";
 import WhyPasaj from "@/components/HomePage/WhyPasaj";
-import { getProducts } from "@/server/posts";
+import { getFavorites, getProducts } from "@/server/posts";
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
+import { getSession } from "next-auth/react";
+import { GetServerSideProps } from "next";
+import React from "react";
 
-export async function getServerSideProps() {
-  const queryClient = new QueryClient();
-
-  await queryClient.prefetchQuery({
-    queryKey: ["products"],
-    queryFn: getProducts,
-  });
-
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-    },
-  };
+interface HomeProps {
+  dehydratedState: unknown;
+  session: any;
 }
 
-export default function Home() {
+const Home: React.FC<HomeProps> = ({ session }) => {
   const { data } = useQuery({ queryKey: ["products"], queryFn: getProducts });
+
+  const { data: favorites } = useQuery({
+    queryKey: ["favorites"],
+    queryFn: async () =>
+      await getFavorites((session?.user as { uid: string })?.uid),
+  });
 
   const specialForYouData = data
     ? data.filter(
@@ -50,15 +49,40 @@ export default function Home() {
     <>
       <Slider />
       <PopularCategories />
-      <SpecialForYou data={specialForYouData} />
+      <SpecialForYou data={specialForYouData} favorites={favorites} />
       <AdditionToYourBill />
-      <BestOffers data={bestOffersData} />
+      <BestOffers data={bestOffersData} favorites={favorites} />
       <Campaigns />
-      <BestSellers data={data} />
+      <BestSellers data={data} favorites={favorites} />
       <Opportunities />
-      <NewOnes data={newOnesData} />
-      <RecentReviews data={recentReviewsData} />
+      <NewOnes data={newOnesData} favorites={favorites} />
+      <RecentReviews data={recentReviewsData} favorites={favorites} />
       <WhyPasaj />
     </>
   );
-}
+};
+
+export default Home;
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  console.log(context);
+  const queryClient = new QueryClient();
+  const session = await getSession(context);
+
+  await queryClient.prefetchQuery({
+    queryKey: ["products"],
+    queryFn: getProducts,
+  });
+
+  await queryClient.prefetchQuery({
+    queryKey: ["favorites"],
+    queryFn: () => getFavorites((session?.user as { uid: string })?.uid),
+  });
+
+  return {
+    props: {
+      session,
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+};

@@ -26,6 +26,7 @@ interface RightProps {
   freeShipping: boolean;
   guarantee: boolean;
   isContract: boolean;
+  isFavorite: boolean;
 }
 
 const Right: React.FC<RightProps> = ({
@@ -44,6 +45,7 @@ const Right: React.FC<RightProps> = ({
   freeShipping,
   guarantee,
   isContract,
+  isFavorite,
 }) => {
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
   const [selectedMemory, setSelectedMemory] = useState<string | null>(null);
@@ -75,7 +77,13 @@ const Right: React.FC<RightProps> = ({
 
   return (
     <Col size={6}>
-      <Head title={name} targetDate={discountEndTime} stock={stock} />
+      <Head
+        title={name}
+        targetDate={discountEndTime}
+        stock={stock}
+        isFavorite={isFavorite}
+        productId={id}
+      />
       <Configuraiton
         configuration={configuration}
         setSelectedColor={setSelectedColor}

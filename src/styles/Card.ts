@@ -111,6 +111,7 @@ export const LikeIconWrapper = styled.span`
   top: 10px;
   right: 10px;
   z-index: 2;
+  cursor: pointer;
 `;
 
 export const SingleBadgeWrapper = styled.div<SingleBadgeWrapperProps>`

@@ -2,29 +2,24 @@ import React from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import JustForYou from "@/components/Category/JustForYou";
 import Title from "@/components/Category/Title";
-import { getProducts } from "@/server/posts";
+import { getFavorites, getProducts } from "@/server/posts";
 import { Content } from "@/styles/Category";
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
 import Filter from "@/components/Category/Filter";
+import { getSession } from "next-auth/react";
 
-export async function getServerSideProps({ params }: { params: any }) {
-  const queryClient = new QueryClient();
-
-  await queryClient.prefetchQuery({
-    queryKey: ["products"],
-    queryFn: getProducts,
-  });
-
-  return {
-    props: {
-      params,
-      dehydratedState: dehydrate(queryClient),
-    },
-  };
+interface ProductFilterProps {
+  session: { user: { uid: string } };
+  params: any;
 }
 
-const ProductFilter = ({ params }: { params: any }) => {
+const ProductFilter: React.FC<ProductFilterProps> = ({ session, params }) => {
   const { data } = useQuery({ queryKey: ["products"], queryFn: getProducts });
+
+  const { data: favorites } = useQuery({
+    queryKey: ["favorites"],
+    queryFn: async () => await getFavorites(session?.user.uid),
+  });
 
   const justForYouData = data
     ? data.filter(
@@ -46,11 +41,36 @@ const ProductFilter = ({ params }: { params: any }) => {
       />
       <Content>
         <Title title={params.slug[params.slug.length - 1]} />
-        <JustForYou data={justForYouData} />
-        <Filter data={justForYouData} params={params} />
+        <JustForYou data={justForYouData} favorites={favorites} />
+        <Filter data={justForYouData} params={params} favorites={favorites} />
       </Content>
     </>
   );
 };
 
 export default ProductFilter;
+
+export const getServerSideProps = async (context: any) => {
+  const queryClient = new QueryClient();
+  const session = await getSession(context);
+
+  const { params } = context;
+
+  await queryClient.prefetchQuery({
+    queryKey: ["products"],
+    queryFn: getProducts,
+  });
+
+  await queryClient.prefetchQuery({
+    queryKey: ["favorites"],
+    queryFn: () => getFavorites((session?.user as { uid: string })?.uid),
+  });
+
+  return {
+    props: {
+      params,
+      session,
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+};

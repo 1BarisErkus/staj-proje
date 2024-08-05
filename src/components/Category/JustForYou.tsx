@@ -5,7 +5,13 @@ import { Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import Card from "../Card";
 
-const JustForYou = ({ data }: { data: Product[] }) => {
+const JustForYou = ({
+  data,
+  favorites,
+}: {
+  data: Product[];
+  favorites: string[];
+}) => {
   return (
     <Section title="Bu Ürünler Tam Size Göre">
       <CustomSwiper
@@ -36,6 +42,7 @@ const JustForYou = ({ data }: { data: Product[] }) => {
               price={product.price}
               badges={product.badges}
               discountPercentage={product.discountPercentage}
+              isFavorite={favorites.includes(product.id)}
             />
           </SwiperSlide>
         ))}

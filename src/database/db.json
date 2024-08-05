@@ -6,7 +6,10 @@
       "email": "baris@gmail.com",
       "isAdmin": false,
       "basket": [],
-      "favorites": []
+      "favorites": [
+        "1",
+        "3"
+      ]
     }
   ],
   "products": [
@@ -135,10 +138,18 @@
         },
         {
           "title": "Hafıza",
-          "options": ["256 GB", "512 GB", "1 TB"]
+          "options": [
+            "256 GB",
+            "512 GB",
+            "1 TB"
+          ]
         }
       ],
-      "badges": ["Peşine 4 Taksit", "Ücretsiz Kargo", "Alışveriş Kredisi"],
+      "badges": [
+        "Peşine 4 Taksit",
+        "Ücretsiz Kargo",
+        "Alışveriş Kredisi"
+      ],
       "comments": [
         {
           "id": "7fc50c94-d948-4c11-a1cd-542f7a85ef38",
@@ -311,10 +322,17 @@
         },
         {
           "title": "Hafıza",
-          "options": ["128 GB", "256 GB", "512 GB"]
+          "options": [
+            "128 GB",
+            "256 GB",
+            "512 GB"
+          ]
         }
       ],
-      "badges": ["Ücretsiz Kargo", "Alışveriş Kredisi"],
+      "badges": [
+        "Ücretsiz Kargo",
+        "Alışveriş Kredisi"
+      ],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -542,7 +560,10 @@
       "limit": null,
       "seller": "AYA DİJİTAL",
       "description": "Apple 20 W USB-C Güç Adaptörü, aygıtınızı evde, ofiste veya yolda hızlı ve verimli bir şekilde şarj etme imkanı sunar. Bu güç adaptörü, USB-C özellikli tüm aygıtlarla uyumludur. Ancak Apple, optimum şarj performansı için bu adaptörü iPad Pro ve iPad Air ile birlikte kullanmanızı önerir",
-      "images": ["apple-power/1.webp", "apple-power/2.webp"],
+      "images": [
+        "apple-power/1.webp",
+        "apple-power/2.webp"
+      ],
       "features": [
         {
           "name": "Ürün Model Adı",
@@ -632,7 +653,9 @@
       "limit": 2,
       "seller": "MediaMarkt",
       "description": "Samsung Galaxy S23 Ultra ile yüksek performansı deneyimleyin. 512 GB depolama alanı ve güçlü işlemcisi ile her türlü ihtiyacınızı karşılayacak.",
-      "images": ["samsung-galaxy-s23-ultra-512gb/1.webp"],
+      "images": [
+        "samsung-galaxy-s23-ultra-512gb/1.webp"
+      ],
       "features": [
         {
           "name": "Ürün Model Adı",
@@ -735,10 +758,18 @@
         },
         {
           "title": "Hafıza",
-          "options": ["256 GB", "512 GB", "1 TB"]
+          "options": [
+            "256 GB",
+            "512 GB",
+            "1 TB"
+          ]
         }
       ],
-      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo", "12 Ay Taksit"],
+      "badges": [
+        "Hızlı Teslimat",
+        "Ücretsiz Kargo",
+        "12 Ay Taksit"
+      ],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -873,10 +904,16 @@
         },
         {
           "title": "Hafıza",
-          "options": ["128 GB", "256 GB"]
+          "options": [
+            "128 GB",
+            "256 GB"
+          ]
         }
       ],
-      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
+      "badges": [
+        "Hızlı Teslimat",
+        "Ücretsiz Kargo"
+      ],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1015,10 +1052,16 @@
         },
         {
           "title": "Hafıza",
-          "options": ["128 GB", "256 GB"]
+          "options": [
+            "128 GB",
+            "256 GB"
+          ]
         }
       ],
-      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
+      "badges": [
+        "Hızlı Teslimat",
+        "Ücretsiz Kargo"
+      ],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1157,10 +1200,17 @@
         },
         {
           "title": "Hafıza",
-          "options": ["256 GB", "512 GB"]
+          "options": [
+            "256 GB",
+            "512 GB"
+          ]
         }
       ],
-      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo", "6 Ay Taksit"],
+      "badges": [
+        "Hızlı Teslimat",
+        "Ücretsiz Kargo",
+        "6 Ay Taksit"
+      ],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1295,10 +1345,17 @@
         },
         {
           "title": "Hafıza",
-          "options": ["128 GB", "256 GB"]
+          "options": [
+            "128 GB",
+            "256 GB"
+          ]
         }
       ],
-      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo", "12 Ay Taksit"],
+      "badges": [
+        "Hızlı Teslimat",
+        "Ücretsiz Kargo",
+        "12 Ay Taksit"
+      ],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1330,7 +1387,11 @@
       "limit": 2,
       "seller": "Vatan Bilgisayar",
       "description": "Sony Xperia 1 III, üstün kamera özellikleri ve yüksek performansı ile dikkat çekiyor. 256 GB depolama alanı ile tüm verilerinizi güvenle saklayın.",
-      "images": ["sigma-plus/1.webp", "sigma-plus/2.webp", "sigma-plus/3.webp"],
+      "images": [
+        "sigma-plus/1.webp",
+        "sigma-plus/2.webp",
+        "sigma-plus/3.webp"
+      ],
       "features": [
         {
           "name": "Ürün Model Adı",
@@ -1429,10 +1490,16 @@
         },
         {
           "title": "Hafıza",
-          "options": ["128 GB", "256 GB"]
+          "options": [
+            "128 GB",
+            "256 GB"
+          ]
         }
       ],
-      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
+      "badges": [
+        "Hızlı Teslimat",
+        "Ücretsiz Kargo"
+      ],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1464,7 +1531,9 @@
       "limit": null,
       "seller": "Messa İletişim",
       "description": "Lightning konnektörüne sahip iPhone, iPad veya iPod’unuzu eşzamanlamak ve şarj etmek için USB C veya Thunderbolt 3 (USB C) özellikli Mac’inize bağlayın.",
-      "images": ["apple-cable/1.webp"],
+      "images": [
+        "apple-cable/1.webp"
+      ],
       "features": [
         {
           "name": "Ürün Model Adı",
@@ -1522,7 +1591,10 @@
           ]
         }
       ],
-      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
+      "badges": [
+        "Hızlı Teslimat",
+        "Ücretsiz Kargo"
+      ],
       "comments": [],
       "qa": [],
       "creditCard": true,

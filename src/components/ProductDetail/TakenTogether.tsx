@@ -8,9 +8,13 @@ import React from "react";
 
 interface TakenTogetherProps {
   similarProducts: Product[];
+  favorites: string[];
 }
 
-const TakenTogether: React.FC<TakenTogetherProps> = ({ similarProducts }) => {
+const TakenTogether: React.FC<TakenTogetherProps> = ({
+  similarProducts,
+  favorites,
+}) => {
   return (
     <Section title="Birlikte Alınanlar">
       <CustomSwiper
@@ -36,6 +40,7 @@ const TakenTogether: React.FC<TakenTogetherProps> = ({ similarProducts }) => {
               badges={product.badges}
               discountPercentage={product.discountPercentage}
               size="small"
+              isFavorite={favorites.includes(product.id)}
             />
           </SwiperSlide>
         ))}

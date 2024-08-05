@@ -5,7 +5,13 @@ import Card from "../Card";
 import { Navigation } from "swiper/modules";
 import CustomSwiper from "../CustomSwiper";
 
-const BestOffers = ({ data }: { data: Product[] }) => {
+const BestOffers = ({
+  data,
+  favorites,
+}: {
+  data: Product[];
+  favorites: string[];
+}) => {
   return (
     <Section title="En İyi Teklifler">
       <CustomSwiper
@@ -36,6 +42,7 @@ const BestOffers = ({ data }: { data: Product[] }) => {
               price={product.price}
               badges={product.badges}
               discountPercentage={product.discountPercentage}
+              isFavorite={favorites.includes(product.id)}
             />
           </SwiperSlide>
         ))}

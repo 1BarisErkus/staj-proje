@@ -5,7 +5,13 @@ import Card from "../Card";
 import { Product, ProductProps } from "@/common/types";
 import CustomSwiper from "../CustomSwiper";
 
-const SpecialForYou = ({ data }: { data: Product[] }) => {
+const SpecialForYou = ({
+  data,
+  favorites,
+}: {
+  data: Product[];
+  favorites: string[];
+}) => {
   return (
     <Section title="Sana Özel Ürünler">
       <CustomSwiper
@@ -35,6 +41,7 @@ const SpecialForYou = ({ data }: { data: Product[] }) => {
               name={product.name}
               price={product.price}
               discountPercentage={product.discountPercentage}
+              isFavorite={favorites.includes(product.id)}
             />
           </SwiperSlide>
         ))}
