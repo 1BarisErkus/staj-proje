@@ -65,6 +65,7 @@ export interface ProductForBasket {
   color: string | null;
   memory: string | null;
   price: number;
+  discountPrice: number;
   count: number;
   seller: string;
 }

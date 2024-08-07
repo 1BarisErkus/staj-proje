@@ -8,7 +8,7 @@ import Badges from "./Badges";
 import { useSession } from "next-auth/react";
 import { notify } from "@/lib/notify";
 import { addProductToBasket, getBasket } from "@/server/basket";
-import { Configuration } from "@/common/types";
+import { Configuration, ProductForBasket } from "@/common/types";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 interface RightProps {
@@ -29,17 +29,6 @@ interface RightProps {
   guarantee: boolean;
   isContract: boolean;
   isFavorite: boolean;
-}
-
-interface BasketItem {
-  productId: string;
-  image: string;
-  name: string;
-  color: string | null;
-  price: number;
-  count: number;
-  memory: string | null;
-  seller: string;
 }
 
 const Right: React.FC<RightProps> = ({
@@ -74,7 +63,7 @@ const Right: React.FC<RightProps> = ({
   });
 
   const { mutate, isPending } = useMutation({
-    mutationFn: async (newBasketItem: BasketItem) =>
+    mutationFn: async (newBasketItem: ProductForBasket) =>
       await addProductToBasket(
         (session.data?.user as { uid: string })?.uid,
         newBasketItem
@@ -99,12 +88,16 @@ const Right: React.FC<RightProps> = ({
     }
 
     const productCountInBasket = basket?.find(
-      (item: BasketItem) => item.productId === id
+      (item: ProductForBasket) => item.productId === id
     )?.count;
     if (productCountInBasket === limit) {
       notify(`Bu üründen sadece ${limit} tane alabilirsiniz`, "error");
       return;
     }
+
+    const discountPrice = Math.round(
+      price - (price * discountPercentage) / 100
+    );
 
     const newBasketItem = {
       productId: id,
@@ -112,6 +105,7 @@ const Right: React.FC<RightProps> = ({
       name,
       color: selectedColor ? selectedColor : null,
       price,
+      discountPrice,
       count: 1,
       memory: configuration[1] ? selectedMemory : null,
       seller: seller,

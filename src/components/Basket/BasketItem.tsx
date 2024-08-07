@@ -32,6 +32,7 @@ interface BasketItemProps {
   memory: string | null;
   color: string;
   price: number;
+  discountPrice: number;
   count: number;
   seller: string;
 }
@@ -44,6 +45,7 @@ const BasketItem: React.FC<BasketItemProps> = ({
   memory,
   color,
   price,
+  discountPrice,
   count,
   seller,
 }) => {
@@ -84,6 +86,7 @@ const BasketItem: React.FC<BasketItemProps> = ({
         memory,
         color,
         price,
+        discountPrice,
         count: newCount,
         seller,
       });
@@ -140,7 +143,7 @@ const BasketItem: React.FC<BasketItemProps> = ({
           <Right size={2}>
             <PriceWrapper $mainprice>
               <Label>Tutar</Label>
-              <Price>{price} TL</Price>
+              <Price>{discountPrice !== 0 ? discountPrice : price} TL</Price>
             </PriceWrapper>
           </Right>
         </Row>

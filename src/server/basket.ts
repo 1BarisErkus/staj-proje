@@ -20,6 +20,7 @@ export const addProductToBasket = async (
     color,
     memory,
     price,
+    discountPrice,
     count,
     seller,
   }: ProductForBasket
@@ -32,9 +33,7 @@ export const addProductToBasket = async (
       product.productId === productId &&
       product.color === color &&
       product.memory === memory &&
-      product.price === price &&
       product.name === name &&
-      product.image === image &&
       product.seller === seller
   );
 
@@ -49,6 +48,7 @@ export const addProductToBasket = async (
       color,
       memory,
       price,
+      discountPrice,
       count,
       seller,
     };

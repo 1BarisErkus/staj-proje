@@ -26,6 +26,7 @@ interface BasketItemProps {
   memory: string;
   color: string;
   price: number;
+  discountPrice: number;
   count: number;
   seller: string;
 }
@@ -67,6 +68,7 @@ const Basket: FC<BasketProps> = ({ session }) => {
                       memory={item.memory ? item.memory : null}
                       color={item.color}
                       price={item.price}
+                      discountPrice={item.discountPrice}
                       count={item.count}
                       seller={item.seller}
                     />

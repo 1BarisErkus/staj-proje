@@ -1,3 +1,4 @@
+import { getBasket } from "@/server/basket";
 import {
   Button,
   CheckboxContainer,
@@ -9,17 +10,40 @@ import {
   SummaryContainer,
   SummaryTitle,
 } from "@/styles/Basket/BasketSummary";
+import { useQuery } from "@tanstack/react-query";
+import { useSession } from "next-auth/react";
 import { FaPlus } from "react-icons/fa6";
 
 const BasketSummary: React.FC = () => {
+  const session = useSession();
+
+  const { data: basket } = useQuery({
+    queryKey: ["basket"],
+    queryFn: () => getBasket((session.data?.user as { uid: string })?.uid),
+  });
+
+  const total = basket?.reduce(
+    (acc: number, item: { price: number; count: number }) =>
+      acc + item.price * item.count,
+    0
+  );
+
+  const totalPriceWithDiscount = basket?.reduce(
+    (acc: number, item: { discountPrice: number; count: number }) =>
+      acc + item.discountPrice * item.count,
+    0
+  );
+
+  const discount = total - totalPriceWithDiscount;
+
   return (
     <SummaryContainer>
       <SummaryTitle>
-        <span>Sipariş Özeti</span> (2 Ürün)
+        <span>Sipariş Özeti</span> ({basket?.length})
       </SummaryTitle>
       <Item>
         <span>Ürünler Toplamı</span>
-        <Price>90.088 TL</Price>
+        <Price>{total} TL</Price>
       </Item>
       <Item>
         <span>Kargo Tutarı</span>
@@ -27,11 +51,11 @@ const BasketSummary: React.FC = () => {
       </Item>
       <Item>
         <span>İndirimler</span>
-        <Discount>- 11.000 TL</Discount>
+        <Discount>- {discount} TL</Discount>
       </Item>
       <Item>
         <span>Ödenecek Tutar (KDV Dahil)</span>
-        <Price>79.088 TL</Price>
+        <Price>{totalPriceWithDiscount} TL</Price>
       </Item>
       <Button>
         İndirim Kodu Ekle

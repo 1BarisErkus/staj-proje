@@ -6,24 +6,14 @@
       "email": "baris@gmail.com",
       "basket": [
         {
-          "id": "bf4c9e27-dde6-4741-af87-64eaa3bcd42f",
+          "id": "f994c4ce-ab2e-46de-b838-eb950ff0529f",
           "productId": "1",
           "image": "iphone-15-pro-max-256gb/1.webp",
           "name": "iPhone 15 Pro Max",
           "color": "Mavi Titanyum",
           "memory": "256 GB",
           "price": 89999,
-          "count": 1,
-          "seller": "Turkcell Satış A.Ş."
-        },
-        {
-          "id": "e466fd4f-65b3-457a-9ca8-ba09a703cdff",
-          "productId": "2",
-          "image": "iphone-13-128gb/1.webp",
-          "name": "iPhone 13",
-          "color": "Gece Yarısı",
-          "memory": "128 GB",
-          "price": 42999,
+          "discountPrice": 79199,
           "count": 1,
           "seller": "Turkcell Satış A.Ş."
         }
