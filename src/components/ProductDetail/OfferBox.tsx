@@ -19,6 +19,8 @@ interface OfferBoxProps {
   title: string;
   subtitle?: string;
   price: string;
+  oldPrice?: number;
+  discountPercentage?: number;
   selected?: boolean;
   tag?: string;
   tagColor?: string;
@@ -31,6 +33,8 @@ const OfferBox: React.FC<OfferBoxProps> = ({
   title,
   subtitle,
   price,
+  oldPrice,
+  discountPercentage,
   selected,
   tag,
   tagColor = "#1d4ed8",
@@ -47,10 +51,20 @@ const OfferBox: React.FC<OfferBoxProps> = ({
           <MainText>{title}</MainText>
         </TextWrapper>
         <PriceWrapper>
-          <Price>{price}</Price>
-          <PriceDetail>
-            TL{installmentCount && "x" + installmentCount + "Ay"}
-          </PriceDetail>
+          <div>
+            <Price>{price}</Price>
+            <PriceDetail>
+              TL{installmentCount && "x" + installmentCount + "Ay"}
+            </PriceDetail>
+          </div>
+          {discountPercentage && discountPercentage !== 0 ? (
+            <>
+              <Price type="old">{oldPrice !== 0 ? oldPrice : "asdasdsa"}</Price>
+              <PriceDetail type="old">
+                TL <span>%{discountPercentage} indirim</span>
+              </PriceDetail>
+            </>
+          ) : null}
         </PriceWrapper>
       </BoxLeft>
       <BoxRight>{deliveryTime && <SubText>{deliveryTime}</SubText>}</BoxRight>

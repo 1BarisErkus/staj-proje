@@ -48,6 +48,8 @@ const Offer: React.FC<OfferProps> = ({
         price={
           discountPercentage > 0 ? discountPrice.toString() : price.toString()
         }
+        oldPrice={price}
+        discountPercentage={discountPercentage}
         selected={selectedOffer === 1}
         tag={freeShipping ? "Ücretsiz Kargo" : ""}
         tagColor="#2855AC"

@@ -45,7 +45,7 @@ const HomePage: React.FC<HomePageProps> = ({ reviews, seller, productId }) => {
   return (
     <Conainer>
       <TopContainer>
-        <RatingCardComponent productId={productId} />
+        <RatingCardComponent productId={productId} count={reviews.length} />
         <DropdownComponent
           selectedOption={selectedOption}
           setSelectedOption={setSelectedOption}

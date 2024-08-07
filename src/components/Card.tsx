@@ -117,7 +117,7 @@ const Card: React.FC<CardProps> = ({
           </BadgeWrapper>
         )}
 
-        {discountPercentage === 0 || size === "small" ? (
+        {discountPercentage === 0 ? (
           <Price>{price} TL</Price>
         ) : (
           <PriceWrapper>

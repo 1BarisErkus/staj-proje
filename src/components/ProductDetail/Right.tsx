@@ -7,9 +7,9 @@ import Offer from "./Offer";
 import Badges from "./Badges";
 import { useSession } from "next-auth/react";
 import { notify } from "@/lib/notify";
-import { addProductToBasket } from "@/server/basket";
+import { addProductToBasket, getBasket } from "@/server/basket";
 import { Configuration } from "@/common/types";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 interface RightProps {
   id: string;
@@ -18,6 +18,7 @@ interface RightProps {
   discountPercentage: number;
   discountEndTime: string;
   stock: number;
+  limit: number;
   configuration: Configuration[];
   creditCard: boolean;
   installmentPrice: number;
@@ -48,6 +49,7 @@ const Right: React.FC<RightProps> = ({
   discountPercentage,
   discountEndTime,
   stock,
+  limit,
   configuration,
   creditCard,
   installmentPrice,
@@ -65,7 +67,13 @@ const Right: React.FC<RightProps> = ({
   const session = useSession();
   const queryClient = useQueryClient();
 
-  const addProductMutation = useMutation({
+  const { data: basket } = useQuery({
+    queryKey: ["basket"],
+    queryFn: async () =>
+      await getBasket((session.data?.user as { uid: string })?.uid),
+  });
+
+  const { mutate, isPending } = useMutation({
     mutationFn: async (newBasketItem: BasketItem) =>
       await addProductToBasket(
         (session.data?.user as { uid: string })?.uid,
@@ -85,6 +93,19 @@ const Right: React.FC<RightProps> = ({
       notify("Lütfen önce giriş yapınız", "error");
       return;
     }
+    if (stock === 0) {
+      notify("Üzgünüz, bu ürün stokta yok", "error");
+      return;
+    }
+
+    const productCountInBasket = basket?.find(
+      (item: BasketItem) => item.productId === id
+    )?.count;
+    if (productCountInBasket === limit) {
+      notify(`Bu üründen sadece ${limit} tane alabilirsiniz`, "error");
+      return;
+    }
+
     const newBasketItem = {
       productId: id,
       image: image,
@@ -95,8 +116,7 @@ const Right: React.FC<RightProps> = ({
       memory: configuration[1] ? selectedMemory : null,
       seller: seller,
     };
-
-    addProductMutation.mutate(newBasketItem);
+    mutate(newBasketItem);
   };
 
   return (
@@ -122,7 +142,9 @@ const Right: React.FC<RightProps> = ({
         freeShipping={freeShipping}
         discountPercentage={discountPercentage}
       />
-      <Button onClick={handleClick}>Sepete Ekle</Button>
+      <Button onClick={handleClick} disabled={isPending}>
+        Sepete Ekle
+      </Button>
       <Badges
         freeShipping={freeShipping}
         guarantee={guarantee}

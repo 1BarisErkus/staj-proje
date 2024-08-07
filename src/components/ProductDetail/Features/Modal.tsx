@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Rating } from "@smastrom/react-rating";
 import {
   ModalOverlay,
@@ -12,21 +12,71 @@ import {
 } from "@/styles/ProductDetail/Features/Modal";
 import { addComment, addQa } from "@/server/posts";
 import { notify } from "@/lib/notify";
+import { getUser } from "@/server/user";
+import { User } from "@/common/types";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 interface ModalProps {
+  userId?: string;
   isOpen: boolean;
   productId: string;
   type?: string;
   onClose: () => void;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, productId, type, onClose }) => {
+const Modal: React.FC<ModalProps> = ({
+  userId,
+  isOpen,
+  productId,
+  type,
+  onClose,
+}) => {
   const [rating, setRating] = useState(0);
   const [text, setText] = useState("");
+  const [user, setUser] = useState<User>();
+  const queryClient = useQueryClient();
+
+  useEffect(() => {
+    if (userId) {
+      getUser(userId).then((data) => setUser(data));
+    }
+  }, [userId]);
+
+  const { mutate: commentMutate, isPending: commentPending } = useMutation({
+    mutationFn: async (newComment: {
+      userName: string;
+      comment: string;
+      rating: number;
+    }) => await addComment(newComment, productId),
+    onSuccess: () => {
+      notify("Yorumunuz başarıyla eklendi", "success");
+      queryClient.invalidateQueries({
+        queryKey: ["product"],
+      });
+      onClose();
+    },
+    onError: () => {
+      notify("Yorum eklenirken bir hata oluştu", "error");
+    },
+  });
+
+  const { mutate: qaMutate, isPending: qaPending } = useMutation({
+    mutationFn: async (question: string) => await addQa(question, productId),
+    onSuccess: () => {
+      notify("Sorunuz başarıyla iletildi", "success");
+      queryClient.invalidateQueries({
+        queryKey: ["product"],
+      });
+      onClose();
+    },
+    onError: () => {
+      notify("Soru iletilirken bir hata oluştu", "error");
+    },
+  });
 
   if (!isOpen) return null;
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     if (text.length < 10) {
       notify("İçerik en az 10 karakter olmalı", "error");
       return;
@@ -37,19 +87,17 @@ const Modal: React.FC<ModalProps> = ({ isOpen, productId, type, onClose }) => {
         notify("Lütfen yıldız seçiniz", "error");
         return;
       }
-      await addComment(
-        { userName: "Geçici User", comment: text, rating },
-        productId
-      );
-      notify("Yorumunuz başarıyla eklendi", "success");
+      commentMutate({
+        userName: user ? user.name : "John Doe",
+        comment: text,
+        rating,
+      });
     } else {
-      await addQa(text, productId);
-      notify("Sorunuz başarıyla iletildi", "success");
+      qaMutate(text);
     }
 
     setText("");
     setRating(0);
-    onClose();
   };
 
   return (
@@ -74,7 +122,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, productId, type, onClose }) => {
             onChange={(e) => setText(e.target.value)}
             placeholder="İçeriği buraya yazın"
           />
-          <SubmitButton onClick={handleSubmit}>Gönder</SubmitButton>
+          <SubmitButton
+            onClick={handleSubmit}
+            disabled={commentPending || qaPending}
+          >
+            Gönder
+          </SubmitButton>
         </ModalContent>
       </ModalContainer>
     </ModalOverlay>

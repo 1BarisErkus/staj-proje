@@ -48,10 +48,16 @@ export const SubText = styled.span`
   color: #6b7280;
 `;
 
-export const Price = styled.span`
-  font-size: 20px;
+interface PriceProps {
+  type?: string;
+}
+
+export const Price = styled.span<PriceProps>`
+  font-size: ${({ type }) => (type === "old" ? "14px" : "20px")};
   font-weight: bold;
-  color: #2855ac;
+  color: ${({ type }) => (type === "old" ? "#6b7280" : "#1d4ed8")};
+
+  ${({ type }) => type === "old" && "text-decoration: line-through;"}
 `;
 
 export const Tag = styled.span<{ color: string }>`
@@ -76,12 +82,17 @@ export const BoxRight = styled.div`
 
 export const PriceWrapper = styled.div`
   position: relative;
-  margin-right: 1rem;
+  margin: 0.5rem 1.5rem 0.5rem 0;
 `;
 
-export const PriceDetail = styled.span`
+export const PriceDetail = styled.span<PriceProps>`
   position: absolute;
   font-size: 10px;
   font-weight: 600;
-  color: #2855ac;
+  color: ${({ type }) => (type === "old" ? "#6b7280" : "#1d4ed8")};
+  width: 100%;
+
+  span {
+    color: #16bffc;
+  }
 `;

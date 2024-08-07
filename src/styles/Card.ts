@@ -22,7 +22,7 @@ export const CardWrapper = styled.div<CardWrapperProps>`
     size === "small" &&
     `
     width: 160px;
-    min-height: 250px;
+    min-height: 280px;
     `}
 
   &:hover {

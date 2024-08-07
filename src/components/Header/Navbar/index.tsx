@@ -1,4 +1,9 @@
 import Image from "next/image";
+import { useSession } from "next-auth/react";
+import { useQuery } from "@tanstack/react-query";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { getBasket } from "@/server/basket";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
 import { Button, CartBadge } from "@/styles/Header/Navbar";
 import { IoPersonCircleOutline, IoChevronDownSharp } from "react-icons/io5";
@@ -6,11 +11,6 @@ import { BsCart4 } from "react-icons/bs";
 import Search from "./Search";
 import { useState } from "react";
 import AuthModal from "./AuthModal";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useQuery } from "@tanstack/react-query";
-import { getBasket } from "@/server/basket";
-import { useSession } from "next-auth/react";
 
 const Navbar = () => {
   const session = useSession();
@@ -20,7 +20,7 @@ const Navbar = () => {
   const { data } = useQuery({
     queryKey: ["basket"],
     queryFn: () => getBasket((session.data?.user as { uid: string })?.uid),
-    enabled: !!session.data?.user,
+    enabled: !!session.data,
   });
 
   const openModal = () => {

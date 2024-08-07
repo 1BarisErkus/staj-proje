@@ -1,12 +1,13 @@
 import React from "react";
+import { getSession } from "next-auth/react";
+import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
+import { GetServerSideProps } from "next";
 import Breadcrumb from "@/components/Breadcrumb";
 import JustForYou from "@/components/Category/JustForYou";
 import Title from "@/components/Category/Title";
 import { getFavorites, getProducts } from "@/server/posts";
 import { Content } from "@/styles/Category";
-import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
 import Filter from "@/components/Category/Filter";
-import { getSession } from "next-auth/react";
 
 interface ProductFilterProps {
   session: { user: { uid: string } };
@@ -18,7 +19,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({ session, params }) => {
 
   const { data: favorites } = useQuery({
     queryKey: ["favorites"],
-    queryFn: async () => await getFavorites(session?.user.uid),
+    queryFn: () => getFavorites(session?.user.uid),
   });
 
   const justForYouData = data
@@ -50,7 +51,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({ session, params }) => {
 
 export default ProductFilter;
 
-export const getServerSideProps = async (context: any) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const queryClient = new QueryClient();
   const session = await getSession(context);
 

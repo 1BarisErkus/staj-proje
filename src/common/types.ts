@@ -78,3 +78,11 @@ export interface Configuration {
   title: string;
   options: ColorOptions[] | string[];
 }
+
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  basket: ProductForBasket[];
+  favorites: string[];
+}

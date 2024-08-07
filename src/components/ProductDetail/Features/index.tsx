@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Navigation } from "swiper/modules";
 import CustomSwiper, { CustomSwiperSlide } from "@/components/CustomSwiper";
 import { Container } from "@/styles/GlobalVariables";
 import {
@@ -6,8 +7,6 @@ import {
   SlideContainer,
   SlideItem,
 } from "@/styles/ProductDetail/Features";
-import { Navigation } from "swiper/modules";
-import { SwiperSlide } from "swiper/react";
 import Description from "./Description";
 import ProductFeatures from "./ProductFeatures";
 import Reviews from "./Reviews";

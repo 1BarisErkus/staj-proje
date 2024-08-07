@@ -4,29 +4,28 @@
       "id": "wuhEiFqcxse8NeTLAAcB4B3DDko1",
       "name": "Barış Erkuş",
       "email": "baris@gmail.com",
-      "isAdmin": false,
       "basket": [
         {
-          "id": "c7680c41-6fb1-441f-ac5a-9c14d457e691",
+          "id": "bf4c9e27-dde6-4741-af87-64eaa3bcd42f",
           "productId": "1",
           "image": "iphone-15-pro-max-256gb/1.webp",
           "name": "iPhone 15 Pro Max",
           "color": "Mavi Titanyum",
           "memory": "256 GB",
           "price": 89999,
-          "count": 2,
+          "count": 1,
           "seller": "Turkcell Satış A.Ş."
         },
         {
-          "id": "ec28a824-258f-4f3f-b515-e62f3b2ba6ff",
-          "productId": "3",
-          "image": "huawei-watch/1.webp",
-          "name": "Huawei Watch GT4 46MM Akıllı Saat Siyah",
-          "color": "Siyah",
-          "memory": null,
-          "price": 5299,
+          "id": "e466fd4f-65b3-457a-9ca8-ba09a703cdff",
+          "productId": "2",
+          "image": "iphone-13-128gb/1.webp",
+          "name": "iPhone 13",
+          "color": "Gece Yarısı",
+          "memory": "128 GB",
+          "price": 42999,
           "count": 1,
-          "seller": "SONNTECH"
+          "seller": "Turkcell Satış A.Ş."
         }
       ],
       "favorites": [
@@ -189,6 +188,22 @@
           "comment": "dsadasdafsdfdsfsdfds",
           "rating": 3,
           "date": "2024-08-01T14:07:58.668Z",
+          "helpfulCount": 0
+        },
+        {
+          "id": "056fe1b6-9d1e-4ef0-ba2f-06b1ff405c66",
+          "userName": "Geçici User",
+          "comment": "asdadsadsa",
+          "rating": 4,
+          "date": "2024-08-07T12:19:38.270Z",
+          "helpfulCount": 0
+        },
+        {
+          "id": "1f0a67b3-dd49-4296-8873-690f29bdb5d6",
+          "userName": "Barış Erkuş",
+          "comment": "DenemeDenemeDeneme",
+          "rating": 3,
+          "date": "2024-08-07T14:57:25.259Z",
           "helpfulCount": 0
         }
       ],
@@ -357,8 +372,50 @@
         "Ücretsiz Kargo",
         "Alışveriş Kredisi"
       ],
-      "comments": [],
-      "qa": [],
+      "comments": [
+        {
+          "id": "28c2b90d-54ba-452f-84da-9a26b9a58ddf",
+          "userName": "Barış Erkuş",
+          "comment": "deneme denem denem",
+          "rating": 1,
+          "date": "2024-08-07T15:04:16.279Z",
+          "helpfulCount": 0
+        },
+        {
+          "id": "f9bf8800-f7ef-437d-a0c3-917639cf7fa8",
+          "userName": "Barış Erkuş",
+          "comment": "anla dedim halimi",
+          "rating": 5,
+          "date": "2024-08-07T15:06:24.153Z",
+          "helpfulCount": 0
+        },
+        {
+          "id": "95a8248e-4c6d-46ed-92eb-a6f15840ed54",
+          "userName": "Barış Erkuş",
+          "comment": "adsadas dasdasdsadsa",
+          "rating": 3,
+          "date": "2024-08-07T15:06:57.880Z",
+          "helpfulCount": 0
+        },
+        {
+          "id": "05a44f3c-4e8e-4896-8c9e-b8653290c391",
+          "userName": "Barış Erkuş",
+          "comment": "qweqwewqewqewqewqewqewqewqewq",
+          "rating": 5,
+          "date": "2024-08-07T15:07:39.591Z",
+          "helpfulCount": 0
+        }
+      ],
+      "qa": [
+        {
+          "id": "2c4384a4-bc66-4859-b9fd-99000f7d294f",
+          "questionText": "dasdsadsadsadasdsa",
+          "questionDate": "2024-08-07T15:07:30.936Z",
+          "answerText": "",
+          "answerDate": "",
+          "storeName": "Turkcell Satış A.Ş."
+        }
+      ],
       "creditCard": true,
       "fibabanka": false,
       "freeShipping": true,

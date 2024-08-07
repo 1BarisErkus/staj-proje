@@ -2,6 +2,8 @@ import { Button, HeadWrapper, Input } from "@/styles/ProductDetail/Features/Qa";
 import QuestionAnswerCard from "./QaCard";
 import { useState } from "react";
 import Modal from "./Modal";
+import { useSession } from "next-auth/react";
+import { notify } from "@/lib/notify";
 
 interface QaProps {
   qas: {
@@ -16,8 +18,15 @@ interface QaProps {
 
 const Qa: React.FC<QaProps> = ({ qas, productId }) => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const session = useSession();
 
-  const openModal = () => setModalOpen(true);
+  const openModal = () => {
+    if (!(session.data?.user as { uid: string })?.uid) {
+      notify("Soru sormak için giriş yapmalısınız", "error");
+      return;
+    }
+    setModalOpen(true);
+  };
   const closeModal = () => setModalOpen(false);
 
   return (

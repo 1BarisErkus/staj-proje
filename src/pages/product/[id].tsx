@@ -1,4 +1,7 @@
+import React from "react";
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
+import { GetServerSideProps } from "next";
+import { getSession } from "next-auth/react";
 import Breadcrumb from "@/components/Breadcrumb";
 import { getFavorites, getProduct, getSimilarProducts } from "@/server/posts";
 import { Container, Row } from "@/styles/GlobalVariables";
@@ -8,9 +11,6 @@ import Right from "@/components/ProductDetail/Right";
 import OtherSellers from "@/components/ProductDetail/OtherSellers";
 import RecentReviews from "@/components/RecentReviews";
 import Features from "@/components/ProductDetail/Features";
-import { GetServerSideProps } from "next";
-import { getSession } from "next-auth/react";
-import React from "react";
 
 interface ProductProps {
   session: { user: { uid: string } };
@@ -30,8 +30,7 @@ const Product: React.FC<ProductProps> = ({ session, params }) => {
 
   const { data: favorites } = useQuery({
     queryKey: ["favorites"],
-    queryFn: async () =>
-      await getFavorites((session?.user as { uid: string })?.uid),
+    queryFn: () => getFavorites((session?.user as { uid: string })?.uid),
   });
 
   return (
@@ -53,6 +52,7 @@ const Product: React.FC<ProductProps> = ({ session, params }) => {
               discountPercentage={data.discountPercentage}
               discountEndTime={data.discountEndTime}
               stock={data.stock}
+              limit={data.limit}
               configuration={data.configuration}
               creditCard={data.creditCard}
               installmentPrice={data.installmentPrice}
@@ -96,11 +96,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     queryFn: () => product,
   });
 
-  const similarProducts = await getSimilarProducts(product.categoryCode);
-
   await queryClient.prefetchQuery({
     queryKey: ["similarProducts"],
-    queryFn: () => similarProducts,
+    queryFn: () => getSimilarProducts(product.categoryCode),
   });
 
   await queryClient.prefetchQuery({

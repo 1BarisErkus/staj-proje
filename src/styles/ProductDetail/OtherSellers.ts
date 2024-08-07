@@ -72,6 +72,7 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: auto;
   gap: 1rem;
   border: none;
   background-color: #ffd917;

@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import localFont from "next/font/local";
+import { SessionProvider } from "next-auth/react";
 
 import {
   HydrationBoundary,
@@ -18,7 +19,6 @@ import "@smastrom/react-rating/style.css";
 import GlobalStyles from "@/styles/GlobalStyles";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import SessionProvider from "@/lib/SessionProvider";
 
 const greycliffCF = localFont({
   src: [
@@ -51,7 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <HydrationBoundary state={pageProps.dehydratedState}>
-        <SessionProvider>
+        <SessionProvider session={pageProps.session}>
           <Head>
             <title>Staj Final</title>
             <link rel="icon" href="/images/favicon.png" />
