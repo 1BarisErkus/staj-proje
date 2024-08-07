@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const Campaigns = () => {
   return (
-    <Section title="Kampanyalar">
+    <Section title="Kampanyalar" id="campaigns">
       <StyledRow>
         <StyledCol size={8}>
           <ImageWrapper $pos="left">

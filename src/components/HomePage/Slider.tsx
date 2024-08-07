@@ -65,7 +65,7 @@ const Slider = () => {
                 alt="Slider"
                 fill
                 priority
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "contain" }}
               />
             </SlideContent>
           </StyledSwiperSlide>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CustomSwiper from "@/components/CustomSwiper";
+import CustomSwiper, { CustomSwiperSlide } from "@/components/CustomSwiper";
 import { Container } from "@/styles/GlobalVariables";
 import {
   FeaturesContainer,
@@ -82,9 +82,12 @@ const FeaturesSlide: React.FC<FeaturesSlideProps> = ({
           modules={[Navigation]}
         >
           {titles.map((title, index) => (
-            <SwiperSlide key={index} onClick={() => handleSlideClick(index)}>
+            <CustomSwiperSlide
+              key={index}
+              onClick={() => handleSlideClick(index)}
+            >
               <SlideItem $active={activeIndex === index}>{title}</SlideItem>
-            </SwiperSlide>
+            </CustomSwiperSlide>
           ))}
         </CustomSwiper>
         <FeaturesContainer>

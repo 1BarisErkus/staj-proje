@@ -8,10 +8,20 @@ import { useState } from "react";
 import AuthModal from "./AuthModal";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useQuery } from "@tanstack/react-query";
+import { getBasket } from "@/server/basket";
+import { useSession } from "next-auth/react";
 
 const Navbar = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const session = useSession();
   const router = useRouter();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const { data } = useQuery({
+    queryKey: ["basket"],
+    queryFn: () => getBasket((session.data?.user as { uid: string })?.uid),
+    enabled: !!session.data?.user,
+  });
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -60,7 +70,7 @@ const Navbar = () => {
               <BsCart4 size={24} />
             </span>
             Sepet
-            <CartBadge>0</CartBadge>
+            <CartBadge>{data?.length > 0 ? data?.length : 0}</CartBadge>
           </Button>
         </Col>
       </Row>

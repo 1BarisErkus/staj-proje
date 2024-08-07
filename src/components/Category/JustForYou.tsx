@@ -1,5 +1,5 @@
 import { Product, ProductProps } from "@/common/types";
-import CustomSwiper from "../CustomSwiper";
+import CustomSwiper, { CustomSwiperSlide } from "../CustomSwiper";
 import Section from "../Section";
 import { Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
@@ -34,7 +34,7 @@ const JustForYou = ({
         modules={[Navigation]}
       >
         {data?.map((product: ProductProps) => (
-          <SwiperSlide key={product.id}>
+          <CustomSwiperSlide key={product.id}>
             <Card
               id={product.id}
               images={product.images}
@@ -44,7 +44,7 @@ const JustForYou = ({
               discountPercentage={product.discountPercentage}
               isFavorite={favorites.includes(product.id)}
             />
-          </SwiperSlide>
+          </CustomSwiperSlide>
         ))}
       </CustomSwiper>
     </Section>

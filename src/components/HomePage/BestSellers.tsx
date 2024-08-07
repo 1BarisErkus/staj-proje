@@ -11,7 +11,7 @@ import { SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import Image from "next/image";
 import { useState } from "react";
-import CustomSwiper from "../CustomSwiper";
+import CustomSwiper, { CustomSwiperSlide } from "../CustomSwiper";
 
 interface BestSellersProductProps extends ProductProps {
   fibabanka: boolean;
@@ -46,7 +46,7 @@ const BestSellers = ({
   );
 
   return (
-    <Section title="Çok Satanlar">
+    <Section title="Çok Satanlar" id="bestSellers">
       <CustomSwiper
         slidesPerView={2}
         breakpoints={{
@@ -67,7 +67,7 @@ const BestSellers = ({
         modules={[Navigation]}
       >
         {categories?.map((category, index) => (
-          <SwiperSlide key={index}>
+          <CustomSwiperSlide key={index}>
             <CategoryCard
               $active={activeCategory === category.name}
               onClick={() => setActiveCategory(category.name)}
@@ -79,11 +79,12 @@ const BestSellers = ({
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: "contain" }}
                 />
               </CategoryImage>
               <CategoryName>{category.name}</CategoryName>
             </CategoryCard>
-          </SwiperSlide>
+          </CustomSwiperSlide>
         ))}
       </CustomSwiper>
       <CardList>

@@ -14,6 +14,7 @@ import {
 } from "@/styles/Header/Navbar/SearchModal";
 import { Navigation } from "swiper/modules";
 import Image from "next/image";
+import { CustomSwiperSlide } from "@/components/CustomSwiper";
 
 const specialCategories = [
   "6 Taksit + 0 Faiz",
@@ -66,9 +67,9 @@ const SearchModal = ({
               modules={[Navigation]}
             >
               {popularSearches.map((popular, index) => (
-                <SwiperSlide key={index}>
+                <CustomSwiperSlide key={index}>
                   <SearchItem>{popular}</SearchItem>
-                </SwiperSlide>
+                </CustomSwiperSlide>
               ))}
             </Swiper>
           </PopularSearches>

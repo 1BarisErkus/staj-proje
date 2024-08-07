@@ -6,6 +6,12 @@ export const CardList = styled.div`
   gap: 20px;
   padding-top: 20px;
   border-top: 1px solid gainsboro;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 export const CategoryCard = styled.div<{ $active?: boolean }>`
@@ -39,9 +45,9 @@ export const CategoryCard = styled.div<{ $active?: boolean }>`
 `;
 
 export const CategoryImage = styled.div`
-  width: 20px;
-  height: 30px;
   position: relative;
+  width: 30px;
+  height: 30px;
 `;
 
 export const CategoryName = styled.span`

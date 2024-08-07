@@ -4,12 +4,14 @@ import { H1, Wrapper } from "@/styles/Section";
 const Section = ({
   children,
   title,
+  id,
 }: {
   children: React.ReactNode;
   title: string;
+  id?: string;
 }) => {
   return (
-    <Container>
+    <Container id={id}>
       <Row>
         <Col>
           <Wrapper>

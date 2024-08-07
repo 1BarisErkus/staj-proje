@@ -12,9 +12,8 @@ export const Wrapper = styled(Col)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: auto;
   background-color: #39a6d8;
-  padding: 20px;
+  padding: 0 20px;
   border: 10px solid #f1f0f8;
   border-radius: 10px;
   flex-wrap: wrap;
@@ -46,6 +45,7 @@ export const Text = styled.p`
   font-size: 1.45rem;
   color: #fff;
   font-weight: bold;
+  text-align: center;
 
   @media (max-width: 576px) {
     font-size: 1rem;

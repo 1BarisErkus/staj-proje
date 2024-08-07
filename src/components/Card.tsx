@@ -1,4 +1,4 @@
-import CustomSwiper from "./CustomSwiper";
+import CustomSwiper, { CustomSwiperSlide } from "./CustomSwiper";
 import Link from "next/link";
 import { Rating } from "@smastrom/react-rating";
 import {
@@ -52,7 +52,7 @@ const Card: React.FC<CardProps> = ({
   const session = useSession();
   const queryClient = useQueryClient();
 
-  const { isPending, mutate } = useMutation({
+  const { mutate } = useMutation({
     mutationFn: async () =>
       await changeFavorite((session.data?.user as { uid: string })?.uid, id),
     onSuccess: () => {
@@ -62,7 +62,11 @@ const Card: React.FC<CardProps> = ({
         queryKey: ["favorites"],
       });
     },
-    onError: () => notify("Ürün favori durumu değiştirilemedi", "error"),
+    onError: () =>
+      notify(
+        "Ürün favori durumu değiştirilemedi. Lütfen önce oturum durumunuzu kontrol edin.",
+        "error"
+      ),
   });
 
   return (
@@ -88,7 +92,7 @@ const Card: React.FC<CardProps> = ({
           modules={[Pagination]}
         >
           {images.map((image, index) => (
-            <SwiperSlide key={index}>
+            <CustomSwiperSlide key={index}>
               <ProductImage
                 src={`/images/products/${image}`}
                 alt={name}
@@ -96,7 +100,7 @@ const Card: React.FC<CardProps> = ({
                 height={size === "small" ? 100 : 200}
                 priority
               />
-            </SwiperSlide>
+            </CustomSwiperSlide>
           ))}
         </CustomSwiper>
         <ProductName size={size}>{name}</ProductName>

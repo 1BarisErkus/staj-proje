@@ -1,4 +1,4 @@
-import CustomSwiper from "../CustomSwiper";
+import CustomSwiper, { CustomSwiperSlide } from "../CustomSwiper";
 import { SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import Image from "next/image";
@@ -18,7 +18,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
       modules={[Pagination]}
     >
       {images.map((image, index) => (
-        <SwiperSlide key={index}>
+        <CustomSwiperSlide key={index}>
           <ImageWrapper>
             <Image
               src={`/images/products/${image}`}
@@ -28,7 +28,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </ImageWrapper>
-        </SwiperSlide>
+        </CustomSwiperSlide>
       ))}
     </CustomSwiper>
   );

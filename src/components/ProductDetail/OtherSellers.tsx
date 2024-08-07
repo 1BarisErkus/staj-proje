@@ -1,5 +1,5 @@
 import React from "react";
-import CustomSwiper from "../CustomSwiper";
+import CustomSwiper, { CustomSwiperSlide } from "../CustomSwiper";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
 import {
   Button,
@@ -46,7 +46,7 @@ const OtherSellers: React.FC<OtherSellersProps> = ({ data }) => {
               navigation={true}
             >
               {data.map((item, index) => (
-                <SwiperSlide key={index}>
+                <CustomSwiperSlide key={index}>
                   <Card>
                     <CardHeader>
                       <CardRating>{item.rating}</CardRating>
@@ -66,7 +66,7 @@ const OtherSellers: React.FC<OtherSellersProps> = ({ data }) => {
                       </Col>
                     </CardBody>
                   </Card>
-                </SwiperSlide>
+                </CustomSwiperSlide>
               ))}
             </CustomSwiper>
           </StyledCol>

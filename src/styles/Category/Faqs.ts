@@ -16,8 +16,9 @@ export const AccordionButton = styled.button`
   text-align: left;
   border: none;
   cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
   border-bottom: 1px solid #ddd;
   background-color: transparent;
 

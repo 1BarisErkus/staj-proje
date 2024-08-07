@@ -2,6 +2,7 @@ import { Button, ImageWrapper, Text } from "@/styles/Category/Slider";
 import Image from "next/image";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { CustomSwiperSlide } from "../CustomSwiper";
 
 const images = [
   {
@@ -32,7 +33,7 @@ const Slider = () => {
       }}
     >
       {images.map((item, index) => (
-        <SwiperSlide key={index}>
+        <CustomSwiperSlide key={index}>
           <ImageWrapper>
             <Text>{item.text}</Text>
             <Image
@@ -46,7 +47,7 @@ const Slider = () => {
             />
             <Button>İncele</Button>
           </ImageWrapper>
-        </SwiperSlide>
+        </CustomSwiperSlide>
       ))}
     </Swiper>
   );

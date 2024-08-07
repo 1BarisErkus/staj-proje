@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { SwiperWrapper } from "@/styles/Footer/Slider";
-import CustomSwiper from "../CustomSwiper";
+import CustomSwiper, { CustomSwiperSlide } from "../CustomSwiper";
 
 const logos = [
   "fizy-logo",
@@ -44,7 +44,7 @@ const Slider = () => {
         modules={[Navigation]}
       >
         {logos.map((logo, index) => (
-          <SwiperSlide key={index}>
+          <CustomSwiperSlide key={index}>
             <div style={{ position: "relative", width: 100, height: 30 }}>
               <Image
                 src={`/images/footerSlider/${logo}.webp`}
@@ -57,7 +57,7 @@ const Slider = () => {
               33vw"
               />
             </div>
-          </SwiperSlide>
+          </CustomSwiperSlide>
         ))}
       </CustomSwiper>
     </SwiperWrapper>

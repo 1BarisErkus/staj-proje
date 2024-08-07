@@ -65,7 +65,6 @@ const Home: React.FC<HomeProps> = ({ session }) => {
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  console.log(context);
   const queryClient = new QueryClient();
   const session = await getSession(context);
 

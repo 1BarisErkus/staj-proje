@@ -38,24 +38,6 @@ export const SlideContent = styled.div`
   padding: 0 50px;
   width: 1200px;
   height: 500px;
-
-  @media (max-width: 1200px) {
-    width: 1000px;
-    height: 400px;
-    padding: 0 40px;
-  }
-
-  @media (max-width: 768px) {
-    width: 80%;
-    height: 300px;
-    padding: 0 30px;
-  }
-
-  @media (max-width: 576px) {
-    width: 100%;
-    height: 250px;
-    padding: 0 20px;
-  }
 `;
 
 export const BlurredImage = styled(Image)`

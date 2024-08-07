@@ -57,7 +57,7 @@ const Basket: FC<BasketProps> = ({ session }) => {
             <Row>
               <Col size={8}>
                 <BasketItemsContainer>
-                  {basket.map((item: BasketItemProps) => (
+                  {basket?.map((item: BasketItemProps) => (
                     <BasketItem
                       key={item.id}
                       userId={session?.user.uid}

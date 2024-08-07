@@ -3,7 +3,7 @@ import Section from "./Section";
 import { Product, ProductProps } from "@/common/types";
 import { Navigation } from "swiper/modules";
 import Card from "./Card";
-import CustomSwiper from "./CustomSwiper";
+import CustomSwiper, { CustomSwiperSlide } from "./CustomSwiper";
 
 const RecentReviews = ({
   data,
@@ -34,7 +34,7 @@ const RecentReviews = ({
         modules={[Navigation]}
       >
         {data?.map((product: ProductProps) => (
-          <SwiperSlide key={product.id}>
+          <CustomSwiperSlide key={product.id}>
             <Card
               id={product.id}
               images={product.images}
@@ -44,7 +44,7 @@ const RecentReviews = ({
               discountPercentage={product.discountPercentage}
               isFavorite={favorites.includes(product.id)}
             />
-          </SwiperSlide>
+          </CustomSwiperSlide>
         ))}
       </CustomSwiper>
     </Section>

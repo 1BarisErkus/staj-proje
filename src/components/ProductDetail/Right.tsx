@@ -9,6 +9,7 @@ import { useSession } from "next-auth/react";
 import { notify } from "@/lib/notify";
 import { addProductToBasket } from "@/server/basket";
 import { Configuration } from "@/common/types";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 interface RightProps {
   id: string;
@@ -27,6 +28,17 @@ interface RightProps {
   guarantee: boolean;
   isContract: boolean;
   isFavorite: boolean;
+}
+
+interface BasketItem {
+  productId: string;
+  image: string;
+  name: string;
+  color: string | null;
+  price: number;
+  count: number;
+  memory: string | null;
+  seller: string;
 }
 
 const Right: React.FC<RightProps> = ({
@@ -51,8 +63,24 @@ const Right: React.FC<RightProps> = ({
   const [selectedMemory, setSelectedMemory] = useState<string | null>(null);
 
   const session = useSession();
+  const queryClient = useQueryClient();
 
-  const handleClick = async () => {
+  const addProductMutation = useMutation({
+    mutationFn: async (newBasketItem: BasketItem) =>
+      await addProductToBasket(
+        (session.data?.user as { uid: string })?.uid,
+        newBasketItem
+      ),
+    onSuccess: () => {
+      notify("Ürün sepete eklendi", "success");
+      queryClient.invalidateQueries({
+        queryKey: ["basket"],
+      });
+    },
+    onError: () => notify("Ürün sepete eklenirken bir hata oluştu", "error"),
+  });
+
+  const handleClick = () => {
     if (!session.data) {
       notify("Lütfen önce giriş yapınız", "error");
       return;
@@ -68,11 +96,7 @@ const Right: React.FC<RightProps> = ({
       seller: seller,
     };
 
-    await addProductToBasket(
-      (session.data?.user as { uid: string })?.uid,
-      newBasketItem
-    );
-    notify("Ürün sepete eklendi", "success");
+    addProductMutation.mutate(newBasketItem);
   };
 
   return (

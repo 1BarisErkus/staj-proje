@@ -5,11 +5,34 @@
       "name": "Barış Erkuş",
       "email": "baris@gmail.com",
       "isAdmin": false,
-      "basket": [],
+      "basket": [
+        {
+          "id": "c7680c41-6fb1-441f-ac5a-9c14d457e691",
+          "productId": "1",
+          "image": "iphone-15-pro-max-256gb/1.webp",
+          "name": "iPhone 15 Pro Max",
+          "color": "Mavi Titanyum",
+          "memory": "256 GB",
+          "price": 89999,
+          "count": 2,
+          "seller": "Turkcell Satış A.Ş."
+        },
+        {
+          "id": "ec28a824-258f-4f3f-b515-e62f3b2ba6ff",
+          "productId": "3",
+          "image": "huawei-watch/1.webp",
+          "name": "Huawei Watch GT4 46MM Akıllı Saat Siyah",
+          "color": "Siyah",
+          "memory": null,
+          "price": 5299,
+          "count": 1,
+          "seller": "SONNTECH"
+        }
+      ],
       "favorites": [
         "1",
-        "4",
-        "5"
+        "5",
+        "4"
       ]
     }
   ],

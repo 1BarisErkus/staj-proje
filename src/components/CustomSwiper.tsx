@@ -5,6 +5,7 @@ import { SwiperOptions, NavigationOptions } from "swiper/types";
 import { ButtonNext, ButtonPrev, SwiperContainer } from "@/styles/Swiper";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import "swiper/css";
+import styled from "styled-components";
 
 interface CustomSwiperProps {
   children: React.ReactNode;
@@ -114,3 +115,8 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
 };
 
 export default CustomSwiper;
+
+export const CustomSwiperSlide = styled(SwiperSlide)`
+  display: flex;
+  justify-content: center;
+`;

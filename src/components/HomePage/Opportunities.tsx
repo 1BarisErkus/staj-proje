@@ -2,7 +2,7 @@ import { SwiperSlide } from "swiper/react";
 import Section from "../Section";
 import { Navigation } from "swiper/modules";
 import Image from "next/image";
-import CustomSwiper from "../CustomSwiper";
+import CustomSwiper, { CustomSwiperSlide } from "../CustomSwiper";
 
 const data = [
   "pacunku-kfa.webp",
@@ -38,7 +38,7 @@ const Opportunities = () => {
         modules={[Navigation]}
       >
         {data?.map((image, index) => (
-          <SwiperSlide key={index}>
+          <CustomSwiperSlide key={index}>
             <Image
               src={`/images/opportunities/${image}`}
               alt={image}
@@ -46,7 +46,7 @@ const Opportunities = () => {
               height={420}
               priority
             />
-          </SwiperSlide>
+          </CustomSwiperSlide>
         ))}
       </CustomSwiper>
     </Section>
