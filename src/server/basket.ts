@@ -93,3 +93,18 @@ export const removeProductFromBasket = async (
   const data = await response.json();
   return data.basket;
 };
+
+export const clearBasket = async (userId: string) => {
+  const user = await getUser(userId);
+
+  const response = await fetch(`${baseUrl}/users/${userId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ ...user, basket: [] }),
+  });
+
+  const data = await response.json();
+  return data.basket;
+};

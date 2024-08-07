@@ -35,6 +35,7 @@ interface BasketItemProps {
   discountPrice: number;
   count: number;
   seller: string;
+  limit: number;
 }
 
 const BasketItem: React.FC<BasketItemProps> = ({
@@ -48,8 +49,11 @@ const BasketItem: React.FC<BasketItemProps> = ({
   discountPrice,
   count,
   seller,
+  limit,
 }) => {
   const queryClient = useQueryClient();
+
+  console.log(limit, count);
 
   const { isPending: isDeleting, mutate: removeProductMutate } = useMutation({
     mutationFn: async () => await removeProductFromBasket(userId, productId),
@@ -65,7 +69,6 @@ const BasketItem: React.FC<BasketItemProps> = ({
   const { isPending: isChangeCount, mutate: changeCount } = useMutation({
     mutationFn: async (newCount: number) => await handleChangeCount(newCount),
     onSuccess: () => {
-      notify("Ürün adedi güncellendi", "success");
       queryClient.invalidateQueries({
         queryKey: ["basket"],
       });
@@ -78,7 +81,11 @@ const BasketItem: React.FC<BasketItemProps> = ({
       removeProductMutate();
       return;
     }
-    if (count < 10) {
+    if (limit && count === limit) {
+      notify(`Bu üründen en fazla ${limit} adet alabilirsiniz`, "error");
+      return;
+    }
+    if (count < limit || !limit) {
       await addProductToBasket(userId, {
         productId,
         image,
@@ -90,6 +97,8 @@ const BasketItem: React.FC<BasketItemProps> = ({
         count: newCount,
         seller,
       });
+      if (newCount < 0) notify("Ürün adedi azaltıldı", "success");
+      if (newCount > 0) notify("Ürün adedi artırıldı", "success");
       return;
     }
   };

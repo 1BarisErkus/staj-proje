@@ -45,6 +45,14 @@ const Basket: FC<BasketProps> = ({ session }) => {
       await getFavorites((session?.user as { uid: string })?.uid),
   });
 
+  const limitData = data
+    ? data.filter((item: any) =>
+        basket?.find((b: any) => b.productId === item.id)
+      )[0]
+    : null;
+
+  console.log("limit", limitData);
+
   const mayInterestYouData = data ? data.slice(0, 6) : [];
 
   return (
@@ -71,6 +79,7 @@ const Basket: FC<BasketProps> = ({ session }) => {
                       discountPrice={item.discountPrice}
                       count={item.count}
                       seller={item.seller}
+                      limit={limitData.limit}
                     />
                   ))}
                 </BasketItemsContainer>

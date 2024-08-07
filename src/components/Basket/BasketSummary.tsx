@@ -1,4 +1,5 @@
-import { getBasket } from "@/server/basket";
+import { notify } from "@/lib/notify";
+import { clearBasket, getBasket } from "@/server/basket";
 import {
   Button,
   CheckboxContainer,
@@ -10,12 +11,15 @@ import {
   SummaryContainer,
   SummaryTitle,
 } from "@/styles/Basket/BasketSummary";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
+import { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
 
 const BasketSummary: React.FC = () => {
+  const [isChecked, setIsChecked] = useState(false);
   const session = useSession();
+  const queryClient = useQueryClient();
 
   const { data: basket } = useQuery({
     queryKey: ["basket"],
@@ -35,6 +39,25 @@ const BasketSummary: React.FC = () => {
   );
 
   const discount = total - totalPriceWithDiscount;
+
+  const { mutate, isPending } = useMutation({
+    mutationFn: async () =>
+      await clearBasket((session.data?.user as { uid: string })?.uid),
+
+    onSuccess: () => {
+      notify("Siparişiniz başarıyla alındı.", "success");
+      queryClient.invalidateQueries({
+        queryKey: ["basket"],
+      });
+    },
+    onError: () =>
+      notify("Beklenmedik bir hata oluştu. Siparişiniz alınamadı.", "error"),
+  });
+
+  const handleClick = () => {
+    if (!isChecked) notify("Kullanıcı sözleşmesini onaylamalısınız.", "error");
+    else mutate();
+  };
 
   return (
     <SummaryContainer>
@@ -64,12 +87,19 @@ const BasketSummary: React.FC = () => {
         </span>
       </Button>
       <CheckboxContainer>
-        <input type="checkbox" id="agreement" />
+        <input
+          type="checkbox"
+          id="agreement"
+          value={isChecked.toString()}
+          onChange={(e) => setIsChecked(e.target.checked)}
+        />
         <CheckboxLabel htmlFor="agreement">
           <span>Kullanıcı sözleşmesini</span> okudum, onaylıyorum.
         </CheckboxLabel>
       </CheckboxContainer>
-      <ContinueButton>Siparişe Devam Et</ContinueButton>
+      <ContinueButton onClick={handleClick} disabled={isPending}>
+        Siparişe Devam Et
+      </ContinueButton>
     </SummaryContainer>
   );
 };

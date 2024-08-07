@@ -4,24 +4,20 @@
       "id": "wuhEiFqcxse8NeTLAAcB4B3DDko1",
       "name": "Barış Erkuş",
       "email": "baris@gmail.com",
-      "basket": [
-        {
-          "id": "f994c4ce-ab2e-46de-b838-eb950ff0529f",
-          "productId": "1",
-          "image": "iphone-15-pro-max-256gb/1.webp",
-          "name": "iPhone 15 Pro Max",
-          "color": "Mavi Titanyum",
-          "memory": "256 GB",
-          "price": 89999,
-          "discountPrice": 79199,
-          "count": 1,
-          "seller": "Turkcell Satış A.Ş."
-        }
-      ],
+      "basket": [],
       "favorites": [
         "1",
-        "5",
         "4"
+      ]
+    },
+    {
+      "id": "PFEWM9uL5HaNrQc35hxspMEjUHt2",
+      "name": "Ahmet Selim",
+      "email": "ahmet@gmail.com",
+      "isAdmin": false,
+      "basket": [],
+      "favorites": [
+        "7"
       ]
     }
   ],

@@ -14,7 +14,7 @@ import {
 } from "@/styles/Header/Navbar/SearchModal";
 import { Navigation } from "swiper/modules";
 import Image from "next/image";
-import { CustomSwiperSlide } from "@/components/CustomSwiper";
+import CustomSwiper, { CustomSwiperSlide } from "@/components/CustomSwiper";
 
 const specialCategories = [
   "6 Taksit + 0 Faiz",
@@ -53,7 +53,7 @@ const SearchModal = ({
           </SpecialCategories>
           <ModalHeader>Popüler Aramalar</ModalHeader>
           <PopularSearches>
-            <Swiper
+            <CustomSwiper
               slidesPerView={2}
               breakpoints={{
                 768: {
@@ -71,7 +71,7 @@ const SearchModal = ({
                   <SearchItem>{popular}</SearchItem>
                 </CustomSwiperSlide>
               ))}
-            </Swiper>
+            </CustomSwiper>
           </PopularSearches>
           <ModalBottomWrapper>
             <Image
