@@ -1,15 +1,14 @@
 import { Col, Container, Row } from "@/styles/GlobalVariables";
 import { H1, Wrapper } from "@/styles/Section";
+import { FC } from "react";
 
-const Section = ({
-  children,
-  title,
-  id,
-}: {
-  children: React.ReactNode;
-  title: string;
+type SectionProps = {
   id?: string;
-}) => {
+  title: string;
+  children: React.ReactNode;
+};
+
+const Section: FC<SectionProps> = ({ id, title, children }) => {
   return (
     <Container id={id}>
       <Row>

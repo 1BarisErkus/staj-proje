@@ -1,59 +1,58 @@
-import { FC, Key } from "react";
+import { FC } from "react";
 import { GetServerSideProps } from "next";
-import { useQuery } from "@tanstack/react-query";
+import { Session } from "next-auth";
 import { getSession } from "next-auth/react";
+import { useQueries } from "@tanstack/react-query";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
-import MayInterestYou from "@/components/Basket/MayInterestYou";
-import NoItem from "@/components/Basket/NoItem";
+
 import { getFavorites, getProducts } from "@/server/posts";
-import { getBasket } from "@/server/basket";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
-import BasketItem from "@/components/Basket/BasketItem";
+import MayInterestYou from "@/components/Basket/MayInterestYou";
 import { BasketItemsContainer, TitleOrder, Wrapper } from "@/styles/Basket";
 import BasketSummary from "@/components/Basket/BasketSummary";
+import BasketItem from "@/components/Basket/BasketItem";
+import NoItem from "@/components/Basket/NoItem";
+import { getBasket } from "@/server/basket";
+import { ProductForBasket } from "@/common/types";
 
-interface BasketProps {
-  dehydratedState: unknown;
-  session: any;
-}
+type BasketProps = {
+  session: Session & { user: { uid: string } };
+};
 
-interface BasketItemProps {
-  id: Key | null | undefined;
-  userId: string;
-  productId: string;
-  image: string;
-  name: string;
-  memory: string;
-  color: string;
-  price: number;
-  discountPrice: number;
-  count: number;
-  seller: string;
+interface BasketItemProps extends ProductForBasket {
+  id: string;
 }
 
 const Basket: FC<BasketProps> = ({ session }) => {
-  const { data } = useQuery({ queryKey: ["products"], queryFn: getProducts });
-
-  const { data: basket } = useQuery({
-    queryKey: ["basket"],
-    queryFn: () => getBasket((session?.user as { uid: string })?.uid),
+  const results = useQueries({
+    queries: [
+      {
+        queryKey: ["products"],
+        queryFn: getProducts,
+      },
+      {
+        queryKey: ["favorites"],
+        queryFn: () => getFavorites(session?.user?.uid),
+        enabled: !!session,
+      },
+      {
+        queryKey: ["basket"],
+        queryFn: () => getBasket(session?.user?.uid),
+      },
+    ],
   });
 
-  const { data: favorites } = useQuery({
-    queryKey: ["favorites"],
-    queryFn: async () =>
-      await getFavorites((session?.user as { uid: string })?.uid),
-  });
+  const products = results[0].data;
+  const favorites = results[1].data;
+  const basket = results[2].data;
 
-  const limitData = data
-    ? data.filter((item: any) =>
+  const limitData = products
+    ? products.filter((item: any) =>
         basket?.find((b: any) => b.productId === item.id)
       )[0]
     : null;
 
-  console.log("limit", limitData);
-
-  const mayInterestYouData = data ? data.slice(0, 6) : [];
+  const mayInterestYouData = products ? products.slice(0, 6) : [];
 
   return (
     <Wrapper>

@@ -36,8 +36,6 @@ export const NameDetails = styled(Link)`
   flex-direction: column;
 `;
 
-export const Name = styled.h4``;
-
 export const Color = styled.p`
   color: #9e9e9e;
 `;

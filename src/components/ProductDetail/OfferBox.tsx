@@ -18,7 +18,7 @@ import {
 interface OfferBoxProps {
   title: string;
   subtitle?: string;
-  price: string;
+  price: number;
   oldPrice?: number;
   discountPercentage?: number;
   selected?: boolean;
@@ -52,7 +52,7 @@ const OfferBox: React.FC<OfferBoxProps> = ({
         </TextWrapper>
         <PriceWrapper>
           <div>
-            <Price>{price}</Price>
+            <Price>{price.toLocaleString("tr-TR")}</Price>
             <PriceDetail>
               TL{installmentCount && "x" + installmentCount + "Ay"}
             </PriceDetail>

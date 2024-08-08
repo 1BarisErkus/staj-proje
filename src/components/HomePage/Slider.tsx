@@ -1,17 +1,15 @@
+import { useState } from "react";
 import Image from "next/image";
 import { Swiper } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 import {
-  BlurredImage,
-  Container,
+  SliderContainer,
   SlideContent,
-  StyledSwiperSlide,
+  BlurredImage,
 } from "@/styles/HomePage/Slider";
-import { useState } from "react";
-import { Pagination, Autoplay } from "swiper/modules";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import { StyledSwiperSlide } from "@/styles/Swiper";
 
-const images = [
+const slideImages = [
   "pdaf-pasaj-hero.webp",
   "Pasaj_Yaz-hero-banner-web.webp",
   "Pasaj_fibabanka-heroff-banner-web.webp",
@@ -30,14 +28,14 @@ const images = [
 ];
 
 const Slider = () => {
-  const [currentImage, setCurrentImage] = useState(images[0]);
+  const [currentImage, setCurrentImage] = useState(slideImages[0]);
 
   const handleSlideChange = (swiper: any) => {
-    setCurrentImage(images[swiper.activeIndex]);
+    setCurrentImage(slideImages[swiper.activeIndex]);
   };
 
   return (
-    <Container>
+    <SliderContainer>
       <BlurredImage
         src={`/images/mainSlider/${currentImage}`}
         alt="Slider"
@@ -48,16 +46,12 @@ const Slider = () => {
       <Swiper
         slidesPerView={1}
         onSlideChange={handleSlideChange}
-        modules={[Pagination, Autoplay]}
-        pagination={{
-          clickable: true,
-        }}
+        modules={[Autoplay]}
         autoplay={{
           delay: 2500,
-          disableOnInteraction: false,
         }}
       >
-        {images.map((image, index) => (
+        {slideImages.map((image, index) => (
           <StyledSwiperSlide key={index}>
             <SlideContent>
               <Image
@@ -71,7 +65,7 @@ const Slider = () => {
           </StyledSwiperSlide>
         ))}
       </Swiper>
-    </Container>
+    </SliderContainer>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { FC, Dispatch, useState } from "react";
 import { Header } from "@/styles/Category";
 import {
   CheckboxContainer,
@@ -17,8 +17,8 @@ const priceOptions = [
   { min: 50000, max: 0 },
 ];
 
-interface PriceProps {
-  dispatch: React.Dispatch<{
+type PriceProps = {
+  dispatch: Dispatch<{
     type: string;
     payload: string | { min: number; max: number };
   }>;
@@ -26,9 +26,9 @@ interface PriceProps {
     min: number;
     max: number;
   }[];
-}
+};
 
-const Price: React.FC<PriceProps> = ({ dispatch, prices }) => {
+const Price: FC<PriceProps> = ({ dispatch, prices }) => {
   const [isPriceOpen, setIsPriceOpen] = useState<boolean>(false);
 
   return (

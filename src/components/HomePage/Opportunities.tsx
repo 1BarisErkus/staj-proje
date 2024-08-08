@@ -1,7 +1,6 @@
-import { SwiperSlide } from "swiper/react";
-import Section from "../Section";
-import { Navigation } from "swiper/modules";
 import Image from "next/image";
+import { Navigation } from "swiper/modules";
+import Section from "../Section";
 import CustomSwiper, { CustomSwiperSlide } from "../CustomSwiper";
 
 const data = [

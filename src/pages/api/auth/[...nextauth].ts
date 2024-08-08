@@ -2,6 +2,7 @@ import NextAuth from "next-auth/next";
 import { auth } from "@/lib/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { notify } from "@/lib/notify";
 
 export const authOptions = {
   providers: [
@@ -23,15 +24,12 @@ export const authOptions = {
             }
             return null;
           })
-          .catch((error) => {
-            console.error("Error:", error);
+          .catch(() => {
+            notify("Beklenmedik bir hata oluştu!", "error");
           });
       },
     }),
   ],
-  pages: {
-    signIn: "/auth/signin",
-  },
   callbacks: {
     async session({ session, token }: { session: any; token: any }) {
       if (token && token.user) {

@@ -1,3 +1,4 @@
+import { FC, Dispatch, useEffect, useState } from "react";
 import {
   CheckboxContainer,
   FilterOption,
@@ -5,22 +6,17 @@ import {
   SearchInput,
   StyledCheckbox,
 } from "@/styles/Category/Options";
-import React, { useEffect, useState } from "react";
 import { HiddenCheckbox } from "@/styles/Category/SwitchButton";
-import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 import { Header } from "@/styles/Category";
+import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 
-interface SellersProps {
-  dispatch: React.Dispatch<{ type: string; payload: string }>;
+type SellersProps = {
+  dispatch: Dispatch<{ type: string; payload: string }>;
   sellers: string[];
   sellerOptions: string[];
-}
+};
 
-const Sellers: React.FC<SellersProps> = ({
-  dispatch,
-  sellers,
-  sellerOptions,
-}) => {
+const Sellers: FC<SellersProps> = ({ dispatch, sellers, sellerOptions }) => {
   const [isSellerOpen, setIsSellerOpen] = useState<boolean>(false);
   const [search, setSearch] = useState<string>("");
   const [filteredSellerOptions, setFilteredSellerOptions] =

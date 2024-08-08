@@ -55,7 +55,8 @@ const OtherSellers: React.FC<OtherSellersProps> = ({ data }) => {
                     <CardBody>
                       <Col size={6}>
                         <Price>
-                          {item.price} <Currency>TL</Currency>
+                          {item.price.toLocaleString("tr-TR")}{" "}
+                          <Currency>TL</Currency>
                         </Price>
                       </Col>
                       <Col size={6}>

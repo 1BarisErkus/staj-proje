@@ -1,28 +1,44 @@
+import { FC } from "react";
+import { Session } from "next-auth";
+import { GetServerSideProps } from "next";
+import { getSession } from "next-auth/react";
+import { dehydrate, QueryClient, useQueries } from "@tanstack/react-query";
+
 import { Product } from "@/common/types";
+import { getFavorites, getProducts } from "@/server/posts";
 import Card from "@/components/Card";
 import Section from "@/components/Section";
-import { getFavorites, getProducts } from "@/server/posts";
-import { CardList } from "@/styles/HomePage/BestSellers";
-import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
-import { getSession, GetSessionParams } from "next-auth/react";
-import React from "react";
+import { CardListWrapper } from "@/styles/GlobalVariables";
 
-const Favorites = ({ session }: { session: any }) => {
-  const { data } = useQuery({ queryKey: ["products"], queryFn: getProducts });
+type FavoritesProps = {
+  session: Session & { user: { uid: string } };
+};
 
-  const { data: favorites } = useQuery({
-    queryKey: ["favorites"],
-    queryFn: async () =>
-      await getFavorites((session?.user as { uid: string })?.uid),
+const Favorites: FC<FavoritesProps> = ({ session }) => {
+  const results = useQueries({
+    queries: [
+      {
+        queryKey: ["products"],
+        queryFn: getProducts,
+      },
+      {
+        queryKey: ["favorites"],
+        queryFn: () => getFavorites(session?.user?.uid),
+        enabled: !!session,
+      },
+    ],
   });
 
-  const favoritesData = data?.filter((product: Product) =>
+  const products = results[0].data;
+  const favorites = results[1].data;
+
+  const favoritesData = products?.filter((product: Product) =>
     favorites.includes(product.id)
   );
 
   return (
     <Section title="Favorilerim">
-      <CardList>
+      <CardListWrapper>
         {favoritesData.length > 0 ? (
           favoritesData?.map((product: Product) => (
             <Card
@@ -41,16 +57,14 @@ const Favorites = ({ session }: { session: any }) => {
         ) : (
           <p>Favori ürününüz bulunmamaktadır.</p>
         )}
-      </CardList>
+      </CardListWrapper>
     </Section>
   );
 };
 
 export default Favorites;
 
-export const getServerSideProps = async (
-  context: GetSessionParams | undefined
-) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const queryClient = new QueryClient();
   const session = await getSession(context);
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { FC, Dispatch, useState } from "react";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 import { Container, Header, Icon, Item } from "@/styles/Category";
 import { RadioButton } from "@/styles/Category/SwitchButton";
@@ -13,10 +13,10 @@ const sortOptions = [
 
 interface SortByProps {
   sortValue: string;
-  dispatch: React.Dispatch<{ type: string; payload: string }>;
+  dispatch: Dispatch<{ type: string; payload: string }>;
 }
 
-const SortBy: React.FC<SortByProps> = ({ sortValue, dispatch }) => {
+const SortBy: FC<SortByProps> = ({ sortValue, dispatch }) => {
   const [isExpanded, setIsExpanded] = useState(true);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

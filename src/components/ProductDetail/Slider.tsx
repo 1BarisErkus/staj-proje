@@ -1,6 +1,5 @@
 import CustomSwiper, { CustomSwiperSlide } from "../CustomSwiper";
-import { SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import Image from "next/image";
 import { ImageWrapper } from "@/styles/ProductDetail";
 
@@ -15,7 +14,11 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
       pagination={{
         clickable: true,
       }}
-      modules={[Pagination]}
+      modules={[Pagination, Autoplay]}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
     >
       {images.map((image, index) => (
         <CustomSwiperSlide key={index}>

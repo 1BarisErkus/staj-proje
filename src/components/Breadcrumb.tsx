@@ -1,18 +1,17 @@
-import React from "react";
+import { FC } from "react";
+import { Container } from "@/styles/GlobalVariables";
 import {
   BreadcrumbIcon,
   BreadcrumbItem,
   BreadcrumbWrapper,
 } from "@/styles/Breadcrumb";
-import { Container } from "@/styles/GlobalVariables";
 
-const Breadcrumb = ({
-  category,
-  subCategory,
-}: {
+type BreadcrumbProps = {
   category: string;
   subCategory?: string;
-}) => {
+};
+
+const Breadcrumb: FC<BreadcrumbProps> = ({ category, subCategory }) => {
   return (
     <Container>
       <BreadcrumbWrapper>

@@ -1,28 +1,24 @@
-import React, { useState } from "react";
-import { Icon } from "@/styles/Category/InfoBox";
+import React, { FC, useState } from "react";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 import { Container, Header, Item } from "@/styles/Category";
 
-interface SubCategory {
-  name: string;
-  count: number;
-}
-
-interface Category {
-  name: string;
-  count: number;
-}
-
-const InfoBox = ({
-  dataLength,
-  params,
-  category,
-  subCategory,
-}: {
+type InfoBoxProps = {
   dataLength: number;
   params: any;
   category: string;
   subCategory: string;
+};
+
+type Category = {
+  name: string;
+  count: number;
+};
+
+const InfoBox: FC<InfoBoxProps> = ({
+  dataLength,
+  params,
+  category,
+  subCategory,
 }) => {
   const categories: Category[] = [
     {
@@ -48,13 +44,11 @@ const InfoBox = ({
         <div key={category.name}>
           <Item $active={false} onClick={() => toggleCategory(category.name)}>
             {category.name} ({category.count})
-            <Icon>
-              {openCategories.includes(category.name) ? (
-                <FaAngleDown />
-              ) : (
-                <FaAngleRight />
-              )}
-            </Icon>
+            {openCategories.includes(category.name) ? (
+              <FaAngleDown />
+            ) : (
+              <FaAngleRight />
+            )}
           </Item>
         </div>
       ))}

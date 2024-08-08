@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Section from "../Section";
 import { Item, Title, Wrapper } from "@/styles/HomePage/PopularCategories";
+import Section from "../Section";
 
 const popularCategories = [
   {

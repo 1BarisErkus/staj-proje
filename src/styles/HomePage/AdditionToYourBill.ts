@@ -12,31 +12,13 @@ export const Wrapper = styled(Col)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   background-color: #39a6d8;
-  padding: 0 20px;
   border: 10px solid #f1f0f8;
   border-radius: 10px;
-  flex-wrap: wrap;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    text-align: center;
-  }
-`;
-
-export const StyledCol = styled(Col)`
-  padding: 10px;
-  flex: ${({ size = 0 }) => (size / 12) * 100}%;
-
-  @media (max-width: 576px) {
-    flex: 100%;
-    width: 100%;
-    text-align: center;
-  }
-
-  @media (max-width: 768px) {
-    flex: 100%;
-    width: 100%;
     text-align: center;
   }
 `;
@@ -67,16 +49,5 @@ export const Button = styled.button`
   @media (max-width: 576px) {
     padding: 5px 10px;
     font-size: 0.75rem;
-  }
-`;
-
-export const ImageWrapper = styled.div`
-  width: 220px;
-  height: 150px;
-  position: relative;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    height: auto;
   }
 `;

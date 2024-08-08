@@ -6,6 +6,10 @@ export const ProductDetailsContainer = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 50px 20px;
+  }
 `;
 
 export const DetailsRow = styled.div`

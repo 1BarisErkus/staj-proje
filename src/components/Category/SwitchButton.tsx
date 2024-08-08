@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import {
   HiddenCheckbox,
   Label,
@@ -7,13 +7,12 @@ import {
   SwitchContainer,
 } from "@/styles/Category/SwitchButton";
 
-const SwitchButton = ({
-  title,
-  handleChange,
-}: {
+type SwitchButtonProps = {
   title: string;
   handleChange: () => void;
-}) => {
+};
+
+const SwitchButton: FC<SwitchButtonProps> = ({ title, handleChange }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleToggle = () => {

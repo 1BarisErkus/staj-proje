@@ -13,7 +13,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
-import "swiper/css";
+import "swiper/swiper-bundle.css";
 import "@smastrom/react-rating/style.css";
 
 import GlobalStyles from "@/styles/GlobalStyles";

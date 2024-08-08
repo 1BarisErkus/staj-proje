@@ -1,5 +1,11 @@
-import React from "react";
+import { FC } from "react";
 import Image from "next/image";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+
+import { addProductToBasket, removeProductFromBasket } from "@/server/basket";
+import { notify } from "@/lib/notify";
+import { Container, Row } from "@/styles/GlobalVariables";
+import { ProductForBasket } from "@/common/types";
 import {
   BasketItemWrapper,
   Bottom,
@@ -13,32 +19,19 @@ import {
   Label,
   Left,
   Middle,
-  Name,
   NameDetails,
   Price,
   PriceWrapper,
   Right,
 } from "@/styles/Basket/BasketItem";
-import { Container, Row } from "@/styles/GlobalVariables";
-import { addProductToBasket, removeProductFromBasket } from "@/server/basket";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { notify } from "@/lib/notify";
+import MinimalLoading from "../MinimalLoading";
 
-interface BasketItemProps {
+interface BasketItemProps extends ProductForBasket {
   userId: string;
-  productId: string;
-  image: string;
-  name: string;
-  memory: string | null;
-  color: string;
-  price: number;
-  discountPrice: number;
-  count: number;
-  seller: string;
   limit: number;
 }
 
-const BasketItem: React.FC<BasketItemProps> = ({
+const BasketItem: FC<BasketItemProps> = ({
   userId,
   productId,
   image,
@@ -53,26 +46,28 @@ const BasketItem: React.FC<BasketItemProps> = ({
 }) => {
   const queryClient = useQueryClient();
 
-  console.log(limit, count);
-
   const { isPending: isDeleting, mutate: removeProductMutate } = useMutation({
-    mutationFn: async () => await removeProductFromBasket(userId, productId),
+    mutationFn: () => removeProductFromBasket(userId, productId),
+
     onSuccess: () => {
       notify("Ürün sepetten kaldırıldı", "success");
       queryClient.invalidateQueries({
         queryKey: ["basket"],
       });
     },
+
     onError: () => notify("Ürün sepetten kaldırılamadı", "error"),
   });
 
   const { isPending: isChangeCount, mutate: changeCount } = useMutation({
-    mutationFn: async (newCount: number) => await handleChangeCount(newCount),
+    mutationFn: (newCount: number) => handleChangeCount(newCount),
+
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["basket"],
       });
     },
+
     onError: () => notify("Ürün adedi güncellenemedi", "error"),
   });
 
@@ -81,12 +76,12 @@ const BasketItem: React.FC<BasketItemProps> = ({
       removeProductMutate();
       return;
     }
-    if (limit && count === limit) {
+    if (limit && count >= limit) {
       notify(`Bu üründen en fazla ${limit} adet alabilirsiniz`, "error");
       return;
     }
     if (count < limit || !limit) {
-      await addProductToBasket(userId, {
+      const newBasketItem = {
         productId,
         image,
         name,
@@ -96,7 +91,9 @@ const BasketItem: React.FC<BasketItemProps> = ({
         discountPrice,
         count: newCount,
         seller,
-      });
+      };
+      await addProductToBasket(userId, newBasketItem);
+
       if (newCount < 0) notify("Ürün adedi azaltıldı", "success");
       if (newCount > 0) notify("Ürün adedi artırıldı", "success");
       return;
@@ -106,7 +103,7 @@ const BasketItem: React.FC<BasketItemProps> = ({
   return (
     <BasketItemWrapper>
       <CloseButton onClick={() => removeProductMutate()} disabled={isDeleting}>
-        X
+        {isDeleting ? <MinimalLoading /> : "×"}
       </CloseButton>
       <Container>
         <Row>
@@ -119,16 +116,16 @@ const BasketItem: React.FC<BasketItemProps> = ({
               priority
             />
             <NameDetails href={`/product/${productId}`}>
-              <Name>
+              <h4>
                 {name} {memory !== "" && memory}
-              </Name>
+              </h4>
               <Color>{color}</Color>
             </NameDetails>
           </Left>
           <Middle size={5}>
             <PriceWrapper>
               Birim Fiyat
-              <Price>{price} TL</Price>
+              <Price>{price.toLocaleString("tr-TR")} TL</Price>
             </PriceWrapper>
             <div>
               <Label>Adet</Label>
@@ -139,7 +136,9 @@ const BasketItem: React.FC<BasketItemProps> = ({
                 >
                   -
                 </Button>
-                <Count>{count}</Count>
+                <Count>
+                  {isChangeCount ? <MinimalLoading size={16} /> : count}
+                </Count>
                 <Button
                   onClick={() => changeCount(1)}
                   disabled={isChangeCount || count >= 10}
@@ -152,7 +151,12 @@ const BasketItem: React.FC<BasketItemProps> = ({
           <Right size={2}>
             <PriceWrapper $mainprice>
               <Label>Tutar</Label>
-              <Price>{discountPrice !== 0 ? discountPrice : price} TL</Price>
+              <Price>
+                {discountPrice !== 0
+                  ? discountPrice.toLocaleString("tr-TR")
+                  : price.toLocaleString("tr-TR")}{" "}
+                TL
+              </Price>
             </PriceWrapper>
           </Right>
         </Row>

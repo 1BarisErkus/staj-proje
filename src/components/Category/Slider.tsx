@@ -1,8 +1,8 @@
-import { Button, ImageWrapper, Text } from "@/styles/Category/Slider";
 import Image from "next/image";
+import { Swiper } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { CustomSwiperSlide } from "../CustomSwiper";
+import { Button, ImageWrapper, Text } from "@/styles/Category/Slider";
 
 const images = [
   {

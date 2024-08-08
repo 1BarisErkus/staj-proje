@@ -12,7 +12,3 @@ export const SubCategoryItem = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-
-export const Icon = styled.span`
-  margin-left: 8px;
-`;

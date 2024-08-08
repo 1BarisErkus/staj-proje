@@ -1,8 +1,7 @@
-import Image from "next/image";
 import {
+  WhyPasajWrapper,
   CardDescription,
   CardTitle,
-  Container,
   Description,
   IconCard,
   IconsContainer,
@@ -12,48 +11,49 @@ import {
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdPayments, MdOutlineCancel } from "react-icons/md";
 
+const data = [
+  {
+    title: "Hızlı ve Kolay Teslimat",
+    description:
+      "Siparişiniz isterseniz gün içinde gelsin, isterseniz bir tıkla gelin ve mağazadan teslim alın.",
+    Icon: TbTruckDelivery,
+  },
+  {
+    title: "Esnek Ödeme Seçenekleri",
+    description:
+      "Alışverişlerinizi ister kredi kartınıza taksitlendirin ister Turkcell faturanıza ek, 36 aya varan vade imkanından faydalanın.",
+    Icon: MdPayments,
+  },
+  {
+    title: "Ücretsiz İptal ve İade",
+    description:
+      "Ürünlerinizi kolayca ve hiçbir ücret ödemeden iptal ve iade edebilirsiniz.",
+    Icon: MdOutlineCancel,
+  },
+];
+
 const WhyPasaj = () => {
   return (
-    <Container>
+    <WhyPasajWrapper>
       <Title>Neden Pasaj?</Title>
       <Description>
         Akıllı telefondan elektrikli süpürgeye, hobi ürünlerinden akıllı
         saatlere binlerce çeşit elektronik ürünü Turkcell Pasaj güvencesi ve
         Turkcell Pasaj ayrıcalığıyla keşfedin.
       </Description>
+
       <IconsContainer>
-        <IconCard>
-          <ImageWrapper>
-            <TbTruckDelivery size={44} />
-          </ImageWrapper>
-          <CardTitle>Hızlı ve Kolay Teslimat</CardTitle>
-          <CardDescription>
-            Siparişiniz isterseniz gün içinde gelsin, isterseniz bir tıkla gelin
-            ve mağazadan teslim alın.
-          </CardDescription>
-        </IconCard>
-        <IconCard>
-          <ImageWrapper>
-            <MdPayments size={44} />
-          </ImageWrapper>
-          <CardTitle>Esnek Ödeme Seçenekleri</CardTitle>
-          <CardDescription>
-            Alışverişlerinizi ister kredi kartınıza taksitlendirin ister
-            Turkcell faturanıza ek, 36 aya varan vade imkanından faydalanın.
-          </CardDescription>
-        </IconCard>
-        <IconCard>
-          <ImageWrapper>
-            <MdOutlineCancel size={44} />
-          </ImageWrapper>
-          <CardTitle>Ücretsiz İptal ve İade</CardTitle>
-          <CardDescription>
-            Ürünlerinizi kolayca ve hiçbir ücret ödemeden iptal ve iade
-            edebilirsiniz.
-          </CardDescription>
-        </IconCard>
+        {data.map((item, index) => (
+          <IconCard key={index}>
+            <ImageWrapper>
+              <item.Icon size={44} />
+            </ImageWrapper>
+            <CardTitle>{item.title}</CardTitle>
+            <CardDescription>{item.description}</CardDescription>
+          </IconCard>
+        ))}
       </IconsContainer>
-    </Container>
+    </WhyPasajWrapper>
   );
 };
 

@@ -1,5 +1,9 @@
-import { notify } from "@/lib/notify";
+import { FC, useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useSession } from "next-auth/react";
+
 import { clearBasket, getBasket } from "@/server/basket";
+import { notify } from "@/lib/notify";
 import {
   Button,
   CheckboxContainer,
@@ -11,12 +15,10 @@ import {
   SummaryContainer,
   SummaryTitle,
 } from "@/styles/Basket/BasketSummary";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useSession } from "next-auth/react";
-import { useState } from "react";
+import MinimalLoading from "../MinimalLoading";
 import { FaPlus } from "react-icons/fa6";
 
-const BasketSummary: React.FC = () => {
+const BasketSummary: FC = () => {
   const [isChecked, setIsChecked] = useState(false);
   const session = useSession();
   const queryClient = useQueryClient();
@@ -41,8 +43,7 @@ const BasketSummary: React.FC = () => {
   const discount = total - totalPriceWithDiscount;
 
   const { mutate, isPending } = useMutation({
-    mutationFn: async () =>
-      await clearBasket((session.data?.user as { uid: string })?.uid),
+    mutationFn: () => clearBasket((session.data?.user as { uid: string })?.uid),
 
     onSuccess: () => {
       notify("Siparişiniz başarıyla alındı.", "success");
@@ -66,7 +67,7 @@ const BasketSummary: React.FC = () => {
       </SummaryTitle>
       <Item>
         <span>Ürünler Toplamı</span>
-        <Price>{total} TL</Price>
+        <Price>{total.toLocaleString("tr-TR")} TL</Price>
       </Item>
       <Item>
         <span>Kargo Tutarı</span>
@@ -74,11 +75,11 @@ const BasketSummary: React.FC = () => {
       </Item>
       <Item>
         <span>İndirimler</span>
-        <Discount>- {discount} TL</Discount>
+        <Discount>- {discount.toLocaleString("tr-TR")} TL</Discount>
       </Item>
       <Item>
         <span>Ödenecek Tutar (KDV Dahil)</span>
-        <Price>{totalPriceWithDiscount} TL</Price>
+        <Price>{totalPriceWithDiscount.toLocaleString("tr-TR")} TL</Price>
       </Item>
       <Button>
         İndirim Kodu Ekle
@@ -98,7 +99,7 @@ const BasketSummary: React.FC = () => {
         </CheckboxLabel>
       </CheckboxContainer>
       <ContinueButton onClick={handleClick} disabled={isPending}>
-        Siparişe Devam Et
+        {isPending ? <MinimalLoading /> : "Siparişi Tamamla"}
       </ContinueButton>
     </SummaryContainer>
   );

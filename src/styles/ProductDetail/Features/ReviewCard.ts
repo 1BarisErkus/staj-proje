@@ -10,6 +10,7 @@ export const ReviewCardContainer = styled.div`
 
 export const ReviewHeader = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 10px;
 `;
@@ -50,6 +51,7 @@ export const PurchaseStatus = styled.span`
 export const ReviewText = styled.p`
   color: #333;
   margin: 20px 0;
+  word-wrap: break-word;
 `;
 
 export const HelpfulSection = styled.div`

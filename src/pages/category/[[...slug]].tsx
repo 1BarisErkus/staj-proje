@@ -1,29 +1,40 @@
-import React from "react";
-import { getSession } from "next-auth/react";
-import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
+import { FC } from "react";
 import { GetServerSideProps } from "next";
+import { getSession } from "next-auth/react";
+import { dehydrate, QueryClient, useQueries } from "@tanstack/react-query";
+import { getFavorites, getProducts } from "@/server/posts";
+import { categoryNames } from "@/lib/categoryNames";
 import Breadcrumb from "@/components/Breadcrumb";
 import JustForYou from "@/components/Category/JustForYou";
-import Title from "@/components/Category/Title";
-import { getFavorites, getProducts } from "@/server/posts";
 import { Content } from "@/styles/Category";
 import Filter from "@/components/Category/Filter";
+import { TitleText } from "@/styles/Category";
 
 interface ProductFilterProps {
   session: { user: { uid: string } };
   params: any;
 }
 
-const ProductFilter: React.FC<ProductFilterProps> = ({ session, params }) => {
-  const { data } = useQuery({ queryKey: ["products"], queryFn: getProducts });
-
-  const { data: favorites } = useQuery({
-    queryKey: ["favorites"],
-    queryFn: () => getFavorites(session?.user.uid),
+const ProductFilter: FC<ProductFilterProps> = ({ session, params }) => {
+  const results = useQueries({
+    queries: [
+      {
+        queryKey: ["products"],
+        queryFn: getProducts,
+      },
+      {
+        queryKey: ["favorites"],
+        queryFn: () => getFavorites(session?.user?.uid),
+        enabled: !!session,
+      },
+    ],
   });
 
-  const justForYouData = data
-    ? data.filter(
+  const products = results[0].data;
+  const favorites = results[1].data;
+
+  const justForYouData = products
+    ? products.filter(
         (product: { categoryCode: string; subCategoryCode: string }) =>
           params.slug.length > 1
             ? product.categoryCode === params.slug[params.slug.length - 2] &&
@@ -41,7 +52,9 @@ const ProductFilter: React.FC<ProductFilterProps> = ({ session, params }) => {
         }
       />
       <Content>
-        <Title title={params.slug[params.slug.length - 1]} />
+        <TitleText>
+          {categoryNames[params.slug[params.slug.length - 1]]}
+        </TitleText>
         <JustForYou data={justForYouData} favorites={favorites} />
         <Filter data={justForYouData} params={params} favorites={favorites} />
       </Content>

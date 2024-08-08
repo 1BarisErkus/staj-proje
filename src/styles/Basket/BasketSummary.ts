@@ -79,6 +79,9 @@ export const CheckboxLabel = styled.label`
 `;
 
 export const ContinueButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #ffc107;
   color: #000;
   border: none;

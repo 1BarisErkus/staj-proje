@@ -1,17 +1,11 @@
-import { SwiperSlide } from "swiper/react";
+import { FC } from "react";
+import { Navigation } from "swiper/modules";
+import { SectionProps, SwiperProductProps } from "@/common/types";
+import CustomSwiper, { CustomSwiperSlide } from "../CustomSwiper";
 import Section from "../Section";
 import Card from "../Card";
-import { Product, ProductProps } from "@/common/types";
-import { Navigation } from "swiper/modules";
-import CustomSwiper, { CustomSwiperSlide } from "../CustomSwiper";
 
-const NewOnes = ({
-  data,
-  favorites,
-}: {
-  data: Product[];
-  favorites: string[];
-}) => {
+const NewOnes: FC<SectionProps> = ({ data, favorites }) => {
   return (
     <Section title="Pasajın Yenileri">
       <CustomSwiper
@@ -33,7 +27,7 @@ const NewOnes = ({
         navigation={true}
         modules={[Navigation]}
       >
-        {data?.map((product: ProductProps) => (
+        {data?.map((product: SwiperProductProps) => (
           <CustomSwiperSlide key={product.id}>
             <Card
               id={product.id}

@@ -1,4 +1,4 @@
-export interface Product {
+export type Product = {
   id: string;
   name: string;
   price: number;
@@ -47,18 +47,18 @@ export interface Product {
   isNew: boolean;
   isBestSeller: boolean;
   date: string;
-}
+};
 
-export interface ProductProps {
+export type SwiperProductProps = {
   id: string;
   images: string[];
   name: string;
   price: number;
   badges: string[];
   discountPercentage: number;
-}
+};
 
-export interface ProductForBasket {
+export type ProductForBasket = {
   productId: string;
   image: string;
   name: string;
@@ -68,22 +68,24 @@ export interface ProductForBasket {
   discountPrice: number;
   count: number;
   seller: string;
-}
+};
 
-export interface ColorOptions {
+export type ColorOptions = {
   label: string;
   color: string;
-}
+};
 
-export interface Configuration {
+export type Configuration = {
   title: string;
   options: ColorOptions[] | string[];
-}
+};
 
-export interface User {
+export type User = {
   id: string;
   name: string;
   email: string;
   basket: ProductForBasket[];
   favorites: string[];
-}
+};
+
+export type SectionProps = { data: Product[]; favorites: string[] };

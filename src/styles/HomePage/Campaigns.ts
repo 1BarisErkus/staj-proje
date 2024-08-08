@@ -1,10 +1,5 @@
 import styled from "styled-components";
-import { Col, Row } from "../GlobalVariables";
-
-export const StyledRow = styled(Row)`
-  display: flex;
-  flex-wrap: wrap;
-`;
+import { Col } from "../GlobalVariables";
 
 export const StyledCol = styled(Col)`
   width: 100%;
@@ -35,13 +30,12 @@ export const StyledCol = styled(Col)`
   }
 `;
 
-export const ImageWrapper = styled.div<{ $pos: string }>`
+export const CapmaignsImageWrapper = styled.div<{ $pos: string }>`
   position: relative;
   width: 100%;
-  height: 300px;
+  height: ${({ $pos }) => ($pos === "right" ? "580px" : "280px")};
 
-  @media (min-width: 768px) {
-    width: ${({ $pos }) => ($pos === "right" ? "100%" : "100%")};
-    height: ${({ $pos }) => ($pos === "right" ? "580px" : "280px")};
+  @media (max-width: 768px) {
+    height: ${({ $pos }) => ($pos === "right" ? "280px" : "140px")};
   }
 `;

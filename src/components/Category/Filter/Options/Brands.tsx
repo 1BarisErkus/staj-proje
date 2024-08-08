@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { FC, Dispatch, useState } from "react";
+import { capitalizeFirstLetter } from "@/lib/helpers";
 import {
   CheckboxContainer,
   FilterOption,
@@ -8,15 +9,14 @@ import {
 } from "@/styles/Category/Options";
 import { Header } from "@/styles/Category";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
-import { capitalizeFirstLetter } from "@/lib/helpers";
 
-interface BrandsProps {
-  dispatch: React.Dispatch<{ type: string; payload: string }>;
+type BrandsProps = {
+  dispatch: Dispatch<{ type: string; payload: string }>;
   brands: string[];
   brandOptions: string[];
-}
+};
 
-const Brands: React.FC<BrandsProps> = ({ dispatch, brands, brandOptions }) => {
+const Brands: FC<BrandsProps> = ({ dispatch, brands, brandOptions }) => {
   const [isBrandOpen, setIsBrandOpen] = useState(true);
 
   return (

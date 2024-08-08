@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  background-color: #eff2f5;
-  padding: 80px 20px;
-  text-align: center;
+export const WhyPasajWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  background-color: #eff2f5;
+  padding: 80px 20px;
 `;
 
 export const Title = styled.h2`

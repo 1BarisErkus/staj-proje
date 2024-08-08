@@ -2,6 +2,15 @@ import styled, { css } from "styled-components";
 
 const gutter = "1.5rem";
 
+type ColProps = {
+  size?: number;
+};
+
+type ImageWrapperProps = {
+  width: number;
+  height: number;
+};
+
 export const Container = styled.div`
   width: 100%;
   padding-right: ${gutter};
@@ -33,10 +42,6 @@ export const Row = styled.div`
   margin-left: calc(${gutter} / -2);
 `;
 
-interface ColProps {
-  size?: number;
-}
-
 export const Col = styled.div<ColProps>`
   flex: 1;
   position: relative;
@@ -54,5 +59,30 @@ export const Col = styled.div<ColProps>`
     flex: 0 0 100%;
     max-width: 100%;
     margin: 1rem 0;
+  }
+`;
+
+export const ImageWrapper = styled.div<ImageWrapperProps>`
+  position: relative;
+  width: ${({ width }) => width}px;
+  height: ${({ height }) => height}px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
+`;
+
+export const CardListWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid gainsboro;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 `;

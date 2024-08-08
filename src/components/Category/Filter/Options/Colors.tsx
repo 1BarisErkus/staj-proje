@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { FC, Dispatch, useState } from "react";
 import { Header } from "@/styles/Category";
 import {
   CheckboxContainer,
@@ -9,13 +9,13 @@ import {
 } from "@/styles/Category/Options";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 
-interface ColorsProps {
-  dispatch: React.Dispatch<{ type: string; payload: string }>;
+type ColorsProps = {
+  dispatch: Dispatch<{ type: string; payload: string }>;
   colors: string[];
   colorOptions: string[];
-}
+};
 
-const Colors: React.FC<ColorsProps> = ({ dispatch, colors, colorOptions }) => {
+const Colors: FC<ColorsProps> = ({ dispatch, colors, colorOptions }) => {
   const [isColorOpen, setIsColorOpen] = useState<boolean>(false);
 
   return (

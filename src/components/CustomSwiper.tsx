@@ -1,11 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperClass } from "swiper";
 import { SwiperOptions, NavigationOptions } from "swiper/types";
-import { ButtonNext, ButtonPrev, SwiperContainer } from "@/styles/Swiper";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import "swiper/css";
+
 import styled from "styled-components";
+import { ButtonNext, ButtonPrev, SwiperContainer } from "@/styles/Swiper";
+
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 interface CustomSwiperProps {
   children: React.ReactNode;
@@ -15,9 +16,10 @@ interface CustomSwiperProps {
   spaceBetween?: SwiperOptions["spaceBetween"];
   pagination?: SwiperOptions["pagination"];
   navigation?: SwiperOptions["navigation"];
+  autoplay?: SwiperOptions["autoplay"];
 }
 
-const CustomSwiper: React.FC<CustomSwiperProps> = ({
+const CustomSwiper: FC<CustomSwiperProps> = ({
   children,
   breakpoints,
   modules,
@@ -25,7 +27,7 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
   spaceBetween,
   pagination = false,
   navigation = false,
-  ...props
+  autoplay,
 }) => {
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
@@ -73,18 +75,13 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
   }, []);
 
   return (
-    <SwiperContainer className="swiper-container">
+    <SwiperContainer>
       <Swiper
         onSwiper={(swiper) => (swiperRef.current = swiper)}
-        slidesPerView={slidesPerView}
-        spaceBetween={spaceBetween}
-        breakpoints={breakpoints}
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,
         }}
-        pagination={pagination}
-        modules={modules}
         onBeforeInit={(swiper) => {
           if (
             swiper.params.navigation &&
@@ -96,7 +93,12 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
             navigationParams.nextEl = nextRef.current;
           }
         }}
-        {...props}
+        slidesPerView={slidesPerView}
+        spaceBetween={spaceBetween}
+        breakpoints={breakpoints}
+        pagination={pagination}
+        modules={modules}
+        autoplay={autoplay}
       >
         {children}
       </Swiper>

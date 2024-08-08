@@ -1,45 +1,44 @@
-import Image from "next/image";
 import styled from "styled-components";
 
-interface CardWrapperProps {
+type CardWrapperProps = {
   size?: string;
-}
+};
 
-interface SingleBadgeWrapperProps {
+type SingleBadgeWrapperProps = {
   type?: string;
-}
+};
 
 export const CardWrapper = styled.div<CardWrapperProps>`
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
   width: 280px;
   min-height: 420px;
-  position: relative;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   ${({ size }) =>
     size === "small" &&
     `
     width: 160px;
-    min-height: 280px;
+    min-height: 300px;
     `}
 
   &:hover {
     border: 2px solid #ffc900;
   }
-`;
 
-export const ProductImage = styled(Image)`
-  border-radius: 10px;
-  margin-bottom: 16px;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 16px;
+  }
 `;
 
 export const ProductName = styled.h2<{ size?: string }>`
   font-size: 1.1rem;
   font-weight: bold;
   color: #333;
-  min-height: 50px;
+  margin: 16px 0;
 
   ${({ size }) =>
     size === "small" &&
@@ -85,7 +84,6 @@ export const BadgeWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-top: 10px;
-  height: 25px;
 `;
 
 export const Badge = styled.span`

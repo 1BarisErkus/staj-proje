@@ -36,7 +36,7 @@ const Offer: React.FC<OfferProps> = ({
         <OfferBox
           title="Kredi Kartı Limitine Takılmayın!"
           subtitle="Kredi sorgulama sonucunza göre tutarlar değişiklik gösterebilir."
-          price={installmentPrice.toString()}
+          price={installmentPrice}
           installmentCount={installmentCount}
           selected={selectedOffer === 0}
           onSelect={() => handleSelect(0)}
@@ -45,9 +45,7 @@ const Offer: React.FC<OfferProps> = ({
 
       <OfferBox
         title={seller}
-        price={
-          discountPercentage > 0 ? discountPrice.toString() : price.toString()
-        }
+        price={discountPercentage > 0 ? discountPrice : price}
         oldPrice={price}
         discountPercentage={discountPercentage}
         selected={selectedOffer === 1}

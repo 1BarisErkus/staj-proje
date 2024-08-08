@@ -1,12 +1,12 @@
-import React from "react";
+import { FC, Dispatch } from "react";
 import { Container } from "@/styles/Category";
 import Brands from "./Brands";
 import Colors from "./Colors";
 import Price from "./Price";
 import Sellers from "./Sellers";
 
-interface FilterComponentProps {
-  dispatch: React.Dispatch<{
+type FilterComponentProps = {
+  dispatch: Dispatch<{
     type: string;
     payload: string | { min: number; max: number };
   }>;
@@ -20,9 +20,9 @@ interface FilterComponentProps {
   sellerOptions: string[];
   brandOptions: string[];
   colorOptions: string[];
-}
+};
 
-const FilterComponent: React.FC<FilterComponentProps> = ({
+const FilterComponent: FC<FilterComponentProps> = ({
   dispatch,
   brands,
   colors,

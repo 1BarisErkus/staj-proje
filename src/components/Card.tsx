@@ -1,6 +1,13 @@
-import CustomSwiper, { CustomSwiperSlide } from "./CustomSwiper";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
+import { Pagination } from "swiper/modules";
+import CustomSwiper, { CustomSwiperSlide } from "./CustomSwiper";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+
+import { changeFavorite } from "@/server/posts";
+import { notify } from "@/lib/notify";
 import { Rating } from "@smastrom/react-rating";
+
 import {
   Badge,
   BadgeWrapper,
@@ -11,20 +18,16 @@ import {
   MinPrice,
   Price,
   PriceWrapper,
-  ProductImage,
   ProductName,
   SingleBadgeWrapper,
 } from "@/styles/Card";
-import { Pagination } from "swiper/modules";
-import { SwiperSlide } from "swiper/react";
+import MinimalLoading from "./MinimalLoading";
+
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { changeFavorite } from "@/server/posts";
-import { notify } from "@/lib/notify";
-import { useSession } from "next-auth/react";
+import Image from "next/image";
 
-interface CardProps {
+type CardProps = {
   id: string;
   images: string[];
   name: string;
@@ -35,7 +38,7 @@ interface CardProps {
   isBestSeller?: boolean;
   isFavorite: boolean;
   size?: string;
-}
+};
 
 const Card: React.FC<CardProps> = ({
   id,
@@ -49,15 +52,16 @@ const Card: React.FC<CardProps> = ({
   isFavorite,
   size,
 }) => {
-  const session = useSession();
   const queryClient = useQueryClient();
+  const session = useSession();
 
-  const { mutate } = useMutation({
-    mutationFn: async () =>
-      await changeFavorite((session.data?.user as { uid: string })?.uid, id),
+  const { mutate, isPending } = useMutation({
+    mutationFn: () =>
+      changeFavorite((session.data?.user as { uid: string })?.uid, id),
     onSuccess: () => {
       if (isFavorite) notify("Ürün favorilerden kaldırıldı", "success");
       else notify("Ürün favorilere eklendi", "success");
+
       queryClient.invalidateQueries({
         queryKey: ["favorites"],
       });
@@ -71,29 +75,33 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <CardWrapper size={size}>
-      {isBestSeller ? (
-        <SingleBadgeWrapper type="bestSeller">Çok Satan</SingleBadgeWrapper>
-      ) : fibabanka ? (
-        <SingleBadgeWrapper type="fibabanka">Fibabanka</SingleBadgeWrapper>
+      {isBestSeller || fibabanka ? (
+        <SingleBadgeWrapper type={isBestSeller ? "bestSeller" : "fibabanka"}>
+          {isBestSeller ? "Çok Satan" : fibabanka ? "Fibabanka" : ""}
+        </SingleBadgeWrapper>
       ) : null}
-      <LikeIconWrapper onClick={() => mutate()}>
-        {isFavorite ? (
+
+      <LikeIconWrapper onClick={() => !isPending && mutate()}>
+        {isPending ? (
+          <MinimalLoading />
+        ) : isFavorite ? (
           <FaHeart size={24} color="orange" />
         ) : (
-          <CiHeart size={30} color="orange" />
+          <CiHeart size={32} color="orange" />
         )}
       </LikeIconWrapper>
+
       <Link href={`/product/${id}`}>
         <CustomSwiper
           slidesPerView={1}
+          modules={[Pagination]}
           pagination={{
             clickable: true,
           }}
-          modules={[Pagination]}
         >
           {images.map((image, index) => (
             <CustomSwiperSlide key={index}>
-              <ProductImage
+              <Image
                 src={`/images/products/${image}`}
                 alt={name}
                 width={size === "small" ? 130 : 250}
@@ -103,8 +111,11 @@ const Card: React.FC<CardProps> = ({
             </CustomSwiperSlide>
           ))}
         </CustomSwiper>
+
         <ProductName size={size}>{name}</ProductName>
-        <Rating value={4} style={{ maxWidth: 50 }} />
+
+        <Rating value={4} style={{ maxWidth: 70 }} readOnly />
+
         {size !== "small" && (
           <BadgeWrapper>
             {badges &&
@@ -118,15 +129,21 @@ const Card: React.FC<CardProps> = ({
         )}
 
         {discountPercentage === 0 ? (
-          <Price>{price} TL</Price>
+          <Price>{price.toLocaleString("tr-TR")} TL</Price>
         ) : (
           <PriceWrapper>
             <Price>
-              {price - Math.round(price * ((discountPercentage ?? 0) / 100))} TL
+              {(
+                price - Math.round(price * ((discountPercentage ?? 0) / 100))
+              ).toLocaleString("tr-TR")}{" "}
+              TL
             </Price>
             <Discount>
               <DiscountlessAmount>{price} TL</DiscountlessAmount>{" "}
-              {Math.round(price * ((discountPercentage ?? 0) / 100))} TL İndirim
+              {Math.round(
+                price * ((discountPercentage ?? 0) / 100)
+              ).toLocaleString("tr-TR")}{" "}
+              TL İndirim
             </Discount>
             <MinPrice>Son 30 günün en düşük fiyatı</MinPrice>
           </PriceWrapper>

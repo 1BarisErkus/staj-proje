@@ -1,16 +1,17 @@
+import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
-import { useQuery } from "@tanstack/react-query";
-import Link from "next/link";
 import { useRouter } from "next/router";
+import { useQuery } from "@tanstack/react-query";
+
 import { getBasket } from "@/server/basket";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
 import { Button, CartBadge } from "@/styles/Header/Navbar";
-import { IoPersonCircleOutline, IoChevronDownSharp } from "react-icons/io5";
-import { BsCart4 } from "react-icons/bs";
 import Search from "./Search";
-import { useState } from "react";
 import AuthModal from "./AuthModal";
+import { BsCart4 } from "react-icons/bs";
+import { IoPersonCircleOutline, IoChevronDownSharp } from "react-icons/io5";
 
 const Navbar = () => {
   const session = useSession();

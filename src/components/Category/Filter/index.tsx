@@ -1,23 +1,29 @@
-import { useEffect, useReducer, useState } from "react";
+import { FC, useEffect, useReducer, useState } from "react";
+import { Product, SwiperProductProps } from "@/common/types";
 import { StyledCol, StyledLeftCol } from "@/styles/Category/Filter";
-import { Container as Background } from "@/styles/Category";
-import { CardList } from "@/styles/HomePage/BestSellers";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
-import { Product, ProductProps } from "@/common/types";
+import { Container as Background } from "@/styles/Category";
+import { CardListWrapper } from "@/styles/GlobalVariables";
+import Card from "@/components/Card";
 import SwitchButton from "../SwitchButton";
 import InfoBox from "../InfoBox";
 import SortBy from "./SortBy";
 import FilterComponent from "./Options";
 import Slider from "../Slider";
-import Card from "@/components/Card";
 import Faqs from "../Faqs";
 
-interface BestSellersProductProps extends ProductProps {
+type FilterProps = {
+  data: Product[];
+  params: any;
+  favorites: string[];
+};
+
+interface BestSellersProductProps extends SwiperProductProps {
   fibabanka: boolean;
   isBestSeller: boolean;
 }
 
-interface FilterState {
+type FilterState = {
   sortBy: string;
   isContract: boolean;
   brands: string[];
@@ -27,14 +33,23 @@ interface FilterState {
     max: number;
   }[];
   sellers: string[];
-}
+};
 
 type FilterAction = {
   type: string;
   payload: any;
 };
 
-function reducer(state: FilterState, action: FilterAction): FilterState {
+const initialArgs = {
+  sortBy: "En Popüler",
+  isContract: false,
+  brands: [],
+  colors: [],
+  prices: [],
+  sellers: [],
+};
+
+function reducer(state: FilterState, action: FilterAction) {
   switch (action.type) {
     case "SORT_BY":
       return { ...state, sortBy: action.payload };
@@ -77,15 +92,6 @@ function reducer(state: FilterState, action: FilterAction): FilterState {
   }
 }
 
-const initialArgs = {
-  sortBy: "En Popüler",
-  isContract: false,
-  brands: [],
-  colors: [],
-  prices: [],
-  sellers: [],
-};
-
 const applyFilters = (data: Product[], state: FilterState) => {
   return data
     .filter((product) => (state.isContract ? product.isContract : true))
@@ -117,24 +123,22 @@ const applyFilters = (data: Product[], state: FilterState) => {
       state.sellers.length ? state.sellers.includes(product.seller) : true
     )
     .sort((a, b) => {
-      if (state.sortBy === "En Yeniler")
-        return new Date(b.date).getTime() - new Date(a.date).getTime();
-      if (state.sortBy === "En Düşük Fiyat") return a.price - b.price;
-      if (state.sortBy === "En Yüksek Fiyat") return b.price - a.price;
-      if (state.sortBy === "En Yüksek Puan") return b.rating - a.rating;
-      return 0;
+      switch (state.sortBy) {
+        case "En Yeniler":
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
+        case "En Düşük Fiyat":
+          return a.price - b.price;
+        case "En Yüksek Fiyat":
+          return b.price - a.price;
+        case "En Yüksek Puan":
+          return b.rating - a.rating;
+        default:
+          return 0;
+      }
     });
 };
 
-const Filter = ({
-  data,
-  params,
-  favorites,
-}: {
-  data: Product[];
-  params: any;
-  favorites: string[];
-}) => {
+const Filter: FC<FilterProps> = ({ data, params, favorites }) => {
   const [state, dispatch] = useReducer<
     React.Reducer<FilterState, FilterAction>
   >(reducer, initialArgs);
@@ -215,7 +219,7 @@ const Filter = ({
         </StyledLeftCol>
         <Col size={9}>
           <Slider />
-          <CardList>
+          <CardListWrapper>
             {filteredData?.map((product: BestSellersProductProps) => (
               <Card
                 key={product.id}
@@ -230,7 +234,7 @@ const Filter = ({
                 isFavorite={favorites.includes(product.id)}
               />
             ))}
-          </CardList>
+          </CardListWrapper>
         </Col>
         <Faqs />
       </Row>

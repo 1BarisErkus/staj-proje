@@ -1,17 +1,14 @@
-import {
-  ImageWrapper,
-  StyledCol,
-  StyledRow,
-} from "@/styles/HomePage/Campaigns";
-import Section from "../Section";
 import Image from "next/image";
+import { Row } from "@/styles/GlobalVariables";
+import { CapmaignsImageWrapper, StyledCol } from "@/styles/HomePage/Campaigns";
+import Section from "../Section";
 
 const Campaigns = () => {
   return (
     <Section title="Kampanyalar" id="campaigns">
-      <StyledRow>
+      <Row>
         <StyledCol size={8}>
-          <ImageWrapper $pos="left">
+          <CapmaignsImageWrapper $pos="left">
             <Image
               src="/images/campaigns/36aytaksit-kampanyalar-yatay-webx.webp"
               alt="36 Ay Taksit"
@@ -19,8 +16,9 @@ const Campaigns = () => {
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-          </ImageWrapper>
-          <ImageWrapper $pos="left">
+          </CapmaignsImageWrapper>
+
+          <CapmaignsImageWrapper $pos="left">
             <Image
               src="/images/campaigns/pac-jbl--yatay-web.webp"
               alt="PAC JBL"
@@ -28,10 +26,11 @@ const Campaigns = () => {
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-          </ImageWrapper>
+          </CapmaignsImageWrapper>
         </StyledCol>
+
         <StyledCol size={4}>
-          <ImageWrapper $pos="right">
+          <CapmaignsImageWrapper $pos="right">
             <Image
               src="/images/campaigns/hk30k-Kampanyalar-Dikey.webp"
               alt="HK30K Kampanya"
@@ -39,9 +38,9 @@ const Campaigns = () => {
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-          </ImageWrapper>
+          </CapmaignsImageWrapper>
         </StyledCol>
-      </StyledRow>
+      </Row>
     </Section>
   );
 };

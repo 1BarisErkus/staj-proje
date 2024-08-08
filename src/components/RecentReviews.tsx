@@ -1,9 +1,8 @@
-import { SwiperSlide } from "swiper/react";
-import Section from "./Section";
-import { Product, ProductProps } from "@/common/types";
 import { Navigation } from "swiper/modules";
-import Card from "./Card";
+import { Product, SwiperProductProps } from "@/common/types";
 import CustomSwiper, { CustomSwiperSlide } from "./CustomSwiper";
+import Section from "./Section";
+import Card from "./Card";
 
 const RecentReviews = ({
   data,
@@ -33,7 +32,7 @@ const RecentReviews = ({
         navigation={true}
         modules={[Navigation]}
       >
-        {data?.map((product: ProductProps) => (
+        {data?.map((product: SwiperProductProps) => (
           <CustomSwiperSlide key={product.id}>
             <Card
               id={product.id}
