@@ -3,7 +3,7 @@ import { getSession, GetSessionParams } from "next-auth/react";
 import { Session } from "next-auth";
 import { dehydrate, QueryClient, useQueries } from "@tanstack/react-query";
 
-import { getFavorites, getProducts } from "@/server/posts";
+import { getFavorites, getProducts } from "@/server/product";
 
 import AdditionToYourBill from "@/components/HomePage/AdditionToYourBill";
 import BestOffers from "@/components/HomePage/BestOffers";

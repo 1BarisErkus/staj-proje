@@ -1,10 +1,11 @@
+import { FC, MouseEvent } from "react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { Pagination } from "swiper/modules";
 import CustomSwiper, { CustomSwiperSlide } from "./CustomSwiper";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-import { changeFavorite } from "@/server/posts";
+import { changeFavorite } from "@/server/product";
 import { notify } from "@/lib/notify";
 import { Rating } from "@smastrom/react-rating";
 
@@ -26,6 +27,7 @@ import MinimalLoading from "./MinimalLoading";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import Image from "next/image";
+import { CompareItemProps } from "@/common/types";
 
 type CardProps = {
   id: string;
@@ -38,9 +40,11 @@ type CardProps = {
   isBestSeller?: boolean;
   isFavorite: boolean;
   size?: string;
+  compareMode?: boolean;
+  handleAdd?: (product: CompareItemProps) => void;
 };
 
-const Card: React.FC<CardProps> = ({
+const Card: FC<CardProps> = ({
   id,
   images,
   name,
@@ -51,6 +55,8 @@ const Card: React.FC<CardProps> = ({
   isBestSeller,
   isFavorite,
   size,
+  compareMode,
+  handleAdd,
 }) => {
   const queryClient = useQueryClient();
   const session = useSession();
@@ -73,8 +79,18 @@ const Card: React.FC<CardProps> = ({
       ),
   });
 
+  const handleCardClick = (
+    e: MouseEvent<HTMLAnchorElement>,
+    product: CompareItemProps
+  ) => {
+    if (compareMode) {
+      e.preventDefault();
+      handleAdd && handleAdd(product);
+    }
+  };
+
   return (
-    <CardWrapper size={size}>
+    <CardWrapper size={size} $comparemode={compareMode}>
       {isBestSeller || fibabanka ? (
         <SingleBadgeWrapper type={isBestSeller ? "bestSeller" : "fibabanka"}>
           {isBestSeller ? "Çok Satan" : fibabanka ? "Fibabanka" : ""}
@@ -91,7 +107,16 @@ const Card: React.FC<CardProps> = ({
         )}
       </LikeIconWrapper>
 
-      <Link href={`/product/${id}`}>
+      <Link
+        href={`/product/${id}`}
+        onClick={(e) =>
+          handleCardClick(e, {
+            productId: id,
+            name,
+            image: images[0],
+          })
+        }
+      >
         <CustomSwiper
           slidesPerView={1}
           modules={[Pagination]}

@@ -8,7 +8,7 @@ import {
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 
-import { getFavorites, getProduct, getSimilarProducts } from "@/server/posts";
+import { getFavorites, getProduct, getSimilarProducts } from "@/server/product";
 import { Container, Row } from "@/styles/GlobalVariables";
 import OtherSellers from "@/components/ProductDetail/OtherSellers";
 import Features from "@/components/ProductDetail/Features";

@@ -1,7 +1,7 @@
 import { FC, Fragment, useCallback, useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { changeFavorite } from "@/server/posts";
+import { changeFavorite } from "@/server/product";
 import { notify } from "@/lib/notify";
 import { Rating } from "@smastrom/react-rating";
 import {

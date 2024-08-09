@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 type CardWrapperProps = {
   size?: string;
+  $comparemode?: boolean;
 };
 
 type SingleBadgeWrapperProps = {
@@ -25,7 +26,17 @@ export const CardWrapper = styled.div<CardWrapperProps>`
     `}
 
   &:hover {
-    border: 2px solid #ffc900;
+    ${(props) =>
+      props.$comparemode
+        ? `
+          cursor: pointer;
+          box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+          transform: scale(1.05);
+          background-color: #ffc900;
+        `
+        : `
+          border: 2px solid #ffc900;
+        `}
   }
 
   @media (max-width: 768px) {

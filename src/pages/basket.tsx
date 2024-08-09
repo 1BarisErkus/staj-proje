@@ -5,7 +5,7 @@ import { getSession } from "next-auth/react";
 import { useQueries } from "@tanstack/react-query";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
 
-import { getFavorites, getProducts } from "@/server/posts";
+import { getFavorites, getProducts } from "@/server/product";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
 import MayInterestYou from "@/components/Basket/MayInterestYou";
 import { BasketItemsContainer, TitleOrder, Wrapper } from "@/styles/Basket";

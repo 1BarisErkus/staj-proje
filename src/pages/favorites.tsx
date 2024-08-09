@@ -5,7 +5,7 @@ import { getSession } from "next-auth/react";
 import { dehydrate, QueryClient, useQueries } from "@tanstack/react-query";
 
 import { Product } from "@/common/types";
-import { getFavorites, getProducts } from "@/server/posts";
+import { getFavorites, getProducts } from "@/server/product";
 import Card from "@/components/Card";
 import Section from "@/components/Section";
 import { CardListWrapper } from "@/styles/GlobalVariables";

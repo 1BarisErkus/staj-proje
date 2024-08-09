@@ -2,7 +2,7 @@ import { FC } from "react";
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import { dehydrate, QueryClient, useQueries } from "@tanstack/react-query";
-import { getFavorites, getProducts } from "@/server/posts";
+import { getFavorites, getProducts } from "@/server/product";
 import { categoryNames } from "@/lib/categoryNames";
 import Breadcrumb from "@/components/Breadcrumb";
 import JustForYou from "@/components/Category/JustForYou";

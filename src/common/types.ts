@@ -89,3 +89,9 @@ export type User = {
 };
 
 export type SectionProps = { data: Product[]; favorites: string[] };
+
+export type CompareItemProps = {
+  productId: string;
+  image: string;
+  name: string;
+};
