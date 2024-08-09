@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import {
   ProductDetailsContainer,
   DetailsRow,
@@ -7,11 +7,11 @@ import {
   ToggleButton,
 } from "@/styles/ProductDetail/Features/ProductFeatures";
 
-interface ProductFeaturesProps {
+type ProductFeaturesProps = {
   features: { name: string; value: string }[];
-}
+};
 
-const ProductFeatures: React.FC<ProductFeaturesProps> = ({ features }) => {
+const ProductFeatures: FC<ProductFeaturesProps> = ({ features }) => {
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpanded = () => {

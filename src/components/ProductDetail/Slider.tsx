@@ -1,13 +1,14 @@
-import CustomSwiper, { CustomSwiperSlide } from "../CustomSwiper";
-import { Autoplay, Pagination } from "swiper/modules";
+import { FC } from "react";
 import Image from "next/image";
-import { ImageWrapper } from "@/styles/ProductDetail";
+import { Autoplay, Pagination } from "swiper/modules";
+import { ImageWrapper } from "@/styles/GlobalVariables";
+import CustomSwiper, { CustomSwiperSlide } from "../CustomSwiper";
 
-interface SliderProps {
+type SliderProps = {
   images: string[];
-}
+};
 
-const Slider: React.FC<SliderProps> = ({ images }) => {
+const Slider: FC<SliderProps> = ({ images }) => {
   return (
     <CustomSwiper
       slidesPerView={1}
@@ -22,7 +23,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
     >
       {images.map((image, index) => (
         <CustomSwiperSlide key={index}>
-          <ImageWrapper>
+          <ImageWrapper width={500} height={380}>
             <Image
               src={`/images/products/${image}`}
               alt="product"

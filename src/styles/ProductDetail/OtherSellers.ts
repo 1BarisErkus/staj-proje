@@ -23,7 +23,7 @@ export const Card = styled.div`
   transition: 0.3s;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
   }
 `;
 

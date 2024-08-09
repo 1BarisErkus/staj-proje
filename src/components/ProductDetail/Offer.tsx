@@ -1,8 +1,8 @@
+import { FC, useState } from "react";
 import { OfferWrapper } from "@/styles/ProductDetail";
-import React, { useState } from "react";
 import OfferBox from "./OfferBox";
 
-interface OfferProps {
+type OfferProps = {
   creditCard: boolean;
   installmentPrice: number;
   installmentCount: number;
@@ -10,9 +10,9 @@ interface OfferProps {
   freeShipping: boolean;
   price: number;
   discountPercentage: number;
-}
+};
 
-const Offer: React.FC<OfferProps> = ({
+const Offer: FC<OfferProps> = ({
   creditCard,
   installmentPrice,
   installmentCount,

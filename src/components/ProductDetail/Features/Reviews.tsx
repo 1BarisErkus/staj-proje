@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import RatingCardComponent from "./RatingCard";
-import DropdownComponent from "./DropDown";
+import { FC, useState } from "react";
 import {
   Conainer,
   TopContainer,
 } from "@/styles/ProductDetail/Features/Reviews";
+import RatingCardComponent from "./RatingCard";
+import DropdownComponent from "./DropDown";
 import ReviewCard from "./ReviewCard";
 
-interface HomePageProps {
+type HomePageProps = {
   reviews: {
     id: string;
     userName: string;
@@ -18,7 +18,7 @@ interface HomePageProps {
   }[];
   seller: string;
   productId: string;
-}
+};
 
 const options = [
   "Puan Çoktan Aza",
@@ -27,7 +27,7 @@ const options = [
   "Yeniden Eskiye",
 ];
 
-const HomePage: React.FC<HomePageProps> = ({ reviews, seller, productId }) => {
+const HomePage: FC<HomePageProps> = ({ reviews, seller, productId }) => {
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
   const sortedReviews = reviews.sort((a, b) => {

@@ -1,15 +1,15 @@
-import React from "react";
+import { Dispatch, FC, SetStateAction } from "react";
+import { Configuration } from "@/common/types";
 import { ConfigurationWrapper } from "@/styles/ProductDetail";
 import SelectBox from "./SelectBox";
-import { Configuration } from "@/common/types";
 
-interface ConfigurationProps {
+type ConfigurationProps = {
   configuration: Configuration[];
-  setSelectedColor: React.Dispatch<React.SetStateAction<string | null>>;
-  setSelectedMemory: React.Dispatch<React.SetStateAction<string | null>>;
-}
+  setSelectedColor: Dispatch<SetStateAction<string | null>>;
+  setSelectedMemory: Dispatch<SetStateAction<string | null>>;
+};
 
-const Configuraiton: React.FC<ConfigurationProps> = ({
+const Configuraiton: FC<ConfigurationProps> = ({
   configuration,
   setSelectedColor,
   setSelectedMemory,

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import { Navigation } from "swiper/modules";
-import CustomSwiper, { CustomSwiperSlide } from "@/components/CustomSwiper";
 import { Container } from "@/styles/GlobalVariables";
+import CustomSwiper, { CustomSwiperSlide } from "@/components/CustomSwiper";
 import {
   FeaturesContainer,
   SlideContainer,
@@ -25,7 +25,7 @@ const titles = [
   "İptal/İade Koşulları",
 ];
 
-interface FeaturesSlideProps {
+type FeaturesSlideProps = {
   description: string;
   features: { name: string; value: string }[];
   reviews: {
@@ -45,9 +45,9 @@ interface FeaturesSlideProps {
     storeName: string;
     answerText: string;
   }[];
-}
+};
 
-const FeaturesSlide: React.FC<FeaturesSlideProps> = ({
+const FeaturesSlide: FC<FeaturesSlideProps> = ({
   description,
   features,
   reviews,

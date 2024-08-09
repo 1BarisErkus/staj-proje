@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import { FC, Dispatch, SetStateAction, useState } from "react";
 import {
   DropdownContainer,
   DropdownHeader,
@@ -7,13 +7,13 @@ import {
 } from "@/styles/ProductDetail/Features/Reviews";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-interface DropdownComponentProps {
+type DropdownComponentProps = {
   options: string[];
   selectedOption: string;
   setSelectedOption: Dispatch<SetStateAction<string>>;
-}
+};
 
-const DropdownComponent: React.FC<DropdownComponentProps> = ({
+const DropdownComponent: FC<DropdownComponentProps> = ({
   options,
   selectedOption,
   setSelectedOption,

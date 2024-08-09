@@ -1,4 +1,9 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { FC, Fragment, useCallback, useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { changeFavorite } from "@/server/posts";
+import { notify } from "@/lib/notify";
+import { Rating } from "@smastrom/react-rating";
 import {
   DiscountWrapper,
   FavoriteButton,
@@ -9,23 +14,19 @@ import {
   Title,
   TitleWrapper,
 } from "@/styles/ProductDetail";
+import MinimalLoading from "../MinimalLoading";
 import { CiHeart } from "react-icons/ci";
-import { Rating } from "@smastrom/react-rating";
 import { FaHeart } from "react-icons/fa";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { changeFavorite } from "@/server/posts";
-import { useSession } from "next-auth/react";
-import { notify } from "@/lib/notify";
 
-interface HeadProps {
+type HeadProps = {
   title: string;
   targetDate: string;
   stock: number;
   isFavorite: boolean;
   productId: string;
-}
+};
 
-const Head: React.FC<HeadProps> = ({
+const Head: FC<HeadProps> = ({
   title,
   targetDate,
   stock,
@@ -72,50 +73,68 @@ const Head: React.FC<HeadProps> = ({
     return () => clearInterval(timer);
   }, [calculateTimeLeft, targetDate]);
 
-  const { isPending, mutate } = useMutation({
-    mutationFn: async () =>
-      await changeFavorite(
-        (session.data?.user as { uid: string })?.uid,
-        productId
-      ),
-    onSuccess: () => {
-      if (isFavorite) notify("Ürün favorilerden kaldırıldı", "success");
-      else notify("Ürün favorilere eklendi", "success");
-      queryClient.invalidateQueries({
-        queryKey: ["favorites"],
-      });
+  const { mutate: changeFavoriteMutate, isPending: changeFavoritePending } =
+    useMutation({
+      mutationFn: () =>
+        changeFavorite((session.data?.user as { uid: string })?.uid, productId),
+
+      onSuccess: () => {
+        if (isFavorite) notify("Ürün favorilerden kaldırıldı", "success");
+        else notify("Ürün favorilere eklendi", "success");
+        queryClient.invalidateQueries({
+          queryKey: ["favorites"],
+        });
+      },
+
+      onError: () => notify("Ürün favori durumu değiştirilemedi", "error"),
+    });
+
+  const timeDatas = [
+    {
+      title: "Gn",
+      value: timeLeft.days,
     },
-    onError: () => notify("Ürün favori durumu değiştirilemedi", "error"),
-  });
+    {
+      title: "Sa",
+      value: timeLeft.hours,
+    },
+    {
+      title: "Dk",
+      value: timeLeft.minutes,
+    },
+  ];
 
   return (
     <>
       <TitleWrapper>
         <Title>{title}</Title>
-        <FavoriteButton onClick={() => mutate()} disabled={isPending}>
-          {isFavorite ? (
+        <FavoriteButton
+          onClick={() => changeFavoriteMutate()}
+          disabled={changeFavoritePending}
+        >
+          {changeFavoritePending ? (
+            <MinimalLoading />
+          ) : isFavorite ? (
             <FaHeart size={34} color="orange" />
           ) : (
             <CiHeart size={40} color="orange" />
           )}
         </FavoriteButton>
       </TitleWrapper>
-      <Rating value={4} style={{ maxWidth: 75 }} readOnly />
+      <Rating value={4} style={{ maxWidth: 100 }} readOnly />
       {targetDate !== "" && (
         <DiscountWrapper>
           <span>İndirimin bitmesine</span>{" "}
           <TimerContainer>
-            <TimePart>{timeLeft.days}</TimePart>
-            <TimePart color="secondary">Gn</TimePart>
-            <Separator>|</Separator>
-            <TimePart>{timeLeft.hours}</TimePart>
-            <TimePart color="secondary">Sa</TimePart>
-            <Separator>|</Separator>
-            <TimePart>{timeLeft.minutes}</TimePart>
-            <TimePart color="secondary">Dk</TimePart>
+            {timeDatas.map((data, index) => (
+              <Fragment key={index}>
+                <TimePart>{data.value}</TimePart>
+                <TimePart color="secondary">{data.title}</TimePart>
+                {index !== timeDatas.length - 1 && <Separator>|</Separator>}
+              </Fragment>
+            ))}
           </TimerContainer>{" "}
           <span>kaldı.</span>
-          <Separator>|</Separator>
           <Stock>30&apos;dan {stock > 30 ? "fazla" : "az"} ürün vardır.</Stock>
         </DiscountWrapper>
       )}

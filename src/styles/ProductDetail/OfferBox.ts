@@ -26,10 +26,6 @@ export const TextWrapper = styled.div`
   margin-top: 1rem;
 `;
 
-export const RadioInput = styled.input.attrs({ type: "radio" })`
-  margin-right: 12px;
-`;
-
 export const BoxText = styled.div`
   display: flex;
   flex-direction: column;
@@ -41,6 +37,7 @@ export const MainText = styled.span`
   font-size: 16px;
   font-weight: bold;
   color: #1d4ed8;
+  margin-left: 12px;
 `;
 
 export const SubText = styled.span`

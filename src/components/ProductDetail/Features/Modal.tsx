@@ -1,4 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { getUser } from "@/server/user";
+import { addComment, addQa } from "@/server/posts";
+import { User } from "@/common/types";
+import { notify } from "@/lib/notify";
 import { Rating } from "@smastrom/react-rating";
 import {
   ModalOverlay,
@@ -10,21 +15,16 @@ import {
   TextArea,
   SubmitButton,
 } from "@/styles/ProductDetail/Features/Modal";
-import { addComment, addQa } from "@/server/posts";
-import { notify } from "@/lib/notify";
-import { getUser } from "@/server/user";
-import { User } from "@/common/types";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-interface ModalProps {
+type ModalProps = {
   userId?: string;
   isOpen: boolean;
   productId: string;
   type?: string;
   onClose: () => void;
-}
+};
 
-const Modal: React.FC<ModalProps> = ({
+const Modal: FC<ModalProps> = ({
   userId,
   isOpen,
   productId,
@@ -43,11 +43,12 @@ const Modal: React.FC<ModalProps> = ({
   }, [userId]);
 
   const { mutate: commentMutate, isPending: commentPending } = useMutation({
-    mutationFn: async (newComment: {
+    mutationFn: (newComment: {
       userName: string;
       comment: string;
       rating: number;
-    }) => await addComment(newComment, productId),
+    }) => addComment(newComment, productId),
+
     onSuccess: () => {
       notify("Yorumunuz başarıyla eklendi", "success");
       queryClient.invalidateQueries({
@@ -55,13 +56,15 @@ const Modal: React.FC<ModalProps> = ({
       });
       onClose();
     },
+
     onError: () => {
       notify("Yorum eklenirken bir hata oluştu", "error");
     },
   });
 
   const { mutate: qaMutate, isPending: qaPending } = useMutation({
-    mutationFn: async (question: string) => await addQa(question, productId),
+    mutationFn: (question: string) => addQa(question, productId),
+
     onSuccess: () => {
       notify("Sorunuz başarıyla iletildi", "success");
       queryClient.invalidateQueries({
@@ -69,6 +72,7 @@ const Modal: React.FC<ModalProps> = ({
       });
       onClose();
     },
+
     onError: () => {
       notify("Soru iletilirken bir hata oluştu", "error");
     },

@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { Col } from "@/styles/GlobalVariables";
+import { FC, useState } from "react";
+import { useSession } from "next-auth/react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { addProductToBasket, getBasket } from "@/server/basket";
+import { Configuration, ProductForBasket } from "@/common/types";
+import { notify } from "@/lib/notify";
 import { Button } from "@/styles/ProductDetail";
+import { Col } from "@/styles/GlobalVariables";
 import Configuraiton from "./Configuraiton";
 import Head from "./Head";
 import Offer from "./Offer";
 import Badges from "./Badges";
-import { useSession } from "next-auth/react";
-import { notify } from "@/lib/notify";
-import { addProductToBasket, getBasket } from "@/server/basket";
-import { Configuration, ProductForBasket } from "@/common/types";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
-interface RightProps {
+type RightProps = {
   id: string;
   name: string;
   image: string;
@@ -29,9 +29,9 @@ interface RightProps {
   guarantee: boolean;
   isContract: boolean;
   isFavorite: boolean;
-}
+};
 
-const Right: React.FC<RightProps> = ({
+const Right: FC<RightProps> = ({
   id,
   image,
   name,
@@ -58,22 +58,26 @@ const Right: React.FC<RightProps> = ({
 
   const { data: basket } = useQuery({
     queryKey: ["basket"],
-    queryFn: async () =>
-      await getBasket((session.data?.user as { uid: string })?.uid),
+    queryFn: () => getBasket((session.data?.user as { uid: string })?.uid),
   });
 
-  const { mutate, isPending } = useMutation({
-    mutationFn: async (newBasketItem: ProductForBasket) =>
-      await addProductToBasket(
+  const {
+    mutate: addProductToBasketMutate,
+    isPending: addProductToBasketPending,
+  } = useMutation({
+    mutationFn: (newBasketItem: ProductForBasket) =>
+      addProductToBasket(
         (session.data?.user as { uid: string })?.uid,
         newBasketItem
       ),
+
     onSuccess: () => {
       notify("Ürün sepete eklendi", "success");
       queryClient.invalidateQueries({
         queryKey: ["basket"],
       });
     },
+
     onError: () => notify("Ürün sepete eklenirken bir hata oluştu", "error"),
   });
 
@@ -110,7 +114,7 @@ const Right: React.FC<RightProps> = ({
       memory: configuration[1] ? selectedMemory : null,
       seller: seller,
     };
-    mutate(newBasketItem);
+    addProductToBasketMutate(newBasketItem);
   };
 
   return (
@@ -136,7 +140,7 @@ const Right: React.FC<RightProps> = ({
         freeShipping={freeShipping}
         discountPercentage={discountPercentage}
       />
-      <Button onClick={handleClick} disabled={isPending}>
+      <Button onClick={handleClick} disabled={addProductToBasketPending}>
         Sepete Ekle
       </Button>
       <Badges

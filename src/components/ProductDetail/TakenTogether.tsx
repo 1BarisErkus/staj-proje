@@ -1,17 +1,16 @@
+import { FC } from "react";
 import { Navigation } from "swiper/modules";
+import { Product, SwiperProductProps } from "@/common/types";
 import CustomSwiper, { CustomSwiperSlide } from "../CustomSwiper";
 import Section from "../Section";
-import { SwiperSlide } from "swiper/react";
 import Card from "../Card";
-import { Product, ProductProps } from "@/common/types";
-import React from "react";
 
-interface TakenTogetherProps {
+type TakenTogetherProps = {
   similarProducts: Product[];
   favorites: string[];
-}
+};
 
-const TakenTogether: React.FC<TakenTogetherProps> = ({
+const TakenTogether: FC<TakenTogetherProps> = ({
   similarProducts,
   favorites,
 }) => {
@@ -30,7 +29,7 @@ const TakenTogether: React.FC<TakenTogetherProps> = ({
         navigation={true}
         modules={[Navigation]}
       >
-        {similarProducts?.map((product: ProductProps) => (
+        {similarProducts?.map((product: SwiperProductProps) => (
           <CustomSwiperSlide key={product.id}>
             <Card
               id={product.id}

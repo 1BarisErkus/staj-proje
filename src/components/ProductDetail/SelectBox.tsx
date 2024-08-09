@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { ColorOptions, Configuration } from "@/common/types";
 import {
   ArrowIcon,
   ColorCircle,
@@ -12,22 +13,12 @@ import {
 } from "@/styles/ProductDetail/SelectBox";
 import { FaAngleDown } from "react-icons/fa";
 
-interface ColorOptions {
-  label: string;
-  color: string;
-}
-
-interface Configuration {
-  title: string;
-  options: ColorOptions[] | string[];
-}
-
-interface SelectBoxProps {
+type SelectBoxProps = {
   title: string;
   configuration: Configuration;
   setSelectedColor?: React.Dispatch<React.SetStateAction<string | null>>;
   setSelectedMemory?: React.Dispatch<React.SetStateAction<string | null>>;
-}
+};
 
 const SelectBox: React.FC<SelectBoxProps> = ({
   title,

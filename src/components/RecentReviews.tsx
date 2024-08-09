@@ -1,16 +1,11 @@
+import { FC } from "react";
 import { Navigation } from "swiper/modules";
-import { Product, SwiperProductProps } from "@/common/types";
+import { SectionProps, SwiperProductProps } from "@/common/types";
 import CustomSwiper, { CustomSwiperSlide } from "./CustomSwiper";
 import Section from "./Section";
 import Card from "./Card";
 
-const RecentReviews = ({
-  data,
-  favorites,
-}: {
-  data: Product[];
-  favorites: string[];
-}) => {
+const RecentReviews: FC<SectionProps> = ({ data, favorites }) => {
   return (
     <Section title="Son İncelenenler">
       <CustomSwiper

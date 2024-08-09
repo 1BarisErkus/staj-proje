@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import {
   Badge,
   BadgeContainer,
@@ -9,17 +9,13 @@ import { FaShippingFast } from "react-icons/fa";
 import { GoShield } from "react-icons/go";
 import { LuCalendarPlus } from "react-icons/lu";
 
-interface BadgesProps {
+type BadgesProps = {
   freeShipping: boolean;
   guarantee: boolean;
   isContract: boolean;
-}
+};
 
-const Badges: React.FC<BadgesProps> = ({
-  freeShipping,
-  guarantee,
-  isContract,
-}) => {
+const Badges: FC<BadgesProps> = ({ freeShipping, guarantee, isContract }) => {
   return (
     <BadgeContainer>
       {freeShipping && (

@@ -5,10 +5,7 @@
       "name": "Barış Erkuş",
       "email": "baris@gmail.com",
       "basket": [],
-      "favorites": [
-        "1",
-        "3"
-      ]
+      "favorites": ["3", "1"]
     },
     {
       "id": "PFEWM9uL5HaNrQc35hxspMEjUHt2",
@@ -16,10 +13,7 @@
       "email": "ahmet@gmail.com",
       "isAdmin": false,
       "basket": [],
-      "favorites": [
-        "7",
-        "2"
-      ]
+      "favorites": ["7", "2"]
     }
   ],
   "products": [
@@ -148,62 +142,12 @@
         },
         {
           "title": "Hafıza",
-          "options": [
-            "256 GB",
-            "512 GB",
-            "1 TB"
-          ]
+          "options": ["256 GB", "512 GB", "1 TB"]
         }
       ],
-      "badges": [
-        "Peşine 4 Taksit",
-        "Ücretsiz Kargo",
-        "Alışveriş Kredisi"
-      ],
-      "comments": [
-        {
-          "id": "7fc50c94-d948-4c11-a1cd-542f7a85ef38",
-          "userName": "Geçici User",
-          "comment": "Deneme Yorum",
-          "rating": 4,
-          "date": "2024-08-01T11:33:15.166Z",
-          "helpfulCount": 0
-        },
-        {
-          "id": "d0267bed-9b5d-416e-a50c-f908b6f8781d",
-          "userName": "Geçici User",
-          "comment": "dsadasdafsdfdsfsdfds",
-          "rating": 3,
-          "date": "2024-08-01T14:07:58.668Z",
-          "helpfulCount": 0
-        },
-        {
-          "id": "056fe1b6-9d1e-4ef0-ba2f-06b1ff405c66",
-          "userName": "Geçici User",
-          "comment": "asdadsadsa",
-          "rating": 4,
-          "date": "2024-08-07T12:19:38.270Z",
-          "helpfulCount": 0
-        },
-        {
-          "id": "1f0a67b3-dd49-4296-8873-690f29bdb5d6",
-          "userName": "Barış Erkuş",
-          "comment": "DenemeDenemeDeneme",
-          "rating": 3,
-          "date": "2024-08-07T14:57:25.259Z",
-          "helpfulCount": 0
-        }
-      ],
-      "qa": [
-        {
-          "id": "e26fdfad-8d21-4d63-ae9c-07859cddb60e",
-          "questionText": "MerhabaMerhaba",
-          "questionDate": "2024-08-01T11:33:27.328Z",
-          "answerText": "",
-          "answerDate": "",
-          "storeName": "Turkcell Satış A.Ş."
-        }
-      ],
+      "badges": ["Peşine 4 Taksit", "Ücretsiz Kargo", "Alışveriş Kredisi"],
+      "comments": [],
+      "qa": [],
       "creditCard": true,
       "fibabanka": true,
       "freeShipping": true,
@@ -348,61 +292,12 @@
         },
         {
           "title": "Hafıza",
-          "options": [
-            "128 GB",
-            "256 GB",
-            "512 GB"
-          ]
+          "options": ["128 GB", "256 GB", "512 GB"]
         }
       ],
-      "badges": [
-        "Ücretsiz Kargo",
-        "Alışveriş Kredisi"
-      ],
-      "comments": [
-        {
-          "id": "28c2b90d-54ba-452f-84da-9a26b9a58ddf",
-          "userName": "Barış Erkuş",
-          "comment": "deneme denem denem",
-          "rating": 1,
-          "date": "2024-08-07T15:04:16.279Z",
-          "helpfulCount": 0
-        },
-        {
-          "id": "f9bf8800-f7ef-437d-a0c3-917639cf7fa8",
-          "userName": "Barış Erkuş",
-          "comment": "anla dedim halimi",
-          "rating": 5,
-          "date": "2024-08-07T15:06:24.153Z",
-          "helpfulCount": 0
-        },
-        {
-          "id": "95a8248e-4c6d-46ed-92eb-a6f15840ed54",
-          "userName": "Barış Erkuş",
-          "comment": "adsadas dasdasdsadsa",
-          "rating": 3,
-          "date": "2024-08-07T15:06:57.880Z",
-          "helpfulCount": 0
-        },
-        {
-          "id": "05a44f3c-4e8e-4896-8c9e-b8653290c391",
-          "userName": "Barış Erkuş",
-          "comment": "qweqwewqewqewqewqewqewqewqewq",
-          "rating": 5,
-          "date": "2024-08-07T15:07:39.591Z",
-          "helpfulCount": 0
-        }
-      ],
-      "qa": [
-        {
-          "id": "2c4384a4-bc66-4859-b9fd-99000f7d294f",
-          "questionText": "dasdsadsadsadasdsa",
-          "questionDate": "2024-08-07T15:07:30.936Z",
-          "answerText": "",
-          "answerDate": "",
-          "storeName": "Turkcell Satış A.Ş."
-        }
-      ],
+      "badges": ["Ücretsiz Kargo", "Alışveriş Kredisi"],
+      "comments": [],
+      "qa": [],
       "creditCard": true,
       "fibabanka": false,
       "freeShipping": true,
@@ -628,10 +523,7 @@
       "limit": null,
       "seller": "AYA DİJİTAL",
       "description": "Apple 20 W USB-C Güç Adaptörü, aygıtınızı evde, ofiste veya yolda hızlı ve verimli bir şekilde şarj etme imkanı sunar. Bu güç adaptörü, USB-C özellikli tüm aygıtlarla uyumludur. Ancak Apple, optimum şarj performansı için bu adaptörü iPad Pro ve iPad Air ile birlikte kullanmanızı önerir",
-      "images": [
-        "apple-power/1.webp",
-        "apple-power/2.webp"
-      ],
+      "images": ["apple-power/1.webp", "apple-power/2.webp"],
       "features": [
         {
           "name": "Ürün Model Adı",
@@ -721,9 +613,7 @@
       "limit": 2,
       "seller": "MediaMarkt",
       "description": "Samsung Galaxy S23 Ultra ile yüksek performansı deneyimleyin. 512 GB depolama alanı ve güçlü işlemcisi ile her türlü ihtiyacınızı karşılayacak.",
-      "images": [
-        "samsung-galaxy-s23-ultra-512gb/1.webp"
-      ],
+      "images": ["samsung-galaxy-s23-ultra-512gb/1.webp"],
       "features": [
         {
           "name": "Ürün Model Adı",
@@ -826,18 +716,10 @@
         },
         {
           "title": "Hafıza",
-          "options": [
-            "256 GB",
-            "512 GB",
-            "1 TB"
-          ]
+          "options": ["256 GB", "512 GB", "1 TB"]
         }
       ],
-      "badges": [
-        "Hızlı Teslimat",
-        "Ücretsiz Kargo",
-        "12 Ay Taksit"
-      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo", "12 Ay Taksit"],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -972,16 +854,10 @@
         },
         {
           "title": "Hafıza",
-          "options": [
-            "128 GB",
-            "256 GB"
-          ]
+          "options": ["128 GB", "256 GB"]
         }
       ],
-      "badges": [
-        "Hızlı Teslimat",
-        "Ücretsiz Kargo"
-      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1120,16 +996,10 @@
         },
         {
           "title": "Hafıza",
-          "options": [
-            "128 GB",
-            "256 GB"
-          ]
+          "options": ["128 GB", "256 GB"]
         }
       ],
-      "badges": [
-        "Hızlı Teslimat",
-        "Ücretsiz Kargo"
-      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1268,17 +1138,10 @@
         },
         {
           "title": "Hafıza",
-          "options": [
-            "256 GB",
-            "512 GB"
-          ]
+          "options": ["256 GB", "512 GB"]
         }
       ],
-      "badges": [
-        "Hızlı Teslimat",
-        "Ücretsiz Kargo",
-        "6 Ay Taksit"
-      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo", "6 Ay Taksit"],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1413,17 +1276,10 @@
         },
         {
           "title": "Hafıza",
-          "options": [
-            "128 GB",
-            "256 GB"
-          ]
+          "options": ["128 GB", "256 GB"]
         }
       ],
-      "badges": [
-        "Hızlı Teslimat",
-        "Ücretsiz Kargo",
-        "12 Ay Taksit"
-      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo", "12 Ay Taksit"],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1455,11 +1311,7 @@
       "limit": 2,
       "seller": "Vatan Bilgisayar",
       "description": "Sony Xperia 1 III, üstün kamera özellikleri ve yüksek performansı ile dikkat çekiyor. 256 GB depolama alanı ile tüm verilerinizi güvenle saklayın.",
-      "images": [
-        "sigma-plus/1.webp",
-        "sigma-plus/2.webp",
-        "sigma-plus/3.webp"
-      ],
+      "images": ["sigma-plus/1.webp", "sigma-plus/2.webp", "sigma-plus/3.webp"],
       "features": [
         {
           "name": "Ürün Model Adı",
@@ -1558,16 +1410,10 @@
         },
         {
           "title": "Hafıza",
-          "options": [
-            "128 GB",
-            "256 GB"
-          ]
+          "options": ["128 GB", "256 GB"]
         }
       ],
-      "badges": [
-        "Hızlı Teslimat",
-        "Ücretsiz Kargo"
-      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1599,9 +1445,7 @@
       "limit": null,
       "seller": "Messa İletişim",
       "description": "Lightning konnektörüne sahip iPhone, iPad veya iPod’unuzu eşzamanlamak ve şarj etmek için USB C veya Thunderbolt 3 (USB C) özellikli Mac’inize bağlayın.",
-      "images": [
-        "apple-cable/1.webp"
-      ],
+      "images": ["apple-cable/1.webp"],
       "features": [
         {
           "name": "Ürün Model Adı",
@@ -1659,10 +1503,97 @@
           ]
         }
       ],
-      "badges": [
-        "Hızlı Teslimat",
-        "Ücretsiz Kargo"
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
+      "comments": [],
+      "qa": [],
+      "creditCard": true,
+      "fibabanka": true,
+      "freeShipping": true,
+      "guarantee": true,
+      "isContract": false,
+      "isSpecialForYou": false,
+      "isBestOffer": true,
+      "isNew": false,
+      "isBestSeller": true,
+      "date": "2024-07-31T23:59:59.999Z"
+    },
+    {
+      "id": "13",
+      "name": "Roborock S8 Pro Ultra İstasyonlu Robot Süpürge ve Sonic Paspas",
+      "price": 37589,
+      "category": "Elektrikli Ev Aletleri",
+      "subCategory": "Süpürgeler",
+      "categoryCode": "electrical",
+      "subCategoryCode": "vacuum-cleaners",
+      "brandCode": "Roborock",
+      "rating": 1,
+      "discountPercentage": 9,
+      "discountEndTime": "2024-09-05T23:59:59.999Z",
+      "stock": 0,
+      "installmentCount": 0,
+      "installmentPrice": 0,
+      "limit": null,
+      "seller": "Mobifon",
+      "description": "69 W güç performansına sahip Roborock S8 Pro Ultra güçlü motoru ile kısa sürede her yeri akıllı bir şekilde süpürür.Roborock robot süpürge, 20 mm aşılabilir yükseklik kapasitesi ile halı ve zemin arasında devrilmeden rahat bir geçiş sağlar.4 saat şarj süresi bulunan çöp istasyonlu robot süpürgeler kapasitesi doldukça istasyona çöplerini boşaltarak süpürme işlemine devam ederler.2500 ml istasyon toz kapasitesi olan moplu robot süpürge hem süpürme hem de silme özelliğine sahiptir.200 mililitre su haznesi olan hepa filtreli robot süpürge tozları tutar ve bu sayede havadaki toz oranının da azalmasına yardımcı olur.350 mililitre toz haznesi bulunan çoklu haritalama yapan robot süpürge her odayı süpürmek için harita algılama özelliği gösterir180 dakika kesintisiz çalışma süresine sahip olan beyaz robot süpürge ile yaşam alanlarınızı rahatlıkla süpürürsünüz.6000 Pa robot süpürge yüksek emiş gücü sayesinde halı ve parke yüzeylerinin temizlenmesini sağlar. ",
+      "images": ["roborock/1.webp", "roborock/2.webp", "roborock/3.webp"],
+      "features": [
+        {
+          "name": "Ürün Model Adı",
+          "value": "Roborock S8 Pro Ultra İstasyonlu Robot Süpürge ve Sonic Paspas"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "ÇİN"
+        },
+        {
+          "name": "Emiş Gücü",
+          "value": "6000 PA"
+        },
+        {
+          "name": "Toz Haznesi",
+          "value": "0,25 L"
+        },
+        {
+          "name": "Güç (w)",
+          "value": "69 W"
+        },
+        {
+          "name": "Hepa Filtre",
+          "value": "YOK"
+        },
+        {
+          "name": "Otomatik Şarj",
+          "value": "VAR"
+        },
+        {
+          "name": "Turbo Başlık",
+          "value": "YOK"
+        }
       ],
+      "otherSellers": [
+        {
+          "seller": "Hepsiburada",
+          "price": 8499,
+          "rating": 6
+        },
+        {
+          "seller": "Amazon Türkiye",
+          "price": 8499,
+          "rating": 7
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": [
+            {
+              "label": "Beyaz",
+              "color": "#fff"
+            }
+          ]
+        }
+      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
       "comments": [],
       "qa": [],
       "creditCard": true,

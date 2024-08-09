@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { FC, useState } from "react";
+import { useSession } from "next-auth/react";
+import { notify } from "@/lib/notify";
 import { Rating } from "@smastrom/react-rating";
 import {
   RatingCard,
@@ -8,19 +10,13 @@ import {
   Note,
 } from "@/styles/ProductDetail/Features/Reviews";
 import Modal from "./Modal";
-import { useSession } from "next-auth/react";
-import { notify } from "@/lib/notify";
-import { getUser } from "@/server/user";
 
-interface RatingCardProps {
+type RatingCardProps = {
   productId: string;
   count: number;
-}
+};
 
-const RatingCardComponent: React.FC<RatingCardProps> = ({
-  productId,
-  count,
-}) => {
+const RatingCardComponent: FC<RatingCardProps> = ({ productId, count }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const session = useSession();
 

@@ -1,11 +1,11 @@
-import { Button, HeadWrapper, Input } from "@/styles/ProductDetail/Features/Qa";
-import QuestionAnswerCard from "./QaCard";
-import { useState } from "react";
-import Modal from "./Modal";
+import { FC, useState } from "react";
 import { useSession } from "next-auth/react";
 import { notify } from "@/lib/notify";
+import QuestionAnswerCard from "./QaCard";
+import Modal from "./Modal";
+import { Button, HeadWrapper, Input } from "@/styles/ProductDetail/Features/Qa";
 
-interface QaProps {
+type QaProps = {
   qas: {
     questionDate: string;
     questionText: string;
@@ -14,9 +14,9 @@ interface QaProps {
     answerText: string;
   }[];
   productId: string;
-}
+};
 
-const Qa: React.FC<QaProps> = ({ qas, productId }) => {
+const Qa: FC<QaProps> = ({ qas, productId }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const session = useSession();
 

@@ -13,12 +13,6 @@ export const LeftCol = styled(Col)`
   align-items: center;
 `;
 
-export const ImageWrapper = styled.div`
-  position: relative;
-  width: 500px;
-  height: 380px;
-`;
-
 export const LimitWrapper = styled.div`
   margin-top: 2rem;
   max-width: 25.375rem;
@@ -84,6 +78,7 @@ export const Stock = styled.div`
   font-size: 0.9rem;
   font-weight: 600;
   color: #ffca00;
+  margin-left: 0.5rem;
 `;
 
 export const ConfigurationWrapper = styled.div`

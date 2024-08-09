@@ -1,5 +1,4 @@
-// components/OfferBox.tsx
-import React from "react";
+import { FC } from "react";
 import {
   BoxContainer,
   BoxLeft,
@@ -9,13 +8,12 @@ import {
   SubText,
   Price,
   Tag,
-  RadioInput,
   TextWrapper,
   PriceWrapper,
   PriceDetail,
 } from "@/styles/ProductDetail/OfferBox";
 
-interface OfferBoxProps {
+type OfferBoxProps = {
   title: string;
   subtitle?: string;
   price: number;
@@ -27,9 +25,9 @@ interface OfferBoxProps {
   deliveryTime?: string;
   installmentCount?: number;
   onSelect: () => void;
-}
+};
 
-const OfferBox: React.FC<OfferBoxProps> = ({
+const OfferBox: FC<OfferBoxProps> = ({
   title,
   subtitle,
   price,
@@ -47,7 +45,7 @@ const OfferBox: React.FC<OfferBoxProps> = ({
       {tag && <Tag color={tagColor}>{tag}</Tag>}
       <BoxLeft>
         <TextWrapper>
-          <RadioInput checked={selected} readOnly />
+          <input type="radio" checked={selected} readOnly />
           <MainText>{title}</MainText>
         </TextWrapper>
         <PriceWrapper>
@@ -59,7 +57,9 @@ const OfferBox: React.FC<OfferBoxProps> = ({
           </div>
           {discountPercentage && discountPercentage !== 0 ? (
             <>
-              <Price type="old">{oldPrice !== 0 ? oldPrice : "asdasdsa"}</Price>
+              <Price type="old">
+                {oldPrice !== 0 && oldPrice?.toLocaleString("tr-TR")}
+              </Price>
               <PriceDetail type="old">
                 TL <span>%{discountPercentage} indirim</span>
               </PriceDetail>

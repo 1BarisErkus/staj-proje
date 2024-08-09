@@ -1,5 +1,5 @@
-import React from "react";
-import { FaThumbsUp } from "react-icons/fa";
+import { FC } from "react";
+import { Rating } from "@smastrom/react-rating";
 import {
   ReviewCardContainer,
   ReviewHeader,
@@ -14,19 +14,19 @@ import {
   ThumbsUpIcon,
   HelpfulCount,
 } from "@/styles/ProductDetail/Features/ReviewCard";
-import { Rating } from "@smastrom/react-rating";
 import { AiOutlineCheck } from "react-icons/ai";
+import { FaThumbsUp } from "react-icons/fa";
 
-interface ReviewCardProps {
+type ReviewCardProps = {
   userName: string;
   comment: string;
   rating: number;
   date: string;
   seller: string;
   helpfulCount: number;
-}
+};
 
-const ReviewCard: React.FC<ReviewCardProps> = ({
+const ReviewCard: FC<ReviewCardProps> = ({
   userName,
   comment,
   rating,
@@ -40,7 +40,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
     <ReviewCardContainer>
       <ReviewHeader>
         <StarRating>
-          <Rating value={rating} style={{ maxWidth: "70px" }} />
+          <Rating value={rating} style={{ maxWidth: "70px" }} readOnly />
         </StarRating>
         <ReviewerName>{userName}</ReviewerName>
         <ReviewDate>{displayDate}</ReviewDate>

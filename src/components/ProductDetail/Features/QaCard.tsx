@@ -1,3 +1,4 @@
+import { FC } from "react";
 import {
   Answer,
   AnswerContainer,
@@ -7,15 +8,15 @@ import {
   QuestionText,
 } from "@/styles/ProductDetail/Features/Qa";
 
-interface QuestionAnswerCardProps {
+type QuestionAnswerCardProps = {
   questionDate: string;
   questionText: string;
   answerDate: string;
   storeName: string;
   answerText: string;
-}
+};
 
-const QuestionAnswerCard: React.FC<QuestionAnswerCardProps> = ({
+const QuestionAnswerCard: FC<QuestionAnswerCardProps> = ({
   questionDate,
   questionText,
   answerDate,
