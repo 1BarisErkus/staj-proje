@@ -91,6 +91,7 @@ const BasketItem: FC<BasketItemProps> = ({
         discountPrice,
         count: newCount,
         seller,
+        limit,
       };
       await addProductToBasket(userId, newBasketItem);
 

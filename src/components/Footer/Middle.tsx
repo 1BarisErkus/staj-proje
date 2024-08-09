@@ -1,17 +1,17 @@
+import Link from "next/link";
 import {
   LanguageSelector,
   MiddleRight,
   MiddleSection,
   SocialMedia,
 } from "@/styles/Footer/Middle";
-import Link from "next/link";
-import { BsTwitterX } from "react-icons/bs";
 import {
   FaFacebookF,
   FaInstagram,
   FaLinkedin,
   FaYoutube,
 } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
 
 const Middle = () => {
   return (

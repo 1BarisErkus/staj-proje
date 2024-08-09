@@ -113,6 +113,7 @@ const Right: FC<RightProps> = ({
       count: 1,
       memory: configuration[1] ? selectedMemory : null,
       seller: seller,
+      limit,
     };
     addProductToBasketMutate(newBasketItem);
   };

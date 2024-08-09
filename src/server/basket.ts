@@ -23,6 +23,7 @@ export const addProductToBasket = async (
     discountPrice,
     count,
     seller,
+    limit,
   }: ProductForBasket
 ) => {
   const user = await getUser(userId);
@@ -51,6 +52,7 @@ export const addProductToBasket = async (
       discountPrice,
       count,
       seller,
+      limit,
     };
     basket.push(newBasketItem);
   }

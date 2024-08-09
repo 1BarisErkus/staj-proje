@@ -70,6 +70,7 @@ export type ProductForBasket = {
   discountPrice: number;
   count: number;
   seller: string;
+  limit: number;
 };
 
 export type ColorOptions = {

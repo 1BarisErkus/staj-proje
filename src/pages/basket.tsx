@@ -46,12 +46,6 @@ const Basket: FC<BasketProps> = ({ session }) => {
   const favorites = results[1].data;
   const basket = results[2].data;
 
-  const limitData = products
-    ? products.filter((item: any) =>
-        basket?.find((b: any) => b.productId === item.id)
-      )[0]
-    : null;
-
   const mayInterestYouData = products ? products.slice(0, 6) : [];
 
   return (
@@ -78,7 +72,7 @@ const Basket: FC<BasketProps> = ({ session }) => {
                       discountPrice={item.discountPrice}
                       count={item.count}
                       seller={item.seller}
-                      limit={limitData.limit}
+                      limit={item.limit}
                     />
                   ))}
                 </BasketItemsContainer>

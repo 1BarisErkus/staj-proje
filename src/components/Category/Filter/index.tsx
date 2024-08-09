@@ -145,18 +145,21 @@ const Filter: FC<FilterProps> = ({ data, params, favorites }) => {
     React.Reducer<FilterState, FilterAction>
   >(reducer, initialArgs);
 
-  const [compareMode, setCompareMode] = useState(false);
   const [filteredData, setFilteredData] = useState<Product[]>(data);
+  const [compareMode, setCompareMode] = useState(false);
+  const { clearCompareItems } = useCompareStore();
 
   useEffect(() => {
     clearCompareItems();
-  }, []);
+
+    return () => {
+      clearCompareItems();
+    };
+  }, [clearCompareItems]);
 
   useEffect(() => {
     setFilteredData(applyFilters(data, state));
   }, [data, state]);
-
-  const { compareItems, clearCompareItems } = useCompareStore();
 
   let sellerOptions: string[] = [];
   data.forEach((product) => {

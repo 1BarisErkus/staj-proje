@@ -85,7 +85,7 @@ const datas = [
   },
 ];
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <FooterContainer>
       <Container>
