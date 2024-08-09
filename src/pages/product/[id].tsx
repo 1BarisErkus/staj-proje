@@ -18,6 +18,7 @@ import Left from "@/components/ProductDetail/Left";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Content } from "@/styles/ProductDetail";
 import Loading from "@/components/Loading";
+import NotFound from "@/components/NotFound";
 
 type ProductProps = {
   session: { user: { uid: string } };
@@ -51,6 +52,10 @@ const Product: FC<ProductProps> = ({ session, params }) => {
 
   const similarProducts = results[0].data;
   const favorites = results[1].data;
+
+  if (!product || Object.keys(product).length === 0) {
+    return <NotFound />;
+  }
 
   return (
     <>

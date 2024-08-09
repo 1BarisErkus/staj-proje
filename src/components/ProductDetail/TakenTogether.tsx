@@ -40,6 +40,8 @@ const TakenTogether: FC<TakenTogetherProps> = ({
               discountPercentage={product.discountPercentage}
               size="small"
               isFavorite={favorites.includes(product.id)}
+              fibabanka={product.fibabanka}
+              isBestSeller={product.isBestSeller}
             />
           </CustomSwiperSlide>
         ))}

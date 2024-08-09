@@ -1,39 +1,69 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
 type CardWrapperProps = {
   size?: string;
   $comparemode?: boolean;
+  $iscompareitem: boolean | undefined;
 };
 
 type SingleBadgeWrapperProps = {
   type?: string;
 };
 
+const shake = keyframes`
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+`;
+
 export const CardWrapper = styled.div<CardWrapperProps>`
   position: relative;
   width: 280px;
-  min-height: 420px;
+  min-height: 470px;
   padding: 16px;
-  border: 1px solid #e0e0e0;
+  border: none;
+  background-color: white;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid white;
 
   ${({ size }) =>
     size === "small" &&
     `
     width: 160px;
-    min-height: 300px;
+    min-height: 350px;
+    `}
+
+  ${({ $iscompareitem }) =>
+    $iscompareitem &&
+    `
+    border: 5px solid #ffc900;
+    `}
+
+    ${({ $comparemode }) =>
+    $comparemode &&
+    css`
+      animation: ${shake} 1.5s ease-in-out infinite;
     `}
 
   &:hover {
     ${(props) =>
       props.$comparemode
         ? `
-          cursor: pointer;
-          box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
-          transform: scale(1.05);
-          background-color: #ffc900;
-        `
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+            transform: scale(1.05);
+            background-color: #ffc900;
+          `
         : `
           border: 2px solid #ffc900;
         `}
@@ -50,17 +80,22 @@ export const ProductName = styled.h2<{ size?: string }>`
   font-weight: bold;
   color: #333;
   margin: 16px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   ${({ size }) =>
     size === "small" &&
     `
     font-size: 0.8rem;
     min-height: 30px;
-    word-wrap: break-word;
     max-width: 100px;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
     `}
 `;
-
 export const PriceWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -71,6 +106,8 @@ export const Price = styled.p`
   font-weight: bold;
   color: #2855ac;
   margin-top: 5px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 10px;
 `;
 
 export const Discount = styled.p`
@@ -94,7 +131,8 @@ export const MinPrice = styled.p`
 export const BadgeWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin: 10px 0;
+  height: 30px;
 `;
 
 export const Badge = styled.span`

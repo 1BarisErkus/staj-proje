@@ -77,6 +77,7 @@ export const CardListWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
+  margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid gainsboro;
 

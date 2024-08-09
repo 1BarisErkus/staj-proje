@@ -37,6 +37,8 @@ const JustForYou: FC<SectionProps> = ({ data, favorites }) => {
               badges={product.badges}
               discountPercentage={product.discountPercentage}
               isFavorite={favorites.includes(product.id)}
+              fibabanka={product.fibabanka}
+              isBestSeller={product.isBestSeller}
             />
           </CustomSwiperSlide>
         ))}

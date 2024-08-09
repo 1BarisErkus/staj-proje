@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import { Pagination } from "swiper/modules";
 import CustomSwiper, { CustomSwiperSlide } from "./CustomSwiper";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useCompareStore } from "@/zustand/useCompareStore";
 
 import { changeFavorite } from "@/server/product";
 import { notify } from "@/lib/notify";
@@ -41,7 +42,6 @@ type CardProps = {
   isFavorite: boolean;
   size?: string;
   compareMode?: boolean;
-  handleAdd?: (product: CompareItemProps) => void;
 };
 
 const Card: FC<CardProps> = ({
@@ -56,10 +56,10 @@ const Card: FC<CardProps> = ({
   isFavorite,
   size,
   compareMode,
-  handleAdd,
 }) => {
   const queryClient = useQueryClient();
   const session = useSession();
+  const { compareItems, addCompareItem, removeCompareItem } = useCompareStore();
 
   const { mutate, isPending } = useMutation({
     mutationFn: () =>
@@ -85,15 +85,24 @@ const Card: FC<CardProps> = ({
   ) => {
     if (compareMode) {
       e.preventDefault();
-      handleAdd && handleAdd(product);
+      const isAlreadyAdded = compareItems.some(
+        (item) => item?.productId === product.productId
+      );
+
+      if (isAlreadyAdded) removeCompareItem(product.productId);
+      else addCompareItem(product);
     }
   };
 
   return (
-    <CardWrapper size={size} $comparemode={compareMode}>
+    <CardWrapper
+      size={size}
+      $comparemode={compareMode}
+      $iscompareitem={compareItems.some((item) => item?.productId === id)}
+    >
       {isBestSeller || fibabanka ? (
         <SingleBadgeWrapper type={isBestSeller ? "bestSeller" : "fibabanka"}>
-          {isBestSeller ? "Çok Satan" : fibabanka ? "Fibabanka" : ""}
+          {isBestSeller ? "Çok Satan" : fibabanka ? "Fibabanka ile 0 faiz" : ""}
         </SingleBadgeWrapper>
       ) : null}
 
@@ -132,6 +141,7 @@ const Card: FC<CardProps> = ({
                 width={size === "small" ? 130 : 250}
                 height={size === "small" ? 100 : 200}
                 priority
+                style={{ margin: "20px 0" }}
               />
             </CustomSwiperSlide>
           ))}

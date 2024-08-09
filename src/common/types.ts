@@ -56,6 +56,8 @@ export type SwiperProductProps = {
   price: number;
   badges: string[];
   discountPercentage: number;
+  fibabanka: boolean;
+  isBestSeller: boolean;
 };
 
 export type ProductForBasket = {

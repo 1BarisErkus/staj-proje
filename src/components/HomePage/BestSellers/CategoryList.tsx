@@ -52,7 +52,7 @@ const CategoryList: FC<CategoryListProps> = ({
             $active={activeCategory === category.name}
             onClick={() => setActiveCategory(category.name)}
           >
-            <ImageWrapper width={30} height={20}>
+            <ImageWrapper width={40} height={30}>
               <Image
                 src={`/images/bestSellerCategories/${category.image}`}
                 alt={category.name}

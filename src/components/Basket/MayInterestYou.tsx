@@ -13,15 +13,14 @@ const MayInterestYou: FC<SectionProps> = ({ data, favorites }) => {
         breakpoints={{
           768: {
             slidesPerView: 2,
-            spaceBetween: 10,
           },
           1024: {
             slidesPerView: 3,
-            spaceBetween: 20,
+            spaceBetween: 30,
           },
           1700: {
             slidesPerView: 4,
-            spaceBetween: 30,
+            spaceBetween: 50,
           },
         }}
         modules={[Navigation]}
@@ -36,6 +35,9 @@ const MayInterestYou: FC<SectionProps> = ({ data, favorites }) => {
               price={product.price}
               discountPercentage={product.discountPercentage}
               isFavorite={favorites.includes(product.id)}
+              badges={product.badges}
+              fibabanka={product.fibabanka}
+              isBestSeller={product.isBestSeller}
             />
           </CustomSwiperSlide>
         ))}

@@ -1,7 +1,8 @@
-import { FC } from "react";
 import Image from "next/image";
-import { CompareItemProps } from "@/common/types";
-import { Container, Row } from "@/styles/GlobalVariables";
+import { useRouter } from "next/router";
+import { notify } from "@/lib/notify";
+import { useCompareStore } from "@/zustand/useCompareStore";
+import { Container } from "@/styles/GlobalVariables";
 import {
   CompareContainer,
   CompareItem,
@@ -11,24 +12,35 @@ import {
   CloseButton,
 } from "@/styles/Category/Filter";
 
-type CompareBarProps = {
-  items: Array<CompareItemProps | null>;
-  onClear: () => void;
-  onClearItem: (item: CompareItemProps) => void;
-  onCompare: () => void;
-};
+const CompareBar = () => {
+  const router = useRouter();
 
-const CompareBar: FC<CompareBarProps> = ({
-  items,
-  onClear,
-  onClearItem,
-  onCompare,
-}) => {
+  const { compareItems, clearCompareItems, removeCompareItem } =
+    useCompareStore();
+
+  const handleCompare = () => {
+    const itemsToCompare = compareItems
+      .filter((item) => item !== null)
+      .map((item) => item?.productId);
+
+    if (itemsToCompare.length < 2) {
+      notify("Karşılaştırma için en az 2 ürün seçmelisiniz.", "error");
+      return;
+    }
+
+    router.push({
+      pathname: "/compare",
+      query: {
+        items: JSON.stringify(itemsToCompare),
+      },
+    });
+  };
+
   return (
     <CompareContainer>
       <Container>
         <StyledRow>
-          {items.map((item, index) => (
+          {compareItems.map((item, index) => (
             <CompareItem key={index}>
               <Image
                 src={
@@ -42,13 +54,15 @@ const CompareBar: FC<CompareBarProps> = ({
               />
               <p>{item ? item.name : `Listeden bir cihaz seçin`}</p>
               {item && (
-                <CloseButton onClick={() => onClearItem(item)}>X</CloseButton>
+                <CloseButton onClick={() => removeCompareItem(item.productId)}>
+                  X
+                </CloseButton>
               )}
             </CompareItem>
           ))}
           <div>
-            <ClearButton onClick={onClear}>Temizle</ClearButton>
-            <CompareButton onClick={onCompare}>Karşılaştır</CompareButton>
+            <ClearButton onClick={clearCompareItems}>Temizle</ClearButton>
+            <CompareButton onClick={handleCompare}>Karşılaştır</CompareButton>
           </div>
         </StyledRow>
       </Container>

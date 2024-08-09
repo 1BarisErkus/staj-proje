@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import Section from "../Section";
 import {
   FaqContainer,
@@ -39,7 +39,7 @@ const faqs: FaqItem[] = [
   },
 ];
 
-const Faqs: React.FC = () => {
+const Faqs: FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const toggleFaq = (id: number) => {

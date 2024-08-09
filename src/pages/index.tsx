@@ -16,6 +16,7 @@ import RecentReviews from "@/components/RecentReviews";
 import Slider from "@/components/HomePage/Slider";
 import SpecialForYou from "@/components/HomePage/SpecialForYou";
 import WhyPasaj from "@/components/HomePage/WhyPasaj";
+import Loading from "@/components/Loading";
 
 interface HomeProps {
   session: Session & { user: { uid: string } };
@@ -36,8 +37,8 @@ const Home: FC<HomeProps> = ({ session }) => {
     ],
   });
 
-  const products = results[0].data;
-  const favorites = results[1].data;
+  const { data: products, isLoading: productsLoading } = results[0];
+  const { data: favorites, isLoading: favoritesLoading } = results[1];
 
   const specialForYouData = products
     ? products.filter(
@@ -56,6 +57,8 @@ const Home: FC<HomeProps> = ({ session }) => {
     : [];
 
   const recentReviewsData = products ? products.slice(0, 4) : [];
+
+  if (productsLoading || favoritesLoading) return <Loading />;
 
   return (
     <>

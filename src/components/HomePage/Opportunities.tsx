@@ -22,15 +22,12 @@ const Opportunities = () => {
         breakpoints={{
           768: {
             slidesPerView: 2,
-            spaceBetween: 10,
           },
           1024: {
             slidesPerView: 3,
-            spaceBetween: 20,
           },
           1700: {
             slidesPerView: 4,
-            spaceBetween: 20,
           },
         }}
         navigation={true}

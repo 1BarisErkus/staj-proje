@@ -13,7 +13,7 @@
       "email": "ahmet@gmail.com",
       "isAdmin": false,
       "basket": [],
-      "favorites": ["7", "2"]
+      "favorites": ["7", "2", "1"]
     }
   ],
   "products": [
@@ -1015,7 +1015,7 @@
     },
     {
       "id": "9",
-      "name": "Huawei Matebook D14 İntel İ5-12450H 16 GB 512 GB Dizüstü Bilgisayar",
+      "name": "Huawei Matebook D14 Dizüstü Bilgisayar",
       "price": 10999,
       "category": "Bilgisayar-Tablet",
       "subCategory": "Dizüstü Bilgisayar",

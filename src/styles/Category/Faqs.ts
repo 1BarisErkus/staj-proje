@@ -28,12 +28,13 @@ export const AccordionButton = styled.button`
 `;
 
 export const AccordionContent = styled.div<{ $isopen: boolean }>`
-  max-height: ${({ $isopen }) => ($isopen ? "500px" : "0")};
-  overflow: hidden;
-  background-color: transparent;
-  transition: max-height 0.3s ease;
-  padding: ${({ $isopen }) => ($isopen ? "15px" : "0 15px")};
+  transform: ${({ $isopen }) => ($isopen ? "scaleY(1)" : "scaleY(0)")};
+  transform-origin: top;
+  transition: transform 0.3s ease;
+  height: auto;
   background-color: #f1f1f1;
+  padding: ${({ $isopen }) => ($isopen ? "15px" : "0 15px")};
+  overflow: hidden;
 `;
 
 export const Answer = styled.p`

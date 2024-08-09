@@ -1,7 +1,7 @@
-import { Logo, Nav, NavLink, TopWrapper } from "@/styles/Header/Top";
-import { Col, Container, Row } from "@/styles/GlobalVariables";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { Logo, Nav, NavLink, TopWrapper } from "@/styles/Header/Top";
+import { Col, Container, Row } from "@/styles/GlobalVariables";
 
 const Top = () => {
   const router = useRouter();
@@ -11,7 +11,7 @@ const Top = () => {
       <Row>
         <Col>
           <TopWrapper>
-            <Logo href="https://www.turkcell.com.tr/">
+            <Logo href="https://www.turkcell.com.tr/" target="_blank">
               <Image
                 src="/images/turkcell.png"
                 alt="logo"

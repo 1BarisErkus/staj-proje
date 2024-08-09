@@ -1,5 +1,6 @@
 import { FC, useEffect, useReducer, useState } from "react";
-import { CompareItemProps, Product, SwiperProductProps } from "@/common/types";
+import { useCompareStore } from "@/zustand/useCompareStore";
+import { Product, SwiperProductProps } from "@/common/types";
 import { StyledCol, StyledLeftCol } from "@/styles/Category/Filter";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
 import { Container as Background } from "@/styles/Category";
@@ -12,7 +13,6 @@ import FilterComponent from "./Options";
 import Slider from "../Slider";
 import Faqs from "../Faqs";
 import CompareBar from "../Compare";
-import { useRouter } from "next/router";
 
 type FilterProps = {
   data: Product[];
@@ -144,51 +144,19 @@ const Filter: FC<FilterProps> = ({ data, params, favorites }) => {
   const [state, dispatch] = useReducer<
     React.Reducer<FilterState, FilterAction>
   >(reducer, initialArgs);
-  const router = useRouter();
 
   const [compareMode, setCompareMode] = useState(false);
-  const [compareItems, setCompareItems] = useState<(CompareItemProps | null)[]>(
-    [null, null, null]
-  );
   const [filteredData, setFilteredData] = useState<Product[]>(data);
+
+  useEffect(() => {
+    clearCompareItems();
+  }, []);
 
   useEffect(() => {
     setFilteredData(applyFilters(data, state));
   }, [data, state]);
 
-  const handleAdd = (product: CompareItemProps) => {
-    const index = compareItems.findIndex((item) => item === null);
-    if (index !== -1) {
-      setCompareItems((prev) => {
-        const newItems = [...prev];
-        newItems[index] = product;
-        return newItems;
-      });
-    }
-  };
-
-  const handleClear = () => {
-    setCompareItems([null, null, null]);
-  };
-
-  const handleClearItem = (item: CompareItemProps) => {
-    setCompareItems((prev) =>
-      prev.map((prevItem) => (prevItem === item ? null : prevItem))
-    );
-  };
-
-  const handleCompare = () => {
-    const itemsToCompare = compareItems
-      .filter((item) => item !== null)
-      .map((item) => item?.productId);
-
-    router.push({
-      pathname: "/compare",
-      query: {
-        items: JSON.stringify(itemsToCompare),
-      },
-    });
-  };
+  const { compareItems, clearCompareItems } = useCompareStore();
 
   let sellerOptions: string[] = [];
   data.forEach((product) => {
@@ -226,7 +194,10 @@ const Filter: FC<FilterProps> = ({ data, params, favorites }) => {
       <StyledCol>
         <SwitchButton
           title="Karşılaştırma Modu"
-          handleChange={() => setCompareMode(!compareMode)}
+          handleChange={() => {
+            setCompareMode(!compareMode);
+            clearCompareItems();
+          }}
         />
       </StyledCol>
       <Row>
@@ -273,21 +244,13 @@ const Filter: FC<FilterProps> = ({ data, params, favorites }) => {
                 isBestSeller={product.isBestSeller}
                 isFavorite={favorites.includes(product.id)}
                 compareMode={compareMode}
-                handleAdd={handleAdd}
               />
             ))}
           </CardListWrapper>
         </Col>
         <Faqs />
       </Row>
-      {compareMode && (
-        <CompareBar
-          items={compareItems}
-          onClear={handleClear}
-          onClearItem={handleClearItem}
-          onCompare={handleCompare}
-        />
-      )}
+      {compareMode && <CompareBar />}
     </Container>
   );
 };
