@@ -29,6 +29,7 @@ import MinimalLoading from "../MinimalLoading";
 interface BasketItemProps extends ProductForBasket {
   userId: string;
   limit: number;
+  stock: number;
 }
 
 const BasketItem: FC<BasketItemProps> = ({
@@ -43,11 +44,12 @@ const BasketItem: FC<BasketItemProps> = ({
   count,
   seller,
   limit,
+  stock,
 }) => {
   const queryClient = useQueryClient();
 
   const { isPending: isDeleting, mutate: removeProductMutate } = useMutation({
-    mutationFn: () => removeProductFromBasket(userId, productId),
+    mutationFn: () => removeProductFromBasket(userId, productId, color, memory),
 
     onSuccess: () => {
       notify("Ürün sepetten kaldırıldı", "success");
@@ -74,6 +76,10 @@ const BasketItem: FC<BasketItemProps> = ({
   const handleChangeCount = async (newCount: number) => {
     if (count + newCount < 1) {
       removeProductMutate();
+      return;
+    }
+    if (count + newCount > stock) {
+      notify(`Bu üründen en fazla ${stock} adet alabilirsiniz`, "error");
       return;
     }
     if (count < limit || !limit || (count >= limit && newCount < 0)) {
@@ -142,7 +148,9 @@ const BasketItem: FC<BasketItemProps> = ({
                 </Count>
                 <Button
                   onClick={() => changeCount(1)}
-                  disabled={isChangeCount || count >= 10}
+                  disabled={
+                    isChangeCount || count >= stock || (limit && count >= limit)
+                  }
                 >
                   +
                 </Button>

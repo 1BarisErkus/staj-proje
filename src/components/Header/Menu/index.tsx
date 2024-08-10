@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useRouter } from "next/router";
 import {
   MenuContainer,
   MenuItem,
@@ -6,8 +7,15 @@ import {
   SubmenuItem,
 } from "@/styles/Header/Menu";
 
+type MenuItemProps = {
+  title: string;
+  href?: string;
+  subItems?: { title: string; href: string }[];
+};
+
 const Menu = () => {
   const [openMenuIndex, setOpenMenuIndex] = useState<number | null>(null);
+  const router = useRouter();
 
   const menuItems = [
     {
@@ -37,102 +45,51 @@ const Menu = () => {
     },
     {
       title: "Bilgisayar-Tablet",
-      subItems: [
-        {
-          title: "Tüm Bilgisayar ve Tabletler",
-          href: "/category/computer-tablet",
-        },
-        {
-          title: "Dizüstü Bilgisayarlar",
-          href: "/category/computer-tablet/laptops",
-        },
-      ],
+      href: "/category/computer-tablet",
     },
     {
       title: "Elektrikli Ev Aletleri",
-      subItems: [
-        {
-          title: "Tüm Elektrikli Ev Aletleri",
-          href: "/category/electrical",
-        },
-      ],
+      href: "/category/electrical",
     },
     {
       title: "Beyaz Eşya",
-      subItems: [
-        {
-          title: "Tüm Beyaz Eşyalar",
-          href: "/category/white-goods",
-        },
-        {
-          title: "Isıtma ve Soğutma Sistemleri",
-          href: "/category/white-goods/heating-cooling-systems",
-        },
-      ],
+      href: "/category/white-goods",
     },
     {
       title: "Sağlık-Kişisel Bakım",
-      subItems: [
-        {
-          title: "Tüm Sağlık-Kişisel Bakım Ürünleri",
-          href: "/category/health-personal-care",
-        },
-      ],
+      href: "/category/health-personal-care",
     },
     {
       title: "Hobi-Oyun",
-      subItems: [
-        {
-          title: "Tüm Hobi-Oyun Ürünleri",
-          href: "/category/hobby-game",
-        },
-        {
-          title: "Scooterlar ve Bisikletler",
-          href: "/category/hobby-game/scooters-bicycles",
-        },
-      ],
+      href: "/category/hobby-game",
     },
     {
       title: "TV-Ses Sistemleri",
-      subItems: [
-        {
-          title: "Tüm TV-Ses Sistemleri",
-          href: "/category/tv-audio",
-        },
-      ],
+      href: "/category/tv-audio",
     },
     {
       title: "Ev-Yaşam",
-      subItems: [
-        {
-          title: "Tüm Ev-Yaşam Ürünleri",
-          href: "/category/home-living",
-        },
-      ],
+      href: "/category/home-living",
     },
     {
       title: "Anne-Bebek-Oyuncak",
-      subItems: [
-        {
-          title: "Tüm Anne-Bebek-Oyuncak Ürünleri",
-          href: "/category/mom-baby-toys",
-        },
-      ],
+      href: "/category/mom-baby-toys",
     },
   ];
 
-  const handleMenuClick = (index: number) => {
-    setOpenMenuIndex(openMenuIndex === index ? null : index);
+  const handleMenuClick = (item: MenuItemProps, index: number) => {
+    if (item.href) router.push(item.href);
+    else setOpenMenuIndex(openMenuIndex === index ? null : index);
   };
 
   return (
     <MenuContainer>
       {menuItems.map((item, index) => (
         <div key={index}>
-          <MenuItem onClick={() => handleMenuClick(index)}>
+          <MenuItem onClick={() => handleMenuClick(item, index)}>
             {item.title}
           </MenuItem>
-          {openMenuIndex === index && (
+          {openMenuIndex === index && item.subItems && (
             <SubmenuContainer>
               {item.subItems.map((subItem, subIndex) => (
                 <SubmenuItem

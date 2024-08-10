@@ -7,7 +7,7 @@ import { dehydrate, QueryClient } from "@tanstack/react-query";
 
 import { getBasket } from "@/server/basket";
 import { getFavorites, getProducts } from "@/server/product";
-import { ProductForBasket } from "@/lib/types";
+import { Product, ProductForBasket } from "@/lib/types";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
 import { BasketItemsContainer, TitleOrder, Wrapper } from "@/styles/Basket";
 import SwiperDataTemplate from "@/components/SwiperDataTemplate";
@@ -78,6 +78,11 @@ const Basket: FC<BasketProps> = ({ session }) => {
                       count={item.count}
                       seller={item.seller}
                       limit={item.limit}
+                      stock={
+                        products?.find(
+                          (product: Product) => product.id === item.productId
+                        )?.stock
+                      }
                     />
                   ))}
                 </BasketItemsContainer>

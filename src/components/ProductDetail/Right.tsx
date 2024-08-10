@@ -90,12 +90,19 @@ const Right: FC<RightProps> = ({
       notify("Üzgünüz, bu ürün stokta yok", "error");
       return;
     }
-
     const productCountInBasket = basket?.find(
       (item: ProductForBasket) => item.productId === id
     )?.count;
     if (productCountInBasket === limit) {
       notify(`Bu üründen sadece ${limit} tane alabilirsiniz`, "error");
+      return;
+    }
+
+    console.log("productCountInBasket", productCountInBasket);
+    console.log("stock", stock);
+
+    if (productCountInBasket >= stock) {
+      notify(`Bu üründen sadece ${stock} tane alabilirsiniz`, "error");
       return;
     }
 

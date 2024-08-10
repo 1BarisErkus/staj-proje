@@ -4,21 +4,7 @@
       "id": "wuhEiFqcxse8NeTLAAcB4B3DDko1",
       "name": "Barış Erkuş",
       "email": "baris@gmail.com",
-      "basket": [
-        {
-          "id": "725d0b2a-3203-409c-a2b5-fa0b98f6de2e",
-          "productId": "1",
-          "image": "iphone-15-pro-max-256gb/1.webp",
-          "name": "iPhone 15 Pro Max",
-          "color": "Mavi Titanyum",
-          "memory": "256 GB",
-          "price": 89999,
-          "discountPrice": 79199,
-          "count": 1,
-          "seller": "Turkcell Satış A.Ş.",
-          "limit": 1
-        }
-      ],
+      "basket": [],
       "favorites": [
         "3",
         "1",
@@ -394,7 +380,7 @@
       "rating": 4.8,
       "discountPercentage": 0,
       "discountEndTime": "",
-      "stock": 25,
+      "stock": 6,
       "installmentCount": 6,
       "installmentPrice": 1644,
       "limit": null,
@@ -1739,6 +1725,105 @@
       "isBestOffer": true,
       "isNew": false,
       "isBestSeller": true,
+      "date": "2024-07-31T23:59:59.999Z"
+    },
+    {
+      "id": "14",
+      "name": "Oral-B Clean ve Protect Şarjlı Diş Fırçası",
+      "price": 2499,
+      "category": "Sağlık-Kişisel Bakım",
+      "subCategory": "Ağız Bakım Ürünleri",
+      "categoryCode": "health-personal-care",
+      "subCategoryCode": "oral-care-products",
+      "brandCode": "Oral",
+      "rating": 2,
+      "discountPercentage": 9,
+      "discountEndTime": "2024-09-05T23:59:59.999Z",
+      "stock": 111,
+      "installmentCount": 2,
+      "installmentPrice": 1299,
+      "limit": null,
+      "seller": "Braun Shop",
+      "description": "Dünya çapında diş hekimlerinin tavsiye ettiği 1 numaralı markanın sunduğu Oral-B Pro 750 modelini deneyimleyin. Pro 750 elektrikli diş fırçası profesyonel zamanlayıcı ile diş hekiminizin tavsiye ettiği gibi 2 dakika süreyle dişlerinizi fırçalamanızı ve 30 saniyede bir fırçaladığınız alanı değiştirmeniz gerektiğini size bildirir. Siz sadece fırçayı ağzınızda hareket ettirirken, Oral-B'nin benzersiz yuvarlak başlığı da geri kalan işleri halleder.",
+      "images": [
+        "oral/1.webp"
+      ],
+      "features": [
+        {
+          "name": "Ürün Model Adı",
+          "value": "ORAL-B CLEAN VE PROTECT ŞARJLI DİŞ FIRÇASI"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "ALMANYA"
+        },
+        {
+          "name": "Hız Ayarı",
+          "value": "BELİRTİLMEMİŞ"
+        },
+        {
+          "name": "Şarjlı Kullanım Süresi",
+          "value": "BELİRTİLMEMİŞ"
+        },
+        {
+          "name": "Garanti Süresi",
+          "value": "BELİRTİLMEMİŞ"
+        },
+        {
+          "name": "Ana Renk",
+          "value": "SİYAH"
+        },
+        {
+          "name": "Renk",
+          "value": "SİYAH"
+        },
+        {
+          "name": "Seri - Imeı",
+          "value": "SERİ"
+        }
+      ],
+      "otherSellers": [
+        {
+          "seller": "Hepsiburada",
+          "price": 28999,
+          "rating": 10
+        },
+        {
+          "seller": "Amazon Türkiye",
+          "price": 3199,
+          "rating": 7
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": [
+            {
+              "label": "Beyaz",
+              "color": "#fff"
+            },
+            {
+              "label": "Siyah",
+              "color": "#000"
+            }
+          ]
+        }
+      ],
+      "badges": [
+        "Hızlı Teslimat",
+        "Ücretsiz Kargo"
+      ],
+      "comments": [],
+      "qa": [],
+      "creditCard": false,
+      "fibabanka": false,
+      "freeShipping": false,
+      "guarantee": true,
+      "isContract": false,
+      "isSpecialForYou": false,
+      "isBestOffer": false,
+      "isNew": false,
+      "isBestSeller": false,
       "date": "2024-07-31T23:59:59.999Z"
     }
   ]

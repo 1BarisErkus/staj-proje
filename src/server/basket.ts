@@ -71,13 +71,18 @@ export const addProductToBasket = async (
 
 export const removeProductFromBasket = async (
   userId: string,
-  productId: string
+  productId: string,
+  color: string | null,
+  memory: string | null
 ) => {
   const user = await getUser(userId);
 
   const basket = user.basket;
   const productIndex = basket.findIndex(
-    (product: ProductForBasket) => product.productId === productId
+    (product: ProductForBasket) =>
+      product.productId === productId &&
+      product.color === color &&
+      product.memory === memory
   );
 
   if (productIndex !== -1) {
