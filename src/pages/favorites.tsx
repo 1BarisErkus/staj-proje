@@ -4,11 +4,12 @@ import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import { dehydrate, QueryClient, useQueries } from "@tanstack/react-query";
 
-import { Product } from "@/common/types";
+import { Product } from "@/lib/types";
 import { getFavorites, getProducts } from "@/server/product";
-import Card from "@/components/Card";
-import Section from "@/components/Section";
 import { CardListWrapper } from "@/styles/GlobalVariables";
+import Loading from "@/components/Loading";
+import Section from "@/components/Section";
+import Card from "@/components/Card";
 
 type FavoritesProps = {
   session: Session & { user: { uid: string } };
@@ -28,6 +29,10 @@ const Favorites: FC<FavoritesProps> = ({ session }) => {
       },
     ],
   });
+
+  if (results.some((result) => result.isLoading)) {
+    return <Loading />;
+  }
 
   const products = results[0].data;
   const favorites = results[1].data;

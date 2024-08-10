@@ -34,8 +34,12 @@ const Home: FC<HomeProps> = ({ session }) => {
     ],
   });
 
-  const { data: products, isLoading: productsLoading } = results[0];
-  const { data: favorites, isLoading: favoritesLoading } = results[1];
+  if (results.some((result) => result.isLoading)) {
+    return <Loading />;
+  }
+
+  const products = results[0].data;
+  const favorites = results[1].data;
 
   const specialForYouData = products
     ? products.filter(
@@ -54,8 +58,6 @@ const Home: FC<HomeProps> = ({ session }) => {
     : [];
 
   const recentReviewsData = products ? products.slice(0, 4) : [];
-
-  if (productsLoading || favoritesLoading) return <Loading />;
 
   return (
     <>

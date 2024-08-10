@@ -5,10 +5,11 @@ import { dehydrate, QueryClient, useQueries } from "@tanstack/react-query";
 import { getFavorites, getProducts } from "@/server/product";
 import { categoryNames } from "@/lib/categoryNames";
 import Breadcrumb from "@/components/Breadcrumb";
-import JustForYou from "@/components/Category/JustForYou";
 import { Content } from "@/styles/Category";
 import Filter from "@/components/Category/Filter";
 import { TitleText } from "@/styles/Category";
+import SwiperDataTemplate from "@/components/SwiperDataTemplate";
+import Loading from "@/components/Loading";
 
 interface ProductFilterProps {
   session: { user: { uid: string } };
@@ -29,6 +30,10 @@ const ProductFilter: FC<ProductFilterProps> = ({ session, params }) => {
       },
     ],
   });
+
+  if (results.some((result) => result.isLoading)) {
+    return <Loading />;
+  }
 
   const products = results[0].data;
   const favorites = results[1].data;
@@ -55,7 +60,11 @@ const ProductFilter: FC<ProductFilterProps> = ({ session, params }) => {
         <TitleText>
           {categoryNames[params.slug[params.slug.length - 1]]}
         </TitleText>
-        <JustForYou data={justForYouData} favorites={favorites} />
+        <SwiperDataTemplate
+          title="Bu Ürünler Tam Size Göre"
+          data={justForYouData}
+          favorites={favorites}
+        />
         <Filter data={justForYouData} params={params} favorites={favorites} />
       </Content>
     </>

@@ -2,7 +2,7 @@ import { FC, MouseEventHandler, RefObject } from "react";
 import { useSession } from "next-auth/react";
 import { useQuery } from "@tanstack/react-query";
 import { getFavorites } from "@/server/product";
-import { Product } from "@/common/types";
+import { Product } from "@/lib/types";
 import {
   ModalContent,
   Overlay,

@@ -1,11 +1,16 @@
+import { FC } from "react";
 import { GetServerSideProps } from "next";
 import { getProduct } from "@/server/product";
-import { Product } from "@/common/types";
+import { Product } from "@/lib/types";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
 import CompareCard from "@/components/Compare/CompareCard";
 import { List, Title } from "@/styles/Compare";
 
-const Compare = ({ compareItems }: { compareItems: Product[] }) => {
+type CompareProps = {
+  compareItems: Product[];
+};
+
+const Compare: FC<CompareProps> = ({ compareItems }) => {
   return (
     <Container>
       <Row>

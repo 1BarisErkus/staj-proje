@@ -95,6 +95,7 @@ export type SectionProps = {
   title: string;
   data: Product[];
   favorites: string[];
+  size?: string;
 };
 
 export type CompareItemProps = {

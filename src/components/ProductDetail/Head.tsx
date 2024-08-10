@@ -17,6 +17,7 @@ import {
 import MinimalLoading from "../MinimalLoading";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
+import { calculateTimeLeft } from "@/lib/helpers";
 
 type HeadProps = {
   title: string;
@@ -36,42 +37,15 @@ const Head: FC<HeadProps> = ({
   const session = useSession();
   const queryClient = useQueryClient();
 
-  const calculateTimeLeft = useCallback(() => {
-    const difference = +new Date(targetDate) - +new Date();
-    let timeLeft = {
-      days: "00",
-      hours: "00",
-      minutes: "00",
-    };
-
-    if (difference > 0) {
-      timeLeft = {
-        days: String(Math.floor(difference / (1000 * 60 * 60 * 24))).padStart(
-          2,
-          "0"
-        ),
-        hours: String(
-          Math.floor((difference / (1000 * 60 * 60)) % 24)
-        ).padStart(2, "0"),
-        minutes: String(Math.floor((difference / 1000 / 60) % 60)).padStart(
-          2,
-          "0"
-        ),
-      };
-    }
-
-    return timeLeft;
-  }, [targetDate]);
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
+      setTimeLeft(calculateTimeLeft(targetDate));
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [calculateTimeLeft, targetDate]);
+  }, [targetDate]);
 
   const { mutate: changeFavoriteMutate, isPending: changeFavoritePending } =
     useMutation({

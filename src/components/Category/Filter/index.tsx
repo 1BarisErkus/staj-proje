@@ -1,6 +1,6 @@
 import { FC, useEffect, useReducer, useState } from "react";
 import { useCompareStore } from "@/zustand/useCompareStore";
-import { Product, SwiperProductProps } from "@/common/types";
+import { Product, SwiperProductProps } from "@/lib/types";
 import { StyledCol, StyledLeftCol } from "@/styles/Category/Filter";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
 import { Container as Background } from "@/styles/Category";

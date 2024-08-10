@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ColorOptions, Configuration } from "@/common/types";
+import { ColorOptions, Configuration } from "@/lib/types";
 import {
   ArrowIcon,
   ColorCircle,

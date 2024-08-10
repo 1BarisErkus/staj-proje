@@ -28,7 +28,7 @@ import MinimalLoading from "./MinimalLoading";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import Image from "next/image";
-import { CompareItemProps } from "@/common/types";
+import { CompareItemProps } from "@/lib/types";
 
 type CardProps = {
   id: string;

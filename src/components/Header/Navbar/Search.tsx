@@ -1,7 +1,7 @@
 import { MouseEventHandler, useState, useRef, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "@/server/product";
-import { Product } from "@/common/types";
+import { Product } from "@/lib/types";
 import {
   SearchContainer,
   SearchIcon,

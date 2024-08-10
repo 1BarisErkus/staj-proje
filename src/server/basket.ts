@@ -1,4 +1,4 @@
-import { ProductForBasket } from "@/common/types";
+import { ProductForBasket } from "@/lib/types";
 import { getUser } from "./user";
 import { v4 as uuidv4 } from "uuid";
 

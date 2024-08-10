@@ -1,12 +1,12 @@
 import { FC } from "react";
+import { GetServerSideProps } from "next";
+import { getSession } from "next-auth/react";
 import {
   dehydrate,
   QueryClient,
   useQueries,
   useQuery,
 } from "@tanstack/react-query";
-import { GetServerSideProps } from "next";
-import { getSession } from "next-auth/react";
 
 import { getFavorites, getProduct, getSimilarProducts } from "@/server/product";
 import { Container, Row } from "@/styles/GlobalVariables";
@@ -121,6 +121,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { params } = context;
 
   const product = await getProduct(params?.id as string);
+
+  if (!product) {
+    return {
+      notFound: true,
+    };
+  }
 
   await queryClient.prefetchQuery({
     queryKey: ["product"],

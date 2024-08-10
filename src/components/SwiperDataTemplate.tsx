@@ -1,11 +1,16 @@
 import { FC } from "react";
 import { Navigation } from "swiper/modules";
-import { SwiperProductProps, SectionProps } from "@/common/types";
+import { SwiperProductProps, SectionProps } from "@/lib/types";
 import CustomSwiper, { CustomSwiperSlide } from "./CustomSwiper";
 import Section from "./Section";
 import Card from "./Card";
 
-const SwiperDataTemplate: FC<SectionProps> = ({ title, data, favorites }) => {
+const SwiperDataTemplate: FC<SectionProps> = ({
+  title,
+  data,
+  favorites,
+  size,
+}) => {
   return (
     <Section title={title}>
       <CustomSwiper
@@ -13,15 +18,12 @@ const SwiperDataTemplate: FC<SectionProps> = ({ title, data, favorites }) => {
         breakpoints={{
           768: {
             slidesPerView: 2,
-            spaceBetween: 10,
           },
           1024: {
             slidesPerView: 3,
-            spaceBetween: 20,
           },
           1700: {
             slidesPerView: 4,
-            spaceBetween: 20,
           },
         }}
         modules={[Navigation]}
@@ -39,6 +41,7 @@ const SwiperDataTemplate: FC<SectionProps> = ({ title, data, favorites }) => {
               badges={product.badges}
               fibabanka={product.fibabanka}
               isBestSeller={product.isBestSeller}
+              size={size}
             />
           </CustomSwiperSlide>
         ))}

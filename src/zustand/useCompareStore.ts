@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { CompareItemProps } from "@/common/types";
+import { CompareItemProps } from "@/lib/types";
 
 type CompareState = {
   compareItems: (CompareItemProps | null)[];

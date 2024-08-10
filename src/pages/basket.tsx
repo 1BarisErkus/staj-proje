@@ -7,13 +7,14 @@ import { dehydrate, QueryClient } from "@tanstack/react-query";
 
 import { getBasket } from "@/server/basket";
 import { getFavorites, getProducts } from "@/server/product";
-import { ProductForBasket } from "@/common/types";
+import { ProductForBasket } from "@/lib/types";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
-import MayInterestYou from "@/components/Basket/MayInterestYou";
 import { BasketItemsContainer, TitleOrder, Wrapper } from "@/styles/Basket";
+import SwiperDataTemplate from "@/components/SwiperDataTemplate";
 import BasketSummary from "@/components/Basket/BasketSummary";
 import BasketItem from "@/components/Basket/BasketItem";
 import NoItem from "@/components/Basket/NoItem";
+import Loading from "@/components/Loading";
 
 type BasketProps = {
   session: Session & { user: { uid: string } };
@@ -41,6 +42,10 @@ const Basket: FC<BasketProps> = ({ session }) => {
       },
     ],
   });
+
+  if (results.some((result) => result.isLoading)) {
+    return <Loading />;
+  }
 
   const products = results[0].data;
   const favorites = results[1].data;
@@ -83,7 +88,11 @@ const Basket: FC<BasketProps> = ({ session }) => {
             </Row>
           </>
         )}
-        <MayInterestYou data={mayInterestYouData} favorites={favorites} />
+        <SwiperDataTemplate
+          title="İlginizi Çekebilecek Ürünler"
+          data={mayInterestYouData}
+          favorites={favorites}
+        />
       </Container>
     </Wrapper>
   );

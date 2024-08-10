@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Product } from "@/common/types";
+import { Product } from "@/lib/types";
 import {
   CardContainer,
   FeatureListItem,

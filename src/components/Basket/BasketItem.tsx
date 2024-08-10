@@ -5,7 +5,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { addProductToBasket, removeProductFromBasket } from "@/server/basket";
 import { notify } from "@/lib/notify";
 import { Container, Row } from "@/styles/GlobalVariables";
-import { ProductForBasket } from "@/common/types";
+import { ProductForBasket } from "@/lib/types";
 import {
   BasketItemWrapper,
   Bottom,
@@ -76,11 +76,7 @@ const BasketItem: FC<BasketItemProps> = ({
       removeProductMutate();
       return;
     }
-    if (limit && count >= limit) {
-      notify(`Bu üründen en fazla ${limit} adet alabilirsiniz`, "error");
-      return;
-    }
-    if (count < limit || !limit) {
+    if (count < limit || !limit || (count >= limit && newCount < 0)) {
       const newBasketItem = {
         productId,
         image,
@@ -97,6 +93,10 @@ const BasketItem: FC<BasketItemProps> = ({
 
       if (newCount < 0) notify("Ürün adedi azaltıldı", "success");
       if (newCount > 0) notify("Ürün adedi artırıldı", "success");
+      return;
+    }
+    if (limit && count >= limit) {
+      notify(`Bu üründen en fazla ${limit} adet alabilirsiniz`, "error");
       return;
     }
   };

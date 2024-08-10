@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { SectionProps } from "@/common/types";
+import { SectionProps } from "@/lib/types";
 import Section from "../../Section";
 import CategoryList from "./CategoryList";
 import CardList from "./CardList";

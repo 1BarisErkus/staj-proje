@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Navigation } from "swiper/modules";
-import { Product, SwiperProductProps } from "@/common/types";
+import { Product, SwiperProductProps } from "@/lib/types";
 import CustomSwiper, { CustomSwiperSlide } from "../CustomSwiper";
 import Section from "../Section";
 import Card from "../Card";

@@ -61,8 +61,11 @@ const Register: FC<RegisterProps> = ({ setIsAuth }) => {
         email: data.email,
       });
       setIsAuth("login");
-    } catch (error: any) {
-      notify(error.message, "error");
+    } catch {
+      notify(
+        "Kayıt oluşturulurken bir sorun oluştu. Lütfen farklı bir email deneyin.",
+        "error"
+      );
     }
     reset();
   };

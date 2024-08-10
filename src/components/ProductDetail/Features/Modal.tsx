@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { getUser } from "@/server/user";
 import { addComment, addQa } from "@/server/product";
-import { User } from "@/common/types";
+import { User } from "@/lib/types";
 import { notify } from "@/lib/notify";
 import { Rating } from "@smastrom/react-rating";
 import {

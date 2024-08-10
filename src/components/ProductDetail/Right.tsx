@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { addProductToBasket, getBasket } from "@/server/basket";
-import { Configuration, ProductForBasket } from "@/common/types";
+import { Configuration, ProductForBasket } from "@/lib/types";
 import { notify } from "@/lib/notify";
 import { Button } from "@/styles/ProductDetail";
 import { Col } from "@/styles/GlobalVariables";

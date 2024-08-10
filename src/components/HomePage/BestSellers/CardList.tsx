@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { SwiperProductProps } from "@/common/types";
+import { SwiperProductProps } from "@/lib/types";
 import { CardListWrapper } from "@/styles/GlobalVariables";
 import Card from "@/components/Card";
 

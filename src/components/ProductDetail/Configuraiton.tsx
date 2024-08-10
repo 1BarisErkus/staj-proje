@@ -1,5 +1,5 @@
 import { Dispatch, FC, SetStateAction } from "react";
-import { Configuration } from "@/common/types";
+import { Configuration } from "@/lib/types";
 import { ConfigurationWrapper } from "@/styles/ProductDetail";
 import SelectBox from "./SelectBox";
 
