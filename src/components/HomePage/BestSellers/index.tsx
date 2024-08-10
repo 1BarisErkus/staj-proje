@@ -4,14 +4,14 @@ import Section from "../../Section";
 import CategoryList from "./CategoryList";
 import CardList from "./CardList";
 
-const BestSellers: FC<SectionProps> = ({ data, favorites }) => {
+const BestSellers: FC<SectionProps> = ({ title, data, favorites }) => {
   const [activeCategory, setActiveCategory] = useState("Cep Telefonu-Aksesuar");
   const filteredData = data.filter(
     (product) => product.category === activeCategory
   );
 
   return (
-    <Section title="Çok Satanlar" id="bestSellers">
+    <Section title={title} id="bestSellers">
       <CategoryList
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}

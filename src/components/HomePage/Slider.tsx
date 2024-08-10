@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Swiper } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import {
   SliderContainer,
   SlideContent,
@@ -30,7 +30,7 @@ const slideImages = [
 const Slider = () => {
   const [currentImage, setCurrentImage] = useState(slideImages[0]);
 
-  const handleSlideChange = (swiper: any) => {
+  const handleSlideChange = (swiper: { activeIndex: number }) => {
     setCurrentImage(slideImages[swiper.activeIndex]);
   };
 
@@ -46,7 +46,8 @@ const Slider = () => {
       <Swiper
         slidesPerView={1}
         onSlideChange={handleSlideChange}
-        modules={[Autoplay]}
+        modules={[Autoplay, Pagination]}
+        pagination={{ clickable: true }}
         autoplay={{
           delay: 2500,
         }}

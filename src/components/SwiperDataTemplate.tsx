@@ -1,13 +1,13 @@
 import { FC } from "react";
 import { Navigation } from "swiper/modules";
-import { SectionProps, SwiperProductProps } from "@/common/types";
+import { SwiperProductProps, SectionProps } from "@/common/types";
 import CustomSwiper, { CustomSwiperSlide } from "./CustomSwiper";
 import Section from "./Section";
 import Card from "./Card";
 
-const RecentReviews: FC<SectionProps> = ({ data, favorites }) => {
+const SwiperDataTemplate: FC<SectionProps> = ({ title, data, favorites }) => {
   return (
-    <Section title="Son İncelenenler">
+    <Section title={title}>
       <CustomSwiper
         slidesPerView={1}
         breakpoints={{
@@ -24,8 +24,8 @@ const RecentReviews: FC<SectionProps> = ({ data, favorites }) => {
             spaceBetween: 20,
           },
         }}
-        navigation={true}
         modules={[Navigation]}
+        navigation
       >
         {data?.map((product: SwiperProductProps) => (
           <CustomSwiperSlide key={product.id}>
@@ -34,9 +34,9 @@ const RecentReviews: FC<SectionProps> = ({ data, favorites }) => {
               images={product.images}
               name={product.name}
               price={product.price}
-              badges={product.badges}
               discountPercentage={product.discountPercentage}
               isFavorite={favorites.includes(product.id)}
+              badges={product.badges}
               fibabanka={product.fibabanka}
               isBestSeller={product.isBestSeller}
             />
@@ -47,4 +47,4 @@ const RecentReviews: FC<SectionProps> = ({ data, favorites }) => {
   );
 };
 
-export default RecentReviews;
+export default SwiperDataTemplate;

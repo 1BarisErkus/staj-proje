@@ -6,21 +6,18 @@ import { dehydrate, QueryClient, useQueries } from "@tanstack/react-query";
 import { getFavorites, getProducts } from "@/server/product";
 
 import AdditionToYourBill from "@/components/HomePage/AdditionToYourBill";
-import BestOffers from "@/components/HomePage/BestOffers";
 import BestSellers from "@/components/HomePage/BestSellers";
 import Campaigns from "@/components/HomePage/Campaigns";
-import NewOnes from "@/components/HomePage/NewOnes";
 import Opportunities from "@/components/HomePage/Opportunities";
 import PopularCategories from "@/components/HomePage/PopularCategories";
-import RecentReviews from "@/components/RecentReviews";
 import Slider from "@/components/HomePage/Slider";
-import SpecialForYou from "@/components/HomePage/SpecialForYou";
 import WhyPasaj from "@/components/HomePage/WhyPasaj";
 import Loading from "@/components/Loading";
+import SwiperDataTemplate from "@/components/SwiperDataTemplate";
 
-interface HomeProps {
+type HomeProps = {
   session: Session & { user: { uid: string } };
-}
+};
 
 const Home: FC<HomeProps> = ({ session }) => {
   const results = useQueries({
@@ -64,14 +61,30 @@ const Home: FC<HomeProps> = ({ session }) => {
     <>
       <Slider />
       <PopularCategories />
-      <SpecialForYou data={specialForYouData} favorites={favorites} />
+      <SwiperDataTemplate
+        title="Sana Özel Ürünler"
+        data={specialForYouData}
+        favorites={favorites}
+      />
       <AdditionToYourBill />
-      <BestOffers data={bestOffersData} favorites={favorites} />
+      <SwiperDataTemplate
+        title="En İyi Teklifler"
+        data={bestOffersData}
+        favorites={favorites}
+      />
       <Campaigns />
-      <BestSellers data={products} favorites={favorites} />
+      <BestSellers title="Çok Satanlar" data={products} favorites={favorites} />
       <Opportunities />
-      <NewOnes data={newOnesData} favorites={favorites} />
-      <RecentReviews data={recentReviewsData} favorites={favorites} />
+      <SwiperDataTemplate
+        title="Pasajın Yenileri"
+        data={newOnesData}
+        favorites={favorites}
+      />
+      <SwiperDataTemplate
+        title="Son İncelenenler"
+        data={recentReviewsData}
+        favorites={favorites}
+      />
       <WhyPasaj />
     </>
   );

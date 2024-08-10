@@ -154,8 +154,8 @@ const BasketItem: FC<BasketItemProps> = ({
               <Label>Tutar</Label>
               <Price>
                 {discountPrice !== 0
-                  ? discountPrice.toLocaleString("tr-TR")
-                  : price.toLocaleString("tr-TR")}{" "}
+                  ? (discountPrice * count).toLocaleString("tr-TR")
+                  : (price * count).toLocaleString("tr-TR")}{" "}
                 TL
               </Price>
             </PriceWrapper>

@@ -5,15 +5,15 @@ import { getSession } from "next-auth/react";
 import { useQueries } from "@tanstack/react-query";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
 
+import { getBasket } from "@/server/basket";
 import { getFavorites, getProducts } from "@/server/product";
+import { ProductForBasket } from "@/common/types";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
 import MayInterestYou from "@/components/Basket/MayInterestYou";
 import { BasketItemsContainer, TitleOrder, Wrapper } from "@/styles/Basket";
 import BasketSummary from "@/components/Basket/BasketSummary";
 import BasketItem from "@/components/Basket/BasketItem";
 import NoItem from "@/components/Basket/NoItem";
-import { getBasket } from "@/server/basket";
-import { ProductForBasket } from "@/common/types";
 
 type BasketProps = {
   session: Session & { user: { uid: string } };

@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import { Col, Container, ImageWrapper } from "@/styles/GlobalVariables";
 import {
   Button,
@@ -7,7 +6,6 @@ import {
   Text,
   Wrapper,
 } from "@/styles/HomePage/AdditionToYourBill";
-
 import { FaAngleRight } from "react-icons/fa6";
 
 const AdditionToYourBill = () => {

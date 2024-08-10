@@ -91,7 +91,11 @@ export type User = {
   favorites: string[];
 };
 
-export type SectionProps = { data: Product[]; favorites: string[] };
+export type SectionProps = {
+  title: string;
+  data: Product[];
+  favorites: string[];
+};
 
 export type CompareItemProps = {
   productId: string;

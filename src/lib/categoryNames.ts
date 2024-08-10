@@ -16,4 +16,8 @@ export const categoryNames: { [key: string]: string } = {
   "wearable-technologies": "Giyinebilir Teknolojiler",
   accessories: "Aksesuarlar",
   laptops: "Dizüstü Bilgisayarlar",
+  "health-personal-care": "Sağlık ve Kişisel Bakım",
+  "tv-audio": "TV ve Ses Sistemleri",
+  "home-living": "Ev ve Yaşam",
+  "mom-baby-toys": "Anne, Bebek ve Oyuncak",
 };

@@ -1,5 +1,4 @@
 import { FC, MouseEventHandler, RefObject } from "react";
-import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 import { useQuery } from "@tanstack/react-query";
 import { getFavorites } from "@/server/product";

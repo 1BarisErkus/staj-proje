@@ -12,13 +12,13 @@ import { getFavorites, getProduct, getSimilarProducts } from "@/server/product";
 import { Container, Row } from "@/styles/GlobalVariables";
 import OtherSellers from "@/components/ProductDetail/OtherSellers";
 import Features from "@/components/ProductDetail/Features";
-import RecentReviews from "@/components/RecentReviews";
 import Right from "@/components/ProductDetail/Right";
 import Left from "@/components/ProductDetail/Left";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Content } from "@/styles/ProductDetail";
 import Loading from "@/components/Loading";
 import NotFound from "@/components/NotFound";
+import SwiperDataTemplate from "@/components/SwiperDataTemplate";
 
 type ProductProps = {
   session: { user: { uid: string } };
@@ -95,7 +95,11 @@ const Product: FC<ProductProps> = ({ session, params }) => {
         </Container>
       </Content>
       <OtherSellers data={product.otherSellers} />
-      <RecentReviews data={similarProducts} favorites={favorites} />
+      <SwiperDataTemplate
+        title="Son Gezilenler"
+        data={similarProducts}
+        favorites={favorites}
+      />
       <Features
         description={product.description}
         features={product.features}

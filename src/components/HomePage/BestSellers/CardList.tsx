@@ -16,7 +16,7 @@ type CardListProps = {
 const CardList: FC<CardListProps> = ({ filteredData, favorites }) => {
   return (
     <CardListWrapper>
-      {filteredData?.slice(0, 8).map((product: CardListProductProps) => (
+      {filteredData?.slice(0, 8).map((product: SwiperProductProps) => (
         <Card
           key={product.id}
           id={product.id}

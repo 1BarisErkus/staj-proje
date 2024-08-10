@@ -329,8 +329,34 @@
         "Ücretsiz Kargo",
         "Alışveriş Kredisi"
       ],
-      "comments": [],
-      "qa": [],
+      "comments": [
+        {
+          "id": "a2cb270f-b621-4a32-9ee1-814a5b0d1d8d",
+          "userName": "Barış Erkuş",
+          "comment": "Denem yorum Deneme",
+          "rating": 3,
+          "date": "2024-08-10T14:57:54.246Z",
+          "helpfulCount": 0
+        },
+        {
+          "id": "ce88d27f-eef9-4a29-82e6-443b0c56199a",
+          "userName": "Barış Erkuş",
+          "comment": "sfdsfsdfsdfsdfsdds",
+          "rating": 4,
+          "date": "2024-08-10T14:58:02.805Z",
+          "helpfulCount": 0
+        }
+      ],
+      "qa": [
+        {
+          "id": "31057806-d472-467c-85e8-455fcc76ca23",
+          "questionText": "dasdsadasdasda",
+          "questionDate": "2024-08-10T14:58:18.081Z",
+          "answerText": "",
+          "answerDate": "",
+          "storeName": "Turkcell Satış A.Ş."
+        }
+      ],
       "creditCard": true,
       "fibabanka": false,
       "freeShipping": true,
