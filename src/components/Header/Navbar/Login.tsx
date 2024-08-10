@@ -54,7 +54,8 @@ const Login: FC<LoginProps> = ({ setIsAuth, setIsModalOpen }) => {
     if (!result?.error) {
       setIsAuth(null);
       setIsModalOpen(false);
-      router.push("/");
+      if (data.email === "admin@gmail.com") router.push("/admin");
+      else router.push("/");
       notify("Giriş başarılı", "success");
     } else {
       notify("Kullanıcı adı veya şifre hatalı !", "error");

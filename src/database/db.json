@@ -4,34 +4,36 @@
       "id": "wuhEiFqcxse8NeTLAAcB4B3DDko1",
       "name": "Barış Erkuş",
       "email": "baris@gmail.com",
-      "basket": [],
-      "favorites": [
-        "3",
-        "1",
-        "9"
-      ]
+      "basket": [
+        {
+          "id": "1709d8f0-89e8-4cb5-af0c-eeb1c13f113f",
+          "productId": "9",
+          "image": "huawei-matebook/1.webp",
+          "name": "Huawei Matebook D14 Dizüstü Bilgisayar",
+          "color": "Siyah",
+          "memory": "256 GB",
+          "price": 10999,
+          "discountPrice": 10229,
+          "count": 1,
+          "seller": "Teknosa",
+          "limit": 2
+        }
+      ],
+      "favorites": ["3", "1", "9"]
     },
     {
       "id": "PFEWM9uL5HaNrQc35hxspMEjUHt2",
       "name": "Ahmet Selim",
       "email": "ahmet@gmail.com",
-      "isAdmin": false,
       "basket": [],
-      "favorites": [
-        "7",
-        "2",
-        "1"
-      ]
+      "favorites": ["7", "2", "1"]
     },
     {
       "id": "wDb7iyNjFpd1AyXyKrbAiGVTODh1",
       "name": "Admin Admin",
       "email": "admin@gmail.com",
-      "isAdmin": false,
       "basket": [],
-      "favorites": [
-        "1"
-      ]
+      "favorites": ["1"]
     }
   ],
   "products": [
@@ -160,18 +162,10 @@
         },
         {
           "title": "Hafıza",
-          "options": [
-            "256 GB",
-            "512 GB",
-            "1 TB"
-          ]
+          "options": ["256 GB", "512 GB", "1 TB"]
         }
       ],
-      "badges": [
-        "Peşine 4 Taksit",
-        "Ücretsiz Kargo",
-        "Alışveriş Kredisi"
-      ],
+      "badges": ["Peşine 4 Taksit", "Ücretsiz Kargo", "Alışveriş Kredisi"],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -318,17 +312,10 @@
         },
         {
           "title": "Hafıza",
-          "options": [
-            "128 GB",
-            "256 GB",
-            "512 GB"
-          ]
+          "options": ["128 GB", "256 GB", "512 GB"]
         }
       ],
-      "badges": [
-        "Ücretsiz Kargo",
-        "Alışveriş Kredisi"
-      ],
+      "badges": ["Ücretsiz Kargo", "Alışveriş Kredisi"],
       "comments": [
         {
           "id": "a2cb270f-b621-4a32-9ee1-814a5b0d1d8d",
@@ -582,10 +569,7 @@
       "limit": null,
       "seller": "AYA DİJİTAL",
       "description": "Apple 20 W USB-C Güç Adaptörü, aygıtınızı evde, ofiste veya yolda hızlı ve verimli bir şekilde şarj etme imkanı sunar. Bu güç adaptörü, USB-C özellikli tüm aygıtlarla uyumludur. Ancak Apple, optimum şarj performansı için bu adaptörü iPad Pro ve iPad Air ile birlikte kullanmanızı önerir",
-      "images": [
-        "apple-power/1.webp",
-        "apple-power/2.webp"
-      ],
+      "images": ["apple-power/1.webp", "apple-power/2.webp"],
       "features": [
         {
           "name": "Ürün Model Adı",
@@ -675,9 +659,7 @@
       "limit": 2,
       "seller": "MediaMarkt",
       "description": "Samsung Galaxy S23 Ultra ile yüksek performansı deneyimleyin. 512 GB depolama alanı ve güçlü işlemcisi ile her türlü ihtiyacınızı karşılayacak.",
-      "images": [
-        "samsung-galaxy-s23-ultra-512gb/1.webp"
-      ],
+      "images": ["samsung-galaxy-s23-ultra-512gb/1.webp"],
       "features": [
         {
           "name": "Ürün Model Adı",
@@ -780,18 +762,10 @@
         },
         {
           "title": "Hafıza",
-          "options": [
-            "256 GB",
-            "512 GB",
-            "1 TB"
-          ]
+          "options": ["256 GB", "512 GB", "1 TB"]
         }
       ],
-      "badges": [
-        "Hızlı Teslimat",
-        "Ücretsiz Kargo",
-        "12 Ay Taksit"
-      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo", "12 Ay Taksit"],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -926,16 +900,10 @@
         },
         {
           "title": "Hafıza",
-          "options": [
-            "128 GB",
-            "256 GB"
-          ]
+          "options": ["128 GB", "256 GB"]
         }
       ],
-      "badges": [
-        "Hızlı Teslimat",
-        "Ücretsiz Kargo"
-      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1074,16 +1042,10 @@
         },
         {
           "title": "Hafıza",
-          "options": [
-            "128 GB",
-            "256 GB"
-          ]
+          "options": ["128 GB", "256 GB"]
         }
       ],
-      "badges": [
-        "Hızlı Teslimat",
-        "Ücretsiz Kargo"
-      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1222,17 +1184,10 @@
         },
         {
           "title": "Hafıza",
-          "options": [
-            "256 GB",
-            "512 GB"
-          ]
+          "options": ["256 GB", "512 GB"]
         }
       ],
-      "badges": [
-        "Hızlı Teslimat",
-        "Ücretsiz Kargo",
-        "6 Ay Taksit"
-      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo", "6 Ay Taksit"],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1367,17 +1322,10 @@
         },
         {
           "title": "Hafıza",
-          "options": [
-            "128 GB",
-            "256 GB"
-          ]
+          "options": ["128 GB", "256 GB"]
         }
       ],
-      "badges": [
-        "Hızlı Teslimat",
-        "Ücretsiz Kargo",
-        "12 Ay Taksit"
-      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo", "12 Ay Taksit"],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1409,11 +1357,7 @@
       "limit": 2,
       "seller": "Vatan Bilgisayar",
       "description": "Sony Xperia 1 III, üstün kamera özellikleri ve yüksek performansı ile dikkat çekiyor. 256 GB depolama alanı ile tüm verilerinizi güvenle saklayın.",
-      "images": [
-        "sigma-plus/1.webp",
-        "sigma-plus/2.webp",
-        "sigma-plus/3.webp"
-      ],
+      "images": ["sigma-plus/1.webp", "sigma-plus/2.webp", "sigma-plus/3.webp"],
       "features": [
         {
           "name": "Ürün Model Adı",
@@ -1512,16 +1456,10 @@
         },
         {
           "title": "Hafıza",
-          "options": [
-            "128 GB",
-            "256 GB"
-          ]
+          "options": ["128 GB", "256 GB"]
         }
       ],
-      "badges": [
-        "Hızlı Teslimat",
-        "Ücretsiz Kargo"
-      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1553,9 +1491,7 @@
       "limit": null,
       "seller": "Messa İletişim",
       "description": "Lightning konnektörüne sahip iPhone, iPad veya iPod’unuzu eşzamanlamak ve şarj etmek için USB C veya Thunderbolt 3 (USB C) özellikli Mac’inize bağlayın.",
-      "images": [
-        "apple-cable/1.webp"
-      ],
+      "images": ["apple-cable/1.webp"],
       "features": [
         {
           "name": "Ürün Model Adı",
@@ -1613,10 +1549,7 @@
           ]
         }
       ],
-      "badges": [
-        "Hızlı Teslimat",
-        "Ücretsiz Kargo"
-      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1648,11 +1581,7 @@
       "limit": null,
       "seller": "Mobifon",
       "description": "69 W güç performansına sahip Roborock S8 Pro Ultra güçlü motoru ile kısa sürede her yeri akıllı bir şekilde süpürür.Roborock robot süpürge, 20 mm aşılabilir yükseklik kapasitesi ile halı ve zemin arasında devrilmeden rahat bir geçiş sağlar.4 saat şarj süresi bulunan çöp istasyonlu robot süpürgeler kapasitesi doldukça istasyona çöplerini boşaltarak süpürme işlemine devam ederler.2500 ml istasyon toz kapasitesi olan moplu robot süpürge hem süpürme hem de silme özelliğine sahiptir.200 mililitre su haznesi olan hepa filtreli robot süpürge tozları tutar ve bu sayede havadaki toz oranının da azalmasına yardımcı olur.350 mililitre toz haznesi bulunan çoklu haritalama yapan robot süpürge her odayı süpürmek için harita algılama özelliği gösterir180 dakika kesintisiz çalışma süresine sahip olan beyaz robot süpürge ile yaşam alanlarınızı rahatlıkla süpürürsünüz.6000 Pa robot süpürge yüksek emiş gücü sayesinde halı ve parke yüzeylerinin temizlenmesini sağlar. ",
-      "images": [
-        "roborock/1.webp",
-        "roborock/2.webp",
-        "roborock/3.webp"
-      ],
+      "images": ["roborock/1.webp", "roborock/2.webp", "roborock/3.webp"],
       "features": [
         {
           "name": "Ürün Model Adı",
@@ -1710,10 +1639,7 @@
           ]
         }
       ],
-      "badges": [
-        "Hızlı Teslimat",
-        "Ücretsiz Kargo"
-      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
       "comments": [],
       "qa": [],
       "creditCard": true,
@@ -1745,9 +1671,7 @@
       "limit": null,
       "seller": "Braun Shop",
       "description": "Dünya çapında diş hekimlerinin tavsiye ettiği 1 numaralı markanın sunduğu Oral-B Pro 750 modelini deneyimleyin. Pro 750 elektrikli diş fırçası profesyonel zamanlayıcı ile diş hekiminizin tavsiye ettiği gibi 2 dakika süreyle dişlerinizi fırçalamanızı ve 30 saniyede bir fırçaladığınız alanı değiştirmeniz gerektiğini size bildirir. Siz sadece fırçayı ağzınızda hareket ettirirken, Oral-B'nin benzersiz yuvarlak başlığı da geri kalan işleri halleder.",
-      "images": [
-        "oral/1.webp"
-      ],
+      "images": ["oral/1.webp"],
       "features": [
         {
           "name": "Ürün Model Adı",
@@ -1809,10 +1733,7 @@
           ]
         }
       ],
-      "badges": [
-        "Hızlı Teslimat",
-        "Ücretsiz Kargo"
-      ],
+      "badges": ["Hızlı Teslimat", "Ücretsiz Kargo"],
       "comments": [],
       "qa": [],
       "creditCard": false,

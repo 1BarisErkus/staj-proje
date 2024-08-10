@@ -13,26 +13,26 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials): Promise<any> {
-        return await signInWithEmailAndPassword(
-          auth,
-          (credentials as any).email || "",
-          (credentials as any).password || ""
-        )
-          .then((userCredential) => {
-            if (userCredential.user) {
-              return userCredential.user;
-            }
-            return null;
-          })
-          .catch(() => {
-            notify("Beklenmedik bir hata oluştu!", "error");
-          });
+        try {
+          const userCredential = await signInWithEmailAndPassword(
+            auth,
+            (credentials as any).email || "",
+            (credentials as any).password || ""
+          );
+          if (userCredential.user) {
+            return userCredential.user;
+          }
+          return null;
+        } catch (error) {
+          notify("Beklenmedik bir hata oluştu!", "error");
+          throw new Error("Kimlik doğrulama başarısız");
+        }
       },
     }),
   ],
   callbacks: {
     async session({ session, token }: { session: any; token: any }) {
-      if (token && token.user) {
+      if (token?.user) {
         session.user = token.user as {
           id: string;
           email: string;
@@ -40,7 +40,7 @@ export const authOptions = {
       }
       return session;
     },
-    async jwt({ token, user }: { token: any; user: any }) {
+    async jwt({ token, user }: { token: any; user?: any }) {
       if (user) {
         token.user = user;
       }

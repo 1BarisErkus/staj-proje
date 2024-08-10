@@ -149,7 +149,9 @@ const BasketItem: FC<BasketItemProps> = ({
                 <Button
                   onClick={() => changeCount(1)}
                   disabled={
-                    isChangeCount || count >= stock || (limit && count >= limit)
+                    isChangeCount ||
+                    count >= stock ||
+                    !!(limit && count >= limit)
                   }
                 >
                   +

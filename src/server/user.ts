@@ -14,7 +14,6 @@ export const addUser = async (user: {
 }) => {
   const newUser = {
     ...user,
-    isAdmin: false,
     basket: [],
     favorites: [],
   };

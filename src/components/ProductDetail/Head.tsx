@@ -60,7 +60,11 @@ const Head: FC<HeadProps> = ({
         });
       },
 
-      onError: () => notify("Ürün favori durumu değiştirilemedi", "error"),
+      onError: () =>
+        notify(
+          "Ürün favori durumu değiştirilemedi. Lütfen önce oturum durumunuzu kontrol edin.",
+          "error"
+        ),
     });
 
   const timeDatas = [
