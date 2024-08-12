@@ -1,7 +1,8 @@
 import { FC, Dispatch, useState } from "react";
-import { FaAngleDown, FaAngleRight } from "react-icons/fa";
+import { FilterAction } from "@/lib/types";
 import { Container, Header, Icon, Item } from "@/styles/Category";
 import { RadioButton } from "@/styles/Category/SwitchButton";
+import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 
 const sortOptions = [
   "En Popüler",
@@ -13,7 +14,7 @@ const sortOptions = [
 
 interface SortByProps {
   sortValue: string;
-  dispatch: Dispatch<{ type: string; payload: string }>;
+  dispatch: Dispatch<FilterAction>;
 }
 
 const SortBy: FC<SortByProps> = ({ sortValue, dispatch }) => {

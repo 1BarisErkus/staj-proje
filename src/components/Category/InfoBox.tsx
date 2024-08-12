@@ -1,10 +1,10 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 import { Container, Header, Item } from "@/styles/Category";
 
 type InfoBoxProps = {
   dataLength: number;
-  params: any;
+  slug: string[];
   category: string;
   subCategory: string;
 };
@@ -16,13 +16,13 @@ type Category = {
 
 const InfoBox: FC<InfoBoxProps> = ({
   dataLength,
-  params,
+  slug,
   category,
   subCategory,
 }) => {
   const categories: Category[] = [
     {
-      name: params.slug[1] ? subCategory : "Tüm Kategoriler",
+      name: slug[1] ? subCategory : "Tüm Kategoriler",
       count: dataLength,
     },
   ];

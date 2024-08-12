@@ -98,9 +98,6 @@ const Right: FC<RightProps> = ({
       return;
     }
 
-    console.log("productCountInBasket", productCountInBasket);
-    console.log("stock", stock);
-
     if (productCountInBasket >= stock) {
       notify(`Bu üründen sadece ${stock} tane alabilirsiniz`, "error");
       return;

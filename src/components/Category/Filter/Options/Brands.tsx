@@ -1,4 +1,5 @@
 import { FC, Dispatch, useState } from "react";
+import { FilterAction } from "@/lib/types";
 import { capitalizeFirstLetter } from "@/lib/helpers";
 import {
   CheckboxContainer,
@@ -11,7 +12,7 @@ import { Header } from "@/styles/Category";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 
 type BrandsProps = {
-  dispatch: Dispatch<{ type: string; payload: string }>;
+  dispatch: Dispatch<FilterAction>;
   brands: string[];
   brandOptions: string[];
 };

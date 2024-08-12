@@ -1,4 +1,5 @@
 import { FC, Dispatch } from "react";
+import { FilterAction } from "@/lib/types";
 import { Container } from "@/styles/Category";
 import Brands from "./Brands";
 import Colors from "./Colors";
@@ -6,10 +7,7 @@ import Price from "./Price";
 import Sellers from "./Sellers";
 
 type FilterComponentProps = {
-  dispatch: Dispatch<{
-    type: string;
-    payload: string | { min: number; max: number };
-  }>;
+  dispatch: Dispatch<FilterAction>;
   brands: string[];
   colors: string[];
   prices: {

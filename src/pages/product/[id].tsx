@@ -22,13 +22,13 @@ import SwiperDataTemplate from "@/components/SwiperDataTemplate";
 
 type ProductProps = {
   session: { user: { uid: string } };
-  params: any;
+  id: string;
 };
 
-const Product: FC<ProductProps> = ({ session, params }) => {
+const Product: FC<ProductProps> = ({ session, id }) => {
   const { data: product, isLoading: productLoading } = useQuery({
-    queryKey: ["product", params.id],
-    queryFn: () => getProduct(params.id),
+    queryKey: ["product", id],
+    queryFn: () => getProduct(id),
   });
 
   const results = useQueries({
@@ -105,7 +105,7 @@ const Product: FC<ProductProps> = ({ session, params }) => {
         features={product.features}
         reviews={product.comments}
         seller={product.seller}
-        productId={params.id}
+        productId={id}
         qas={product.qa}
       />
     </>
@@ -118,9 +118,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const queryClient = new QueryClient();
   const session = await getSession(context);
 
-  const { params } = context;
+  const { id } = context.params as { id: string };
 
-  const product = await getProduct(params?.id as string);
+  const product = await getProduct(id as string);
 
   if (!product) {
     return {
@@ -145,7 +145,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   return {
     props: {
-      params,
+      id,
       session,
       dehydratedState: dehydrate(queryClient),
     },

@@ -1,6 +1,6 @@
 import { FC, useEffect, useReducer, useState } from "react";
 import { useCompareStore } from "@/zustand/useCompareStore";
-import { Product, SwiperProductProps } from "@/lib/types";
+import { FilterAction, Product, SwiperProductProps } from "@/lib/types";
 import { StyledCol, StyledLeftCol } from "@/styles/Category/Filter";
 import { Col, Container, Row } from "@/styles/GlobalVariables";
 import { Container as Background } from "@/styles/Category";
@@ -16,7 +16,7 @@ import CompareBar from "../Compare";
 
 type FilterProps = {
   data: Product[];
-  params: any;
+  slug: string[];
   favorites: string[];
 };
 
@@ -35,11 +35,6 @@ type FilterState = {
     max: number;
   }[];
   sellers: string[];
-};
-
-type FilterAction = {
-  type: string;
-  payload: any;
 };
 
 const initialArgs = {
@@ -140,7 +135,7 @@ const applyFilters = (data: Product[], state: FilterState) => {
     });
 };
 
-const Filter: FC<FilterProps> = ({ data, params, favorites }) => {
+const Filter: FC<FilterProps> = ({ data, slug, favorites }) => {
   const [state, dispatch] = useReducer<
     React.Reducer<FilterState, FilterAction>
   >(reducer, initialArgs);
@@ -209,7 +204,7 @@ const Filter: FC<FilterProps> = ({ data, params, favorites }) => {
             category={data[0]?.category}
             subCategory={data[0]?.subCategory}
             dataLength={data.length}
-            params={params}
+            slug={slug}
           />
           <SortBy sortValue={state.sortBy} dispatch={dispatch} />
           <Background>

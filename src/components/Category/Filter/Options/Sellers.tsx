@@ -1,4 +1,5 @@
 import { FC, Dispatch, useEffect, useState } from "react";
+import { FilterAction } from "@/lib/types";
 import {
   CheckboxContainer,
   FilterOption,
@@ -11,7 +12,7 @@ import { Header } from "@/styles/Category";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 
 type SellersProps = {
-  dispatch: Dispatch<{ type: string; payload: string }>;
+  dispatch: Dispatch<FilterAction>;
   sellers: string[];
   sellerOptions: string[];
 };

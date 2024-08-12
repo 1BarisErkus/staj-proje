@@ -3,6 +3,8 @@ import { auth } from "@/lib/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { notify } from "@/lib/notify";
+import { Session, User } from "next-auth";
+import { JWT } from "next-auth/jwt";
 
 export const authOptions = {
   providers: [
@@ -16,8 +18,8 @@ export const authOptions = {
         try {
           const userCredential = await signInWithEmailAndPassword(
             auth,
-            (credentials as any).email || "",
-            (credentials as any).password || ""
+            credentials?.email || "",
+            credentials?.password || ""
           );
           if (userCredential.user) {
             return userCredential.user;
@@ -31,7 +33,7 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    async session({ session, token }: { session: any; token: any }) {
+    async session({ session, token }: { session: Session; token: JWT }) {
       if (token?.user) {
         session.user = token.user as {
           id: string;
@@ -40,7 +42,7 @@ export const authOptions = {
       }
       return session;
     },
-    async jwt({ token, user }: { token: any; user?: any }) {
+    async jwt({ token, user }: { token: JWT; user?: User }) {
       if (user) {
         token.user = user;
       }

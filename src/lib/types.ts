@@ -103,3 +103,39 @@ export type CompareItemProps = {
   image: string;
   name: string;
 };
+
+type SortByPayload = string;
+type ContractPayload = null;
+type BrandsPayload = string;
+type ColorsPayload = string;
+type PricePayload = {
+  min: number;
+  max: number;
+};
+type SellersPayload = string;
+
+export type FilterAction =
+  | {
+      type: "SORT_BY";
+      payload: SortByPayload;
+    }
+  | {
+      type: "CONTRACT";
+      payload: ContractPayload;
+    }
+  | {
+      type: "BRANDS";
+      payload: BrandsPayload;
+    }
+  | {
+      type: "COLORS";
+      payload: ColorsPayload;
+    }
+  | {
+      type: "PRICE";
+      payload: PricePayload;
+    }
+  | {
+      type: "SELLERS";
+      payload: SellersPayload;
+    };

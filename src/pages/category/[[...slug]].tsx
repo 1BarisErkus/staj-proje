@@ -13,10 +13,10 @@ import Loading from "@/components/Loading";
 
 interface ProductFilterProps {
   session: { user: { uid: string } };
-  params: any;
+  slug: string[];
 }
 
-const ProductFilter: FC<ProductFilterProps> = ({ session, params }) => {
+const ProductFilter: FC<ProductFilterProps> = ({ session, slug }) => {
   const results = useQueries({
     queries: [
       {
@@ -41,10 +41,10 @@ const ProductFilter: FC<ProductFilterProps> = ({ session, params }) => {
   const justForYouData = products
     ? products.filter(
         (product: { categoryCode: string; subCategoryCode: string }) =>
-          params.slug.length > 1
-            ? product.categoryCode === params.slug[params.slug.length - 2] &&
-              product.subCategoryCode === params.slug[params.slug.length - 1]
-            : product.categoryCode === params.slug[params.slug.length - 1]
+          slug.length > 1
+            ? product.categoryCode === slug[slug.length - 2] &&
+              product.subCategoryCode === slug[slug.length - 1]
+            : product.categoryCode === slug[slug.length - 1]
       )
     : [];
 
@@ -52,20 +52,16 @@ const ProductFilter: FC<ProductFilterProps> = ({ session, params }) => {
     <>
       <Breadcrumb
         category={justForYouData[0]?.category}
-        subCategory={
-          params.slug.length > 1 ? justForYouData[0]?.subCategory : ""
-        }
+        subCategory={slug.length > 1 ? justForYouData[0]?.subCategory : ""}
       />
       <Content>
-        <TitleText>
-          {categoryNames[params.slug[params.slug.length - 1]]}
-        </TitleText>
+        <TitleText>{categoryNames[slug[slug.length - 1]]}</TitleText>
         <SwiperDataTemplate
           title="Bu Ürünler Tam Size Göre"
           data={justForYouData}
           favorites={favorites}
         />
-        <Filter data={justForYouData} params={params} favorites={favorites} />
+        <Filter data={justForYouData} slug={slug} favorites={favorites} />
       </Content>
     </>
   );
@@ -77,7 +73,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const queryClient = new QueryClient();
   const session = await getSession(context);
 
-  const { params } = context;
+  const { slug } = context.params as { slug: string[] };
 
   await queryClient.prefetchQuery({
     queryKey: ["products"],
@@ -91,7 +87,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   return {
     props: {
-      params,
+      slug,
       session,
       dehydratedState: dehydrate(queryClient),
     },

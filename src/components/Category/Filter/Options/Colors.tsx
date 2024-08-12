@@ -1,4 +1,5 @@
 import { FC, Dispatch, useState } from "react";
+import { FilterAction } from "@/lib/types";
 import { Header } from "@/styles/Category";
 import {
   CheckboxContainer,
@@ -10,7 +11,7 @@ import {
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 
 type ColorsProps = {
-  dispatch: Dispatch<{ type: string; payload: string }>;
+  dispatch: Dispatch<FilterAction>;
   colors: string[];
   colorOptions: string[];
 };

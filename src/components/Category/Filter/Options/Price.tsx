@@ -1,4 +1,5 @@
 import { FC, Dispatch, useState } from "react";
+import { FilterAction } from "@/lib/types";
 import { Header } from "@/styles/Category";
 import {
   CheckboxContainer,
@@ -18,10 +19,7 @@ const priceOptions = [
 ];
 
 type PriceProps = {
-  dispatch: Dispatch<{
-    type: string;
-    payload: string | { min: number; max: number };
-  }>;
+  dispatch: Dispatch<FilterAction>;
   prices: {
     min: number;
     max: number;
