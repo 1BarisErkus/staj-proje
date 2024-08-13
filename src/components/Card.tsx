@@ -136,7 +136,9 @@ const Card: FC<CardProps> = ({
           {images.map((image, index) => (
             <CustomSwiperSlide key={index}>
               <Image
-                src={`/images/products/${image}`}
+                src={
+                  image.startsWith("http") ? image : `/images/products/${image}`
+                }
                 alt={name}
                 width={size === "small" ? 130 : 250}
                 height={size === "small" ? 100 : 200}

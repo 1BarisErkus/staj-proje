@@ -25,7 +25,9 @@ const Slider: FC<SliderProps> = ({ images }) => {
         <CustomSwiperSlide key={index}>
           <ImageWrapper width={500} height={380}>
             <Image
-              src={`/images/products/${image}`}
+              src={
+                image.startsWith("http") ? image : `/images/products/${image}`
+              }
               alt="product"
               fill
               priority

@@ -1,3 +1,5 @@
+import { FieldErrors, UseFormRegister, UseFormSetValue } from "react-hook-form";
+
 export type Product = {
   id: string;
   name: string;
@@ -12,7 +14,7 @@ export type Product = {
   stock: number;
   installmentCount: number;
   installmentPrice: number;
-  limit: number;
+  limit: number | null;
   seller: string;
   description: string;
   images: string[];
@@ -139,3 +141,9 @@ export type FilterAction =
       type: "SELLERS";
       payload: SellersPayload;
     };
+
+export type FeaturesProps = {
+  register: UseFormRegister<Product>;
+  setValue: UseFormSetValue<Product>;
+  errors: FieldErrors<Product>;
+};

@@ -25,6 +25,8 @@ type OtherSellersProps = {
 };
 
 const OtherSellers: FC<OtherSellersProps> = ({ data }) => {
+  if (data.length === 0) return null;
+
   return (
     <Container>
       <Row>

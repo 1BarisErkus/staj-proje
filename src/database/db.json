@@ -4,7 +4,21 @@
       "id": "wuhEiFqcxse8NeTLAAcB4B3DDko1",
       "name": "Barış Erkuş",
       "email": "baris@gmail.com",
-      "basket": [],
+      "basket": [
+        {
+          "id": "b0d3e114-3e12-4960-b829-7b501f94d9f6",
+          "productId": "1",
+          "image": "iphone-15-pro-max-256gb/1.webp",
+          "name": "iPhone 15 Pro Max",
+          "color": "Mavi Titanyum",
+          "memory": "256 GB",
+          "price": 89999,
+          "discountPrice": 79199,
+          "count": 1,
+          "seller": "Turkcell Satış A.Ş.",
+          "limit": 1
+        }
+      ],
       "favorites": [
         "3",
         "1",
@@ -28,6 +42,45 @@
           "count": 1,
           "seller": "Turkcell Satış A.Ş.",
           "limit": 1
+        },
+        {
+          "id": "b98c3a8a-aba4-4e8c-8f46-ec959c7e8c9c",
+          "productId": "3",
+          "image": "huawei-watch/1.webp",
+          "name": "Huawei Watch GT4 46MM Akıllı Saat Siyah",
+          "color": "Siyah",
+          "memory": null,
+          "price": 5299,
+          "discountPrice": 5299,
+          "count": 1,
+          "seller": "SONNTECH",
+          "limit": null
+        },
+        {
+          "id": "73c9269a-9dca-402a-8956-7dc5c4c9ec6a",
+          "productId": "1",
+          "image": "iphone-15-pro-max-256gb/1.webp",
+          "name": "iPhone 15 Pro Max",
+          "color": "Mavi Titanyum",
+          "memory": "256 GB",
+          "price": 89999,
+          "discountPrice": 79199,
+          "count": 1,
+          "seller": "Turkcell Satış A.Ş.",
+          "limit": 1
+        },
+        {
+          "id": "76111602-6104-4921-b9cb-fde4a35793e0",
+          "productId": "4",
+          "image": "hifuture-zone/1.webp",
+          "name": "HiFuture FutureFit Zone 2 50 mm Akıllı Saat",
+          "color": "Pembe",
+          "memory": null,
+          "price": 1549,
+          "discountPrice": 1549,
+          "count": 1,
+          "seller": "Erufas Teknoloji Ürünleri",
+          "limit": null
         }
       ],
       "favorites": [
@@ -42,7 +95,12 @@
       "email": "admin@gmail.com",
       "basket": [],
       "favorites": [
-        "1"
+        "1",
+        "1723540442956",
+        "1723541819946",
+        "1723548222757",
+        "1723550624648",
+        "1723550773875"
       ]
     }
   ],
@@ -184,7 +242,16 @@
         "Ücretsiz Kargo",
         "Alışveriş Kredisi"
       ],
-      "comments": [],
+      "comments": [
+        {
+          "id": "2ebb5bdb-0cc0-4a08-8ec3-017fd42c9b3f",
+          "userName": "Barış Erkuş",
+          "comment": "Denem yorum dineme",
+          "rating": 1,
+          "date": "2024-08-12T08:58:59.988Z",
+          "helpfulCount": 0
+        }
+      ],
       "qa": [],
       "creditCard": true,
       "fibabanka": true,
@@ -1855,6 +1922,232 @@
       "isNew": false,
       "isBestSeller": false,
       "date": "2024-07-31T23:59:59.999Z"
+    },
+    {
+      "name": "Chicco Polly 2 Start Mama Sandalyesi",
+      "price": 2999,
+      "category": "Anne-Bebek-Oyuncak",
+      "subCategory": "Anne-Bebek-Oyuncak",
+      "brandCode": "chicco",
+      "discountPercentage": 0,
+      "discountEndTime": "2024-08-30T00:00:00.000Z",
+      "installmentCount": 0,
+      "installmentPrice": 0,
+      "stock": 15,
+      "limit": 5,
+      "seller": "Chicco",
+      "description": "Bebekler için özel olarak geliştirilen Foxy mama sandalyesi, 8 santimetreye kadar genişleyebilen sırtlığı sayesinde 0-3 yaşa kadar olan bebeğinizin büyüme sürecine tamamen uyum sağlar.",
+      "images": [
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/Cihaz/aksesuar/chicco/polly-2-start-mama-sandalyesi-foxy/cg/1/1_600x450.png?1723106160000",
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/Cihaz/aksesuar/chicco/polly-2-start-mama-sandalyesi-foxy/cg/2/2_600x450.png?1723106160000"
+      ],
+      "creditCard": false,
+      "fibabanka": false,
+      "freeShipping": false,
+      "guarantee": false,
+      "isContract": false,
+      "isSpecialForYou": false,
+      "isBestOffer": false,
+      "isBestSeller": false,
+      "badges": [
+        "Peşine 4 Taksit",
+        "Ücretsiz Kargo",
+        "Alışveriş Kredisi"
+      ],
+      "features": [
+        {
+          "name": "Ürün Model Adı",
+          "value": "POLLY 2 START"
+        },
+        {
+          "name": "Standart Model Adı",
+          "value": "POLLY 2 START"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "İtalya"
+        },
+        {
+          "name": "Orjınal Renk",
+          "value": "Bej"
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": [
+            {
+              "label": "Beyaz",
+              "color": "#fff"
+            }
+          ]
+        }
+      ],
+      "id": "1723550624648",
+      "date": "2024-08-13T12:03:44.648Z",
+      "categoryCode": "mom-baby-toys",
+      "subCategoryCode": "mom-baby-toys",
+      "rating": 0,
+      "otherSellers": [],
+      "comments": [],
+      "qa": [],
+      "isNew": true
+    },
+    {
+      "name": "Dynamic Slim Manuel Kosu Bandi",
+      "price": 5799,
+      "category": "Ev-Yaşam",
+      "subCategory": "Ev-Yaşam",
+      "brandCode": "dynamic",
+      "discountPercentage": 20,
+      "discountEndTime": "2024-08-26T00:00:00.000Z",
+      "installmentCount": 3,
+      "installmentPrice": 2286,
+      "stock": 100,
+      "limit": 0,
+      "seller": "Turkcell Satış A.Ş.",
+      "description": "    Taşıma Kapasitesi: 90 KgHız: 0-6 Km/SaatYürüyüş Alanı: 42 cm X 120 cmMotor Gücü: 750 w Energy Saving System (Tasarruflu Özel Motor)Bant: Yağlama gerektirmeyen, kendinden reçineli özel bant sistemi. (Koşu bandı yağlama derdine son verir)Zwift uygulaması ile uyumlu bluetooth aplikasyonGösterge: DijitalUltra ince tasarımı sayesinde koltuk altı yada kapı arkası gibi yerlerde rahatlıkla saklayabilirsiniz.İnterspor tarafından ithal edilmiş olup tüm yedek parça ve servis hizmetleri İnterspor tarafından sağlanmaktadır.81 İlde 100'den fazla noktada teknik servisNot: Bandın alt kısmında banda ait ek yeri bulunmakta olup tüm ev tipi koşu bantlarında bu şekilde ek yeri vardır, bu bir kusur veya hata değildir.",
+      "images": [
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/00J9R6/2024419842-00J9R6-5/2024419842-00J9R6-5_600x450.png?1723106160000"
+      ],
+      "creditCard": false,
+      "fibabanka": true,
+      "freeShipping": false,
+      "guarantee": false,
+      "isContract": false,
+      "isSpecialForYou": false,
+      "isBestOffer": false,
+      "isBestSeller": false,
+      "badges": [],
+      "features": [
+        {
+          "name": "Ürün Model Adı",
+          "value": "DYNAMIC SLIM MANUEL KOŞU BANDI NEW"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "Çin"
+        },
+        {
+          "name": "Garanti Süresi",
+          "value": "2 Yıl"
+        },
+        {
+          "name": "Orjınal Renk",
+          "value": "Siyah"
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": [
+            {
+              "label": "Siyah",
+              "color": "#000"
+            },
+            {
+              "label": "Yeşil",
+              "color": "#4caf50"
+            },
+            {
+              "label": "Mor",
+              "color": "#9c27b0"
+            }
+          ]
+        }
+      ],
+      "id": "1723550773875",
+      "date": "2024-08-13T12:06:13.875Z",
+      "categoryCode": "home-living",
+      "subCategoryCode": "home-living",
+      "rating": 0,
+      "otherSellers": [],
+      "comments": [],
+      "qa": [],
+      "isNew": true
+    },
+    {
+      "name": "Samsung 55QN90C 55 inc 139 Ekran",
+      "price": 62999,
+      "category": "TV-Ses Sistemleri",
+      "subCategory": "TV-Ses Sistemleri",
+      "brandCode": "samsung",
+      "discountPercentage": 0,
+      "discountEndTime": "2024-08-30T00:00:00.000Z",
+      "installmentCount": 0,
+      "installmentPrice": 0,
+      "stock": 100,
+      "limit": 3,
+      "seller": "Dragonfly",
+      "description": "Ultra ince ışık kontrolüyle her ayrıntıyı yakalayın Işığı doğru bir şekilde kontrol eden Quantum Mini LED’ler ile en karanlık ve en parlak sahnelerde dahi harika ayrıntıları görün.",
+      "images": [
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/00H9E5/00H9E5-1/00H9E5-1_600x450.png?1723106160000",
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/00H9E5/00H9E5-2/00H9E5-2_600x450.png?1723106160000",
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/00H9E5/00H9E5-3/00H9E5-3_600x450.png?1723106160000"
+      ],
+      "creditCard": true,
+      "fibabanka": true,
+      "freeShipping": true,
+      "guarantee": true,
+      "isContract": true,
+      "isSpecialForYou": true,
+      "isBestOffer": true,
+      "isBestSeller": true,
+      "badges": [
+        "Peşine 4 Taksit",
+        "Ücretsiz Kargo",
+        "Alışveriş Kredisi"
+      ],
+      "features": [
+        {
+          "name": "Ürün Model Adı",
+          "value": "55QN90C 55 INC 4K NEO QLED TV"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "SLOVAKYA"
+        },
+        {
+          "name": "Ekran Boyutu",
+          "value": "139 cm"
+        },
+        {
+          "name": "Ekran Teknolojisi",
+          "value": "NEO QLED"
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": [
+            {
+              "label": "Siyah",
+              "color": "#000"
+            },
+            {
+              "label": "Mavi",
+              "color": "#1e88e5"
+            },
+            {
+              "label": "Beyaz",
+              "color": "#fff"
+            },
+            {
+              "label": "Kırmızı",
+              "color": "#f44336"
+            }
+          ]
+        }
+      ],
+      "id": "1723550922323",
+      "date": "2024-08-13T12:08:42.323Z",
+      "categoryCode": "tv-audio",
+      "subCategoryCode": "tv-audio",
+      "rating": 0,
+      "otherSellers": [],
+      "comments": [],
+      "qa": [],
+      "isNew": true
     }
   ]
 }

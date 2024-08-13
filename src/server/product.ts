@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import { getUser } from "./user";
+import { Product } from "@/lib/types";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -111,4 +112,26 @@ export const changeFavorite = async (userId: string, productId: string) => {
 
   const updatedUser = await response.json();
   return updatedUser.favorites;
+};
+
+export const addProductFromDb = async (product: Product) => {
+  const response = await fetch(`${baseUrl}/products`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(product),
+  });
+
+  const data = await response.json();
+  return data;
+};
+
+export const deleteProductFromDb = async (productId: string) => {
+  const response = await fetch(`${baseUrl}/products/${productId}`, {
+    method: "DELETE",
+  });
+
+  const data = await response.json();
+  return data;
 };

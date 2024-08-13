@@ -116,7 +116,9 @@ const BasketItem: FC<BasketItemProps> = ({
         <Row>
           <Left size={5}>
             <Image
-              src={`/images/products/${image}`}
+              src={
+                image.startsWith("http") ? image : `/images/products/${image}`
+              }
               alt={image}
               width={95}
               height={70}
