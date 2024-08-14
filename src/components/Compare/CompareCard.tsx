@@ -12,7 +12,14 @@ import {
 const CompareCard: FC<Product> = ({ id, images, name, features, price }) => {
   return (
     <CardContainer href={`/product/${id}`}>
-      <ProductImage src={`/images/products/${images[0]}`} alt={images[0]} />
+      <ProductImage
+        src={
+          images[0].startsWith("http")
+            ? images[0]
+            : `/images/products/${images[0]}`
+        }
+        alt={images[0]}
+      />
       <ProductTitle>{name}</ProductTitle>
       <Price>{price} TL</Price>
       <FeaturesList>

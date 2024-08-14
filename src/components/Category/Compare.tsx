@@ -45,7 +45,9 @@ const CompareBar = () => {
               <Image
                 src={
                   item
-                    ? `/images/products/${item?.image}`
+                    ? item.image.startsWith("http")
+                      ? item.image
+                      : `/images/products/${item.image}`
                     : "/images/def_tel.webp"
                 }
                 alt="Ürün"

@@ -51,6 +51,7 @@ export const CardRating = styled.p`
 
 export const CardBody = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
@@ -64,7 +65,6 @@ export const Price = styled.p`
 `;
 
 export const Currency = styled.span`
-  position: absolute;
   font-size: 0.7rem;
 `;
 
@@ -72,7 +72,6 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: auto;
   gap: 1rem;
   border: none;
   background-color: #ffd917;

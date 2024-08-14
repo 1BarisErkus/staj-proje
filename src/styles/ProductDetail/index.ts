@@ -19,7 +19,7 @@ export const LeftCol = styled(Col)`
 `;
 
 export const LimitWrapper = styled.div`
-  margin-top: 2rem;
+  margin: 2rem 0;
   max-width: 25.375rem;
   width: 100%;
   background-image: linear-gradient(6deg, #3697c9, #3baddf);
@@ -161,6 +161,6 @@ export const CustomImageWrapper = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-    height: 200px;
+    height: 250px;
   }
 `;
