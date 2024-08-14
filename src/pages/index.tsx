@@ -29,7 +29,7 @@ const Home: FC<HomeProps> = ({ session }) => {
       {
         queryKey: ["favorites"],
         queryFn: () => getFavorites(session?.user?.uid),
-        enabled: !!session,
+        enabled: !!session?.user?.uid,
       },
     ],
   });

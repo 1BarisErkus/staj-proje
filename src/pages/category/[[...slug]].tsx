@@ -26,7 +26,7 @@ const ProductFilter: FC<ProductFilterProps> = ({ session, slug }) => {
       {
         queryKey: ["favorites"],
         queryFn: () => getFavorites(session?.user?.uid),
-        enabled: !!session,
+        enabled: !!session?.user?.uid,
       },
     ],
   });

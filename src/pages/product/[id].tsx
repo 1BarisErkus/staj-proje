@@ -41,7 +41,7 @@ const Product: FC<ProductProps> = ({ session, id }) => {
       {
         queryKey: ["favorites"],
         queryFn: () => getFavorites((session?.user as { uid: string })?.uid),
-        enabled: !!session,
+        enabled: !!(session?.user as { uid: string })?.uid,
       },
     ],
   });

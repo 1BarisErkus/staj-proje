@@ -25,7 +25,7 @@ const Favorites: FC<FavoritesProps> = ({ session }) => {
       {
         queryKey: ["favorites"],
         queryFn: () => getFavorites(session?.user?.uid),
-        enabled: !!session,
+        enabled: !!session?.user?.uid,
       },
     ],
   });

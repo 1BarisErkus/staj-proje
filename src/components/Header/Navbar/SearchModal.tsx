@@ -26,6 +26,7 @@ const SearchModal: FC<SearchModalProps> = ({
   const { data: favorites } = useQuery({
     queryKey: ["favorites"],
     queryFn: () => getFavorites((session.data?.user as { uid: string })?.uid),
+    enabled: !!session.data?.user,
   });
 
   return (
