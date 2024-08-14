@@ -61,7 +61,7 @@ const SalesFeatures: FC<FeaturesProps> = ({ register, errors }) => {
               placeholder="Yüzde"
               width={100}
               {...register("discountPercentage", {
-                valueAsNumber: true,
+                setValueAs: (v) => v && new Date(v).toISOString(),
               })}
             />
             {errors.discountPercentage && (

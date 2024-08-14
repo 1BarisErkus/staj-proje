@@ -1,3 +1,4 @@
+import { ImageWrapper } from "@/styles/GlobalVariables";
 import styled from "styled-components";
 
 export const UnOverlay = styled.div`
@@ -12,14 +13,9 @@ export const UnOverlay = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 768px) {
-    top: 100px;
+  @media (max-width: 992px) {
+    top: 0px;
     padding: 0 20px;
-  }
-
-  @media (max-width: 576px) {
-    top: 50px;
-    padding: 0 10px;
   }
 `;
 
@@ -35,10 +31,6 @@ export const CloseButton = styled.button`
   @media (max-width: 768px) {
     right: 50px;
   }
-
-  @media (max-width: 576px) {
-    right: 20px;
-  }
 `;
 
 export const Content = styled.div`
@@ -46,14 +38,9 @@ export const Content = styled.div`
   border-radius: 5px;
   width: 60%;
 
-  @media (max-width: 768px) {
-    width: 80%;
-    padding: 30px 0 155px 0;
-  }
-
-  @media (max-width: 576px) {
+  @media (max-width: 992px) {
     width: 100%;
-    padding: 20px 0 105px 0;
+    padding: 50px 0 105px 0;
   }
 `;
 
@@ -106,11 +93,6 @@ export const LoginHead = styled.h1`
     font-size: 1.8rem;
     margin-bottom: 40px;
   }
-
-  @media (max-width: 576px) {
-    font-size: 1.6rem;
-    margin-bottom: 30px;
-  }
 `;
 
 export const Input = styled.input`
@@ -123,11 +105,6 @@ export const Input = styled.input`
   @media (max-width: 768px) {
     padding: 8px;
     margin-bottom: 16px;
-  }
-
-  @media (max-width: 576px) {
-    padding: 6px;
-    margin-bottom: 12px;
   }
 `;
 
@@ -146,11 +123,6 @@ export const LoginFormButton = styled.button`
     font-size: 1rem;
     padding: 8px;
   }
-
-  @media (max-width: 576px) {
-    font-size: 0.9rem;
-    padding: 6px;
-  }
 `;
 
 export const AlreadyMember = styled.div`
@@ -168,11 +140,6 @@ export const AlreadyMember = styled.div`
     font-size: 0.7rem;
     margin-top: 16px;
   }
-
-  @media (max-width: 576px) {
-    font-size: 0.6rem;
-    margin-top: 12px;
-  }
 `;
 
 export const Error = styled.p`
@@ -187,9 +154,14 @@ export const Error = styled.p`
     font-size: 0.7rem;
     margin-bottom: 8px;
   }
+`;
 
-  @media (max-width: 576px) {
-    font-size: 0.6rem;
-    margin-bottom: 6px;
+export const CustomImageWrapper = styled(ImageWrapper)`
+  width: 350px;
+  height: 200px;
+
+  @media (max-width: 992px) {
+    width: 100%;
+    height: auto;
   }
 `;

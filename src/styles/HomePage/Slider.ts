@@ -17,10 +17,6 @@ export const SliderContainer = styled.div`
   @media (max-width: 768px) {
     height: 400px;
   }
-
-  @media (max-width: 576px) {
-    height: 300px;
-  }
 `;
 
 export const SlideContent = styled.div`

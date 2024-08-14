@@ -95,7 +95,6 @@ const schema = z.object({
       invalid_type_error: "Lütfen geçerli bir sayı girin.",
     })
     .min(0, "Limit en az 0 olmalıdır.")
-    .int("Limit tam sayı olmalıdır.")
     .refine((value) => !Number.isNaN(value), {
       message: "Lütfen geçerli bir sayı girin.",
     })
@@ -172,7 +171,7 @@ const AdminPage = () => {
       discountEndTime: "",
       installmentCount: 0,
       installmentPrice: 0,
-      limit: null,
+      limit: 0,
     },
   });
 
@@ -188,11 +187,6 @@ const AdminPage = () => {
         ? data.subCategory
         : data.category;
 
-    const date = new Date(
-      data.discountEndTime !== "" ? data.discountEndTime : "2024-08-30"
-    );
-    const discountEndTime = date.toISOString();
-
     const newProduct = {
       ...data,
       id: new Date().getTime().toString(),
@@ -202,12 +196,13 @@ const AdminPage = () => {
       subCategoryCode: subCategoryCode ?? "",
       brandCode: data.brandCode.toLowerCase(),
       rating: 0,
-      discountEndTime,
       otherSellers: [],
       comments: [],
       qa: [],
       isNew: true,
     };
+
+    if (data.limit === 0) newProduct.limit = null;
 
     addProduct(newProduct);
   };

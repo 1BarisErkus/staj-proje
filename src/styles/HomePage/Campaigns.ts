@@ -36,6 +36,6 @@ export const CapmaignsImageWrapper = styled.div<{ $pos: string }>`
   height: ${({ $pos }) => ($pos === "right" ? "580px" : "280px")};
 
   @media (max-width: 768px) {
-    height: ${({ $pos }) => ($pos === "right" ? "280px" : "140px")};
+    height: ${({ $pos }) => ($pos === "right" ? "320px" : "140px")};
   }
 `;

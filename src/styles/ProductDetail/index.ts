@@ -11,6 +11,11 @@ export const LeftCol = styled(Col)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 0;
+    flex-direction: column-reverse;
+  }
 `;
 
 export const LimitWrapper = styled.div`
@@ -147,4 +152,15 @@ export const BadgeText = styled.span`
   font-weight: 600;
   color: gray;
   text-align: center;
+`;
+
+export const CustomImageWrapper = styled.div`
+  position: relative;
+  width: 500px;
+  height: 380px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 200px;
+  }
 `;

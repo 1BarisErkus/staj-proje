@@ -6,6 +6,7 @@ import { Col, Row } from "@/styles/GlobalVariables";
 import {
   CloseButton,
   Content,
+  CustomImageWrapper,
   LoginButton,
   LoginFormButton,
   LoginText,
@@ -34,13 +35,9 @@ const AuthModal: FC<ModalProps> = ({ isOpen, setIsModalOpen, onClose }) => {
         <CloseButton onClick={onClose}>X</CloseButton>
         <Row>
           <Col size={6}>
-            <Image
-              src="/images/login-image.png"
-              alt="Login"
-              width={350}
-              height={200}
-              priority
-            />
+            <CustomImageWrapper width={350} height={200}>
+              <Image src="/images/login-image.png" alt="Login" fill priority />
+            </CustomImageWrapper>
             <h2>Turkcell Pasaj’ın fırsatlarla dolu dünyasına hoş geldiniz!</h2>
             <LoginText>
               Turkcell Pasaj’da fırsatlar bitmez! İhtiyacınız olan bir çok

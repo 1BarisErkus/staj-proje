@@ -4,21 +4,7 @@
       "id": "wuhEiFqcxse8NeTLAAcB4B3DDko1",
       "name": "Barış Erkuş",
       "email": "baris@gmail.com",
-      "basket": [
-        {
-          "id": "b0d3e114-3e12-4960-b829-7b501f94d9f6",
-          "productId": "1",
-          "image": "iphone-15-pro-max-256gb/1.webp",
-          "name": "iPhone 15 Pro Max",
-          "color": "Mavi Titanyum",
-          "memory": "256 GB",
-          "price": 89999,
-          "discountPrice": 79199,
-          "count": 1,
-          "seller": "Turkcell Satış A.Ş.",
-          "limit": 1
-        }
-      ],
+      "basket": [],
       "favorites": [
         "3",
         "1",
@@ -93,14 +79,30 @@
       "id": "wDb7iyNjFpd1AyXyKrbAiGVTODh1",
       "name": "Admin Admin",
       "email": "admin@gmail.com",
-      "basket": [],
+      "basket": [
+        {
+          "id": "643b3547-36e9-4ff2-b1ae-bbd263685907",
+          "productId": "1723620645162",
+          "image": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/00JAON/00JAON-1/00JAON-1_600x450.png?1723106160000",
+          "name": "Asus X515EA EJ3575A4 i3 1115G4 12GB",
+          "color": "Kırmızı",
+          "memory": null,
+          "price": 10199,
+          "discountPrice": 10199,
+          "count": 3,
+          "seller": "NotebookStore",
+          "limit": null
+        }
+      ],
       "favorites": [
         "1",
         "1723540442956",
         "1723541819946",
         "1723548222757",
         "1723550624648",
-        "1723550773875"
+        "1723550773875",
+        "1723620645162",
+        "1723621112042"
       ]
     }
   ],
@@ -2004,7 +2006,7 @@
       "installmentCount": 3,
       "installmentPrice": 2286,
       "stock": 100,
-      "limit": 0,
+      "limit": null,
       "seller": "Turkcell Satış A.Ş.",
       "description": "    Taşıma Kapasitesi: 90 KgHız: 0-6 Km/SaatYürüyüş Alanı: 42 cm X 120 cmMotor Gücü: 750 w Energy Saving System (Tasarruflu Özel Motor)Bant: Yağlama gerektirmeyen, kendinden reçineli özel bant sistemi. (Koşu bandı yağlama derdine son verir)Zwift uygulaması ile uyumlu bluetooth aplikasyonGösterge: DijitalUltra ince tasarımı sayesinde koltuk altı yada kapı arkası gibi yerlerde rahatlıkla saklayabilirsiniz.İnterspor tarafından ithal edilmiş olup tüm yedek parça ve servis hizmetleri İnterspor tarafından sağlanmaktadır.81 İlde 100'den fazla noktada teknik servisNot: Bandın alt kısmında banda ait ek yeri bulunmakta olup tüm ev tipi koşu bantlarında bu şekilde ek yeri vardır, bu bir kusur veya hata değildir.",
       "images": [
@@ -2143,6 +2145,86 @@
       "date": "2024-08-13T12:08:42.323Z",
       "categoryCode": "tv-audio",
       "subCategoryCode": "tv-audio",
+      "rating": 0,
+      "otherSellers": [],
+      "comments": [],
+      "qa": [],
+      "isNew": true
+    },
+    {
+      "name": "Asus X515EA EJ3575A4 i3 1115G4 12GB",
+      "price": 10199,
+      "category": "Bilgisayar-Tablet",
+      "subCategory": "Bilgisayar-Tablet",
+      "brandCode": "asus",
+      "discountPercentage": 0,
+      "discountEndTime": "",
+      "installmentCount": 0,
+      "installmentPrice": 0,
+      "stock": 100,
+      "limit": null,
+      "seller": "NotebookStore",
+      "description": "ASUS X515, iş ve oyun dünyalarında adını duyurmuş bir giriş seviyesi dizüstü bilgisayardır. Özellikle etkileyici bir deneyim sunan NanoEdge ekranı ile ön plana çıkar. Bu ekran, 178° geniş görüş açısı ve mat parlama önleyici kaplama ile donatılmıştır. Bu sayede, oyun oynarken veya iş yaparken görsel deneyimde kesintisizlik ve konfor elde edersiniz.",
+      "images": [
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/00JAON/00JAON-1/00JAON-1_600x450.png?1723106160000",
+        "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/00JAON/00JAON-2/00JAON-2_600x450.png?1723106160000"
+      ],
+      "creditCard": false,
+      "fibabanka": true,
+      "freeShipping": false,
+      "guarantee": true,
+      "isContract": false,
+      "isSpecialForYou": false,
+      "isBestOffer": false,
+      "isBestSeller": false,
+      "badges": [
+        "Ücretsiz Kargo"
+      ],
+      "features": [
+        {
+          "name": "Ürün Model Adı",
+          "value": "ASUS X515EA-EJ3575A4 İ3-1115G4 12GB"
+        },
+        {
+          "name": "Üretim Yeri",
+          "value": "ÇİN"
+        },
+        {
+          "name": "İşletim Sistemi Versiyonu",
+          "value": "FREEDOS"
+        },
+        {
+          "name": "Ram (bellek) Kapasitesi",
+          "value": "12 GB"
+        }
+      ],
+      "configuration": [
+        {
+          "title": "Renk",
+          "options": [
+            {
+              "label": "Siyah",
+              "color": "#000"
+            },
+            {
+              "label": "Kırmızı",
+              "color": "#f44336"
+            },
+            {
+              "label": "Beyaz",
+              "color": "#fff"
+            },
+            {
+              "label": "Mavi",
+              "color": "#1e88e5"
+            }
+          ]
+        }
+      ],
+      "id": "1723620645162",
+      "date": "2024-08-14T07:30:45.162Z",
+      "categoryCode": "computer-tablet",
+      "subCategoryCode": "computer-tablet",
       "rating": 0,
       "otherSellers": [],
       "comments": [],

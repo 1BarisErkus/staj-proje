@@ -1,8 +1,8 @@
 import { FC } from "react";
 import Image from "next/image";
 import { Autoplay, Pagination } from "swiper/modules";
-import { ImageWrapper } from "@/styles/GlobalVariables";
 import CustomSwiper, { CustomSwiperSlide } from "../CustomSwiper";
+import { CustomImageWrapper } from "@/styles/ProductDetail";
 
 type SliderProps = {
   images: string[];
@@ -23,7 +23,7 @@ const Slider: FC<SliderProps> = ({ images }) => {
     >
       {images.map((image, index) => (
         <CustomSwiperSlide key={index}>
-          <ImageWrapper width={500} height={380}>
+          <CustomImageWrapper>
             <Image
               src={
                 image.startsWith("http") ? image : `/images/products/${image}`
@@ -33,7 +33,7 @@ const Slider: FC<SliderProps> = ({ images }) => {
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-          </ImageWrapper>
+          </CustomImageWrapper>
         </CustomSwiperSlide>
       ))}
     </CustomSwiper>
