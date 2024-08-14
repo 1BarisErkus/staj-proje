@@ -1,4 +1,4 @@
-import { FC, Dispatch, useState } from "react";
+import { FC, ChangeEvent, Dispatch, useState } from "react";
 import { FilterAction } from "@/lib/types";
 import { Container, Header, Icon, Item } from "@/styles/Category";
 import { RadioButton } from "@/styles/Category/SwitchButton";
@@ -20,7 +20,7 @@ interface SortByProps {
 const SortBy: FC<SortByProps> = ({ sortValue, dispatch }) => {
   const [isExpanded, setIsExpanded] = useState(true);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch({ type: "SORT_BY", payload: event.target.value });
   };
 

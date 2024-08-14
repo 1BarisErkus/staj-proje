@@ -16,11 +16,13 @@ export const useCompareStore = create<CompareState>((set) => ({
   addCompareItem: (item) =>
     set((state) => {
       const index = state.compareItems.findIndex((i) => i === null);
+
       if (index !== -1) {
         const newItems = [...state.compareItems];
         newItems[index] = item;
         return { compareItems: newItems };
       }
+
       return state;
     }),
 

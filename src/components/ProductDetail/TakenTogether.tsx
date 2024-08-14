@@ -42,6 +42,7 @@ const TakenTogether: FC<TakenTogetherProps> = ({
               isFavorite={favorites.includes(product.id)}
               fibabanka={product.fibabanka}
               isBestSeller={product.isBestSeller}
+              rating={product.rating}
             />
           </CustomSwiperSlide>
         ))}

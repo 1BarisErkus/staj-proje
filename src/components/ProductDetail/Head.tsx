@@ -25,6 +25,7 @@ type HeadProps = {
   stock: number;
   isFavorite: boolean;
   productId: string;
+  rating: number;
 };
 
 const Head: FC<HeadProps> = ({
@@ -33,6 +34,7 @@ const Head: FC<HeadProps> = ({
   stock,
   isFavorite,
   productId,
+  rating,
 }) => {
   const session = useSession();
   const queryClient = useQueryClient();
@@ -99,7 +101,7 @@ const Head: FC<HeadProps> = ({
           )}
         </FavoriteButton>
       </TitleWrapper>
-      <Rating value={4} style={{ maxWidth: 100 }} readOnly />
+      <Rating value={rating} style={{ maxWidth: 100 }} readOnly />
       {targetDate !== "" && (
         <DiscountWrapper>
           <span>İndirimin bitmesine</span>{" "}

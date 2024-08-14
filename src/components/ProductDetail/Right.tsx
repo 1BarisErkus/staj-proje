@@ -29,6 +29,7 @@ type RightProps = {
   guarantee: boolean;
   isContract: boolean;
   isFavorite: boolean;
+  rating: number;
 };
 
 const Right: FC<RightProps> = ({
@@ -49,6 +50,7 @@ const Right: FC<RightProps> = ({
   guarantee,
   isContract,
   isFavorite,
+  rating,
 }) => {
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
   const [selectedMemory, setSelectedMemory] = useState<string | null>(null);
@@ -93,6 +95,7 @@ const Right: FC<RightProps> = ({
     const productCountInBasket = basket?.find(
       (item: ProductForBasket) => item.productId === id
     )?.count;
+
     if (productCountInBasket === limit) {
       notify(`Bu üründen sadece ${limit} tane alabilirsiniz`, "error");
       return;
@@ -130,6 +133,7 @@ const Right: FC<RightProps> = ({
         stock={stock}
         isFavorite={isFavorite}
         productId={id}
+        rating={rating}
       />
       <Configuraiton
         configuration={configuration}

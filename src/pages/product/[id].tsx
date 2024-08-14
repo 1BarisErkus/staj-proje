@@ -90,6 +90,7 @@ const Product: FC<ProductProps> = ({ session, id }) => {
               guarantee={product.guarantee}
               isContract={product.isContract}
               isFavorite={favorites.includes(product.id)}
+              rating={product.rating}
             />
           </Row>
         </Container>

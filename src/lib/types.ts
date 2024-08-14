@@ -60,6 +60,7 @@ export type SwiperProductProps = {
   discountPercentage: number;
   fibabanka: boolean;
   isBestSeller: boolean;
+  rating: number;
 };
 
 export type ProductForBasket = {

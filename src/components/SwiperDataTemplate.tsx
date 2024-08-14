@@ -42,6 +42,7 @@ const SwiperDataTemplate: FC<SectionProps> = ({
               fibabanka={product.fibabanka}
               isBestSeller={product.isBestSeller}
               size={size}
+              rating={product.rating}
             />
           </CustomSwiperSlide>
         ))}

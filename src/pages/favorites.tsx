@@ -57,6 +57,7 @@ const Favorites: FC<FavoritesProps> = ({ session }) => {
               fibabanka={product.fibabanka}
               isBestSeller={product.isBestSeller}
               isFavorite={favorites.includes(product.id)}
+              rating={product.rating}
             />
           ))
         ) : (

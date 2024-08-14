@@ -42,6 +42,7 @@ type CardProps = {
   isFavorite: boolean;
   size?: string;
   compareMode?: boolean;
+  rating: number;
 };
 
 const Card: FC<CardProps> = ({
@@ -56,6 +57,7 @@ const Card: FC<CardProps> = ({
   isFavorite,
   size,
   compareMode,
+  rating,
 }) => {
   const queryClient = useQueryClient();
   const session = useSession();
@@ -151,7 +153,7 @@ const Card: FC<CardProps> = ({
 
         <ProductName size={size}>{name}</ProductName>
 
-        <Rating value={4} style={{ maxWidth: 70 }} readOnly />
+        <Rating value={rating} style={{ maxWidth: 70 }} readOnly />
 
         {size !== "small" && (
           <BadgeWrapper>

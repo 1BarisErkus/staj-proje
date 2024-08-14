@@ -158,16 +158,14 @@ const Filter: FC<FilterProps> = ({ data, slug, favorites }) => {
 
   let sellerOptions: string[] = [];
   data.forEach((product) => {
-    if (!sellerOptions.includes(product.seller)) {
+    if (!sellerOptions.includes(product.seller))
       sellerOptions.push(product.seller);
-    }
   });
 
   let brandOptions: string[] = [];
   data.forEach((product) => {
-    if (!brandOptions.includes(product.brandCode)) {
+    if (!brandOptions.includes(product.brandCode))
       brandOptions.push(product.brandCode);
-    }
   });
 
   let colorOptions: string[] = [];
@@ -242,6 +240,7 @@ const Filter: FC<FilterProps> = ({ data, slug, favorites }) => {
                 isBestSeller={product.isBestSeller}
                 isFavorite={favorites.includes(product.id)}
                 compareMode={compareMode}
+                rating={product.rating}
               />
             ))}
           </CardListWrapper>

@@ -44,6 +44,7 @@ const SearchModal: FC<SearchModalProps> = ({
               images={product.images}
               isFavorite={favorites?.includes(product.id)}
               size="small"
+              rating={product.rating}
             />
           ))}
         </ModalContent>

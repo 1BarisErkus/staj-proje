@@ -28,6 +28,7 @@ const CardList: FC<CardListProps> = ({ filteredData, favorites }) => {
           fibabanka={product.fibabanka}
           isBestSeller={product.isBestSeller}
           isFavorite={favorites.includes(product.id)}
+          rating={product.rating}
         />
       ))}
     </CardListWrapper>
