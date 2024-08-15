@@ -120,6 +120,7 @@ export const DeleteProductCardWrapper = styled.div`
   padding: 1rem;
   border: 1px solid #ccc;
   width: 300px;
+  min-height: 400px;
 `;
 
 export const DeleteButton = styled.button`
