@@ -96,6 +96,7 @@ export const ProductName = styled.h2<{ size?: string }>`
     white-space: nowrap;
     `}
 `;
+
 export const PriceWrapper = styled.div`
   display: flex;
   flex-direction: column;

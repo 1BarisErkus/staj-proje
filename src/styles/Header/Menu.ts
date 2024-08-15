@@ -16,6 +16,8 @@ export const MenuItem = styled.div`
   text-align: center;
   max-width: 140px;
   cursor: pointer;
+  min-height: 40px;
+  border-bottom: 2px solid transparent;
 
   &:not(:last-child) {
     border-right: 1px solid #dee2e6;

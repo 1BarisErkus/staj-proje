@@ -8,6 +8,7 @@ import {
   DeleteCardList,
   DeleteProductCardWrapper,
 } from "@/styles/Admin";
+import { Col, Container, Row } from "@/styles/GlobalVariables";
 import {
   dehydrate,
   QueryClient,
@@ -41,28 +42,34 @@ const DeleteProduct = () => {
   if (productsLoading) return <Loading />;
 
   return (
-    <DeleteCardList>
-      {products.map((product: Product) => (
-        <DeleteProductCardWrapper key={product.id}>
-          <Image
-            src={
-              product.images[0].startsWith("http")
-                ? product.images[0]
-                : `/images/products/${product.images[0]}`
-            }
-            alt={product.images[0]}
-            width={150}
-            height={100}
-            priority
-          />
-          <h3>{product.name}</h3>
-          <p>{product.price} TL</p>
-          <DeleteButton onClick={() => mutate(product.id)}>
-            {isPending ? <MinimalLoading /> : "Ürünü Sil"}
-          </DeleteButton>
-        </DeleteProductCardWrapper>
-      ))}
-    </DeleteCardList>
+    <Container>
+      <Row>
+        <Col>
+          <DeleteCardList>
+            {products.map((product: Product) => (
+              <DeleteProductCardWrapper key={product.id}>
+                <Image
+                  src={
+                    product.images[0].startsWith("http")
+                      ? product.images[0]
+                      : `/images/products/${product.images[0]}`
+                  }
+                  alt={product.images[0]}
+                  width={150}
+                  height={100}
+                  priority
+                />
+                <h3>{product.name}</h3>
+                <p>{product.price} TL</p>
+                <DeleteButton onClick={() => mutate(product.id)}>
+                  {isPending ? <MinimalLoading /> : "Ürünü Sil"}
+                </DeleteButton>
+              </DeleteProductCardWrapper>
+            ))}
+          </DeleteCardList>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

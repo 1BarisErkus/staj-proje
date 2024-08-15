@@ -134,6 +134,8 @@ export const DeleteButton = styled.button`
 
 export const DeleteCardList = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem;

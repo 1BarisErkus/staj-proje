@@ -54,7 +54,7 @@ const Navbar = () => {
             <span>
               <IoPersonCircleOutline size={24} />
             </span>
-            Giriş Yap
+            {session.data ? "Hesabım" : "Giriş Yap"}
             <span>
               <IoChevronDownSharp size={24} />
             </span>
