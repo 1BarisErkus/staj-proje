@@ -6,14 +6,20 @@ const secret = process.env.NEXTAUTH_SECRET;
 
 export async function middleware(req: NextRequest) {
   const token = await getToken({ req, secret });
+  const { pathname } = req.nextUrl;
 
-  if (!token || token.email !== "admin@gmail.com") {
+  if (
+    pathname.startsWith("/admin") &&
+    (!token || token.email !== "admin@gmail.com")
+  )
     return NextResponse.redirect(new URL("/", req.url));
-  }
+
+  if (!token && (pathname === "/basket" || pathname === "/favorites"))
+    return NextResponse.redirect(new URL("/", req.url));
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: "/admin/:path*",
+  matcher: ["/admin/:path*", "/basket", "/favorites"],
 };

@@ -67,7 +67,7 @@ const BasketSummary: FC = () => {
       </SummaryTitle>
       <Item>
         <span>Ürünler Toplamı</span>
-        <Price>{total.toLocaleString("tr-TR")} TL</Price>
+        <Price>{total?.toLocaleString("tr-TR")} TL</Price>
       </Item>
       <Item>
         <span>Kargo Tutarı</span>
@@ -75,11 +75,11 @@ const BasketSummary: FC = () => {
       </Item>
       <Item>
         <span>İndirimler</span>
-        <Discount>- {discount.toLocaleString("tr-TR")} TL</Discount>
+        <Discount>- {discount?.toLocaleString("tr-TR")} TL</Discount>
       </Item>
       <Item>
         <span>Ödenecek Tutar (KDV Dahil)</span>
-        <Price>{totalPriceWithDiscount.toLocaleString("tr-TR")} TL</Price>
+        <Price>{totalPriceWithDiscount?.toLocaleString("tr-TR")} TL</Price>
       </Item>
       <Button>
         İndirim Kodu Ekle
