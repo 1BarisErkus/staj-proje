@@ -11,15 +11,15 @@ export const BreadcrumbWrapper = styled.div`
 
 export const BreadcrumbItem = styled(Link)`
   font-size: 14px;
-  color: #333;
+  color: var(--fourth-text);
   cursor: pointer;
   &:hover {
-    color: #ffc900;
+    color: var(--primary);
   }
 `;
 
 export const BreadcrumbIcon = styled.span`
   font-size: 20px;
   margin: 0 5px;
-  color: #ffc900;
+  color: var(--primary);
 `;

@@ -19,7 +19,7 @@ export const AccordionButton = styled.button`
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 2px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color);
   background-color: transparent;
 
   &:focus {
@@ -32,7 +32,7 @@ export const AccordionContent = styled.div<{ $isopen: boolean }>`
   transform-origin: top;
   transition: transform 0.3s ease;
   height: auto;
-  background-color: #f1f1f1;
+  background-color: var(--secondary-background);
   padding: ${({ $isopen }) => ($isopen ? "15px" : "0 15px")};
   overflow: hidden;
 `;

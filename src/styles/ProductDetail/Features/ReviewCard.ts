@@ -5,7 +5,7 @@ export const ReviewCardContainer = styled.div`
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--border-color);
 `;
 
 export const ReviewHeader = styled.div`
@@ -28,7 +28,7 @@ export const ReviewerName = styled.span`
 
 export const ReviewDate = styled.span`
   font-size: 12px;
-  color: #666;
+  color: var(--fourth-text);
   margin-right: 10px;
 `;
 
@@ -49,7 +49,7 @@ export const PurchaseStatus = styled.span`
 `;
 
 export const ReviewText = styled.p`
-  color: #333;
+  color: var(--fourth-text);
   margin: 20px 0;
   word-wrap: break-word;
 `;
@@ -58,7 +58,7 @@ export const HelpfulSection = styled.div`
   display: flex;
   font-size: 12px;
   align-items: center;
-  color: #666;
+  color: var(--fourth-text);
 `;
 
 export const HelpfulText = styled.span`

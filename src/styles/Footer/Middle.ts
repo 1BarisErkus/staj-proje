@@ -24,7 +24,7 @@ export const LanguageSelector = styled.div`
 
   a {
     margin: 0 0.5rem;
-    color: #a7a7a7;
+    color: var(--old-text-color);
     text-decoration: none;
 
     &:hover {
@@ -32,7 +32,7 @@ export const LanguageSelector = styled.div`
     }
 
     &:first-child {
-      color: #ffffff;
+      color: var(--secondary-text);
     }
   }
 `;
@@ -42,7 +42,7 @@ export const SocialMedia = styled.div`
 
   a {
     margin: 0 0.5rem;
-    color: #ffffff;
+    color: var(--secondary-text);
     font-size: 1.5rem;
   }
 `;

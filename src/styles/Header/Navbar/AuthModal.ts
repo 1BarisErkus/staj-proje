@@ -5,7 +5,7 @@ export const UnOverlay = styled.div`
   position: fixed;
   top: 200px;
   left: 50%;
-  background: #f6f5f8;
+  background: var(--secondary-background);
   z-index: 1000;
   transform: translateX(-50%);
   width: 100%;
@@ -48,7 +48,7 @@ export const LoginButton = styled.button`
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #ffc107;
+  background-color: var(--primary);
   border: none;
   border-radius: 50px;
   font-size: 1.2rem;
@@ -98,7 +98,7 @@ export const LoginHead = styled.h1`
 export const Input = styled.input`
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   margin-bottom: 10px;
 
@@ -112,7 +112,7 @@ export const LoginFormButton = styled.button`
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #ffc107;
+  background-color: var(--primary);
   border: none;
   border-radius: 5px;
   font-size: 1.2rem;
@@ -133,7 +133,7 @@ export const AlreadyMember = styled.div`
   cursor: pointer;
 
   &:hover {
-    color: #ffc107;
+    color: var(--primary);
   }
 
   @media (max-width: 768px) {

@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const Content = styled.div`
-  background-color: #fff;
+  background-color: var(--primary-background);
 `;
 
 export const Container = styled.div`
   border-radius: 8px;
   padding: 16px;
   width: 250px;
-  background-color: #f5f7f9;
+  background-color: var(--secondary-background);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  border: 1px solid #e1e4e8;
-  color: #5f6b76;
+  border: 1px solid var(--border-color);
+  color: var(--old-text-color);
 `;
 
 export const Header = styled.div`

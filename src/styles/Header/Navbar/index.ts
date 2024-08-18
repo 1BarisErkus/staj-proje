@@ -6,7 +6,7 @@ export const CartBadge = styled.span`
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: #ff6f61;
+  background-color: var(--cart-badge);
   color: white;
   border-radius: 50%;
   border: 4px solid white;
@@ -26,11 +26,12 @@ export const Button = styled.button<{
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: 500;
-  border: ${(props) => (props.$border ? "1px solid #e9ecef" : "none")};
+  border: ${(props) =>
+    props.$border ? "1px solid var(--border-color)" : "none"};
   border-radius: 6px;
   cursor: pointer;
   background-color: white;
-  color: #343a40;
+  color: var(--primary-text);
   width: 100%;
   height: 100%;
   gap: 8px;
@@ -40,8 +41,8 @@ export const Button = styled.button<{
   ${(props) =>
     props.$primary &&
     css`
-      background-color: #ffca00;
-      color: #343a40;
+      background-color: var(--primary);
+      color: #var(--old-text-color);
     `}
 
   ${(props) =>

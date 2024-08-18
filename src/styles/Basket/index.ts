@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background-color: #fff;
+  background-color: var(--primary-background);
   padding: 70px 0;
 `;
 
@@ -9,7 +9,7 @@ export const NoItemWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #009ed8;
+  background-color: var(--secondary);
   padding: 50px;
   color: white;
   font-size: 24px;

@@ -17,7 +17,7 @@ export const BottomLinks = styled.div`
 
   a {
     margin: 0 1rem;
-    color: #ffffff;
+    color: var(--secondary-text);
     text-decoration: none;
 
     &:hover {

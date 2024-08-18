@@ -14,7 +14,7 @@ export const ModalOverlay = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  background-color: #fff;
+  background-color: var(--primary-background);
   padding: 20px;
   border-radius: 8px;
   width: 400px;
@@ -25,7 +25,7 @@ export const ModalHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 10px;
   margin-bottom: 20px;
 `;
@@ -53,14 +53,14 @@ export const TextArea = styled.textarea`
   width: 100%;
   height: 100px;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   resize: none;
 `;
 
 export const SubmitButton = styled.button`
-  background-color: #1e88e5;
-  color: #fff;
+  background-color: var(--secondary);
+  color: var(--secondary-text);
   padding: 10px;
   border: none;
   border-radius: 4px;
@@ -68,6 +68,6 @@ export const SubmitButton = styled.button`
   font-size: 16px;
 
   &:hover {
-    background-color: #1565c0;
+    background-color: var(--secondary-hover);
   }
 `;

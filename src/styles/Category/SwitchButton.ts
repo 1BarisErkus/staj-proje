@@ -7,7 +7,7 @@ export const SwitchContainer = styled.div`
 
 export const Label = styled.label`
   font-size: 18px;
-  color: #5f6b76;
+  color: var(--old-text-color);
   font-weight: 600;
   margin-right: 8px;
 `;
@@ -26,7 +26,8 @@ export const Slider = styled.span<{ checked: boolean }>`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${(props) => (props.checked ? "#FFC900" : "#ccc")};
+  background-color: ${(props) =>
+    props.checked ? "var(--primary)" : "var(--border-color)"};
   transition: 0.4s;
   border-radius: 40px;
 
@@ -37,7 +38,7 @@ export const Slider = styled.span<{ checked: boolean }>`
     width: 18px;
     left: 3px;
     bottom: 3px;
-    background-color: white;
+    background-color: var(--primary-background);
     transition: 0.4s;
     border-radius: 50%;
     transform: ${(props) =>
@@ -57,7 +58,7 @@ export const RadioButton = styled.input.attrs({ type: "radio" })`
   height: 18px;
   cursor: pointer;
   appearance: none;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 50%;
   position: relative;
   outline: none;
@@ -69,7 +70,7 @@ export const RadioButton = styled.input.attrs({ type: "radio" })`
     left: 50%;
     width: 10px;
     height: 10px;
-    background-color: #ffd700;
+    background-color: var(--primary);
     border-radius: 50%;
     transform: translate(-50%, -50%);
   }

@@ -5,7 +5,7 @@ export const CardContainer = styled(Link)`
   width: 350px;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: var(--primary-background);
   padding: 20px;
 `;
 
@@ -27,7 +27,7 @@ export const ProductTitle = styled.h3`
 
 export const Price = styled.div`
   font-size: 20px;
-  color: #1b4795;
+  color: var(--secondary);
   font-weight: bold;
 `;
 
@@ -38,7 +38,7 @@ export const FeaturesList = styled.ul`
 
 export const FeatureListItem = styled.li`
   font-size: 14px;
-  color: #333;
+  color: var(--old-text-color);
   list-style: none;
   margin-bottom: 10px;
 

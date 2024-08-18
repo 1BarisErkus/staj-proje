@@ -12,9 +12,9 @@ export const CategoryCard = styled.div<{ $active?: boolean }>`
   transition: 0.3s;
 
   &:hover {
-    border-bottom: 1px solid #2855ac;
+    border-bottom: 1px solid var(--secondary);
     span {
-      color: #2855ac;
+      color: var(--secondary);
       font-weight: bold;
     }
   }
@@ -22,9 +22,9 @@ export const CategoryCard = styled.div<{ $active?: boolean }>`
   ${(props) =>
     props.$active &&
     `
-    border-bottom: 1px solid #2855ac;
+    border-bottom: 1px solid var(--secondary);
     span {
-      color: #2855ac;
+      color: var(--secondary);
       font-weight: bold;
       }
     `}

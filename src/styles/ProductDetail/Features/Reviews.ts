@@ -14,7 +14,7 @@ export const TopContainer = styled.div`
 `;
 
 export const RatingCard = styled.div`
-  background-color: #fff;
+  background-color: var(--primary-background);
   padding: 40px 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -28,7 +28,7 @@ export const RatingTitle = styled.div`
 
 export const RatingCount = styled.div`
   font-size: 16px;
-  color: #666;
+  color: var(--fourth-text);
   margin-bottom: 10px;
 `;
 
@@ -36,8 +36,8 @@ export const WriteReviewButton = styled.button`
   padding: 10px 20px;
   font-size: 14px;
   font-weight: bold;
-  color: #fff;
-  background-color: #3a6ccd;
+  color: var(--secondary-text);
+  background-color: var(--secondary);
   width: 50%;
   border: none;
   border-radius: 1.1rem;
@@ -46,13 +46,13 @@ export const WriteReviewButton = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #1565c0;
+    background-color: var(--secondary-hover);
   }
 `;
 
 export const Note = styled.div`
   font-size: 12px;
-  color: #999;
+  color: var(--fourth-text);
   margin-top: 10px;
 `;
 
@@ -65,7 +65,7 @@ export const DropdownHeader = styled.div`
   position: relative;
   background-color: transparent;
   padding: 20px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   cursor: pointer;
   display: flex;
@@ -93,7 +93,7 @@ export const DropdownItem = styled.li<{ $active?: boolean }>`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #f0f0f0;
+    background-color: var(--secondary-background);
   }
 
   ${({ $active }) =>

@@ -9,8 +9,8 @@ export const HeadWrapper = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color: #2855ac;
-  color: white;
+  background-color: var(--secondary);
+  color: var(--secondary-text);
   border: none;
   padding: 10px 140px;
   border-radius: 1.25rem;
@@ -19,22 +19,21 @@ export const Button = styled.button`
   font-size: 1rem;
 
   &:hover {
-    background-color: #3a6ccd;
-    color: #fff;
+    background-color: var(--secondary-hover);
   }
 `;
 
 export const Input = styled.input`
   padding: 15px 20px;
-  border: none;
+  border: 1px solid var(--border-color);
   border-radius: 0.3rem;
   font-size: 0.9rem;
   outline: none;
-  background-color: #f3f5f7;
+  background-color: var(--secondary-background);
 `;
 
 export const CardContainer = styled.div`
-  background: #fff;
+  background: var(--primary-background);
   border-radius: 10px;
   padding: 30px 20px;
   margin-bottom: 20px;
@@ -43,36 +42,36 @@ export const CardContainer = styled.div`
 
 export const Question = styled.div`
   font-size: 16px;
-  color: #666;
+  color: var(--fourth-text);
   margin-bottom: 20px;
 `;
 
 export const AnswerContainer = styled.div`
   padding-top: 10px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--border-color);
 `;
 
 export const AnswerHeader = styled.div`
   font-size: 12px;
   margin: 10px 0;
-  color: #666;
+  color: var(--fourth-text);
   letter-spacing: 1.3px;
 
   span {
     font-weight: bold;
-    color: #2855ac;
+    color: var(--secondary);
   }
 `;
 
 export const Answer = styled.div`
   font-size: 16px;
-  color: #666;
+  color: var(--fourth-text);
 `;
 
 export const QuestionText = styled.div`
   font-size: 14px;
   display: flex;
   gap: 10px;
-  color: #666;
+  color: var(--fourth-text);
   margin-bottom: 10px;
 `;

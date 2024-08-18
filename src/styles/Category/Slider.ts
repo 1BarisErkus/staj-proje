@@ -7,7 +7,7 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Text = styled.h1`
-  color: #273a7d;
+  color: var(--secondary);
   position: absolute;
   top: 35%;
   left: 5%;
@@ -26,7 +26,7 @@ export const Button = styled.button`
   left: 5%;
   transform: translateY(-50%);
   z-index: 2000;
-  background-color: #ffd917;
+  background-color: var(--primary);
   border: none;
   padding: 0.5rem 3rem;
   border-radius: 30px;

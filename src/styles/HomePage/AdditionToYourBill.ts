@@ -13,8 +13,8 @@ export const Wrapper = styled(Col)`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #39a6d8;
-  border: 10px solid #f1f0f8;
+  background-color: var(--your-bill);
+  border: 10px solid var(--border-color);
   border-radius: 10px;
 
   @media (max-width: 768px) {
@@ -25,7 +25,7 @@ export const Wrapper = styled(Col)`
 
 export const Text = styled.p`
   font-size: 1.45rem;
-  color: #fff;
+  color: var(--secondary-text);
   font-weight: bold;
   text-align: center;
 
@@ -39,7 +39,7 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   gap: 30px;
-  background-color: #ffc900;
+  background-color: var(--primary);
   padding: 10px 20px;
   border-radius: 50px;
   border: none;

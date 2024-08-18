@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const SummaryContainer = styled.div`
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 30px 20px;
-  background-color: #f5f7f9;
+  background-color: var(--secondary-background);
 `;
 
 export const SummaryTitle = styled.h2`
@@ -29,12 +29,12 @@ export const Price = styled.span`
 `;
 
 export const Discount = styled.span`
-  color: #00aaff;
+  color: var(--secondary);
 `;
 
 export const Button = styled.button`
-  background-color: #0056b3;
-  color: #fff;
+  background-color: var(--secondary);
+  color: var(--secondary-text);
   border: none;
   border-radius: 5px;
   padding: 12px 20px;
@@ -73,7 +73,7 @@ export const CheckboxLabel = styled.label`
   font-size: 0.85rem;
 
   span {
-    color: #0056b3;
+    color: var(--secondary);
     font-weight: 600;
   }
 `;
@@ -82,8 +82,8 @@ export const ContinueButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffc107;
-  color: #000;
+  background-color: var(--primary);
+  color: var(--primary-text);
   border: none;
   border-radius: 35px;
   padding: 10px;
@@ -93,6 +93,6 @@ export const ContinueButton = styled.button`
   font-size: 0.9rem;
 
   &:hover {
-    background-color: #e0a800;
+    background-color: var(--primary-hover);
   }
 `;

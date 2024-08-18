@@ -11,7 +11,7 @@ export const DropdownHeader = styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px;
-  background-color: #fff;
+  background-color: var(--primary-background);
   cursor: pointer;
 `;
 
@@ -24,7 +24,7 @@ export const DropdownTitleWrapper = styled.div`
 export const DropdownTitle = styled.span`
   font-size: 0.75rem;
   font-weight: bold;
-  color: #8e9fad;
+  color: var(--old-text-color);
 `;
 
 export const DropdownHeaderContent = styled.div`
@@ -39,9 +39,9 @@ export const DropdownListContainer = styled.div`
   left: 0;
   width: 100%;
   z-index: 1000;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
-  background-color: #fff;
+  background-color: var(--primary-background);
   margin-top: 5px;
 `;
 
@@ -51,10 +51,11 @@ export const ListItem = styled.li<{ selected: boolean }>`
   padding: 10px 15px;
   gap: 10px;
   cursor: pointer;
-  background-color: ${({ selected }) => (selected ? "#f0f0f0" : "#fff")};
+  background-color: ${({ selected }) =>
+    selected ? "var(--secondary-background)" : "var(--primary-background)"};
 
   &:hover {
-    background-color: #f0f0f0;
+    background-color: var(--primary-secondary);
   }
 `;
 
@@ -63,12 +64,12 @@ export const ColorCircle = styled.span<{ color: string }>`
   height: 24px;
   border-radius: 50%;
   background-color: ${({ color }) => color};
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
 `;
 
 export const ArrowIcon = styled.span<{ $isopen: boolean }>`
   display: inline-block;
   transform: ${({ $isopen }) => ($isopen ? "rotate(180deg)" : "rotate(0)")};
   transition: transform 0.2s ease;
-  color: #8e9fad;
+  color: var(--fourth-text);
 `;

@@ -16,19 +16,19 @@ export const SlideItem = styled.div<SlideItemProps>`
   height: 50px;
   font-size: 16px;
   font-weight: 500;
-  color: #333;
+  color: var(--fourth-text);
   cursor: pointer;
   transition: background-color 0.3s;
 
   ${({ $active }) =>
     $active &&
     `
-    color: #1e88e5;
-    border-bottom: 2px solid #1e88e5;
+    color: var(--secondary);
+    border-bottom: 2px solid var(--secondary);;
   `}
 
   &:hover {
-    border-bottom: 2px solid #1e88e5;
+    border-bottom: 2px solid var(--secondary);
   }
 `;
 
@@ -38,7 +38,7 @@ export const FeaturesContainer = styled.div`
 
 export const DescriptionText = styled.p`
   font-size: 20px;
-  color: #333;
+  color: var(--fourth-text);
   line-height: 1.5;
   letter-spacing: 0.5px;
   max-width: 800px;

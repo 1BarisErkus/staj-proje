@@ -6,7 +6,7 @@ export const WhyPasajWrapper = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #eff2f5;
+  background-color: var(--third-background);
   padding: 80px 20px;
 `;
 
@@ -18,7 +18,7 @@ export const Title = styled.h2`
 
 export const Description = styled.p`
   font-size: 1.15rem;
-  color: #555;
+  color: var(--old-text-color);
   margin-bottom: 40px;
   max-width: 1100px;
   line-height: 1.5;
@@ -44,7 +44,7 @@ export const IconCard = styled.div`
 
 export const ImageWrapper = styled.div`
   margin-bottom: 20px;
-  background-color: #27356f;
+  background-color: var(--secondary-hover);
   border-radius: 50%;
   padding: 30px;
   color: white;
@@ -52,12 +52,12 @@ export const ImageWrapper = styled.div`
 
 export const CardTitle = styled.h3`
   font-size: 1.5rem;
-  color: #253342;
+  color: var(--secondary-hover);
   margin-bottom: 10px;
 `;
 
 export const CardDescription = styled.p`
   font-size: 1rem;
   line-height: 1.5;
-  color: #555;
+  color: var(--fourth-text);
 `;

@@ -13,7 +13,7 @@ export const InputSection = styled.div`
   padding: 1rem;
   width: 100%;
   margin: 0.5rem 0;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   width: 100%;
 `;
 
@@ -57,7 +57,7 @@ export const Dropdown = styled.select`
   font-size: 1rem;
   width: 100%;
   background-color: transparent;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   width: 300px;
 `;
 
@@ -77,7 +77,7 @@ export const Button = styled.button`
   margin: 0.5rem;
   font-size: 1rem;
   border: none;
-  background-color: #ffca00;
+  background-color: var(--primary);
   border-radius: 2rem;
   cursor: pointer;
 `;
@@ -118,7 +118,7 @@ export const DeleteProductCardWrapper = styled.div`
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   width: 300px;
   min-height: 400px;
 `;

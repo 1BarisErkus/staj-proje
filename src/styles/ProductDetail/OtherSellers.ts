@@ -14,7 +14,7 @@ export const Card = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 340px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-color);
   background-color: white;
   border-radius: 10px;
   padding: 1rem;
@@ -37,14 +37,14 @@ export const CardHeader = styled.div`
 export const CardTitle = styled.h5`
   font-size: 0.9rem;
   font-weight: 600;
-  color: #2855ac;
+  color: var(--secondary);
 `;
 
 export const CardRating = styled.p`
   font-size: 0.75rem;
   font-weight: 500;
-  background-color: #0bc15c;
-  color: white;
+  background-color: var(--rating);
+  color: var(--secondary-text);
   padding: 0.3rem 0.5rem;
   border-radius: 5px;
 `;
@@ -61,7 +61,7 @@ export const CardBody = styled.div`
 export const Price = styled.p`
   font-size: 1.5rem;
   font-weight: 600;
-  color: #5f6b76;
+  color: var(--fourth-text);
 `;
 
 export const Currency = styled.span`
@@ -74,7 +74,7 @@ export const Button = styled.button`
   justify-content: center;
   gap: 1rem;
   border: none;
-  background-color: #ffd917;
+  background-color: var(--primary);
   padding: 0.5rem 1rem;
   border-radius: 15px;
   cursor: pointer;
@@ -82,12 +82,12 @@ export const Button = styled.button`
   font-size: 0.95rem;
 
   &:hover {
-    background-color: orange;
+    background-color: var(--primary-hover);
   }
 `;
 
 export const Shipping = styled.p`
   font-size: 0.8rem;
-  color: #5f6b76;
+  color: var(--fourth-text);
   margin-top: 1rem;
 `;

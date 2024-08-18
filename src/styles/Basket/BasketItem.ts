@@ -3,9 +3,9 @@ import { Col } from "../GlobalVariables";
 import Link from "next/link";
 
 export const BasketItemWrapper = styled.div`
-  background-color: #fff;
+  background-color: var(--primary-background);
   border-radius: 0.5rem;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-color);
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@ export const NameDetails = styled(Link)`
 `;
 
 export const Color = styled.p`
-  color: #9e9e9e;
+  color: var(--old-text-color);
 `;
 
 interface PriceWrapperProps {
@@ -45,7 +45,8 @@ interface PriceWrapperProps {
 }
 
 export const PriceWrapper = styled.div<PriceWrapperProps>`
-  color: ${({ $mainprice }) => ($mainprice ? "#000" : "#9e9e9e")};
+  color: ${({ $mainprice }) =>
+    $mainprice ? "var(--primary-text)" : "var(--old-text-color)"};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,7 +63,7 @@ export const CounterContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 5px 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 30px;
 `;
 
@@ -74,7 +75,7 @@ export const Button = styled.button`
   padding: 0 10px;
 
   &:disabled {
-    color: #ccc;
+    color: var(--button-disabled);
     cursor: not-allowed;
   }
 `;
@@ -93,7 +94,7 @@ export const Label = styled.div`
 export const CloseButton = styled.button`
   background-color: transparent;
   border: none;
-  color: #9e9e9e;
+  color: var(--old-text-color);
   cursor: pointer;
   font-size: 1.2rem;
   padding: 0;
@@ -106,17 +107,17 @@ export const Bottom = styled.div`
   display: flex;
   justify-content: flex-end;
   padding-top: 15px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--border-color);
   font-size: 0.8rem;
 `;
 
 export const BottomText = styled.p`
-  color: #2855ac;
+  color: var(--secondary);
 `;
 
 export const Cargo = styled.span`
   margin-left: 10px;
   padding-left: 10px;
-  border-left: 1px solid #e0e0e0;
-  color: #9e9e9e;
+  border-left: 1px solid var(--border-color);
+  color: var(--old-text-color);
 `;

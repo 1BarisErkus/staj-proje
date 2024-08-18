@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Col } from "../GlobalVariables";
 
 export const Content = styled.div`
-  background-color: #fff;
+  background-color: var(--primary-background);
   padding-top: 5rem;
 `;
 
@@ -24,7 +24,7 @@ export const LimitWrapper = styled.div`
   width: 100%;
   background-image: linear-gradient(6deg, #3697c9, #3baddf);
   font-size: 1rem;
-  color: #fff;
+  color: var(--secondary-text);
   padding: 0.75rem 2rem;
   border-radius: 8px;
   font-weight: 600;
@@ -43,7 +43,7 @@ export const Title = styled.h1`
 `;
 
 export const FavoriteButton = styled.button`
-  background-color: #fff;
+  background-color: var(--primary-background);
   border: 1px solid gainsboro;
   padding: 1rem 0.75rem;
   border-radius: 8px;
@@ -61,7 +61,7 @@ export const DiscountWrapper = styled.div`
 export const TimerContainer = styled.div`
   display: flex;
   align-items: center;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 4px 8px;
   margin: 0 0.5rem;
@@ -70,19 +70,20 @@ export const TimerContainer = styled.div`
 export const TimePart = styled.span`
   font-size: 14px;
   font-weight: 600;
-  color: ${(props) => (props.color === "secondary" ? "#6b7280" : "#1d4ed8")};
+  color: ${(props) =>
+    props.color === "secondary" ? "var(--old-text-color)" : "var(--secondary)"};
   margin: 0 4px;
 `;
 
 export const Separator = styled.span`
   margin: 0 4px;
-  color: #6b7280;
+  color: var(--old-text-color);
 `;
 
 export const Stock = styled.div`
   font-size: 0.9rem;
   font-weight: 600;
-  color: #ffca00;
+  color: var(--primary);
   margin-left: 0.5rem;
 `;
 
@@ -100,7 +101,7 @@ export const OfferWrapper = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color: #ffd917;
+  background-color: var(--primary);
   width: 100%;
   margin-top: 2rem;
   padding: 1rem 2rem;
@@ -141,7 +142,7 @@ export const BadgeWrapper = styled.div`
 export const Badge = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #ecf0f2;
+  background-color: var(--secondary-background);
   color: gray;
   padding: 1rem;
   border-radius: 50%;

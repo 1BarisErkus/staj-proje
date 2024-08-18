@@ -10,8 +10,8 @@ const Button = styled.div<{ disabled?: boolean }>`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #fff;
-  color: #000;
+  background-color: var(--primary-background);
+  color: var(--primary-text);
   padding: 10px;
   border-radius: 50%;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);

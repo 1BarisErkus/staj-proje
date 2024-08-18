@@ -46,7 +46,7 @@ export const CardWrapper = styled.div<CardWrapperProps>`
   ${({ $iscompareitem }) =>
     $iscompareitem &&
     `
-    border: 5px solid #ffc900;
+    border: 5px solid var(--primary);
     `}
 
     ${({ $comparemode }) =>
@@ -60,12 +60,12 @@ export const CardWrapper = styled.div<CardWrapperProps>`
       props.$comparemode
         ? `
             cursor: pointer;
-            box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+            box-shadow: 0 0 10px var(--primary-hover);
             transform: scale(1.05);
-            background-color: #ffc900;
+            background-color: var(--primary);
           `
         : `
-          border: 2px solid #ffc900;
+          border: 2px solid var(--primary);
         `}
   }
 
@@ -78,7 +78,7 @@ export const CardWrapper = styled.div<CardWrapperProps>`
 export const ProductName = styled.h2<{ size?: string }>`
   font-size: 1.1rem;
   font-weight: bold;
-  color: #333;
+  color: var(--fourth-text);
   margin: 16px 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -105,9 +105,9 @@ export const PriceWrapper = styled.div`
 export const Price = styled.p`
   font-size: 1.1rem;
   font-weight: bold;
-  color: #2855ac;
+  color: var(--secondary);
   margin-top: 5px;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--border-color);
   padding-top: 10px;
 `;
 
@@ -115,18 +115,18 @@ export const Discount = styled.p`
   font-size: 0.7rem;
   margin-top: 5px;
   font-weight: 600;
-  color: #00bafc;
+  color: var(--your-bill);
 `;
 
 export const DiscountlessAmount = styled.span`
   text-decoration: line-through;
-  color: #bfc4c8;
+  color: var(--fourth-text);
 `;
 
 export const MinPrice = styled.p`
   font-size: 0.65rem;
   font-weight: bold;
-  color: #4fcd53;
+  color: var(--rating);
 `;
 
 export const BadgeWrapper = styled.div`
@@ -139,12 +139,12 @@ export const BadgeWrapper = styled.div`
 export const Badge = styled.span`
   background-color: ${(props) =>
     props.title?.includes("Peşin")
-      ? "#E5F8FF"
+      ? "var(--third-background)"
       : props.title?.includes("Kargo")
-      ? "#FDF7E7"
+      ? "var(--secondary-background)"
       : props.title?.includes("Hızlı")
-      ? "#ff9800"
-      : "#E5FDE6"};
+      ? "var(--primary)"
+      : "var(--rating)"};
   color: #333;
   border-radius: 5px;
   padding: 4px 8px;
@@ -168,7 +168,7 @@ export const SingleBadgeWrapper = styled.div<SingleBadgeWrapperProps>`
   left: 0;
   z-index: 2;
   background-color: ${(props) =>
-    props.type === "bestSeller" ? "#ff9800" : "#5BCC34"};
+    props.type === "bestSeller" ? "var(--primary)" : "var(--rating)"};
   color: white;
   padding: 4px 8px;
   border-end-end-radius: 10px;

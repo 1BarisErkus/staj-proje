@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import localFont from "next/font/local";
 import { SessionProvider } from "next-auth/react";
+import { ThemeProvider } from "next-themes";
 
 import {
   HydrationBoundary,
@@ -52,20 +53,22 @@ export default function App({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <HydrationBoundary state={pageProps.dehydratedState}>
         <SessionProvider session={pageProps.session}>
-          <Head>
-            <title>Staj Final</title>
-            <link rel="icon" href="/images/favicon.png" />
-          </Head>
-          <div className={`${greycliffCF.className}`}>
-            <GlobalStyles />
-            <Header />
-            <main>
-              <Component {...pageProps} />
-            </main>
-            <Footer />
-            <ToastContainer />
-          </div>
-          <ReactQueryDevtools />
+          <ThemeProvider enableSystem={false} defaultTheme="light">
+            <Head>
+              <title>Staj Final</title>
+              <link rel="icon" href="/images/favicon.png" />
+            </Head>
+            <div className={`${greycliffCF.className}`}>
+              <GlobalStyles />
+              <Header />
+              <main>
+                <Component {...pageProps} />
+              </main>
+              <Footer />
+              <ToastContainer />
+            </div>
+            <ReactQueryDevtools />
+          </ThemeProvider>
         </SessionProvider>
       </HydrationBoundary>
     </QueryClientProvider>
